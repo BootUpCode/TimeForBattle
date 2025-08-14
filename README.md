@@ -29,6 +29,6 @@ TimeForBattle aims to assist the Game Master of a tabletop roleplaying game with
 
 - Add status tracking and combat info
   - Track turn count and status duration
-- Add options to roll attacks
-  - Edit creature model to include attack and damage modifiers
+- Add hotkeys to roll actions (Done!)
+  - Add two more hotkeys and include damage rolls
 - Pretty up main/sub menus
