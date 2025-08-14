@@ -18,6 +18,7 @@
         <converters:RollConverter x:Key="RollConverter" />
         <converters:RollColorConverter x:Key="RollColorConverter" />
         <converters:AdditionConverter x:Key="AdditionConverter" />
+        <converters:StringContainDataConverter x:Key="StringContainDataConverter" />
     </ContentPage.Resources>
 
     <Grid ColumnDefinitions="*,*,*"
@@ -97,7 +98,7 @@
                                                   IsExpanded="{Binding Path=IsExpanded, Mode=TwoWay}">
                                     <Grid ColumnDefinitions="40,40,40,40,40,40"
                                           ColumnSpacing="0"
-                                          RowDefinitions="*,*,*,*"
+                                          RowDefinitions="*,*,*,*,*"
                                           RowSpacing="0"
                                           Padding="3,3,3,3">
                                         <Label Grid.Column="0"
@@ -158,12 +159,15 @@
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}">
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
-                                                    <Binding Path="StrScore" />
-                                                    <Binding Path="StrSaveProf" />
-                                                    <Binding Path="ProficiencyBonus" />
-                                                    <Binding Path="DoesNotExist"
-                                                             FallbackValue="Strength Save" />
-                                                    <Binding Path="Name" />
+                                                    <Binding Path="." />
+                                                    <Binding Path="AttributeName"
+                                                             FallbackValue="Str" />
+                                                    <Binding Path="IsThisSave"
+                                                             FallbackValue="True" />
+                                                    <Binding Path="Proficiency"
+                                                             FallbackValue="null" />
+                                                    <Binding Path="RollName"
+                                                             FallbackValue="Str Save" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
@@ -174,12 +178,15 @@
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}">
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
-                                                    <Binding Path="DexScore" />
-                                                    <Binding Path="DexSaveProf" />
-                                                    <Binding Path="ProficiencyBonus" />
-                                                    <Binding Path="DoesNotExist"
-                                                             FallbackValue="Dexterity Save" />
-                                                    <Binding Path="Name" />
+                                                    <Binding Path="." />
+                                                    <Binding Path="AttributeName"
+                                                             FallbackValue="Dex" />
+                                                    <Binding Path="IsThisSave"
+                                                             FallbackValue="True" />
+                                                    <Binding Path="Proficiency"
+                                                             FallbackValue="null" />
+                                                    <Binding Path="RollName"
+                                                             FallbackValue="Dex Save" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
@@ -190,12 +197,15 @@
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}">
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
-                                                    <Binding Path="ConScore" />
-                                                    <Binding Path="ConSaveProf" />
-                                                    <Binding Path="ProficiencyBonus" />
-                                                    <Binding Path="DoesNotExist"
-                                                             FallbackValue="Constitution Save" />
-                                                    <Binding Path="Name" />
+                                                    <Binding Path="." />
+                                                    <Binding Path="AttributeName"
+                                                             FallbackValue="Con" />
+                                                    <Binding Path="IsThisSave"
+                                                             FallbackValue="True" />
+                                                    <Binding Path="Proficiency"
+                                                             FallbackValue="null" />
+                                                    <Binding Path="RollName"
+                                                             FallbackValue="Con Save" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
@@ -206,12 +216,15 @@
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}">
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
-                                                    <Binding Path="IntScore" />
-                                                    <Binding Path="IntSaveProf" />
-                                                    <Binding Path="ProficiencyBonus" />
-                                                    <Binding Path="DoesNotExist"
-                                                             FallbackValue="Intelligence Save" />
-                                                    <Binding Path="Name" />
+                                                    <Binding Path="." />
+                                                    <Binding Path="AttributeName"
+                                                             FallbackValue="Int" />
+                                                    <Binding Path="IsThisSave"
+                                                             FallbackValue="True" />
+                                                    <Binding Path="Proficiency"
+                                                             FallbackValue="null" />
+                                                    <Binding Path="RollName"
+                                                             FallbackValue="Int Save" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
@@ -222,12 +235,15 @@
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}">
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
-                                                    <Binding Path="WisScore" />
-                                                    <Binding Path="WisSaveProf" />
-                                                    <Binding Path="ProficiencyBonus" />
-                                                    <Binding Path="DoesNotExist"
-                                                             FallbackValue="Wisdom Save" />
-                                                    <Binding Path="Name" />
+                                                    <Binding Path="." />
+                                                    <Binding Path="AttributeName"
+                                                             FallbackValue="Wis" />
+                                                    <Binding Path="IsThisSave"
+                                                             FallbackValue="True" />
+                                                    <Binding Path="Proficiency"
+                                                             FallbackValue="null" />
+                                                    <Binding Path="RollName"
+                                                             FallbackValue="Wis Save" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
@@ -238,19 +254,46 @@
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}">
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
-                                                    <Binding Path="ChaScore" />
-                                                    <Binding Path="ChaSaveProf" />
-                                                    <Binding Path="ProficiencyBonus" />
-                                                    <Binding Path="DoesNotExist"
-                                                             FallbackValue="Charisma Save" />
-                                                    <Binding Path="Name" />
+                                                    <Binding Path="." />
+                                                    <Binding Path="AttributeName"
+                                                             FallbackValue="Cha" />
+                                                    <Binding Path="IsThisSave"
+                                                             FallbackValue="True" />
+                                                    <Binding Path="Proficiency"
+                                                             FallbackValue="null" />
+                                                    <Binding Path="RollName"
+                                                             FallbackValue="Cha Save" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
+
+                                        <Button x:Name="HotKeyButton1"
+                                                Grid.Column="0"
+                                                Grid.ColumnSpan="2"
+                                                Grid.Row="3"
+                                                Text="{Binding HotKeyName}"
+                                                Padding="5"
+                                                IsVisible="{Binding HotKeyName, Converter={StaticResource StringContainDataConverter}}"
+                                                Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}">
+                                            <Button.CommandParameter>
+                                                <MultiBinding Converter="{StaticResource RollConverter}">
+                                                    <Binding Path="." />
+                                                    <Binding Path="HotKeyAttribute"
+                                                             FallbackValue="null" />
+                                                    <Binding Path="IsThisSave"
+                                                             FallbackValue="False" />
+                                                    <Binding Path="HotKeyProficiency"
+                                                             FallbackValue="null" />
+                                                    <Binding Path="HotKeyName"
+                                                             FallbackValue="" />
+                                                </MultiBinding>
+                                            </Button.CommandParameter>
+                                        </Button>
+
                                         <Button x:Name="ViewStatblock"
                                                 Grid.Column="0"
                                                 Grid.ColumnSpan="7"
-                                                Grid.Row="3"
+                                                Grid.Row="4"
                                                 Text="View Statblock"
                                                 CommandParameter="{Binding .}"
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=GoToDetailsCommand}" />
@@ -364,7 +407,8 @@
                                    FontAttributes="Bold"
                                    HorizontalOptions="Center">
                                 <Label.Text>
-                                    <MultiBinding StringFormat="{} {0} rolled {1} ({2})">
+                                    <MultiBinding StringFormat="{} Round {0}: {1} rolled {2} ({3})">
+                                        <Binding Path="Round" />
                                         <Binding Path="CreatureName" />
                                         <Binding Path="RollName" />
                                         <Binding Path="ModifierString" />

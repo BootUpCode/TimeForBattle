@@ -238,13 +238,12 @@ public partial class InitiativeViewModel : BaseViewModel
     [RelayCommand]
     public async Task RollSaveAsync(Tuple<int?, string?, string?> parameters)
     {
-        if (Combat is null || parameters.Item1 is null)
+        if (Combat is null || parameters.Item1 is null || parameters.Item2 is null || parameters.Item3 is null)
             return;
-
 
             Random rng = new();
             int roll1 = rng.Next(1, 21);
             int roll2 = rng.Next(1, 21);
-            Rolls.Insert(0, new Roll(parameters.Item3, parameters.Item2, roll1, roll2, (int)parameters.Item1));
+            Rolls.Insert(0, new Roll(parameters.Item3, parameters.Item2, roll1, roll2, (int)parameters.Item1, Combat.RoundCount));
     }
 }

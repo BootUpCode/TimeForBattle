@@ -44,4 +44,8 @@ public partial class Creature : DatabaseObject
     [ObservableProperty] public string bonusActions;
     [ObservableProperty] public string reactions;
     [ObservableProperty] public string legendaryActions;
+
+    [ObservableProperty] public string hotKeyName;
+    [ObservableProperty] public string hotKeyAttribute;
+    [ObservableProperty] public string hotKeyProficiency;
 }
