@@ -64,6 +64,10 @@ public partial class InitiativeCreature : Creature
         this.BonusActions = creature.BonusActions;
         this.Reactions = creature.Reactions;
         this.LegendaryActions = creature.LegendaryActions;
+
+        this.hotKeyName = creature.HotKeyName;
+        this.hotKeyAttribute = creature.HotKeyAttribute;
+        this.hotKeyProficiency = creature.HotKeyProficiency;
     }
 }
 

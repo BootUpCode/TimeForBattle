@@ -8,8 +8,9 @@ public partial class Roll : ObservableObject
     [ObservableProperty] int rollValue2;
     [ObservableProperty] int modifier;
     [ObservableProperty] string modifierString;
+    [ObservableProperty] int round;
 
-    public Roll(string creatureName, string rollName, int rollValue1, int rollValue2, int modifier)
+    public Roll(string creatureName, string rollName, int rollValue1, int rollValue2, int modifier, int round)
     {
         CreatureName = creatureName;
         RollName = rollName;
@@ -20,5 +21,6 @@ public partial class Roll : ObservableObject
             ModifierString = Modifier.ToString();
         else
             ModifierString = "+" + Modifier.ToString();
+        Round = round;
     }
 }
