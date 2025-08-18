@@ -68,6 +68,9 @@ public partial class InitiativeCreature : Creature
         this.hotKeyName = creature.HotKeyName;
         this.hotKeyAttribute = creature.HotKeyAttribute;
         this.hotKeyProficiency = creature.HotKeyProficiency;
+        this.hotKeyDamageDiceNumber = creature.HotKeyDamageDiceNumber;
+        this.hotKeyDamageDiceSize = creature.HotKeyDamageDiceSize;
+        this.hotKeyDamageBonus = creature.HotKeyDamageBonus;
     }
 }
 
