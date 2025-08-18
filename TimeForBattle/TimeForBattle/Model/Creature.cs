@@ -47,5 +47,8 @@ public partial class Creature : DatabaseObject
 
     [ObservableProperty] public string hotKeyName;
     [ObservableProperty] public string hotKeyAttribute;
-    [ObservableProperty] public string hotKeyProficiency;
+    [ObservableProperty] public bool hotKeyProficiency;
+    [ObservableProperty] public int hotKeyDamageDiceNumber;
+    [ObservableProperty] public int hotKeyDamageDiceSize;
+    [ObservableProperty] public int hotKeyDamageBonus;
 }

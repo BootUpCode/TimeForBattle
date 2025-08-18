@@ -9,7 +9,6 @@
 
     <ContentPage.Resources>
         <converters:AttributeConverter x:Key="AttributeConverter" />
-        <converters:ProficiencyConverter x:Key="ProficiencyConverter" />
         <converters:InitiativeConverter x:Key="initiative" />
         <converters:InvertedBoolConverter x:Key="InvertedBool" />
     </ContentPage.Resources>
@@ -251,17 +250,27 @@
                 <Label Grid.Column="2"
                        Grid.Row="12"
                        HorizontalOptions="Center"
-                       Text="{Binding Creature.StrScore, Converter={StaticResource AttributeConverter}, Mode=OneWay}"
-                       Style="{StaticResource StatblockText}" />
+                       Style="{StaticResource StatblockText}">
+                    <Label.Text>
+                        <MultiBinding Converter="{StaticResource AttributeConverter}">
+                            <Binding Path="Creature" />
+                            <Binding Path="AttributeName"
+                                     FallbackValue="Str" />
+                            <Binding Path="Proficiency"
+                                     FallbackValue="false" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
                 <Label Grid.Column="3"
                        Grid.Row="12"
                        HorizontalOptions="Center"
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
-                        <MultiBinding Converter="{StaticResource ProficiencyConverter}">
-                            <Binding Path="Creature.StrScore" />
+                        <MultiBinding Converter="{StaticResource AttributeConverter}">
+                            <Binding Path="Creature" />
+                            <Binding Path="AttributeName"
+                                     FallbackValue="Str" />
                             <Binding Path="Creature.StrSaveProf" />
-                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -293,17 +302,27 @@
                 <Label Grid.Column="2"
                        Grid.Row="13"
                        HorizontalOptions="Center"
-                       Text="{Binding Creature.DexScore, Converter={StaticResource AttributeConverter}, Mode=OneWay}"
-                       Style="{StaticResource StatblockText}" />
+                       Style="{StaticResource StatblockText}">
+                    <Label.Text>
+                        <MultiBinding Converter="{StaticResource AttributeConverter}">
+                            <Binding Path="Creature" />
+                            <Binding Path="AttributeName"
+                                     FallbackValue="Dex" />
+                            <Binding Path="Proficiency"
+                                     FallbackValue="false" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
                 <Label Grid.Column="3"
                        Grid.Row="13"
                        HorizontalOptions="Center"
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
-                        <MultiBinding Converter="{StaticResource ProficiencyConverter}">
-                            <Binding Path="Creature.DexScore" />
+                        <MultiBinding Converter="{StaticResource AttributeConverter}">
+                            <Binding Path="Creature" />
+                            <Binding Path="AttributeName"
+                                     FallbackValue="Dex" />
                             <Binding Path="Creature.DexSaveProf" />
-                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -335,17 +354,27 @@
                 <Label Grid.Column="2"
                        Grid.Row="14"
                        HorizontalOptions="Center"
-                       Text="{Binding Creature.ConScore, Converter={StaticResource AttributeConverter}, Mode=OneWay}"
-                       Style="{StaticResource StatblockText}" />
+                       Style="{StaticResource StatblockText}">
+                    <Label.Text>
+                        <MultiBinding Converter="{StaticResource AttributeConverter}">
+                            <Binding Path="Creature" />
+                            <Binding Path="AttributeName"
+                                     FallbackValue="Con" />
+                            <Binding Path="Proficiency"
+                                     FallbackValue="false" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
                 <Label Grid.Column="3"
                        Grid.Row="14"
                        HorizontalOptions="Center"
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
-                        <MultiBinding Converter="{StaticResource ProficiencyConverter}">
-                            <Binding Path="Creature.ConScore" />
+                        <MultiBinding Converter="{StaticResource AttributeConverter}">
+                            <Binding Path="Creature" />
+                            <Binding Path="AttributeName"
+                                     FallbackValue="Con" />
                             <Binding Path="Creature.ConSaveProf" />
-                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -377,17 +406,27 @@
                 <Label Grid.Column="2"
                        Grid.Row="15"
                        HorizontalOptions="Center"
-                       Text="{Binding Creature.IntScore, Converter={StaticResource AttributeConverter}, Mode=OneWay}"
-                       Style="{StaticResource StatblockText}" />
+                       Style="{StaticResource StatblockText}">
+                    <Label.Text>
+                        <MultiBinding Converter="{StaticResource AttributeConverter}">
+                            <Binding Path="Creature" />
+                            <Binding Path="AttributeName"
+                                     FallbackValue="Int" />
+                            <Binding Path="Proficiency"
+                                     FallbackValue="false" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
                 <Label Grid.Column="3"
                        Grid.Row="15"
                        HorizontalOptions="Center"
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
-                        <MultiBinding Converter="{StaticResource ProficiencyConverter}">
-                            <Binding Path="Creature.IntScore" />
+                        <MultiBinding Converter="{StaticResource AttributeConverter}">
+                            <Binding Path="Creature" />
+                            <Binding Path="AttributeName"
+                                     FallbackValue="Int" />
                             <Binding Path="Creature.IntSaveProf" />
-                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -419,17 +458,27 @@
                 <Label Grid.Column="2"
                        Grid.Row="16"
                        HorizontalOptions="Center"
-                       Text="{Binding Creature.WisScore, Converter={StaticResource AttributeConverter}, Mode=OneWay}"
-                       Style="{StaticResource StatblockText}" />
+                       Style="{StaticResource StatblockText}">
+                    <Label.Text>
+                        <MultiBinding Converter="{StaticResource AttributeConverter}">
+                            <Binding Path="Creature" />
+                            <Binding Path="AttributeName"
+                                     FallbackValue="Wis" />
+                            <Binding Path="Proficiency"
+                                     FallbackValue="false" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
                 <Label Grid.Column="3"
                        Grid.Row="16"
                        HorizontalOptions="Center"
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
-                        <MultiBinding Converter="{StaticResource ProficiencyConverter}">
-                            <Binding Path="Creature.WisScore" />
+                        <MultiBinding Converter="{StaticResource AttributeConverter}">
+                            <Binding Path="Creature" />
+                            <Binding Path="AttributeName"
+                                     FallbackValue="Wis" />
                             <Binding Path="Creature.WisSaveProf" />
-                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -461,17 +510,27 @@
                 <Label Grid.Column="2"
                        Grid.Row="17"
                        HorizontalOptions="Center"
-                       Text="{Binding Creature.ChaScore, Converter={StaticResource AttributeConverter}, Mode=OneWay}"
-                       Style="{StaticResource StatblockText}" />
+                       Style="{StaticResource StatblockText}">
+                    <Label.Text>
+                        <MultiBinding Converter="{StaticResource AttributeConverter}">
+                            <Binding Path="Creature" />
+                            <Binding Path="AttributeName"
+                                     FallbackValue="Cha" />
+                            <Binding Path="Proficiency"
+                                     FallbackValue="false" />
+                        </MultiBinding>
+                    </Label.Text>
+                </Label>
                 <Label Grid.Column="3"
                        Grid.Row="17"
                        HorizontalOptions="Center"
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
-                        <MultiBinding Converter="{StaticResource ProficiencyConverter}">
-                            <Binding Path="Creature.ChaScore" />
+                        <MultiBinding Converter="{StaticResource AttributeConverter}">
+                            <Binding Path="Creature" />
+                            <Binding Path="AttributeName"
+                                     FallbackValue="Cha" />
                             <Binding Path="Creature.ChaSaveProf" />
-                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -589,7 +648,7 @@
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="6"
                        Grid.Row="26"
-                       Text="Hotkey Actions"
+                       Text="Hotkey Rolls"
                        Style="{StaticResource StatblockText}"
                        IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
                        FontSize="20"
@@ -603,21 +662,123 @@
                 <Grid Grid.Column="0"
                       Grid.ColumnSpan="6"
                       Grid.Row="28"
-                      RowDefinitions="Auto, Auto, Auto"
-                      ColumnDefinitions="*,*,*"
+                      RowDefinitions="20,20,40,20,20,40"
+                      ColumnDefinitions="100,20,20,20,20,20,20,20,20"
                       IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}">
-                    <Entry Grid.Column="0"
+                    <Label Grid.Column="0"
                            Grid.Row="0"
-                           Style="{StaticResource StatblockText}"
-                           Text="{Binding Creature.HotKeyName}"/>
+                           HorizontalOptions="Center"
+                           Text="NAME"
+                           Style="{StaticResource SmallLabel}"
+                           TextColor="Grey" />
+                    <Label Grid.Column="1"
+                           Grid.ColumnSpan="8"
+                           Grid.Row="0"
+                           HorizontalOptions="Center"
+                           Text="ATTACK ROLL"
+                           Style="{StaticResource SmallLabel}"
+                           TextColor="Grey" />
+                    <Editor Grid.Column="0"
+                            Grid.Row="1"
+                            Grid.RowSpan="3"
+                            Style="{StaticResource StatblockText}"
+                            Text="{Binding Creature.HotKeyName}"
+                            MinimumHeightRequest="50"
+                            MaximumHeightRequest="50"
+                            MinimumWidthRequest="80"
+                            MaxLength="16" />
+                    <Label Grid.Column="1"
+                           Grid.ColumnSpan="4"
+                           Grid.Row="1"
+                           HorizontalOptions="Center"
+                           Text="PROFICIENT"
+                           Style="{StaticResource SmallLabel}"
+                           TextColor="Grey" />
+                    <Label Grid.Column="5"
+                           Grid.ColumnSpan="4"
+                           Grid.Row="1"
+                           HorizontalOptions="Center"
+                           Text="ATTRIBUTE"
+                           Style="{StaticResource SmallLabel}"
+                           TextColor="Grey" />
+                    <Switch Grid.Column="1"
+                            Grid.ColumnSpan="4"
+                            Grid.Row="2"
+                            HorizontalOptions="Center"
+                            VerticalOptions="Start"
+                            IsToggled="{Binding Creature.HotKeyProficiency}"
+                            MinimumHeightRequest="30"
+                            HeightRequest="30"
+                            MinimumWidthRequest="40"
+                            WidthRequest="40" />
+                    <Picker Grid.Column="5"
+                            Grid.ColumnSpan="4"
+                            Grid.Row="2"
+                            Style="{StaticResource StatblockText}"
+                            ItemsSource="{Binding AttributeNames}"
+                            SelectedItem="{Binding Creature.HotKeyAttribute}"
+                            MinimumHeightRequest="30"
+                            VerticalOptions="Start" />
+                    <Label Grid.Column="1"
+                           Grid.ColumnSpan="8"
+                           Grid.Row="3"
+                           HorizontalOptions="Center"
+                           Text="DAMAGE ROLL"
+                           Style="{StaticResource SmallLabel}"
+                           TextColor="Grey" />
+                    <Label Grid.Column="1"
+                           Grid.ColumnSpan="5"
+                           Grid.Row="4"
+                           HorizontalOptions="Center"
+                           Text="DICE"
+                           Style="{StaticResource SmallLabel}"
+                           TextColor="Grey" />
+                    <Label Grid.Column="6"
+                           Grid.ColumnSpan="3"
+                           Grid.Row="4"
+                           HorizontalOptions="Center"
+                           Text="BONUS"
+                           Style="{StaticResource SmallLabel}"
+                           TextColor="Grey" />
                     <Entry Grid.Column="1"
-                           Grid.Row="0"
+                           Grid.ColumnSpan="2"
+                           Grid.Row="5"
                            Style="{StaticResource StatblockText}"
-                           Text="{Binding Creature.HotKeyAttribute}" />
-                    <Entry Grid.Column="2"
-                           Grid.Row="0"
+                           Text="{Binding Creature.HotKeyDamageDiceNumber}"
+                           MinimumHeightRequest="30"
+                           MinimumWidthRequest="40"
+                           MaximumWidthRequest="40"
+                           MaxLength="2" />
+                    <Label Grid.Column="3"
+                           Grid.Row="5"
+                           HorizontalOptions="Center"
+                           Style="{StaticResource StatblockEditor}"
+                           Text="d"
+                           VerticalOptions="Center"/>
+                    <Entry Grid.Column="4"
+                           Grid.ColumnSpan="2"
+                           Grid.Row="5"
                            Style="{StaticResource StatblockText}"
-                           Text="{Binding Creature.HotKeyProficiency}" />
+                           Text="{Binding Creature.HotKeyDamageDiceSize}"
+                           MinimumHeightRequest="30"
+                           MinimumWidthRequest="40"
+                           MaximumWidthRequest="40"
+                           MaxLength="2" />
+                    <Label Grid.Column="6"
+                           Grid.Row="5"
+                           HorizontalOptions="Center"
+                           Style="{StaticResource StatblockEditor}"
+                           Text="+"
+                           VerticalOptions="Center" />
+                    <Entry Grid.Column="7"
+                           Grid.ColumnSpan="2"
+                           Grid.Row="5"
+                           Style="{StaticResource StatblockText}"
+                           Text="{Binding Creature.HotKeyDamageBonus}"
+                           MinimumHeightRequest="30"
+                           MinimumWidthRequest="40"
+                           MaximumWidthRequest="40"
+                           MaxLength="2" />
                 </Grid>
 
                 <Label Grid.Column="0"

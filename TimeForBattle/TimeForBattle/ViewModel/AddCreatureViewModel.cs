@@ -8,6 +8,7 @@ public partial class AddCreatureViewModel : BaseViewModel
     public CreatureService<Creature> CreatureService;
     public InitiativeService<InitiativeCreature> InitiativeService;
     public DialogService DialogService;
+    [ObservableProperty] public static ObservableCollection<string> attributeNames = ["Str", "Dex", "Con", "Int", "Wis", "Cha"];
 
     public AddCreatureViewModel(CreatureService<Creature> characterService, InitiativeService<InitiativeCreature> initiativeService, DialogService dialogService)
     {
