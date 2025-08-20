@@ -1,6 +1,6 @@
 ﻿namespace TimeForBattle.Services;
 
-public partial class InitiativeService<T> : CreatureService<T> where T : InitiativeCreature, new() 
+public partial class InitiativeService<T> : CreatureService<T> where T : InitiativeCreatureData, new() 
 {
     public async Task<List<T>> GetAllByCombatAsync(int combatID)
     {

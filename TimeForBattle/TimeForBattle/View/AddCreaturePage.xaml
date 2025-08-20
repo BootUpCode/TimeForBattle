@@ -133,7 +133,7 @@
                        Grid.Row="8"
                        Style="{StaticResource StatblockEntry}"
                        Text="{Binding Creature.MaximumHitPoints}"
-                       MaxLength="2"
+                       MaxLength="3"
                        Keyboard="Numeric"
                        WidthRequest="40"
                        MinimumWidthRequest="40"

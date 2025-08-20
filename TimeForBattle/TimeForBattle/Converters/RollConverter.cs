@@ -7,7 +7,7 @@ public class RollConverter : IMultiValueConverter
     object? IMultiValueConverter.Convert(object[] values, Type targetType, object? parameter, CultureInfo culture)
     {
         //Input values:
-        //0: Creature: InitiativeCreature creature
+        //0: Creature: Creature creature
         //1: Attribute name: string attributeName, can be Str/Dex/Con/Int/Wis/Cha
         //2: Save: string isSaveString, can be True/False, true/false, 0/1
         //3: Proficiency: bool, can be true/false/null, or string, can be True/False, true/false, 0/1
@@ -16,7 +16,7 @@ public class RollConverter : IMultiValueConverter
         if (values[0] is null || values[1] is null || values[2] is null || values[4] is null)
             return new Tuple<int?, string?, string?>(null, null, null);
 
-        if (values[0] is InitiativeCreature creature && values[1] is string attributeName && values[2] is string isSaveString && values[3] is not null && values[4] is string rollName)
+        if (values[0] is InitiativeCreature initiativeCreature && values[1] is string attributeName && values[2] is string isSaveString && values[3] is not null && values[4] is string rollName)
         {
             //Set if the roll is a saving throw
             bool isSave = false;
@@ -41,33 +41,33 @@ public class RollConverter : IMultiValueConverter
             switch (attributeName) {
                 case "Str":
                 case "1":
-                    attributeScore = creature.StrScore;
-                    if (isSave) { isProficient = creature.StrSaveProf; }
+                    attributeScore = initiativeCreature.Creature.StrScore;
+                    if (isSave) { isProficient = initiativeCreature.Creature.StrSaveProf; }
                     break;
                 case "Dex":
                 case "2":
-                    attributeScore = creature.DexScore;
-                    if (isSave) { isProficient = creature.DexSaveProf; }
+                    attributeScore = initiativeCreature.Creature.DexScore;
+                    if (isSave) { isProficient = initiativeCreature.Creature.DexSaveProf; }
                     break;
                 case "Con":
                 case "3":
-                    attributeScore = creature.ConScore;
-                    if (isSave) { isProficient = creature.ConSaveProf; }
+                    attributeScore = initiativeCreature.Creature.ConScore;
+                    if (isSave) { isProficient = initiativeCreature.Creature.ConSaveProf; }
                     break;
                 case "Int":
                 case "4":
-                    attributeScore = creature.IntScore;
-                    if (isSave) { isProficient = creature.IntSaveProf; }
+                    attributeScore = initiativeCreature.Creature.IntScore;
+                    if (isSave) { isProficient = initiativeCreature.Creature.IntSaveProf; }
                     break;
                 case "Wis":
                 case "5":
-                    attributeScore = creature.WisScore;
-                    if (isSave) { isProficient = creature.WisSaveProf; }
+                    attributeScore = initiativeCreature.Creature.WisScore;
+                    if (isSave) { isProficient = initiativeCreature.Creature.WisSaveProf; }
                     break;
                 case "Cha":
                 case "6":
-                    attributeScore = creature.ChaScore;
-                    if (isSave) { isProficient = creature.ChaSaveProf; }
+                    attributeScore = initiativeCreature.Creature.ChaScore;
+                    if (isSave) { isProficient = initiativeCreature.Creature.ChaSaveProf; }
                     break;
             }
 
@@ -77,10 +77,10 @@ public class RollConverter : IMultiValueConverter
 
             //Add proficiency bonus to the roll, if proficient
             if (isProficient)
-                modifier += creature.ProficiencyBonus;
+                modifier += initiativeCreature.Creature.ProficiencyBonus;
 
             //Return info to display the roll's results: the final bonus, description of the roll, and name of the creature that made the roll
-            return new Tuple<int?, string?, string?>(modifier, rollName, creature.Name);
+            return new Tuple<int?, string?, string?>(modifier, rollName, (initiativeCreature.Creature.Name + " " + initiativeCreature.InitiativeCreatureData.NameID));
         }
 
         return new Tuple<int?, string?, string?>(null, null, null);

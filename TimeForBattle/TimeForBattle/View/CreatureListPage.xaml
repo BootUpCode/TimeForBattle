@@ -285,9 +285,11 @@
                    VerticalOptions="Center"
                    HorizontalOptions="Center"
                    Text="Creatures in Initiative:" />
-
-            <CollectionView Grid.Row="1"
-                            Grid.Column="1"
+            <ScrollView Grid.Row="1"
+                        Grid.Column="1"
+                        MaximumHeightRequest="150">
+            
+            <CollectionView 
                             BackgroundColor="Transparent"
                             ItemsSource="{Binding Initiative}"
                             SelectionMode="None"
@@ -319,9 +321,9 @@
                                                             Grid.Row="0"
                                                             Spacing="2">
                                         <Label VerticalOptions="Center"
-                                               Text="{Binding Name}" />
+                                               Text="{Binding Creature.Name}" />
                                         <Label VerticalOptions="Center"
-                                               Text="{Binding NameID}" />
+                                               Text="{Binding InitiativeCreatureData.NameID}" />
                                     </HorizontalStackLayout>
                                     <Button Grid.Column="1"
                                             Grid.Row="0"
@@ -334,6 +336,7 @@
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
+            </ScrollView>
         </Grid>
 
         <Button Grid.Row="5"
