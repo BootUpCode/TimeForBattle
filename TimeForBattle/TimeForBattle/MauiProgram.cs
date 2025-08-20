@@ -34,7 +34,7 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<CreatureService<Combat>>();
         builder.Services.AddSingleton<CreatureService<Creature>>();
-		builder.Services.AddSingleton<InitiativeService<InitiativeCreature>>();
+		builder.Services.AddSingleton<InitiativeService<InitiativeCreatureData>>();
 		builder.Services.AddSingleton<DialogService>();
 
 #if DEBUG

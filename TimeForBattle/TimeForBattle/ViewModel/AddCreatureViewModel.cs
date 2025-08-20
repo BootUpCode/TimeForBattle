@@ -6,11 +6,11 @@ namespace TimeForBattle.ViewModel;
 public partial class AddCreatureViewModel : BaseViewModel
 {
     public CreatureService<Creature> CreatureService;
-    public InitiativeService<InitiativeCreature> InitiativeService;
+    public InitiativeService<InitiativeCreatureData> InitiativeService;
     public DialogService DialogService;
     [ObservableProperty] public static ObservableCollection<string> attributeNames = ["Str", "Dex", "Con", "Int", "Wis", "Cha"];
 
-    public AddCreatureViewModel(CreatureService<Creature> characterService, InitiativeService<InitiativeCreature> initiativeService, DialogService dialogService)
+    public AddCreatureViewModel(CreatureService<Creature> characterService, InitiativeService<InitiativeCreatureData> initiativeService, DialogService dialogService)
     {
         this.CreatureService = characterService;
         this.InitiativeService = initiativeService;
@@ -40,8 +40,8 @@ public partial class AddCreatureViewModel : BaseViewModel
         {
             if (await CreatureService.DeleteAsync(await CreatureService.GetByIdAsync(Creature.Id)) > 0)
             {
-                List<InitiativeCreature> deleteList = await InitiativeService.GetAllByCreatureAsync(Creature.Id);
-                foreach (InitiativeCreature deleteCreature in deleteList)
+                List<InitiativeCreatureData> deleteList = await InitiativeService.GetAllByCreatureAsync(Creature.Id);
+                foreach (InitiativeCreatureData deleteCreature in deleteList)
                 {
                     await InitiativeService.DeleteAsync(deleteCreature);
                 }

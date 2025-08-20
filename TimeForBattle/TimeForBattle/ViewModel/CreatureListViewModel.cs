@@ -9,7 +9,7 @@ public partial class CreatureListViewModel : BaseViewModel
 {
     [ObservableProperty] public ObservableCollection<Creature> creatures = new();
     public CreatureService<Creature> CreatureService;
-    public InitiativeService<InitiativeCreature> InitiativeService;
+    public InitiativeService<InitiativeCreatureData> InitiativeService;
     
     public ObservableCollection<Creature> Monsters { get; }
     public ObservableCollection<Creature> Players { get; }
@@ -18,7 +18,7 @@ public partial class CreatureListViewModel : BaseViewModel
     public bool ViewMonsters;
     [ObservableProperty] public Combat combat;
 
-    public CreatureListViewModel(CreatureService<Creature> creatureService, InitiativeService<InitiativeCreature> initiativeService)
+    public CreatureListViewModel(CreatureService<Creature> creatureService, InitiativeService<InitiativeCreatureData> initiativeService)
     {
         Title = "Creatures";
         this.CreatureService = creatureService;
@@ -48,11 +48,13 @@ public partial class CreatureListViewModel : BaseViewModel
                 Monsters.Add(creature);
         }
 
-        List<InitiativeCreature> initiativeCreatureData = await InitiativeService.GetAllByCombatAsync(Combat.Id);
+        List<InitiativeCreatureData> initiativeCreatureDataList = await InitiativeService.GetAllByCombatAsync(Combat.Id);
+
         Initiative.Clear();
 
-        foreach (InitiativeCreature initiativeCreature in initiativeCreatureData)
+        foreach (InitiativeCreatureData initiativeCreatureData in initiativeCreatureDataList)
         {
+            InitiativeCreature initiativeCreature = new(await CreatureService.GetByIdAsync(initiativeCreatureData.CreatureID), initiativeCreatureData);
             Initiative.Add(initiativeCreature);
         }
 
@@ -106,25 +108,25 @@ public partial class CreatureListViewModel : BaseViewModel
 
         int identifier = 1;
         foreach(InitiativeCreature initiativeCreature in Initiative) {
-            if (initiativeCreature.CreatureID == newInitiativeCreature.CreatureID)
+            if (initiativeCreature.Creature.Id == newInitiativeCreature.Creature.Id)
             {
-                if (initiativeCreature.NameID is null)
+                if (initiativeCreature.InitiativeCreatureData.NameID is null)
                 {
-                    initiativeCreature.NameID = identifier;
-                    await InitiativeService.SaveAsync(initiativeCreature);
+                    initiativeCreature.InitiativeCreatureData.NameID = identifier;
+                    await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
                     identifier++;
                 }
                 else
                 {
-                    identifier = (int)initiativeCreature.NameID + 1;
+                    identifier = (int)initiativeCreature.InitiativeCreatureData.NameID + 1;
                 }
             }
         }
 
         if (identifier > 1)
-            newInitiativeCreature.NameID = identifier;
+            newInitiativeCreature.InitiativeCreatureData.NameID = identifier;
 
-        await InitiativeService.SaveAsync(newInitiativeCreature);
+        await InitiativeService.SaveAsync(newInitiativeCreature.InitiativeCreatureData);
 
         Initiative.Add(newInitiativeCreature);
     }
@@ -135,7 +137,7 @@ public partial class CreatureListViewModel : BaseViewModel
         if (initiativeCreature is null)
             return;
 
-        if (await InitiativeService.DeleteAsync(await InitiativeService.GetByIdAsync(initiativeCreature.Id)) > 0)
+        if (await InitiativeService.DeleteAsync(await InitiativeService.GetByIdAsync(initiativeCreature.InitiativeCreatureData.Id)) > 0)
         {
             Initiative.Remove(initiativeCreature);
         }
