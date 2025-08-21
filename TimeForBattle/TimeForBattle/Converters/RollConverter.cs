@@ -14,7 +14,7 @@ public class RollConverter : IMultiValueConverter
         //4: Roll name: string rollName
 
         if (values[0] is null || values[1] is null || values[2] is null || values[4] is null)
-            return new Tuple<int?, string?, string?>(null, null, null);
+            return new Tuple<int?, string?, string?, string?, string?>(null, null, null, null, null);
 
         if (values[0] is InitiativeCreature initiativeCreature && values[1] is string attributeName && values[2] is string isSaveString && values[3] is not null && values[4] is string rollName)
         {
@@ -79,11 +79,24 @@ public class RollConverter : IMultiValueConverter
             if (isProficient)
                 modifier += initiativeCreature.Creature.ProficiencyBonus;
 
+            //Create damage roll info string, if damage is part of the roll
+            string? damageString = null;
+            if (values.Length > 5 && values[5] is int && values[6] is int && values[7] is int)
+            {
+                damageString = (int)values[5] + "d" + (int)values[6] + "+" + (int)values[7];
+            }
+            //Create damage type string
+            string? damageType = null;
+            if (values.Length > 8 && values[8] is not null && values[8] is string)
+            {
+                damageType = (string)values[8];
+            }
+
             //Return info to display the roll's results: the final bonus, description of the roll, and name of the creature that made the roll
-            return new Tuple<int?, string?, string?>(modifier, rollName, (initiativeCreature.Creature.Name + " " + initiativeCreature.InitiativeCreatureData.NameID));
+            return new Tuple<int?, string?, string?, string?, string?>(modifier, rollName, (initiativeCreature.Creature.Name + " " + initiativeCreature.InitiativeCreatureData.NameID), damageString, damageType);
         }
 
-        return new Tuple<int?, string?, string?>(null, null, null);
+        return new Tuple<int?, string?, string?, string?, string?>(null, null, null, null, null);
     }
 
     public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)

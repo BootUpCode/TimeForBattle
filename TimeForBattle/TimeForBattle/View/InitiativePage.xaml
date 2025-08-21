@@ -286,6 +286,10 @@
                                                              FallbackValue="null" />
                                                     <Binding Path="Creature.HotKeyName"
                                                              FallbackValue="" />
+                                                    <Binding Path="Creature.HotKeyDamageDiceNumber" />
+                                                    <Binding Path="Creature.HotKeyDamageDiceSize" />
+                                                    <Binding Path="Creature.HotKeyDamageBonus" />
+                                                    <Binding Path="Creature.HotKeyDamageType" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
@@ -396,13 +400,13 @@
                         AlignContent="Start">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="model:Roll">
-                        <Grid ColumnDefinitions="*,*,*,*"
+                        <Grid ColumnDefinitions="*,*"
                               ColumnSpacing="0"
                               RowDefinitions="*,*,*"
                               RowSpacing="0"
                               Padding="3,3,3,3">
                             <Label Grid.Column="0"
-                                   Grid.ColumnSpan="4"
+                                   Grid.ColumnSpan="3"
                                    Grid.Row="0"
                                    FontAttributes="Bold"
                                    HorizontalOptions="Center">
@@ -415,30 +419,45 @@
                                     </MultiBinding>
                                 </Label.Text>
                             </Label>
-                            <Label Grid.Column="1"
-                                   Grid.Row="1" 
-                                   FontSize="20"
-                                   FontAttributes="Bold"
-                                   TextColor="{Binding RollValue1, Converter={StaticResource RollColorConverter}}">
-                                <Label.Text>
-                                    <MultiBinding Converter="{StaticResource AdditionConverter}">
-                                        <Binding Path="RollValue1" />
-                                        <Binding Path="Modifier" />
-                                    </MultiBinding>
-                                </Label.Text>
-                            </Label>
-                            <Label Grid.Column="2"
-                                   Grid.Row="1"
-                                   FontSize="20"
-                                   FontAttributes="Bold"
-                                   TextColor="{Binding RollValue2, Converter={StaticResource RollColorConverter}}">
-                                <Label.Text>
-                                    <MultiBinding Converter="{StaticResource AdditionConverter}">
-                                        <Binding Path="RollValue2" />
-                                        <Binding Path="Modifier" />
-                                    </MultiBinding>
-                                </Label.Text>
-                            </Label>
+                            <HorizontalStackLayout Grid.Column="0"
+                                                   Grid.Row="1"
+                                                   Padding="20,0,0,0"
+                                                   Spacing="5">
+                                <Label FontSize="20"
+                                       FontAttributes="Bold"
+                                       TextColor="{Binding RollValue1, Converter={StaticResource RollColorConverter}}">
+                                    <Label.Text>
+                                        <MultiBinding Converter="{StaticResource AdditionConverter}">
+                                            <Binding Path="RollValue1" />
+                                            <Binding Path="Modifier" />
+                                        </MultiBinding>
+                                    </Label.Text>
+                                </Label>
+                                <Label FontSize="20"
+                                       FontAttributes="Bold" 
+                                       Text="|"/>
+                                <Label FontSize="20"
+                                       FontAttributes="Bold"
+                                       TextColor="{Binding RollValue2, Converter={StaticResource RollColorConverter}}">
+                                    <Label.Text>
+                                        <MultiBinding Converter="{StaticResource AdditionConverter}">
+                                            <Binding Path="RollValue2" />
+                                            <Binding Path="Modifier" />
+                                        </MultiBinding>
+                                    </Label.Text>
+                                </Label>
+                            </HorizontalStackLayout>
+                            <HorizontalStackLayout Grid.Column="1"
+                                                   Grid.Row="1"
+                                                   Padding="0,0,20,0">
+                                <Label FontSize="20"
+                                       FontAttributes="Bold"
+                                       Text="{Binding Damage}" />
+                                <Label FontSize="20"
+                                       FontAttributes="Bold"
+                                       Text="{Binding DamageType, StringFormat='{} {0}'}"
+                                       IsVisible="{Binding DamageType, Converter={StaticResource StringContainDataConverter}}"/>
+                            </HorizontalStackLayout>
                         </Grid>
                     </DataTemplate>
                 </BindableLayout.ItemTemplate>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TimeForBattle")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+fc5aa825b5a146c7c9d1514ba69eee14b1277514")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0+349f2f1c0aecff91e15a24352f91b64c80f4d24e")]
 [assembly: System.Reflection.AssemblyProductAttribute("TimeForBattle")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TimeForBattle")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
