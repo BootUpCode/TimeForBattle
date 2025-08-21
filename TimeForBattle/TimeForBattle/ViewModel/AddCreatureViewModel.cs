@@ -9,6 +9,7 @@ public partial class AddCreatureViewModel : BaseViewModel
     public InitiativeService<InitiativeCreatureData> InitiativeService;
     public DialogService DialogService;
     [ObservableProperty] public static ObservableCollection<string> attributeNames = ["Str", "Dex", "Con", "Int", "Wis", "Cha"];
+    [ObservableProperty] public static ObservableCollection<string> damageTypes = ["acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"];
 
     public AddCreatureViewModel(CreatureService<Creature> characterService, InitiativeService<InitiativeCreatureData> initiativeService, DialogService dialogService)
     {

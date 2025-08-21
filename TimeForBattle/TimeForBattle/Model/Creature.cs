@@ -51,4 +51,5 @@ public partial class Creature : DatabaseObject
     [ObservableProperty] public int hotKeyDamageDiceNumber;
     [ObservableProperty] public int hotKeyDamageDiceSize;
     [ObservableProperty] public int hotKeyDamageBonus;
+    [ObservableProperty] public string hotKeyDamageType;
 }
