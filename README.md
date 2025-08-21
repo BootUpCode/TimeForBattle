@@ -26,9 +26,10 @@ TimeForBattle aims to assist the Game Master of a tabletop roleplaying game with
   - Change Save Modifier variables to int, with AttributeConverter to convert to int and back to display string to a mod with +/- (Done!)
   - Create UI element with most recent roll, with secondary advantage roll, with modifier and roll and creature descriptions (Done!)
   - Add buttons to roll saves (Done!)
+- Add hotkeys to roll actions (Done!)
+  - Include damage rolls (Done!)
 
+- Add a second hotkey
 - Add status tracking and combat info
   - Track turn count and status duration
-- Add hotkeys to roll actions (Done!)
-  - Add two more hotkeys and include damage rolls
 - Pretty up main/sub menus
