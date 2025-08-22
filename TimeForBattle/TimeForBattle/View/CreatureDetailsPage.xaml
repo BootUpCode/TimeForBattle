@@ -396,7 +396,6 @@
                        IsVisible="{Binding Creature.Vulnerabilities, Converter={StaticResource StringContainDataConverter}}"
                        Style="{StaticResource StatblockText}"
                        Text="{Binding Creature.Vulnerabilities}"
-                       MinimumHeightRequest="30"
                        VerticalTextAlignment="Start" />
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="2"
@@ -462,7 +461,7 @@
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="6"
                        Grid.Row="26"
-                       Text="Hotkey Rolls"
+                       Text="Roll Hotkeys"
                        Style="{StaticResource StatblockText}"
                        FontSize="20"
                        Padding="0,10,0,0" />
@@ -475,50 +474,88 @@
                       Grid.ColumnSpan="6"
                       Grid.Row="28"
                       RowDefinitions="Auto, Auto, Auto"
-                      ColumnDefinitions="*,*,*">
+                      ColumnDefinitions="2*,*,2*">
                     <Label Grid.Column="0"
                            Grid.Row="0"
-                           HorizontalOptions="Center"
+                           HorizontalOptions="Start"
                            Text="NAME"
                            Style="{StaticResource SmallLabel}"
                            TextColor="Grey" />
                     <Label Grid.Column="1"
                            Grid.Row="0"
-                           HorizontalOptions="Center"
-                           Text="ROLL BONUS"
+                           HorizontalOptions="Start"
+                           Text="BONUS"
                            Style="{StaticResource SmallLabel}"
                            TextColor="Grey" />
                     <Label Grid.Column="2"
                            Grid.Row="0"
-                           HorizontalOptions="Center"
+                           HorizontalOptions="Start"
                            Text="DAMAGE"
                            Style="{StaticResource SmallLabel}"
                            TextColor="Grey" />
                     <Label Grid.Column="0"
                            Grid.Row="1"
                            Style="{StaticResource StatblockText}"
-                           Text="{Binding Creature.HotKeyName}" />
+                           Text="{Binding Creature.HotKey1Name}"
+                           IsVisible="{Binding Creature.HotKey1Name, Converter={StaticResource StringContainDataConverter}}"
+                           HorizontalOptions="Start" />
                     <Label Grid.Column="1"
                            Grid.Row="1"
-                           HorizontalOptions="Center"
-                           Style="{StaticResource StatblockText}">
+                           HorizontalOptions="Start"
+                           Style="{StaticResource StatblockText}"
+                           IsVisible="{Binding Creature.HotKey1Name, Converter={StaticResource StringContainDataConverter}}">
                         <Label.Text>
                             <MultiBinding Converter="{StaticResource AttributeConverter}">
                                 <Binding Path="Creature"/>
-                                <Binding Path="Creature.HotKeyAttribute" />
-                                <Binding Path="Creature.HotKeyProficiency" />
+                                <Binding Path="Creature.HotKey1Attribute" />
+                                <Binding Path="Creature.HotKey1Proficiency" />
                             </MultiBinding>
                         </Label.Text>
                     </Label>
                     <Label Grid.Column="2"
                            Grid.Row="1"
-                           HorizontalOptions="Center"
-                           Style="{StaticResource StatblockText}">
+                           HorizontalOptions="Start"
+                           Style="{StaticResource StatblockText}"
+                           IsVisible="{Binding Creature.HotKey1Name, Converter={StaticResource StringContainDataConverter}}">
                         <Label.Text>
-                            <MultiBinding StringFormat="{}{0}d{1} + {2}">
-                                <Binding Path="Creature.HotKeyDamageDiceNumber" />
-                                <Binding Path="Creature.HotKeyDamageDiceSize" />
-                                <Binding Path="Creature.HotKeyDamageBonus" />
+                            <MultiBinding StringFormat="{}{0}d{1} + {2} {3}">
+                                <Binding Path="Creature.HotKey1DamageDiceNumber" />
+                                <Binding Path="Creature.HotKey1DamageDiceSize" />
+                                <Binding Path="Creature.HotKey1DamageBonus" />
+                                <Binding Path="Creature.HotKey1DamageType" />
+                            </MultiBinding>
+                        </Label.Text>
+                    </Label>
+                    <Label Grid.Column="0"
+                           Grid.Row="2"
+                           Style="{StaticResource StatblockText}"
+                           Text="{Binding Creature.HotKey2Name}"
+                           IsVisible="{Binding Creature.HotKey2Name, Converter={StaticResource StringContainDataConverter}}"
+                           HorizontalOptions="Start" />
+                    <Label Grid.Column="1"
+                           Grid.Row="2"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource StatblockText}"
+                           IsVisible="{Binding Creature.HotKey2Name, Converter={StaticResource StringContainDataConverter}}">
+                        <Label.Text>
+                            <MultiBinding Converter="{StaticResource AttributeConverter}">
+                                <Binding Path="Creature" />
+                                <Binding Path="Creature.HotKey2Attribute" />
+                                <Binding Path="Creature.HotKey2Proficiency" />
+                            </MultiBinding>
+                        </Label.Text>
+                    </Label>
+                    <Label Grid.Column="2"
+                           Grid.Row="2"
+                           HorizontalOptions="Start"
+                           Style="{StaticResource StatblockText}"
+                           IsVisible="{Binding Creature.HotKey2Name, Converter={StaticResource StringContainDataConverter}}">
+                        <Label.Text>
+                            <MultiBinding StringFormat="{}{0}d{1} + {2} {3}">
+                                <Binding Path="Creature.HotKey2DamageDiceNumber" />
+                                <Binding Path="Creature.HotKey2DamageDiceSize" />
+                                <Binding Path="Creature.HotKey2DamageBonus" />
+                                <Binding Path="Creature.HotKey2DamageType" />
                             </MultiBinding>
                         </Label.Text>
                     </Label>

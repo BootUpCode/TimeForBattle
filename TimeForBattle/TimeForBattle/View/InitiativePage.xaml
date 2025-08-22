@@ -271,25 +271,52 @@
                                                 Grid.Column="0"
                                                 Grid.ColumnSpan="3"
                                                 Grid.Row="3"
-                                                Text="{Binding Creature.HotKeyName}"
+                                                Text="{Binding Creature.HotKey1Name}"
                                                 Padding="5"
-                                                IsVisible="{Binding Creature.HotKeyName, Converter={StaticResource StringContainDataConverter}}"
+                                                IsVisible="{Binding Creature.HotKey1Name, Converter={StaticResource StringContainDataConverter}}"
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}">
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
                                                     <Binding Path="." />
-                                                    <Binding Path="Creature.HotKeyAttribute"
+                                                    <Binding Path="Creature.HotKey1Attribute"
                                                              FallbackValue="null" />
                                                     <Binding Path="IsThisSave"
                                                              FallbackValue="False" />
-                                                    <Binding Path="Creature.HotKeyProficiency"
+                                                    <Binding Path="Creature.HotKey1Proficiency"
                                                              FallbackValue="null" />
-                                                    <Binding Path="Creature.HotKeyName"
+                                                    <Binding Path="Creature.HotKey1Name"
                                                              FallbackValue="" />
-                                                    <Binding Path="Creature.HotKeyDamageDiceNumber" />
-                                                    <Binding Path="Creature.HotKeyDamageDiceSize" />
-                                                    <Binding Path="Creature.HotKeyDamageBonus" />
-                                                    <Binding Path="Creature.HotKeyDamageType" />
+                                                    <Binding Path="Creature.HotKey1DamageDiceNumber" />
+                                                    <Binding Path="Creature.HotKey1DamageDiceSize" />
+                                                    <Binding Path="Creature.HotKey1DamageBonus" />
+                                                    <Binding Path="Creature.HotKey1DamageType" />
+                                                </MultiBinding>
+                                            </Button.CommandParameter>
+                                        </Button>
+
+                                        <Button x:Name="HotKeyButton2"
+                                                Grid.Column="3"
+                                                Grid.ColumnSpan="3"
+                                                Grid.Row="3"
+                                                Text="{Binding Creature.HotKey2Name}"
+                                                Padding="5"
+                                                IsVisible="{Binding Creature.HotKey2Name, Converter={StaticResource StringContainDataConverter}}"
+                                                Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}">
+                                            <Button.CommandParameter>
+                                                <MultiBinding Converter="{StaticResource RollConverter}">
+                                                    <Binding Path="." />
+                                                    <Binding Path="Creature.HotKey2Attribute"
+                                                             FallbackValue="null" />
+                                                    <Binding Path="IsThisSave"
+                                                             FallbackValue="False" />
+                                                    <Binding Path="Creature.HotKey2Proficiency"
+                                                             FallbackValue="null" />
+                                                    <Binding Path="Creature.HotKey2Name"
+                                                             FallbackValue="" />
+                                                    <Binding Path="Creature.HotKey2DamageDiceNumber" />
+                                                    <Binding Path="Creature.HotKey2DamageDiceSize" />
+                                                    <Binding Path="Creature.HotKey2DamageBonus" />
+                                                    <Binding Path="Creature.HotKey2DamageType" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
