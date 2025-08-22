@@ -28,8 +28,8 @@ TimeForBattle aims to assist the Game Master of a tabletop roleplaying game with
   - Add buttons to roll saves (Done!)
 - Add hotkeys to roll actions (Done!)
   - Include damage rolls (Done!)
+  - Add a second hotkey (Done!)
 
-- Add a second hotkey
 - Add status tracking and combat info
   - Track turn count and status duration
 - Pretty up main/sub menus
