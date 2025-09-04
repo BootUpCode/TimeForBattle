@@ -1,4 +1,7 @@
-﻿namespace TimeForBattle;
+﻿using Microsoft.Maui.Controls.PlatformConfiguration;
+using Microsoft.Maui.Storage;
+
+namespace TimeForBattle;
 
 public static class Constants
 {
@@ -13,4 +16,6 @@ public static class Constants
     SQLite.SQLiteOpenFlags.SharedCache;
 
     public static string DatabasePath => Path.Combine(FileSystem.AppDataDirectory, DatabaseFileName);
+    //public static string AndroidPath => Path.Combine(Android.App.Application.Context.GetExternalFilesDir("").AbsolutePath, DatabaseFileName);
+
 }

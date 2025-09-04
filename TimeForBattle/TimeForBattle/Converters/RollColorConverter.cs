@@ -13,7 +13,15 @@ public class RollColorConverter : IValueConverter
             else if (rollValue == 1)
                 return Colors.Red;
             else
-                return Colors.Black;
+            {
+                var color = Colors.Black;
+
+                if (App.Current.Resources.TryGetValue("LabelText", out var colorvalue))
+                    color = (Color)colorvalue;
+
+                return color;
+            }
+                
         }
 
         return value;

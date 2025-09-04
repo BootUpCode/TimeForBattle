@@ -157,7 +157,6 @@
                        Style="{StaticResource StatblockEntry}"
                        Text="{Binding Creature.ChallengeRating}"
                        MaxLength="3"
-                       Keyboard="Numeric"
                        WidthRequest="40"
                        MinimumWidthRequest="40"
                        HorizontalOptions="Start" />
@@ -241,7 +240,7 @@
                        Style="{StaticResource StatblockEntry}"
                        Text="{Binding Creature.StrScore}"
                        MinimumHeightRequest="0"
-                       HeightRequest="30"
+                       HeightRequest="35"
                        MinimumWidthRequest="40"
                        WidthRequest="40"
                        MaxLength="2"
@@ -252,11 +251,10 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature" />
-                            <Binding Path="AttributeName"
-                                     FallbackValue="Str" />
-                            <Binding Path="Proficiency"
-                                     FallbackValue="false" />
+                            <Binding Path="Creature.StrScore" />
+                            <Binding Path="IsSave"
+                                     FallbackValue="False" />
+                            <Binding Path="Creature.ProficiencyBonus"/>
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -266,10 +264,9 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature" />
-                            <Binding Path="AttributeName"
-                                     FallbackValue="Str" />
-                            <Binding Path="Creature.StrSaveProf" />
+                            <Binding Path="Creature.StrScore" />
+                            <Binding Path="Creature.StrSaveProf"/>
+                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -293,7 +290,7 @@
                        Style="{StaticResource StatblockEntry}"
                        Text="{Binding Creature.DexScore}"
                        MinimumHeightRequest="0"
-                       HeightRequest="30"
+                       HeightRequest="35"
                        MinimumWidthRequest="40"
                        WidthRequest="40"
                        MaxLength="2"
@@ -304,11 +301,10 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature" />
-                            <Binding Path="AttributeName"
-                                     FallbackValue="Dex" />
-                            <Binding Path="Proficiency"
-                                     FallbackValue="false" />
+                            <Binding Path="Creature.DexScore" />
+                            <Binding Path="IsSave"
+                                     FallbackValue="False" />
+                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -318,10 +314,9 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature" />
-                            <Binding Path="AttributeName"
-                                     FallbackValue="Dex" />
+                            <Binding Path="Creature.DexScore" />
                             <Binding Path="Creature.DexSaveProf" />
+                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -345,7 +340,7 @@
                        Style="{StaticResource StatblockEntry}"
                        Text="{Binding Creature.ConScore}"
                        MinimumHeightRequest="0"
-                       HeightRequest="30"
+                       HeightRequest="35"
                        MinimumWidthRequest="40"
                        WidthRequest="40"
                        MaxLength="2"
@@ -356,11 +351,10 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature" />
-                            <Binding Path="AttributeName"
-                                     FallbackValue="Con" />
-                            <Binding Path="Proficiency"
-                                     FallbackValue="false" />
+                            <Binding Path="Creature.ConScore" />
+                            <Binding Path="IsSave"
+                                     FallbackValue="False" />
+                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -370,10 +364,9 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature" />
-                            <Binding Path="AttributeName"
-                                     FallbackValue="Con" />
+                            <Binding Path="Creature.ConScore" />
                             <Binding Path="Creature.ConSaveProf" />
+                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -397,7 +390,7 @@
                        Style="{StaticResource StatblockEntry}"
                        Text="{Binding Creature.IntScore}"
                        MinimumHeightRequest="0"
-                       HeightRequest="30"
+                       HeightRequest="35"
                        MinimumWidthRequest="40"
                        WidthRequest="40"
                        MaxLength="2"
@@ -408,11 +401,10 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature" />
-                            <Binding Path="AttributeName"
-                                     FallbackValue="Int" />
-                            <Binding Path="Proficiency"
-                                     FallbackValue="false" />
+                            <Binding Path="Creature.IntScore" />
+                            <Binding Path="IsSave"
+                                     FallbackValue="False" />
+                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -422,10 +414,9 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature" />
-                            <Binding Path="AttributeName"
-                                     FallbackValue="Int" />
+                            <Binding Path="Creature.IntScore" />
                             <Binding Path="Creature.IntSaveProf" />
+                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -449,7 +440,7 @@
                        Style="{StaticResource StatblockEntry}"
                        Text="{Binding Creature.WisScore}"
                        MinimumHeightRequest="0"
-                       HeightRequest="30"
+                       HeightRequest="35"
                        MinimumWidthRequest="40"
                        WidthRequest="40"
                        MaxLength="2"
@@ -460,11 +451,10 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature" />
-                            <Binding Path="AttributeName"
-                                     FallbackValue="Wis" />
-                            <Binding Path="Proficiency"
-                                     FallbackValue="false" />
+                            <Binding Path="Creature.WisScore" />
+                            <Binding Path="IsSave"
+                                     FallbackValue="False" />
+                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -474,10 +464,9 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature" />
-                            <Binding Path="AttributeName"
-                                     FallbackValue="Wis" />
+                            <Binding Path="Creature.WisScore" />
                             <Binding Path="Creature.WisSaveProf" />
+                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -501,7 +490,7 @@
                        Style="{StaticResource StatblockEntry}"
                        Text="{Binding Creature.ChaScore}"
                        MinimumHeightRequest="0"
-                       HeightRequest="30"
+                       HeightRequest="35"
                        MinimumWidthRequest="40"
                        WidthRequest="40"
                        MaxLength="2"
@@ -512,11 +501,10 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature" />
-                            <Binding Path="AttributeName"
-                                     FallbackValue="Cha" />
-                            <Binding Path="Proficiency"
-                                     FallbackValue="false" />
+                            <Binding Path="Creature.ChaScore" />
+                            <Binding Path="IsSave"
+                                     FallbackValue="False" />
+                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -526,10 +514,9 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature" />
-                            <Binding Path="AttributeName"
-                                     FallbackValue="Cha" />
+                            <Binding Path="Creature.ChaScore" />
                             <Binding Path="Creature.ChaSaveProf" />
+                            <Binding Path="Creature.ProficiencyBonus" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -690,8 +677,8 @@
                            Grid.ColumnSpan="5"
                            Style="{StaticResource StatblockEntry}"
                            Text="{Binding Creature.HotKey1Name}"
-                           MinimumHeightRequest="30"
-                           MaximumHeightRequest="30"
+                           MinimumHeightRequest="35"
+                           MaximumHeightRequest="35"
                            MinimumWidthRequest="120"
                            MaxLength="16"
                            VerticalOptions="Start" />
@@ -712,8 +699,8 @@
                             Style="{StaticResource StatblockText}"
                             ItemsSource="{Binding AttributeNames}"
                             SelectedItem="{Binding Creature.HotKey1Attribute}"
-                            MinimumHeightRequest="30"
-                            HeightRequest="30"
+                            MinimumHeightRequest="35"
+                            HeightRequest="35"
                             VerticalOptions="Start"
                             HorizontalOptions="End" />
                     <Label Grid.Column="0"
@@ -735,8 +722,8 @@
                             Style="{StaticResource StatblockText}"
                             ItemsSource="{Binding DamageTypes}"
                             SelectedItem="{Binding Creature.HotKey1DamageType}"
-                            MinimumHeightRequest="30"
-                            HeightRequest="30"
+                            MinimumHeightRequest="35"
+                            HeightRequest="35"
                             MinimumWidthRequest="135"
                             WidthRequest="135"
                             VerticalOptions="Start"
@@ -746,8 +733,8 @@
                            Grid.Row="3"
                            Style="{StaticResource StatblockEntry}"
                            Text="{Binding Creature.HotKey1DamageDiceNumber}"
-                           MinimumHeightRequest="30"
-                           HeightRequest="30"
+                           MinimumHeightRequest="35"
+                           HeightRequest="35"
                            MinimumWidthRequest="40"
                            MaximumWidthRequest="40"
                            Keyboard="Numeric"
@@ -766,8 +753,8 @@
                            Grid.Row="3"
                            Style="{StaticResource StatblockEntry}"
                            Text="{Binding Creature.HotKey1DamageDiceSize}"
-                           MinimumHeightRequest="30"
-                           HeightRequest="30"
+                           MinimumHeightRequest="35"
+                           HeightRequest="35"
                            MinimumWidthRequest="40"
                            MaximumWidthRequest="40"
                            Keyboard="Numeric"
@@ -786,8 +773,8 @@
                            Grid.Row="3"
                            Style="{StaticResource StatblockEntry}"
                            Text="{Binding Creature.HotKey1DamageBonus}"
-                           MinimumHeightRequest="30"
-                           HeightRequest="30"
+                           MinimumHeightRequest="35"
+                           HeightRequest="35"
                            MinimumWidthRequest="40"
                            MaximumWidthRequest="40"
                            Keyboard="Numeric"
@@ -842,8 +829,8 @@
                            Grid.ColumnSpan="5"
                            Style="{StaticResource StatblockEntry}"
                            Text="{Binding Creature.HotKey2Name}"
-                           MinimumHeightRequest="30"
-                           MaximumHeightRequest="30"
+                           MinimumHeightRequest="35"
+                           MaximumHeightRequest="35"
                            MinimumWidthRequest="120"
                            MaxLength="16"
                            VerticalOptions="Start" />
@@ -854,8 +841,8 @@
                             HorizontalOptions="Center"
                             VerticalOptions="Center"
                             IsToggled="{Binding Creature.HotKey2Proficiency}"
-                            MinimumHeightRequest="30"
-                            HeightRequest="30"
+                            MinimumHeightRequest="35"
+                            HeightRequest="35"
                             MinimumWidthRequest="40"
                             WidthRequest="40" />
                     <Picker Grid.Column="8"
@@ -864,8 +851,8 @@
                             Style="{StaticResource StatblockText}"
                             ItemsSource="{Binding AttributeNames}"
                             SelectedItem="{Binding Creature.HotKey2Attribute}"
-                            MinimumHeightRequest="30"
-                            HeightRequest="30"
+                            MinimumHeightRequest="35"
+                            HeightRequest="35"
                             VerticalOptions="Start"
                             HorizontalOptions="End" />
                     <Label Grid.Column="0"
@@ -887,8 +874,8 @@
                             Style="{StaticResource StatblockText}"
                             ItemsSource="{Binding DamageTypes}"
                             SelectedItem="{Binding Creature.HotKey2DamageType}"
-                            MinimumHeightRequest="30"
-                            HeightRequest="30"
+                            MinimumHeightRequest="35"
+                            HeightRequest="35"
                             MinimumWidthRequest="135"
                             WidthRequest="135"
                             VerticalOptions="Start"
@@ -898,8 +885,8 @@
                            Grid.Row="3"
                            Style="{StaticResource StatblockEntry}"
                            Text="{Binding Creature.HotKey2DamageDiceNumber}"
-                           MinimumHeightRequest="30"
-                           HeightRequest="30"
+                           MinimumHeightRequest="35"
+                           HeightRequest="35"
                            MinimumWidthRequest="40"
                            MaximumWidthRequest="40"
                            Keyboard="Numeric"
@@ -918,8 +905,8 @@
                            Grid.Row="3"
                            Style="{StaticResource StatblockEntry}"
                            Text="{Binding Creature.HotKey2DamageDiceSize}"
-                           MinimumHeightRequest="30"
-                           HeightRequest="30"
+                           MinimumHeightRequest="35"
+                           HeightRequest="35"
                            MinimumWidthRequest="40"
                            MaximumWidthRequest="40"
                            Keyboard="Numeric"
@@ -938,8 +925,8 @@
                            Grid.Row="3"
                            Style="{StaticResource StatblockEntry}"
                            Text="{Binding Creature.HotKey2DamageBonus}"
-                           MinimumHeightRequest="30"
-                           HeightRequest="30"
+                           MinimumHeightRequest="35"
+                           HeightRequest="35"
                            MinimumWidthRequest="40"
                            MaximumWidthRequest="40"
                            Keyboard="Numeric"
@@ -1061,12 +1048,14 @@
                 Command="{Binding SaveCreatureCommand}"
                 Text="Return"
                 BorderColor="Black"
-                CornerRadius="0" />
+                CornerRadius="0"
+                Style="{StaticResource BaseButton}" />
         <Button Grid.Column="1"
                 Grid.Row="1"
                 Command="{Binding DeleteCreatureCommand}"
                 Text="Delete"
                 BorderColor="Black"
-                CornerRadius="0" />
+                CornerRadius="0"
+                Style="{StaticResource BaseButton}" />
     </Grid>
 </ContentPage>

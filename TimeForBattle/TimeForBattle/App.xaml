@@ -9,8 +9,8 @@
             <Color x:Key="PrimaryDark">#FFA000</Color>
             <Color x:Key="Accent">#00BCD4</Color>
 
-            <Color x:Key="LightBackground">#FDF1DC</Color>
-            <Color x:Key="DarkBackground">Black</Color>
+            <Color x:Key="LightBackground">Beige</Color>
+            <Color x:Key="DarkBackground">DarkOrange</Color>
 
             <Color x:Key="LabelText">#1F1F1F</Color>
             <Color x:Key="LabelTextDark">White</Color>
@@ -40,6 +40,36 @@
                         Value="OpenSansRegular" />
                 <Setter Property="TextColor"
                         Value="{AppThemeBinding Light={StaticResource LabelText}, Dark={StaticResource LabelTextDark}}" />
+            </Style>
+
+            <Style TargetType="Button"
+                   x:Key="BaseButton">
+                <Setter Property="FontFamily"
+                        Value="OpenSansRegular" />
+                <Setter Property="TextColor"
+                        Value="{AppThemeBinding Light={StaticResource LabelText}, Dark={StaticResource LabelTextDark}}" />
+                <Setter Property="BackgroundColor"
+                        Value="{StaticResource Primary}"/>
+                <Setter Property="BorderColor"
+                        Value="Black" />
+                <Setter Property="CornerRadius"
+                        Value="0" />
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal" />
+                            <VisualState x:Name="Disabled">
+                                <VisualState.Setters>
+                                    <Setter Property="TextColor"
+                                            Value="Gray" />
+                                    <Setter Property="BackgroundColor"
+                                            Value="Beige" />
+                                </VisualState.Setters>
+                            </VisualState>
+                            <VisualState x:Name="PointerOver" />
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
             </Style>
 
             <Style x:Key="MicroLabel"

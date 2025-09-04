@@ -14,16 +14,20 @@
         <Button Grid.Column="1"
                 Grid.Row="1"
                 Text="New Combat"
-                Command="{Binding NewCombatCommand}"/>
+                Command="{Binding NewCombatCommand}"
+                Style="{StaticResource BaseButton}" />
         <Button Grid.Column="1"
                 Grid.Row="2"
                 Text="Load Combat"
-                Command="{Binding GoToCombatListPageCommand}" />
+                Command="{Binding GoToCombatListPageCommand}"
+                Style="{StaticResource BaseButton}" />
         <Button Grid.Column="1"
                 Grid.Row="3"
-                Text="Options"/>
+                Text="Options"
+                Style="{StaticResource BaseButton}" />
         <Button Grid.Column="1"
                 Grid.Row="4"
-                Text="Exit" />
+                Text="Exit"
+                Style="{StaticResource BaseButton}" />
     </Grid>
 </ContentPage>
