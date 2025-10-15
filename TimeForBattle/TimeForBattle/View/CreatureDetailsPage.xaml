@@ -4,6 +4,7 @@
              xmlns:viewmodel="clr-namespace:TimeForBattle.ViewModel"
              xmlns:converters="clr-namespace:TimeForBattle.Converters"
              xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             xmlns:local="clr-namespace:TimeForBattle"
              x:Class="TimeForBattle.View.CreatureDetailsPage"
              x:DataType="viewmodel:CreatureDetailsViewModel"
              Title="{Binding Creature.Name}">
@@ -160,10 +161,11 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature.StrScore" />
-                            <Binding Path="IsSave"
-                                     FallbackValue="False" />
-                            <Binding Path="Creature.ProficiencyBonus" />
+                            <Binding Path="Creature"/>
+                            <Binding x:DataType="x:Boolean"
+                                     Source="{StaticResource BooleanFalse}" />
+                            <Binding x:DataType="x:String"
+                                     Source="{StaticResource Attribute0}" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -173,9 +175,11 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature.StrScore" />
-                            <Binding Path="Creature.StrSaveProf" />
-                            <Binding Path="Creature.ProficiencyBonus" />
+                            <Binding Path="Creature" />
+                            <Binding x:DataType="x:Boolean"
+                                     Source="{StaticResource BooleanTrue}" />
+                            <Binding x:DataType="x:String"
+                                     Source="{StaticResource Attribute0}" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -195,10 +199,11 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature.DexScore" />
-                            <Binding Path="IsSave"
-                                     FallbackValue="False" />
-                            <Binding Path="Creature.ProficiencyBonus" />
+                            <Binding Path="Creature" />
+                            <Binding x:DataType="x:Boolean"
+                                     Source="{StaticResource BooleanFalse}" />
+                            <Binding x:DataType="x:String"
+                                     Source="{StaticResource Attribute1}" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -208,9 +213,11 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature.DexScore" />
-                            <Binding Path="Creature.DexSaveProf" />
-                            <Binding Path="Creature.ProficiencyBonus" />
+                            <Binding Path="Creature" />
+                            <Binding x:DataType="x:Boolean"
+                                     Source="{StaticResource BooleanTrue}" />
+                            <Binding x:DataType="x:String"
+                                     Source="{StaticResource Attribute1}" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -230,10 +237,11 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature.ConScore" />
-                            <Binding Path="IsSave"
-                                     FallbackValue="False" />
-                            <Binding Path="Creature.ProficiencyBonus" />
+                            <Binding Path="Creature" />
+                            <Binding x:DataType="x:Boolean"
+                                     Source="{StaticResource BooleanFalse}" />
+                            <Binding x:DataType="x:String"
+                                     Source="{StaticResource Attribute2}" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -243,9 +251,11 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature.ConScore" />
-                            <Binding Path="Creature.ConSaveProf" />
-                            <Binding Path="Creature.ProficiencyBonus" />
+                            <Binding Path="Creature" />
+                            <Binding x:DataType="x:Boolean"
+                                     Source="{StaticResource BooleanTrue}" />
+                            <Binding x:DataType="x:String"
+                                     Source="{StaticResource Attribute2}" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -265,10 +275,11 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature.IntScore" />
-                            <Binding Path="IsSave"
-                                     FallbackValue="False" />
-                            <Binding Path="Creature.ProficiencyBonus" />
+                            <Binding Path="Creature" />
+                            <Binding x:DataType="x:Boolean"
+                                     Source="{StaticResource BooleanFalse}" />
+                            <Binding x:DataType="x:String"
+                                     Source="{StaticResource Attribute3}" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -278,9 +289,11 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature.IntScore" />
-                            <Binding Path="Creature.IntSaveProf" />
-                            <Binding Path="Creature.ProficiencyBonus" />
+                            <Binding Path="Creature" />
+                            <Binding x:DataType="x:Boolean"
+                                     Source="{StaticResource BooleanTrue}" />
+                            <Binding x:DataType="x:String"
+                                     Source="{StaticResource Attribute3}" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -300,10 +313,11 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature.WisScore" />
-                            <Binding Path="IsSave"
-                                     FallbackValue="False" />
-                            <Binding Path="Creature.ProficiencyBonus" />
+                            <Binding Path="Creature" />
+                            <Binding x:DataType="x:Boolean"
+                                     Source="{StaticResource BooleanFalse}" />
+                            <Binding x:DataType="x:String"
+                                     Source="{StaticResource Attribute4}" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -313,9 +327,11 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature.WisScore" />
-                            <Binding Path="Creature.WisSaveProf" />
-                            <Binding Path="Creature.ProficiencyBonus" />
+                            <Binding Path="Creature" />
+                            <Binding x:DataType="x:Boolean"
+                                     Source="{StaticResource BooleanTrue}" />
+                            <Binding x:DataType="x:String"
+                                     Source="{StaticResource Attribute4}" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -335,10 +351,11 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature.ChaScore" />
-                            <Binding Path="IsSave"
-                                     FallbackValue="False" />
-                            <Binding Path="Creature.ProficiencyBonus" />
+                            <Binding Path="Creature" />
+                            <Binding x:DataType="x:Boolean"
+                                     Source="{StaticResource BooleanFalse}" />
+                            <Binding x:DataType="x:String"
+                                     Source="{StaticResource Attribute5}" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>
@@ -348,9 +365,11 @@
                        Style="{StaticResource StatblockText}">
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
-                            <Binding Path="Creature.ChaScore" />
-                            <Binding Path="Creature.ChaSaveProf" />
-                            <Binding Path="Creature.ProficiencyBonus" />
+                            <Binding Path="Creature" />
+                            <Binding x:DataType="x:Boolean"
+                                     Source="{StaticResource BooleanTrue}" />
+                            <Binding x:DataType="x:String"
+                                     Source="{StaticResource Attribute5}" />
                         </MultiBinding>
                     </Label.Text>
                 </Label>

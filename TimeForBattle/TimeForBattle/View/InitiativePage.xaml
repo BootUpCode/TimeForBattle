@@ -168,14 +168,14 @@
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
                                                     <Binding Path="." />
-                                                    <Binding Path="AttributeName"
-                                                             FallbackValue="Str" />
-                                                    <Binding Path="IsThisSave"
-                                                             FallbackValue="True" />
-                                                    <Binding Path="Proficiency"
-                                                             FallbackValue="null" />
-                                                    <Binding Path="RollName"
-                                                             FallbackValue="Str Save" />
+                                                    <Binding x:DataType="x:String"
+                                                             Source="{StaticResource Attribute0}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanTrue}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanFalse}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanFalse}" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
@@ -188,14 +188,14 @@
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
                                                     <Binding Path="." />
-                                                    <Binding Path="AttributeName"
-                                                             FallbackValue="Dex" />
-                                                    <Binding Path="IsThisSave"
-                                                             FallbackValue="True" />
-                                                    <Binding Path="Proficiency"
-                                                             FallbackValue="null" />
-                                                    <Binding Path="RollName"
-                                                             FallbackValue="Dex Save" />
+                                                    <Binding x:DataType="x:String"
+                                                             Source="{StaticResource Attribute1}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanTrue}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanFalse}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanFalse}" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
@@ -208,14 +208,14 @@
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
                                                     <Binding Path="." />
-                                                    <Binding Path="AttributeName"
-                                                             FallbackValue="Con" />
-                                                    <Binding Path="IsThisSave"
-                                                             FallbackValue="True" />
-                                                    <Binding Path="Proficiency"
-                                                             FallbackValue="null" />
-                                                    <Binding Path="RollName"
-                                                             FallbackValue="Con Save" />
+                                                    <Binding x:DataType="x:String"
+                                                             Source="{StaticResource Attribute2}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanTrue}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanFalse}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanFalse}" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
@@ -228,14 +228,14 @@
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
                                                     <Binding Path="." />
-                                                    <Binding Path="AttributeName"
-                                                             FallbackValue="Int" />
-                                                    <Binding Path="IsThisSave"
-                                                             FallbackValue="True" />
-                                                    <Binding Path="Proficiency"
-                                                             FallbackValue="null" />
-                                                    <Binding Path="RollName"
-                                                             FallbackValue="Int Save" />
+                                                    <Binding x:DataType="x:String"
+                                                             Source="{StaticResource Attribute3}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanTrue}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanFalse}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanFalse}" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
@@ -248,14 +248,14 @@
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
                                                     <Binding Path="." />
-                                                    <Binding Path="AttributeName"
-                                                             FallbackValue="Wis" />
-                                                    <Binding Path="IsThisSave"
-                                                             FallbackValue="True" />
-                                                    <Binding Path="Proficiency"
-                                                             FallbackValue="null" />
-                                                    <Binding Path="RollName"
-                                                             FallbackValue="Wis Save" />
+                                                    <Binding x:DataType="x:String"
+                                                             Source="{StaticResource Attribute4}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanTrue}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanFalse}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanFalse}" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
@@ -268,14 +268,14 @@
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
                                                     <Binding Path="." />
-                                                    <Binding Path="AttributeName"
-                                                             FallbackValue="Cha" />
-                                                    <Binding Path="IsThisSave"
-                                                             FallbackValue="True" />
-                                                    <Binding Path="Proficiency"
-                                                             FallbackValue="null" />
-                                                    <Binding Path="RollName"
-                                                             FallbackValue="Cha Save" />
+                                                    <Binding x:DataType="x:String"
+                                                             Source="{StaticResource Attribute5}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanTrue}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanFalse}" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanFalse}" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
@@ -294,8 +294,8 @@
                                                     <Binding Path="." />
                                                     <Binding Path="Creature.HotKey1Attribute"
                                                              FallbackValue="null" />
-                                                    <Binding Path="IsThisSave"
-                                                             FallbackValue="False" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanFalse}" />
                                                     <Binding Path="Creature.HotKey1Proficiency"
                                                              FallbackValue="null" />
                                                     <Binding Path="Creature.HotKey1Name"
@@ -322,8 +322,8 @@
                                                     <Binding Path="." />
                                                     <Binding Path="Creature.HotKey2Attribute"
                                                              FallbackValue="null" />
-                                                    <Binding Path="IsThisSave"
-                                                             FallbackValue="False" />
+                                                    <Binding x:DataType="x:Boolean"
+                                                             Source="{StaticResource BooleanFalse}" />
                                                     <Binding Path="Creature.HotKey2Proficiency"
                                                              FallbackValue="null" />
                                                     <Binding Path="Creature.HotKey2Name"

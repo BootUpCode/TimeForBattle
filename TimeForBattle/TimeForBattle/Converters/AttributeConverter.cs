@@ -10,51 +10,39 @@ public class AttributeConverter : IMultiValueConverter
             return 0;
 
         //Get proficiency
-        if (values[2] is int proficiencyBonus)
+        if (values[0] is Creature creature && values[1] is bool isSave && values[2] is string attributeName)
         {
-            bool isProficient = false;
-            if (values[1] is bool)
-            {
-                isProficient = (bool)values[1];
-            }
-            else if (values[1] is string && (values[1].Equals("True") || values[1].Equals("true") || values[1].Equals("1")))
-                {
-                isProficient = true;
-            }
 
             //Calculate roll modifier from the attribute score
             int attributeScore = 10;
-            if (values[0] is int)
-            {
-                attributeScore = (int)values[0];
-            }
-            else if (values[0] is string attributeName && values[3] is Creature creature)
+            bool isProficient = false;
+
             {
                 switch (attributeName)
                 {
                     case "Str":
-                    case "1":
                         attributeScore = creature.StrScore;
+                        isProficient = creature.StrSaveProf;
                         break;
                     case "Dex":
-                    case "2":
                         attributeScore = creature.DexScore;
+                        isProficient = creature.DexSaveProf;
                         break;
                     case "Con":
-                    case "3":
                         attributeScore = creature.ConScore;
+                        isProficient = creature.ConSaveProf;
                         break;
                     case "Int":
-                    case "4":
                         attributeScore = creature.IntScore;
+                        isProficient = creature.IntSaveProf;
                         break;
                     case "Wis":
-                    case "5":
                         attributeScore = creature.WisScore;
+                        isProficient = creature.WisSaveProf;
                         break;
                     case "Cha":
-                    case "6":
                         attributeScore = creature.ChaScore;
+                        isProficient = creature.ChaSaveProf;
                         break;
                 }
             }
@@ -63,8 +51,8 @@ public class AttributeConverter : IMultiValueConverter
             int modifier = (int)Math.Floor(x);
 
             //Add proficiency bonus to the roll, if proficient
-            if (isProficient)
-                modifier += proficiencyBonus;
+            if (isSave && isProficient)
+                modifier += creature.ProficiencyBonus;
 
             if (modifier >= 0)
             {

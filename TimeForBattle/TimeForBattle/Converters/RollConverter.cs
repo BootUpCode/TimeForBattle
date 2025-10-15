@@ -16,11 +16,8 @@ public class RollConverter : IMultiValueConverter
         if (values[0] is null || values[1] is null || values[2] is null || values[4] is null)
             return new Tuple<int?, string?, string?, string?, string?>(null, null, null, null, null);
 
-        if (values[0] is InitiativeCreature initiativeCreature && values[1] is string attributeName && values[2] is string isSaveString && values[3] is not null && values[4] is string rollName)
+        if (values[0] is InitiativeCreature initiativeCreature && values[1] is string attributeName && values[2] is bool isSave)
         {
-            //Set if the roll is a saving throw
-            bool isSave = false;
-            if (isSaveString.Equals("True") || isSaveString.Equals("true") || isSaveString.Equals("1")) { isSave = true; }
 
             //If the roll is not a saving throw, set if roll is with proficiency bonus
             bool isProficient = false;
@@ -40,32 +37,32 @@ public class RollConverter : IMultiValueConverter
             int attributeScore = 10;
             switch (attributeName) {
                 case "Str":
-                case "1":
+                case "0":
                     attributeScore = initiativeCreature.Creature.StrScore;
                     if (isSave) { isProficient = initiativeCreature.Creature.StrSaveProf; }
                     break;
                 case "Dex":
-                case "2":
+                case "1":
                     attributeScore = initiativeCreature.Creature.DexScore;
                     if (isSave) { isProficient = initiativeCreature.Creature.DexSaveProf; }
                     break;
                 case "Con":
-                case "3":
+                case "2":
                     attributeScore = initiativeCreature.Creature.ConScore;
                     if (isSave) { isProficient = initiativeCreature.Creature.ConSaveProf; }
                     break;
                 case "Int":
-                case "4":
+                case "3":
                     attributeScore = initiativeCreature.Creature.IntScore;
                     if (isSave) { isProficient = initiativeCreature.Creature.IntSaveProf; }
                     break;
                 case "Wis":
-                case "5":
+                case "4":
                     attributeScore = initiativeCreature.Creature.WisScore;
                     if (isSave) { isProficient = initiativeCreature.Creature.WisSaveProf; }
                     break;
                 case "Cha":
-                case "6":
+                case "5":
                     attributeScore = initiativeCreature.Creature.ChaScore;
                     if (isSave) { isProficient = initiativeCreature.Creature.ChaSaveProf; }
                     break;
@@ -92,8 +89,18 @@ public class RollConverter : IMultiValueConverter
                 damageType = (string)values[8];
             }
 
-            //Return info to display the roll's results: the final bonus, description of the roll, and name of the creature that made the roll
-            return new Tuple<int?, string?, string?, string?, string?>(modifier, rollName, (initiativeCreature.Creature.Name + " " + initiativeCreature.InitiativeCreatureData.NameID), damageString, damageType);
+            //Set roll name
+            string rollName = "";
+            if (values[4] is string)
+            {
+                rollName = (string)values[4];
+            } else if (values[4] is bool && !(bool)values[4])
+            {
+                rollName = attributeName + " Save";
+            }
+
+                //Return info to display the roll's results: the final bonus, description of the roll, and name of the creature that made the roll
+                return new Tuple<int?, string?, string?, string?, string?>(modifier, rollName, (initiativeCreature.Creature.Name + " " + initiativeCreature.InitiativeCreatureData.NameID), damageString, damageType);
         }
 
         return new Tuple<int?, string?, string?, string?, string?>(null, null, null, null, null);
