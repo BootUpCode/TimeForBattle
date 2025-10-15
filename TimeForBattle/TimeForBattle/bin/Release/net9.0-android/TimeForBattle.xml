@@ -1,0 +1,1074 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TimeForBattle</name>
+    </assembly>
+    <members>
+        <member name="T:TimeForBattle.Model.Combat">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.Model.Combat.Name">
+            <inheritdoc cref="F:TimeForBattle.Model.Combat.name"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Combat.RoundCount">
+            <inheritdoc cref="F:TimeForBattle.Model.Combat.roundCount"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Combat.IsStarted">
+            <inheritdoc cref="F:TimeForBattle.Model.Combat.isStarted"/>
+        </member>
+        <member name="T:TimeForBattle.Model.Creature">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.IsPlayer">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.isPlayer"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Name">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.name"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Size">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.size"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Type">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.type"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Alignment">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.alignment"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.ArmorClass">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.armorClass"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.InitiativeBonus">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.initiativeBonus"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.MaximumHitPoints">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.maximumHitPoints"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Speed">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.speed"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.ChallengeRating">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.challengeRating"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.ProficiencyBonus">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.proficiencyBonus"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.StrScore">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.strScore"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.DexScore">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.dexScore"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.ConScore">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.conScore"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.IntScore">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.intScore"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.WisScore">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.wisScore"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.ChaScore">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.chaScore"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.StrSaveProf">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.strSaveProf"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.DexSaveProf">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.dexSaveProf"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.ConSaveProf">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.conSaveProf"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.IntSaveProf">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.intSaveProf"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.WisSaveProf">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.wisSaveProf"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.ChaSaveProf">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.chaSaveProf"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Skills">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.skills"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Resistances">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.resistances"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Vulnerabilities">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.vulnerabilities"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Immunities">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.immunities"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Senses">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.senses"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Languages">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.languages"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Gear">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.gear"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Traits">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.traits"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Actions">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.actions"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.BonusActions">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.bonusActions"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.Reactions">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.reactions"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.LegendaryActions">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.legendaryActions"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.HotKey1Name">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey1Name"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.HotKey1Attribute">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey1Attribute"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.HotKey1Proficiency">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey1Proficiency"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.HotKey1DamageDiceNumber">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey1DamageDiceNumber"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.HotKey1DamageDiceSize">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey1DamageDiceSize"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.HotKey1DamageBonus">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey1DamageBonus"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.HotKey1DamageType">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey1DamageType"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.HotKey2Name">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey2Name"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.HotKey2Attribute">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey2Attribute"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.HotKey2Proficiency">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey2Proficiency"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.HotKey2DamageDiceNumber">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey2DamageDiceNumber"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.HotKey2DamageDiceSize">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey2DamageDiceSize"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.HotKey2DamageBonus">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey2DamageBonus"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Creature.HotKey2DamageType">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey2DamageType"/>
+        </member>
+        <member name="T:TimeForBattle.Model.InitiativeCreature">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreature.Creature">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreature.creature"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreature.InitiativeCreatureData">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreature.initiativeCreatureData"/>
+        </member>
+        <member name="T:TimeForBattle.Model.InitiativeCreatureData">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.CurrentHitPoints">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.currentHitPoints"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.Initiative">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.initiative"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.NameID">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.nameID"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.IsTurn">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.isTurn"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.IsExpanded">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.isExpanded"/>
+        </member>
+        <member name="T:TimeForBattle.Model.Roll">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.Model.Roll.CreatureName">
+            <inheritdoc cref="F:TimeForBattle.Model.Roll.creatureName"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Roll.RollName">
+            <inheritdoc cref="F:TimeForBattle.Model.Roll.rollName"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Roll.RollValue1">
+            <inheritdoc cref="F:TimeForBattle.Model.Roll.rollValue1"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Roll.RollValue2">
+            <inheritdoc cref="F:TimeForBattle.Model.Roll.rollValue2"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Roll.Modifier">
+            <inheritdoc cref="F:TimeForBattle.Model.Roll.modifier"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Roll.ModifierString">
+            <inheritdoc cref="F:TimeForBattle.Model.Roll.modifierString"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Roll.Damage">
+            <inheritdoc cref="F:TimeForBattle.Model.Roll.damage"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Roll.DamageType">
+            <inheritdoc cref="F:TimeForBattle.Model.Roll.damageType"/>
+        </member>
+        <member name="P:TimeForBattle.Model.Roll.Round">
+            <inheritdoc cref="F:TimeForBattle.Model.Roll.round"/>
+        </member>
+        <member name="T:TimeForBattle.ViewModel.AddCreatureViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.AttributeNames">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.AddCreatureViewModel.attributeNames"/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.DamageTypes">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.AddCreatureViewModel.damageTypes"/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.Creature">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.AddCreatureViewModel.creature"/>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.AddCreatureViewModel.saveCreatureCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.AddCreatureViewModel.SaveCreatureCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.SaveCreatureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.AddCreatureViewModel.SaveCreatureAsync"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.AddCreatureViewModel.deleteCreatureCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.AddCreatureViewModel.DeleteCreatureCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.DeleteCreatureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.AddCreatureViewModel.DeleteCreatureAsync"/>.</summary>
+        </member>
+        <member name="T:TimeForBattle.ViewModel.BaseViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.BaseViewModel.IsBusy">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.BaseViewModel.isBusy"/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.BaseViewModel.Title">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.BaseViewModel.title"/>
+        </member>
+        <member name="T:TimeForBattle.ViewModel.CombatListViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CombatListViewModel.IsRefreshing">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.CombatListViewModel.isRefreshing"/>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CombatListViewModel.refreshCombatsCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CombatListViewModel.RefreshCombatsCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CombatListViewModel.RefreshCombatsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CombatListViewModel.RefreshCombats"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CombatListViewModel.deleteCombatCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CombatListViewModel.DeleteCombatCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CombatListViewModel.DeleteCombatCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CombatListViewModel.DeleteCombatAsync(TimeForBattle.Model.Combat)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CombatListViewModel.loadCombatCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CombatListViewModel.LoadCombatCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CombatListViewModel.LoadCombatCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CombatListViewModel.LoadCombatAsync(TimeForBattle.Model.Combat)"/>.</summary>
+        </member>
+        <member name="T:TimeForBattle.ViewModel.CreatureDetailsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureDetailsViewModel.Creature">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.CreatureDetailsViewModel.creature"/>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureDetailsViewModel.goToEditCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureDetailsViewModel.GoToEditCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureDetailsViewModel.GoToEditCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureDetailsViewModel.GoToEditAsync"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureDetailsViewModel.returnCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureDetailsViewModel.ReturnCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureDetailsViewModel.ReturnCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureDetailsViewModel.ReturnAsync"/>.</summary>
+        </member>
+        <member name="T:TimeForBattle.ViewModel.CreatureListViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.Creatures">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.CreatureListViewModel.creatures"/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.Combat">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.CreatureListViewModel.combat"/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.IsRefreshing">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.CreatureListViewModel.isRefreshing"/>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.refreshCreaturesCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.RefreshCreaturesCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.RefreshCreaturesCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.RefreshCreatures"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.changeViewCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.ChangeViewCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.ChangeViewCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.ChangeView(System.Boolean)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.goToDetailsCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.GoToDetailsCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.GoToDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.GoToDetailsAsync(TimeForBattle.Model.Creature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.goToInitiativeCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.GoToInitiativeCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.GoToInitiativeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.GoToInitiativeAsync"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.addToInitiativeCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.AddToInitiativeCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.AddToInitiativeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.AddToInitiativeAsync(TimeForBattle.Model.Creature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.removeFromInitiativeCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.RemoveFromInitiativeCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.RemoveFromInitiativeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.RemoveFromInitiativeAsync(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.newCreatureCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.NewCreatureCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.NewCreatureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.CreatureListViewModel.NewCreatureAsync(System.Boolean)"/>.</summary>
+        </member>
+        <member name="T:TimeForBattle.ViewModel.InitiativeViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.Initiative">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.initiative"/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.Combat">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.combat"/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.Rolls">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.rolls"/>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.refreshInitiativeCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RefreshInitiativeCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.RefreshInitiativeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.RefreshInitiativeAsync"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.goToCreatureListCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.GoToCreatureListCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.GoToCreatureListCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.GoToCreatureListAsync"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.rollInitiativeCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RollInitiativeCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.RollInitiativeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.RollInitiativeAsync"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.sortInitiativeCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.SortInitiativeCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.SortInitiativeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.SortInitiativeAsync"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.saveCombatCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.SaveCombatCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.SaveCombatCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.SaveCombatAsync"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.nextCreatureCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.NextCreatureCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.NextCreatureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.NextCreature"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.previousCreatureCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.PreviousCreatureCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.PreviousCreatureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.PreviousCreature"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.goToDetailsCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.GoToDetailsCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.GoToDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.GoToDetailsAsync(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.pauseInitiativeCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.PauseInitiativeCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.PauseInitiativeCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.PauseInitiativeAsync"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.currentHitPointsPlusCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsPlusCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsPlusCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsPlusAsync(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.currentHitPointsMinusCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsMinusCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsMinusCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsMinusAsync(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.rollSaveCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RollSaveCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.RollSaveCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.RollSaveAsync(System.Tuple{System.Nullable{System.Int32},System.String,System.String,System.String,System.String})"/>.</summary>
+        </member>
+        <member name="T:TimeForBattle.ViewModel.MainMenuViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.MainMenuViewModel.IsRefreshing">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.MainMenuViewModel.isRefreshing"/>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.MainMenuViewModel.newCombatCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.MainMenuViewModel.NewCombatCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.MainMenuViewModel.NewCombatCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.MainMenuViewModel.NewCombat(System.String)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.MainMenuViewModel.goToCombatListPageCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.MainMenuViewModel.GoToCombatListPageCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.MainMenuViewModel.GoToCombatListPageCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.MainMenuViewModel.GoToCombatListPageAsync"/>.</summary>
+        </member>
+        <member name="T:TimeForBattle.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_InputView.TextColorTo(Microsoft.Maui.Controls.InputView,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Name">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Name" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RoundCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RoundCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsStarted">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsStarted" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsPlayer">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsPlayer" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Size">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Size" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Type">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Type" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Alignment">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Alignment" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ArmorClass">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ArmorClass" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.InitiativeBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "InitiativeBonus" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MaximumHitPoints">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MaximumHitPoints" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Speed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Speed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ChallengeRating">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ChallengeRating" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ProficiencyBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ProficiencyBonus" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StrScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StrScore" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DexScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DexScore" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConScore" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IntScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IntScore" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.WisScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "WisScore" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ChaScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ChaScore" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StrSaveProf">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StrSaveProf" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DexSaveProf">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DexSaveProf" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConSaveProf">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConSaveProf" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IntSaveProf">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IntSaveProf" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.WisSaveProf">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "WisSaveProf" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ChaSaveProf">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ChaSaveProf" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Skills">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Skills" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Resistances">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Resistances" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Vulnerabilities">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Vulnerabilities" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Immunities">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Immunities" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Senses">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Senses" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Languages">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Languages" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Gear">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Gear" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Traits">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Traits" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Actions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Actions" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.BonusActions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "BonusActions" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Reactions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Reactions" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.LegendaryActions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "LegendaryActions" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey1Name">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey1Name" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey1Attribute">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey1Attribute" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey1Proficiency">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey1Proficiency" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey1DamageDiceNumber">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey1DamageDiceNumber" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey1DamageDiceSize">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey1DamageDiceSize" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey1DamageBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey1DamageBonus" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey1DamageType">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey1DamageType" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey2Name">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey2Name" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey2Attribute">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey2Attribute" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey2Proficiency">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey2Proficiency" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey2DamageDiceNumber">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey2DamageDiceNumber" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey2DamageDiceSize">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey2DamageDiceSize" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey2DamageBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey2DamageBonus" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey2DamageType">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey2DamageType" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Creature">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Creature" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.InitiativeCreatureData">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "InitiativeCreatureData" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CurrentHitPoints">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CurrentHitPoints" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Initiative">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Initiative" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NameID">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NameID" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsTurn">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsTurn" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsExpanded">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsExpanded" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CreatureName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CreatureName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RollName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RollName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RollValue1">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RollValue1" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.RollValue2">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "RollValue2" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Modifier">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Modifier" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ModifierString">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ModifierString" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Damage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Damage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DamageType">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DamageType" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Round">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Round" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.AttributeNames">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "AttributeNames" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DamageTypes">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DamageTypes" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsRefreshing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Creatures">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Creatures" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Combat">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Combat" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Rolls">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Rolls" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Name">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Name" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RoundCount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RoundCount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsStarted">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsStarted" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsPlayer">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsPlayer" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Size">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Size" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Type">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Type" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Alignment">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Alignment" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ArmorClass">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ArmorClass" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.InitiativeBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "InitiativeBonus" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MaximumHitPoints">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MaximumHitPoints" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Speed">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Speed" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ChallengeRating">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ChallengeRating" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ProficiencyBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ProficiencyBonus" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StrScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StrScore" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DexScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DexScore" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConScore" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IntScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IntScore" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.WisScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "WisScore" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ChaScore">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ChaScore" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StrSaveProf">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StrSaveProf" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DexSaveProf">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DexSaveProf" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConSaveProf">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConSaveProf" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IntSaveProf">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IntSaveProf" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.WisSaveProf">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "WisSaveProf" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ChaSaveProf">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ChaSaveProf" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Skills">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Skills" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Resistances">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Resistances" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Vulnerabilities">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Vulnerabilities" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Immunities">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Immunities" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Senses">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Senses" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Languages">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Languages" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Gear">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Gear" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Traits">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Traits" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Actions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Actions" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.BonusActions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "BonusActions" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Reactions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Reactions" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.LegendaryActions">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "LegendaryActions" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey1Name">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey1Name" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey1Attribute">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey1Attribute" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey1Proficiency">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey1Proficiency" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey1DamageDiceNumber">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey1DamageDiceNumber" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey1DamageDiceSize">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey1DamageDiceSize" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey1DamageBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey1DamageBonus" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey1DamageType">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey1DamageType" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey2Name">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey2Name" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey2Attribute">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey2Attribute" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey2Proficiency">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey2Proficiency" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey2DamageDiceNumber">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey2DamageDiceNumber" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey2DamageDiceSize">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey2DamageDiceSize" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey2DamageBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey2DamageBonus" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey2DamageType">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey2DamageType" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Creature">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Creature" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.InitiativeCreatureData">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "InitiativeCreatureData" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CurrentHitPoints">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CurrentHitPoints" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Initiative">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Initiative" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NameID">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NameID" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsTurn">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsTurn" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsExpanded">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsExpanded" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CreatureName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CreatureName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RollName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RollName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RollValue1">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RollValue1" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.RollValue2">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "RollValue2" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Modifier">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Modifier" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ModifierString">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ModifierString" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Damage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Damage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DamageType">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DamageType" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Round">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Round" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.AttributeNames">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "AttributeNames" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DamageTypes">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DamageTypes" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsRefreshing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Creatures">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Creatures" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Combat">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Combat" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Rolls">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Rolls" generated properties.</summary>
+        </member>
+    </members>
+</doc>

@@ -5,6 +5,16 @@
              x:Class="TimeForBattle.App">
     <Application.Resources>
         <ResourceDictionary>
+
+            <x:Boolean x:Key="BooleanFalse">false</x:Boolean>
+            <x:Boolean x:Key="BooleanTrue">true</x:Boolean>
+            <x:String x:Key="Attribute0">Str</x:String>
+            <x:String x:Key="Attribute1">Dex</x:String>
+            <x:String x:Key="Attribute2">Con</x:String>
+            <x:String x:Key="Attribute3">Int</x:String>
+            <x:String x:Key="Attribute4">Wis</x:String>
+            <x:String x:Key="Attribute5">Cha</x:String>
+
             <Color x:Key="Primary">DarkRed</Color>
             <Color x:Key="PrimaryDark">#FFA000</Color>
             <Color x:Key="Accent">#00BCD4</Color>

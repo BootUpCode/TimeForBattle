@@ -261,9 +261,6 @@ public partial class InitiativeViewModel : BaseViewModel
                 damage += rng.Next(1, diceSize);
             }
             damage += damageBonus;
-
-            Trace.WriteLine(diceCount + "d" + diceSize + "+" + damageBonus);
-            Trace.WriteLine(damage);
         }
 
         if (!String.IsNullOrWhiteSpace(parameters.Item5)) {

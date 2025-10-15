@@ -1,5 +1,4 @@
-﻿using System.Globalization;
-using TimeForBattle.Services;
+﻿using TimeForBattle.Services;
 using TimeForBattle.View;
 
 namespace TimeForBattle.ViewModel;
@@ -8,6 +7,9 @@ namespace TimeForBattle.ViewModel;
 public partial class CreatureDetailsViewModel: BaseViewModel
 {
     public CreatureService<Creature> creatureService;
+
+    public bool[] Bools { get => [false, true]; }
+    public String[] Attributes { get => ["Str", "Dex", "Con", "Int", "Wis", "Cha"]; }
 
     public CreatureDetailsViewModel(CreatureService<Creature> characterService)
     {
