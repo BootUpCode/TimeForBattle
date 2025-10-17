@@ -215,9 +215,29 @@ public partial class InitiativeViewModel : BaseViewModel
         Combat.IsStarted = false;
         await CombatService.SaveAsync(Combat);
     }
+    
+    [RelayCommand]
+    public async Task CurrentHitPointsPlusTenAsync(InitiativeCreature initiativeCreature)
+    {
+        if (Combat is null || Initiative is null || initiativeCreature is null)
+            return;
+
+        initiativeCreature.InitiativeCreatureData.CurrentHitPoints += 10;
+        await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
+    }
 
     [RelayCommand]
-    public async Task CurrentHitPointsPlusAsync(InitiativeCreature initiativeCreature)
+    public async Task CurrentHitPointsMinusTenAsync(InitiativeCreature initiativeCreature)
+    {
+        if (Combat is null || Initiative is null || initiativeCreature is null || initiativeCreature.InitiativeCreatureData.CurrentHitPoints <= 0)
+            return;
+
+        initiativeCreature.InitiativeCreatureData.CurrentHitPoints -= 10;
+        await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
+    }
+
+    [RelayCommand]
+    public async Task CurrentHitPointsPlusOneAsync(InitiativeCreature initiativeCreature)
     {
         if (Combat is null || Initiative is null || initiativeCreature is null)
             return;
@@ -227,7 +247,7 @@ public partial class InitiativeViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    public async Task CurrentHitPointsMinusAsync(InitiativeCreature initiativeCreature)
+    public async Task CurrentHitPointsMinusOneAsync(InitiativeCreature initiativeCreature)
     {
         if (Combat is null || Initiative is null || initiativeCreature is null || initiativeCreature.InitiativeCreatureData.CurrentHitPoints <= 0)
             return;
