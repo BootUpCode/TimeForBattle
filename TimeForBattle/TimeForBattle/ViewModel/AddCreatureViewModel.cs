@@ -1,4 +1,5 @@
-﻿using TimeForBattle.Services;
+﻿using System.Text.RegularExpressions;
+using TimeForBattle.Services;
 
 namespace TimeForBattle.ViewModel;
 
@@ -10,6 +11,7 @@ public partial class AddCreatureViewModel : BaseViewModel
     public DialogService DialogService;
     [ObservableProperty] public static ObservableCollection<string> attributeNames = ["Str", "Dex", "Con", "Int", "Wis", "Cha"];
     [ObservableProperty] public static ObservableCollection<string> damageTypes = ["acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"];
+    [ObservableProperty] public string importCreatureText = "";
 
     public AddCreatureViewModel(CreatureService<Creature> characterService, InitiativeService<InitiativeCreatureData> initiativeService, DialogService dialogService)
     {
@@ -50,5 +52,67 @@ public partial class AddCreatureViewModel : BaseViewModel
 
             await Shell.Current.GoToAsync("../..");
         }
+    }
+
+    [RelayCommand]
+    public async Task ImportFromText()
+    {
+        string[] regexStrings =
+        [
+            @"([a-zA-Z ]+)\r?\n?",
+            @"(?<size>Small|Medium|Large|Huge|Gargantuan)",
+            @"[a-zA-Z ]+\r?\n?[a-zA-Z]+ ([a-zA-Z() ]+)",
+            @"[a-zA-Z]+\r?\n?[a-zA-Z]+ [a-zA-Z() ]+, ([a-zA-Z ]+)",
+            @"AC ([0-9]+)",
+            @"HP ([0-9]+)",
+            @"CR ([0-9]+)",
+            @"Initiative ([\+|\-][0-9]+)",
+            @"Speed ([0-9a-zA-Z .,]+)",
+            @"Str\r?\n?([0-9]+)",
+            @"Str\r?\n?[0-9]+\n?\r?[\+\-0-9]+\r?\n?([\+\-0-9]+)",
+            @"Dex\r?\n?([0-9]+)",
+            @"Dex\r?\n?[0-9]+\n?\r?[\+\-0-9]+\r?\n?([\+\-0-9]+)",
+            @"Con\r?\n?([0-9]+)",
+            @"Con\r?\n?[0-9]+\n?\r?[\+\-0-9]+\r?\n?([\+\-0-9]+)",
+            @"Int\r?\n?([0-9]+)",
+            @"Int\r?\n?[0-9]+\n?\r?[\+\-0-9]+\r?\n?([\+\-0-9]+)",
+            @"Wis\r?\n?([0-9]+)",
+            @"Wis\r?\n?[0-9]+\n?\r?[\+\-0-9]+\r?\n?([\+\-0-9]+)",
+            @"Cha\r?\n?([0-9]+)",
+            @"Cha\r?\n?[0-9]+\n?\r?[\+\-0-9]+\r?\n?([\+\-0-9]+)",
+            @"Skills ([a-zA-Z0-9 ,+]+)",
+            @"Vulnerabilities ([a-zA-Z ,;]+)",
+            @"Resistances ([a-zA-Z ,;]+)",
+            @"Immunities ([a-zA-Z ,;]+)",
+            @"Senses ([a-zA-Z0-9. ,;]+)",
+            @"Languages ([a-zA-Z ,]+)",
+            @"Traits\s*((?:(?!Actions|Bonus actions|Reactions|Legendary actions).)*)",
+            @"Actions\s*((?:(?!Bonus actions|Reactions|Legendary actions).)*)",
+            @"Bonus actions\s*((?:(?!Reactions|Legendary actions).)*)",
+            @"Reactions\s*((?:(?!Legendary actions).)*)",
+            @"Legendary actions\s*(.*)"
+        ];
+
+        string[] matches = new string[regexStrings.Length];
+
+        await Task.Run(() =>
+        {
+            RegexOptions options = RegexOptions.Singleline;
+            ImportCreatureText = Regex.Replace(ImportCreatureText, "–", "-", options);
+
+            for (int i = 0; i < regexStrings.Length; i++)
+            {
+                Regex pattern = new Regex(regexStrings[i], options);
+                Match match = pattern.Match(ImportCreatureText);
+
+                matches[i] = "";
+                if (!String.IsNullOrEmpty(match.Groups[1].Value))
+                {
+                    matches[i] = match.Groups[1].Value.TrimEnd();
+                }
+            }
+
+            this.Creature.Import(matches);
+        });
     }
 }
