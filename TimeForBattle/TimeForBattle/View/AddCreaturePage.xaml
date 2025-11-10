@@ -26,7 +26,7 @@
                     Grid.Row="0">
             <Grid Margin="10"
                   ColumnDefinitions="*,*,*,*,*,*"
-                  RowDefinitions="Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto">
+                  RowDefinitions="Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,10,Auto">
 
 
                 <Label Grid.Column="0"
@@ -254,7 +254,7 @@
                             <Binding Path="Creature" />
                             <Binding x:DataType="x:Boolean"
                                      Source="{StaticResource BooleanFalse}" />
-                            <Binding x:DataType="x:Int32"
+                            <Binding x:DataType="x:String"
                                      Source="{StaticResource Attribute0}" />
                         </MultiBinding>
                     </Label.Text>
@@ -266,9 +266,8 @@
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
                             <Binding Path="Creature" />
-                            <Binding x:DataType="x:Boolean"
-                                     Source="{StaticResource BooleanTrue}" />
-                            <Binding x:DataType="x:Int32"
+                            <Binding Path="Creature.StrSaveProf" />
+                            <Binding x:DataType="x:String"
                                      Source="{StaticResource Attribute0}" />
                         </MultiBinding>
                     </Label.Text>
@@ -307,7 +306,7 @@
                             <Binding Path="Creature" />
                             <Binding x:DataType="x:Boolean"
                                      Source="{StaticResource BooleanFalse}" />
-                            <Binding x:DataType="x:Int32"
+                            <Binding x:DataType="x:String"
                                      Source="{StaticResource Attribute1}" />
                         </MultiBinding>
                     </Label.Text>
@@ -319,9 +318,8 @@
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
                             <Binding Path="Creature" />
-                            <Binding x:DataType="x:Boolean"
-                                     Source="{StaticResource BooleanTrue}" />
-                            <Binding x:DataType="x:Int32"
+                            <Binding Path="Creature.DexSaveProf" />
+                            <Binding x:DataType="x:String"
                                      Source="{StaticResource Attribute1}" />
                         </MultiBinding>
                     </Label.Text>
@@ -360,7 +358,7 @@
                             <Binding Path="Creature" />
                             <Binding x:DataType="x:Boolean"
                                      Source="{StaticResource BooleanFalse}" />
-                            <Binding x:DataType="x:Int32"
+                            <Binding x:DataType="x:String"
                                      Source="{StaticResource Attribute2}" />
                         </MultiBinding>
                     </Label.Text>
@@ -372,9 +370,8 @@
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
                             <Binding Path="Creature" />
-                            <Binding x:DataType="x:Boolean"
-                                     Source="{StaticResource BooleanTrue}" />
-                            <Binding x:DataType="x:Int32"
+                            <Binding Path="Creature.ConSaveProf" />
+                            <Binding x:DataType="x:String"
                                      Source="{StaticResource Attribute2}" />
                         </MultiBinding>
                     </Label.Text>
@@ -413,7 +410,7 @@
                             <Binding Path="Creature" />
                             <Binding x:DataType="x:Boolean"
                                      Source="{StaticResource BooleanFalse}" />
-                            <Binding x:DataType="x:Int32"
+                            <Binding x:DataType="x:String"
                                      Source="{StaticResource Attribute3}" />
                         </MultiBinding>
                     </Label.Text>
@@ -425,9 +422,8 @@
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
                             <Binding Path="Creature" />
-                            <Binding x:DataType="x:Boolean"
-                                     Source="{StaticResource BooleanTrue}" />
-                            <Binding x:DataType="x:Int32"
+                            <Binding Path="Creature.IntSaveProf" />
+                            <Binding x:DataType="x:String"
                                      Source="{StaticResource Attribute3}" />
                         </MultiBinding>
                     </Label.Text>
@@ -466,7 +462,7 @@
                             <Binding Path="Creature" />
                             <Binding x:DataType="x:Boolean"
                                      Source="{StaticResource BooleanFalse}" />
-                            <Binding x:DataType="x:Int32"
+                            <Binding x:DataType="x:String"
                                      Source="{StaticResource Attribute4}" />
                         </MultiBinding>
                     </Label.Text>
@@ -478,9 +474,8 @@
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
                             <Binding Path="Creature" />
-                            <Binding x:DataType="x:Boolean"
-                                     Source="{StaticResource BooleanTrue}" />
-                            <Binding x:DataType="x:Int32"
+                            <Binding Path="Creature.WisSaveProf" />
+                            <Binding x:DataType="x:String"
                                      Source="{StaticResource Attribute4}" />
                         </MultiBinding>
                     </Label.Text>
@@ -519,7 +514,7 @@
                             <Binding Path="Creature" />
                             <Binding x:DataType="x:Boolean"
                                      Source="{StaticResource BooleanFalse}" />
-                            <Binding x:DataType="x:Int32"
+                            <Binding x:DataType="x:String"
                                      Source="{StaticResource Attribute5}" />
                         </MultiBinding>
                     </Label.Text>
@@ -531,9 +526,8 @@
                     <Label.Text>
                         <MultiBinding Converter="{StaticResource AttributeConverter}">
                             <Binding Path="Creature" />
-                            <Binding x:DataType="x:Boolean"
-                                     Source="{StaticResource BooleanTrue}" />
-                            <Binding x:DataType="x:Int32"
+                            <Binding Path="Creature.ChaSaveProf" />
+                            <Binding x:DataType="x:String"
                                      Source="{StaticResource Attribute5}" />
                         </MultiBinding>
                     </Label.Text>
@@ -1058,6 +1052,21 @@
                         Text="{Binding Creature.LegendaryActions}"
                         AutoSize="TextChanges"
                         VerticalTextAlignment="Start" />
+                <Editor Grid.Column="0"
+                        Grid.ColumnSpan="4"
+                        Grid.Row="53"
+                        IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
+                        Text="{Binding ImportCreatureText}"
+                        AutoSize="Disabled"
+                        VerticalTextAlignment="Start" />
+                <Button Grid.Column="4"
+                        Grid.ColumnSpan="2"
+                        Grid.Row="53"
+                        Text="Import"
+                        Command="{Binding ImportFromTextCommand}"
+                        BorderColor="Black"
+                        CornerRadius="0"
+                        Style="{StaticResource BaseButton}" />
             </Grid>
         </ScrollView>
 
