@@ -111,8 +111,21 @@ public partial class AddCreatureViewModel : BaseViewModel
                     matches[i] = match.Groups[1].Value.TrimEnd();
                 }
             }
+        });
 
+        bool answer = await DialogService.ShowConfirmationAsync((ContentPage)AppShell.Current.CurrentPage, "Import?", "Are you sure you want to import the creature \'" + matches[0] + "\'?", "Yes", "No");
+        if (answer)
+        {
             this.Creature.Import(matches);
+        }
+    }
+
+    [RelayCommand]
+    public async Task ClearImportText()
+    {
+        await Task.Run(() =>
+        {
+            ImportCreatureText = "";
         });
     }
 }
