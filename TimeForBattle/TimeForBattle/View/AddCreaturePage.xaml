@@ -26,7 +26,7 @@
                     Grid.Row="0">
             <Grid Margin="10"
                   ColumnDefinitions="*,*,*,*,*,*"
-                  RowDefinitions="Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,10,Auto">
+                  RowDefinitions="Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,30,30">
 
 
                 <Label Grid.Column="0"
@@ -1052,18 +1052,42 @@
                         Text="{Binding Creature.LegendaryActions}"
                         AutoSize="TextChanges"
                         VerticalTextAlignment="Start" />
+
+                <Label Grid.Column="0"
+                       Grid.ColumnSpan="6"
+                       Grid.Row="53"
+                       IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
+                       Text="Import From Text"
+                       Style="{StaticResource StatblockText}"
+                       FontSize="20"
+                       Padding="0,10,0,0" />
+                <BoxView Grid.Column="0"
+                         Grid.ColumnSpan="6"
+                         Grid.Row="54"
+                         IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
+                         HeightRequest="2"
+                         Color="DarkRed" />
                 <Editor Grid.Column="0"
                         Grid.ColumnSpan="4"
-                        Grid.Row="53"
+                        Grid.Row="55"
+                        Grid.RowSpan="2"
                         IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
                         Text="{Binding ImportCreatureText}"
                         AutoSize="Disabled"
                         VerticalTextAlignment="Start" />
                 <Button Grid.Column="4"
                         Grid.ColumnSpan="2"
-                        Grid.Row="53"
+                        Grid.Row="55"
                         Text="Import"
                         Command="{Binding ImportFromTextCommand}"
+                        BorderColor="Black"
+                        CornerRadius="0"
+                        Style="{StaticResource BaseButton}" />
+                <Button Grid.Column="4"
+                        Grid.ColumnSpan="2"
+                        Grid.Row="56"
+                        Text="Clear"
+                        Command="{Binding ClearImportTextCommand}"
                         BorderColor="Black"
                         CornerRadius="0"
                         Style="{StaticResource BaseButton}" />

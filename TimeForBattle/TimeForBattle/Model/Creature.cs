@@ -63,76 +63,76 @@ public partial class Creature : DatabaseObject
 
     public void Import(string[] creatureData)
     {
-        this.Name = creatureData[0];
-        this.Size = creatureData[1];
-        this.Type = creatureData[2];
-        this.Alignment = creatureData[3];
-        this.ArmorClass = int.Parse(creatureData[4]);
-        this.MaximumHitPoints = int.Parse(creatureData[5]);
-        this.ChallengeRating = creatureData[6];
-        this.InitiativeBonus = int.Parse(creatureData[7]);
-        this.Speed = creatureData[8];
+        this.Name = String.IsNullOrEmpty(creatureData[0]) ? string.Empty : creatureData[0];
+        this.Size = String.IsNullOrEmpty(creatureData[1]) ? string.Empty : creatureData[1];
+        this.Type = String.IsNullOrEmpty(creatureData[2]) ? string.Empty : creatureData[2];
+        this.Alignment = String.IsNullOrEmpty(creatureData[3]) ? string.Empty : creatureData[3];
+        this.ArmorClass = String.IsNullOrEmpty(creatureData[4]) ? 0 : int.Parse(creatureData[4]);
+        this.MaximumHitPoints = String.IsNullOrEmpty(creatureData[5]) ? 0 : int.Parse(creatureData[5]);
+        this.ChallengeRating = String.IsNullOrEmpty(creatureData[6]) ? string.Empty : creatureData[6];
+        this.InitiativeBonus = String.IsNullOrEmpty(creatureData[7]) ? 0 : int.Parse(creatureData[7]);
+        this.Speed = String.IsNullOrEmpty(creatureData[8]) ? string.Empty : creatureData[8];
         this.ProficiencyBonus = 0;
 
-        this.StrScore = int.Parse(creatureData[9]);
+        this.StrScore = String.IsNullOrEmpty(creatureData[9]) ? 0 : int.Parse(creatureData[9]);
         this.StrSaveProf = false;
-        if (((this.StrScore - 10) / 2 ) < int.Parse(creatureData[10]))
+        if (!String.IsNullOrEmpty(creatureData[10]) && ((this.StrScore - 10) / 2 ) < int.Parse(creatureData[10]))
         {
             this.StrSaveProf = true;
             this.ProficiencyBonus = int.Parse(creatureData[10]) - ((this.StrScore - 10) / 2);
         }
 
-        this.DexScore = int.Parse(creatureData[11]);
+        this.DexScore = String.IsNullOrEmpty(creatureData[11]) ? 0 : int.Parse(creatureData[11]);
         this.DexSaveProf = false;
-        if (((this.DexScore - 10) / 2) < int.Parse(creatureData[12]))
+        if (!String.IsNullOrEmpty(creatureData[12]) && ((this.DexScore - 10) / 2) < int.Parse(creatureData[12]))
         {
             this.DexSaveProf = true;
             this.ProficiencyBonus = int.Parse(creatureData[12]) - ((this.DexScore - 10) / 2);
         }
 
-        this.ConScore = int.Parse(creatureData[13]);
+        this.ConScore = String.IsNullOrEmpty(creatureData[13]) ? 0 : int.Parse(creatureData[13]);
         this.ConSaveProf = false;
-        if (((this.ConScore - 10) / 2) < int.Parse(creatureData[14]))
+        if (!String.IsNullOrEmpty(creatureData[14]) && ((this.ConScore - 10) / 2) < int.Parse(creatureData[14]))
         {
             this.ConSaveProf = true;
             this.ProficiencyBonus = int.Parse(creatureData[14]) - ((this.ConScore - 10) / 2);
         }
 
-        this.IntScore = int.Parse(creatureData[15]);
+        this.IntScore = String.IsNullOrEmpty(creatureData[15]) ? 0 : int.Parse(creatureData[15]);
         this.IntSaveProf = false;
-        if (((this.IntScore - 10) / 2) < int.Parse(creatureData[16]))
+        if (!String.IsNullOrEmpty(creatureData[16]) && ((this.IntScore - 10) / 2) < int.Parse(creatureData[16]))
         {
             this.IntSaveProf = true;
             this.ProficiencyBonus = int.Parse(creatureData[16]) - ((this.IntScore - 10) / 2);
         }
 
-        this.WisScore = int.Parse(creatureData[17]);
+        this.WisScore = String.IsNullOrEmpty(creatureData[17]) ? 0 : int.Parse(creatureData[17]);
         this.WisSaveProf = false;
-        if (((this.WisScore - 10) / 2) < int.Parse(creatureData[18]))
+        if (!String.IsNullOrEmpty(creatureData[18]) && ((this.WisScore - 10) / 2) < int.Parse(creatureData[18]))
         {
             this.WisSaveProf = true;
             this.ProficiencyBonus = int.Parse(creatureData[18]) - ((this.WisScore - 10) / 2);
         }
 
-        this.ChaScore = int.Parse(creatureData[19]);
+        this.ChaScore = String.IsNullOrEmpty(creatureData[19]) ? 0 : int.Parse(creatureData[19]);
         this.ChaSaveProf = false;
-        if (((this.ChaScore - 10) / 2) < int.Parse(creatureData[20]))
+        if (!String.IsNullOrEmpty(creatureData[20]) && ((this.ChaScore - 10) / 2) < int.Parse(creatureData[20]))
         {
             this.ChaSaveProf = true;
             this.ProficiencyBonus = int.Parse(creatureData[20]) - ((this.ChaScore - 10) / 2);
         }
 
-        this.Skills = creatureData[21];
-        this.Vulnerabilities = creatureData[22];
-        this.Resistances = creatureData[23];
-        this.Immunities = creatureData[24];
-        this.Senses = creatureData[25];
-        this.Languages = creatureData[26];
-        this.Traits = creatureData[27];
-        this.Actions = creatureData[28];
-        this.BonusActions = creatureData[29];
-        this.Reactions = creatureData[30];
-        this.LegendaryActions = creatureData[31];
+        this.Skills = String.IsNullOrEmpty(creatureData[21]) ? string.Empty : creatureData[21];
+        this.Vulnerabilities = String.IsNullOrEmpty(creatureData[22]) ? string.Empty : creatureData[22];
+        this.Resistances = String.IsNullOrEmpty(creatureData[23]) ? string.Empty : creatureData[23];
+        this.Immunities = String.IsNullOrEmpty(creatureData[24]) ? string.Empty : creatureData[24];
+        this.Senses = String.IsNullOrEmpty(creatureData[25]) ? string.Empty : creatureData[25];
+        this.Languages = String.IsNullOrEmpty(creatureData[26]) ? string.Empty : creatureData[26];
+        this.Traits = String.IsNullOrEmpty(creatureData[27]) ? string.Empty : creatureData[27];
+        this.Actions = String.IsNullOrEmpty(creatureData[28]) ? string.Empty : creatureData[28];
+        this.BonusActions = String.IsNullOrEmpty(creatureData[29]) ? string.Empty : creatureData[29];
+        this.Reactions = String.IsNullOrEmpty(creatureData[30]) ? string.Empty : creatureData[30];
+        this.LegendaryActions = String.IsNullOrEmpty(creatureData[31]) ? string.Empty : creatureData[31];
 
         this.HotKey1Name = null;
         this.HotKey1Attribute = null;
