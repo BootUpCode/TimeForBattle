@@ -2,19 +2,15 @@
 
 namespace TimeForBattle.Converters;
 
-public class AttributeConverter : IValueConverter
+public class SignConverter : IValueConverter
 {
     object? IValueConverter.Convert(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         if (value is null)
             return 0;
 
-        //Get proficiency
-        if (value is int attributeScore)
+        if (value is int modifier)
         {
-            double x = ((double)attributeScore - 10) / 2;
-            int modifier = (int)Math.Floor(x);
-
             if (modifier >= 0)
             {
                 return "+" + modifier.ToString();

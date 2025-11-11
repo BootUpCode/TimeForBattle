@@ -202,18 +202,13 @@
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
                                                 Style="{StaticResource BaseButton}">
                                             <Button.CommandParameter>
-                                                <MultiBinding Converter="{StaticResource RollConverter}">
-                                                    <Binding Path="." />
-                                                    <Binding x:DataType="x:String"
-                                                             Source="{StaticResource Attribute0}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanTrue}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanFalse}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanFalse}" />
-                                                </MultiBinding>
-                                            </Button.CommandParameter>
+                                                    <MultiBinding Converter="{StaticResource RollConverter}">
+                                                        <Binding Path="." />
+                                                        <Binding Path="Creature.StrSaveBonus" />
+                                                        <Binding Path="RollName"
+                                                                 FallbackValue="Str Save" />
+                                                    </MultiBinding>
+                                                </Button.CommandParameter>
                                         </Button>
                                         <Button Grid.Column="1"
                                                 Grid.Row="2"
@@ -222,18 +217,13 @@
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
                                                 Style="{StaticResource BaseButton}">
                                             <Button.CommandParameter>
-                                                <MultiBinding Converter="{StaticResource RollConverter}">
-                                                    <Binding Path="." />
-                                                    <Binding x:DataType="x:String"
-                                                             Source="{StaticResource Attribute1}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanTrue}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanFalse}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanFalse}" />
-                                                </MultiBinding>
-                                            </Button.CommandParameter>
+                                                    <MultiBinding Converter="{StaticResource RollConverter}">
+                                                        <Binding Path="." />
+                                                        <Binding Path="Creature.DexSaveBonus" />
+                                                        <Binding Path="RollName"
+                                                                 FallbackValue="Dex Save" />
+                                                    </MultiBinding>
+                                                </Button.CommandParameter>
                                         </Button>
                                         <Button Grid.Column="2"
                                                 Grid.Row="2"
@@ -242,18 +232,13 @@
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
                                                 Style="{StaticResource BaseButton}">
                                             <Button.CommandParameter>
-                                                <MultiBinding Converter="{StaticResource RollConverter}">
-                                                    <Binding Path="." />
-                                                    <Binding x:DataType="x:String"
-                                                             Source="{StaticResource Attribute2}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanTrue}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanFalse}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanFalse}" />
-                                                </MultiBinding>
-                                            </Button.CommandParameter>
+                                                    <MultiBinding Converter="{StaticResource RollConverter}">
+                                                        <Binding Path="." />
+                                                        <Binding Path="Creature.ConSaveBonus" />
+                                                        <Binding Path="RollName"
+                                                                 FallbackValue="Con Save" />
+                                                    </MultiBinding>
+                                                </Button.CommandParameter>
                                         </Button>
                                         <Button Grid.Column="3"
                                                 Grid.Row="2"
@@ -262,18 +247,13 @@
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
                                                 Style="{StaticResource BaseButton}">
                                             <Button.CommandParameter>
-                                                <MultiBinding Converter="{StaticResource RollConverter}">
-                                                    <Binding Path="." />
-                                                    <Binding x:DataType="x:String"
-                                                             Source="{StaticResource Attribute3}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanTrue}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanFalse}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanFalse}" />
-                                                </MultiBinding>
-                                            </Button.CommandParameter>
+                                                    <MultiBinding Converter="{StaticResource RollConverter}">
+                                                        <Binding Path="." />
+                                                        <Binding Path="Creature.IntSaveBonus" />
+                                                        <Binding Path="RollName"
+                                                                 FallbackValue="Int Save" />
+                                                    </MultiBinding>
+                                                </Button.CommandParameter>
                                         </Button>
                                         <Button Grid.Column="4"
                                                 Grid.Row="2"
@@ -282,18 +262,13 @@
                                                 Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
                                                 Style="{StaticResource BaseButton}">
                                             <Button.CommandParameter>
-                                                <MultiBinding Converter="{StaticResource RollConverter}">
-                                                    <Binding Path="." />
-                                                    <Binding x:DataType="x:String"
-                                                             Source="{StaticResource Attribute4}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanTrue}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanFalse}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanFalse}" />
-                                                </MultiBinding>
-                                            </Button.CommandParameter>
+                                                    <MultiBinding Converter="{StaticResource RollConverter}">
+                                                        <Binding Path="." />
+                                                        <Binding Path="Creature.WisSaveBonus" />
+                                                        <Binding Path="RollName"
+                                                                 FallbackValue="Wis Save" />
+                                                    </MultiBinding>
+                                                </Button.CommandParameter>
                                         </Button>
                                         <Button Grid.Column="5"
                                                 Grid.Row="2"
@@ -304,14 +279,8 @@
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
                                                     <Binding Path="." />
-                                                    <Binding x:DataType="x:String"
-                                                             Source="{StaticResource Attribute5}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanTrue}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanFalse}" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanFalse}" />
+                                                    <Binding Path="Creature.ChaSaveBonus" />
+                                                    <Binding Path="RollName"  FallbackValue="Cha Save" />
                                                 </MultiBinding>
                                             </Button.CommandParameter>
                                         </Button>
@@ -328,14 +297,8 @@
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
                                                     <Binding Path="." />
-                                                    <Binding Path="Creature.HotKey1Attribute"
-                                                             FallbackValue="null" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanFalse}" />
-                                                    <Binding Path="Creature.HotKey1Proficiency"
-                                                             FallbackValue="null" />
-                                                    <Binding Path="Creature.HotKey1Name"
-                                                             FallbackValue="" />
+                                                    <Binding Path="Creature.HotKey1Bonus"/>
+                                                    <Binding Path="Creature.HotKey1Name" />
                                                     <Binding Path="Creature.HotKey1DamageDiceNumber" />
                                                     <Binding Path="Creature.HotKey1DamageDiceSize" />
                                                     <Binding Path="Creature.HotKey1DamageBonus" />
@@ -356,14 +319,8 @@
                                             <Button.CommandParameter>
                                                 <MultiBinding Converter="{StaticResource RollConverter}">
                                                     <Binding Path="." />
-                                                    <Binding Path="Creature.HotKey2Attribute"
-                                                             FallbackValue="null" />
-                                                    <Binding x:DataType="x:Boolean"
-                                                             Source="{StaticResource BooleanFalse}" />
-                                                    <Binding Path="Creature.HotKey2Proficiency"
-                                                             FallbackValue="null" />
-                                                    <Binding Path="Creature.HotKey2Name"
-                                                             FallbackValue="" />
+                                                    <Binding Path="Creature.HotKey2Bonus" />
+                                                    <Binding Path="Creature.HotKey2Name" />
                                                     <Binding Path="Creature.HotKey2DamageDiceNumber" />
                                                     <Binding Path="Creature.HotKey2DamageDiceSize" />
                                                     <Binding Path="Creature.HotKey2DamageBonus" />

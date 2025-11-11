@@ -14,7 +14,6 @@ public partial class Creature : DatabaseObject
     [ObservableProperty] public int maximumHitPoints;
     [ObservableProperty] public string speed;
     [ObservableProperty] public string challengeRating;
-    [ObservableProperty] public int proficiencyBonus;
 
     [ObservableProperty] public int strScore;
     [ObservableProperty] public int dexScore;
@@ -23,12 +22,12 @@ public partial class Creature : DatabaseObject
     [ObservableProperty] public int wisScore;
     [ObservableProperty] public int chaScore;
 
-    [ObservableProperty] public bool strSaveProf;
-    [ObservableProperty] public bool dexSaveProf;
-    [ObservableProperty] public bool conSaveProf;
-    [ObservableProperty] public bool intSaveProf;
-    [ObservableProperty] public bool wisSaveProf;
-    [ObservableProperty] public bool chaSaveProf;
+    [ObservableProperty] public int strSaveBonus;
+    [ObservableProperty] public int dexSaveBonus;
+    [ObservableProperty] public int conSaveBonus;
+    [ObservableProperty] public int intSaveBonus;
+    [ObservableProperty] public int wisSaveBonus;
+    [ObservableProperty] public int chaSaveBonus;
 
     [ObservableProperty] public string skills;
     [ObservableProperty] public string resistances;
@@ -46,16 +45,14 @@ public partial class Creature : DatabaseObject
     [ObservableProperty] public string legendaryActions;
 
     [ObservableProperty] public string hotKey1Name;
-    [ObservableProperty] public string hotKey1Attribute;
-    [ObservableProperty] public bool hotKey1Proficiency;
+    [ObservableProperty] public int hotKey1Bonus;
     [ObservableProperty] public int hotKey1DamageDiceNumber;
     [ObservableProperty] public int hotKey1DamageDiceSize;
     [ObservableProperty] public int hotKey1DamageBonus;
     [ObservableProperty] public string hotKey1DamageType;
 
     [ObservableProperty] public string hotKey2Name;
-    [ObservableProperty] public string hotKey2Attribute;
-    [ObservableProperty] public bool hotKey2Proficiency;
+    [ObservableProperty] public int hotKey2Bonus;
     [ObservableProperty] public int hotKey2DamageDiceNumber;
     [ObservableProperty] public int hotKey2DamageDiceSize;
     [ObservableProperty] public int hotKey2DamageBonus;
@@ -72,56 +69,18 @@ public partial class Creature : DatabaseObject
         this.ChallengeRating = String.IsNullOrEmpty(creatureData[6]) ? string.Empty : creatureData[6];
         this.InitiativeBonus = String.IsNullOrEmpty(creatureData[7]) ? 0 : int.Parse(creatureData[7]);
         this.Speed = String.IsNullOrEmpty(creatureData[8]) ? string.Empty : creatureData[8];
-        this.ProficiencyBonus = 0;
-
         this.StrScore = String.IsNullOrEmpty(creatureData[9]) ? 0 : int.Parse(creatureData[9]);
-        this.StrSaveProf = false;
-        if (!String.IsNullOrEmpty(creatureData[10]) && ((this.StrScore - 10) / 2 ) < int.Parse(creatureData[10]))
-        {
-            this.StrSaveProf = true;
-            this.ProficiencyBonus = int.Parse(creatureData[10]) - ((this.StrScore - 10) / 2);
-        }
-
+        this.StrSaveBonus = String.IsNullOrEmpty(creatureData[10]) ? 0 : int.Parse(creatureData[10]);
         this.DexScore = String.IsNullOrEmpty(creatureData[11]) ? 0 : int.Parse(creatureData[11]);
-        this.DexSaveProf = false;
-        if (!String.IsNullOrEmpty(creatureData[12]) && ((this.DexScore - 10) / 2) < int.Parse(creatureData[12]))
-        {
-            this.DexSaveProf = true;
-            this.ProficiencyBonus = int.Parse(creatureData[12]) - ((this.DexScore - 10) / 2);
-        }
-
+        this.DexSaveBonus = String.IsNullOrEmpty(creatureData[12]) ? 0 : int.Parse(creatureData[12]);
         this.ConScore = String.IsNullOrEmpty(creatureData[13]) ? 0 : int.Parse(creatureData[13]);
-        this.ConSaveProf = false;
-        if (!String.IsNullOrEmpty(creatureData[14]) && ((this.ConScore - 10) / 2) < int.Parse(creatureData[14]))
-        {
-            this.ConSaveProf = true;
-            this.ProficiencyBonus = int.Parse(creatureData[14]) - ((this.ConScore - 10) / 2);
-        }
-
+        this.ConSaveBonus = String.IsNullOrEmpty(creatureData[14]) ? 0 : int.Parse(creatureData[14]);
         this.IntScore = String.IsNullOrEmpty(creatureData[15]) ? 0 : int.Parse(creatureData[15]);
-        this.IntSaveProf = false;
-        if (!String.IsNullOrEmpty(creatureData[16]) && ((this.IntScore - 10) / 2) < int.Parse(creatureData[16]))
-        {
-            this.IntSaveProf = true;
-            this.ProficiencyBonus = int.Parse(creatureData[16]) - ((this.IntScore - 10) / 2);
-        }
-
+        this.IntSaveBonus = String.IsNullOrEmpty(creatureData[16]) ? 0 : int.Parse(creatureData[16]);
         this.WisScore = String.IsNullOrEmpty(creatureData[17]) ? 0 : int.Parse(creatureData[17]);
-        this.WisSaveProf = false;
-        if (!String.IsNullOrEmpty(creatureData[18]) && ((this.WisScore - 10) / 2) < int.Parse(creatureData[18]))
-        {
-            this.WisSaveProf = true;
-            this.ProficiencyBonus = int.Parse(creatureData[18]) - ((this.WisScore - 10) / 2);
-        }
-
+        this.WisSaveBonus = String.IsNullOrEmpty(creatureData[18]) ? 0 : int.Parse(creatureData[18]);
         this.ChaScore = String.IsNullOrEmpty(creatureData[19]) ? 0 : int.Parse(creatureData[19]);
-        this.ChaSaveProf = false;
-        if (!String.IsNullOrEmpty(creatureData[20]) && ((this.ChaScore - 10) / 2) < int.Parse(creatureData[20]))
-        {
-            this.ChaSaveProf = true;
-            this.ProficiencyBonus = int.Parse(creatureData[20]) - ((this.ChaScore - 10) / 2);
-        }
-
+        this.ChaSaveBonus = String.IsNullOrEmpty(creatureData[20]) ? 0 : int.Parse(creatureData[20]);
         this.Skills = String.IsNullOrEmpty(creatureData[21]) ? string.Empty : creatureData[21];
         this.Vulnerabilities = String.IsNullOrEmpty(creatureData[22]) ? string.Empty : creatureData[22];
         this.Resistances = String.IsNullOrEmpty(creatureData[23]) ? string.Empty : creatureData[23];
@@ -135,16 +94,14 @@ public partial class Creature : DatabaseObject
         this.LegendaryActions = String.IsNullOrEmpty(creatureData[31]) ? string.Empty : creatureData[31];
 
         this.HotKey1Name = null;
-        this.HotKey1Attribute = null;
-        this.HotKey1Proficiency = false;
+        this.HotKey1Bonus = 0;
         this.HotKey1DamageDiceNumber = 0;
         this.HotKey1DamageDiceSize = 0;
         this.HotKey1DamageBonus = 0;
         this.HotKey1DamageType = null;
 
         this.HotKey2Name = null;
-        this.HotKey2Attribute = null;
-        this.HotKey2Proficiency = false;
+        this.HotKey2Bonus = 0;
         this.HotKey2DamageDiceNumber = 0;
         this.HotKey2DamageDiceSize = 0;
         this.HotKey2DamageBonus = 0;
