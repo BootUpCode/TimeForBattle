@@ -122,7 +122,8 @@
                        Grid.RowSpan="2"
                        Style="{StaticResource StatblockText}"
                        Text="{Binding Creature.Speed}"
-                       HorizontalOptions="End"/>
+                       HorizontalOptions="End"
+                       VerticalOptions="Start"/>
 
                 <Label Grid.Column="2"
                        Grid.Row="11"

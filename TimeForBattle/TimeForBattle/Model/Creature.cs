@@ -64,11 +64,13 @@ public partial class Creature : DatabaseObject
         this.Size = String.IsNullOrEmpty(creatureData[1]) ? string.Empty : creatureData[1];
         this.Type = String.IsNullOrEmpty(creatureData[2]) ? string.Empty : creatureData[2];
         this.Alignment = String.IsNullOrEmpty(creatureData[3]) ? string.Empty : creatureData[3];
+
         this.ArmorClass = String.IsNullOrEmpty(creatureData[4]) ? 0 : int.Parse(creatureData[4]);
         this.MaximumHitPoints = String.IsNullOrEmpty(creatureData[5]) ? 0 : int.Parse(creatureData[5]);
         this.ChallengeRating = String.IsNullOrEmpty(creatureData[6]) ? string.Empty : creatureData[6];
         this.InitiativeBonus = String.IsNullOrEmpty(creatureData[7]) ? 0 : int.Parse(creatureData[7]);
         this.Speed = String.IsNullOrEmpty(creatureData[8]) ? string.Empty : creatureData[8];
+
         this.StrScore = String.IsNullOrEmpty(creatureData[9]) ? 0 : int.Parse(creatureData[9]);
         this.StrSaveBonus = String.IsNullOrEmpty(creatureData[10]) ? 0 : int.Parse(creatureData[10]);
         this.DexScore = String.IsNullOrEmpty(creatureData[11]) ? 0 : int.Parse(creatureData[11]);
@@ -81,30 +83,32 @@ public partial class Creature : DatabaseObject
         this.WisSaveBonus = String.IsNullOrEmpty(creatureData[18]) ? 0 : int.Parse(creatureData[18]);
         this.ChaScore = String.IsNullOrEmpty(creatureData[19]) ? 0 : int.Parse(creatureData[19]);
         this.ChaSaveBonus = String.IsNullOrEmpty(creatureData[20]) ? 0 : int.Parse(creatureData[20]);
+
         this.Skills = String.IsNullOrEmpty(creatureData[21]) ? string.Empty : creatureData[21];
         this.Vulnerabilities = String.IsNullOrEmpty(creatureData[22]) ? string.Empty : creatureData[22];
         this.Resistances = String.IsNullOrEmpty(creatureData[23]) ? string.Empty : creatureData[23];
         this.Immunities = String.IsNullOrEmpty(creatureData[24]) ? string.Empty : creatureData[24];
         this.Senses = String.IsNullOrEmpty(creatureData[25]) ? string.Empty : creatureData[25];
         this.Languages = String.IsNullOrEmpty(creatureData[26]) ? string.Empty : creatureData[26];
+
         this.Traits = String.IsNullOrEmpty(creatureData[27]) ? string.Empty : creatureData[27];
         this.Actions = String.IsNullOrEmpty(creatureData[28]) ? string.Empty : creatureData[28];
         this.BonusActions = String.IsNullOrEmpty(creatureData[29]) ? string.Empty : creatureData[29];
         this.Reactions = String.IsNullOrEmpty(creatureData[30]) ? string.Empty : creatureData[30];
         this.LegendaryActions = String.IsNullOrEmpty(creatureData[31]) ? string.Empty : creatureData[31];
 
-        this.HotKey1Name = null;
-        this.HotKey1Bonus = 0;
-        this.HotKey1DamageDiceNumber = 0;
-        this.HotKey1DamageDiceSize = 0;
-        this.HotKey1DamageBonus = 0;
-        this.HotKey1DamageType = null;
+        this.HotKey1Name = String.IsNullOrEmpty(creatureData[32]) ? string.Empty : creatureData[32];
+        this.HotKey1Bonus = String.IsNullOrEmpty(creatureData[33]) ? 0 : int.Parse(creatureData[33]);
+        this.HotKey1DamageDiceNumber = String.IsNullOrEmpty(creatureData[34]) ? 0 : int.Parse(creatureData[34]);
+        this.HotKey1DamageDiceSize = String.IsNullOrEmpty(creatureData[35]) ? 0 : int.Parse(creatureData[35]);
+        this.HotKey1DamageBonus = String.IsNullOrEmpty(creatureData[36]) ? 0 : int.Parse(creatureData[36]);
+        this.HotKey1DamageType = String.IsNullOrEmpty(creatureData[37]) ? string.Empty : creatureData[37];
 
-        this.HotKey2Name = null;
-        this.HotKey2Bonus = 0;
-        this.HotKey2DamageDiceNumber = 0;
-        this.HotKey2DamageDiceSize = 0;
-        this.HotKey2DamageBonus = 0;
-        this.HotKey2DamageType = null;
+        this.HotKey2Name = String.IsNullOrEmpty(creatureData[38]) ? string.Empty : creatureData[38];
+        this.HotKey2Bonus = String.IsNullOrEmpty(creatureData[39]) ? 0 : int.Parse(creatureData[39]);
+        this.HotKey2DamageDiceNumber = String.IsNullOrEmpty(creatureData[40]) ? 0 : int.Parse(creatureData[40]);
+        this.HotKey2DamageDiceSize = String.IsNullOrEmpty(creatureData[41]) ? 0 : int.Parse(creatureData[41]);
+        this.HotKey2DamageBonus = String.IsNullOrEmpty(creatureData[42]) ? 0 : int.Parse(creatureData[42]);
+        this.HotKey2DamageType = String.IsNullOrEmpty(creatureData[43]) ? string.Empty : creatureData[43];
     }
 }

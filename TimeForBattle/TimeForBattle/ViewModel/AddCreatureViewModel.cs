@@ -10,7 +10,7 @@ public partial class AddCreatureViewModel : BaseViewModel
     public InitiativeService<InitiativeCreatureData> InitiativeService;
     public DialogService DialogService;
     [ObservableProperty] public static ObservableCollection<string> attributeNames = ["Str", "Dex", "Con", "Int", "Wis", "Cha"];
-    [ObservableProperty] public static ObservableCollection<string> damageTypes = ["acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"];
+    [ObservableProperty] public static ObservableCollection<string> damageTypes = ["Acid", "Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", "Poison", "Psychic", "Radiant", "Slashing", "Thunder"];
     [ObservableProperty] public string importCreatureText = "";
 
     public AddCreatureViewModel(CreatureService<Creature> characterService, InitiativeService<InitiativeCreatureData> initiativeService, DialogService dialogService)
@@ -55,8 +55,27 @@ public partial class AddCreatureViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    public async Task ImportFromText()
+    public async Task PasteImportText()
     {
+        await Task.Run(() => {
+            MainThread.BeginInvokeOnMainThread(() =>
+            {
+                if (Clipboard.GetTextAsync().Result != null)
+                {
+                    ImportCreatureText = Clipboard.GetTextAsync().Result;
+                }
+            });
+        });
+    }
+
+        [RelayCommand]
+    public async Task ImportText()
+    {
+        if (String.IsNullOrEmpty(ImportCreatureText))
+        {
+            return;
+        }
+
         string[] regexStrings =
         [
             @"([a-zA-Z ]+)\r?\n?",
@@ -90,7 +109,19 @@ public partial class AddCreatureViewModel : BaseViewModel
             @"Actions\s*((?:(?!Bonus actions|Reactions|Legendary actions).)*)",
             @"Bonus actions\s*((?:(?!Reactions|Legendary actions).)*)",
             @"Reactions\s*((?:(?!Legendary actions).)*)",
-            @"Legendary actions\s*(.*)"
+            @"Legendary actions\s*(.*)",
+            @"Actions.*?([A-Za-z ]+)\. [A-Za-z ]+: \+",
+            @"Actions.*?: \+([0-9]+)",
+            @"Actions.*?\(([0-9]+)d[0-9]+ \+ [0-9]+\)",
+            @"Actions.*?\([0-9]+d([0-9]+) \+ [0-9]+\)",
+            @"Actions.*?\([0-9]+d[0-9]+ \+ ([0-9]+)\)",
+            @"Actions.*?(Acid|Bludgeoning|Cold|Fire|Force|Lightning|Necrotic|Piercing|Poison|Psychic|Radiant|Slashing|Thunder)",
+            @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?([A-Za-z ]+)\. [A-Za-z ]+: \+",
+            @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?: \+([0-9]+)",
+            @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?\(([0-9]+)d[0-9]+ \+ [0-9]+\)",
+            @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?\([0-9]+d([0-9]+) \+ [0-9]+\)",
+            @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?\([0-9]+d[0-9]+ \+ ([0-9]+)\)",
+            @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?(Acid|Bludgeoning|Cold|Fire|Force|Lightning|Necrotic|Piercing|Poison|Psychic|Radiant|Slashing|Thunder)"
         ];
 
         string[] matches = new string[regexStrings.Length];
