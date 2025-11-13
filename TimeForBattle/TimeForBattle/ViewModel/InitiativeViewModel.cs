@@ -262,31 +262,37 @@ public partial class InitiativeViewModel : BaseViewModel
         if (Combat is null || parameters.Item1 is null || parameters.Item2 is null || parameters.Item3 is null)
             return;
 
-        Random rng = new();
-        int roll1 = rng.Next(1, 21);
-        int roll2 = rng.Next(1, 21);
-
+        int roll1 = 0;
+        int roll2 = 0;
         int? damage = null;
         string? damageType = null;
 
-        if (!String.IsNullOrWhiteSpace(parameters.Item4) && parameters.Item4.IndexOf('d') is int dLocation && dLocation > 0 && parameters.Item4.IndexOf('+') is int plusLocation && plusLocation > 0)
+        await Task.Run(() =>
         {
-            int diceCount = int.Parse(parameters.Item4.Substring(0, dLocation));
-            int diceSize = int.Parse(parameters.Item4.Substring(dLocation + 1, plusLocation - dLocation - 1));
-            int damageBonus = int.Parse(parameters.Item4.Substring(plusLocation + 1, parameters.Item4.Length - plusLocation -1));
+            Random rng = new();
+            roll1 = rng.Next(1, 21);
+            roll2 = rng.Next(1, 21);
 
-            damage = 0;
-            for (int i = 0; i < diceCount; i++)
+            if (!String.IsNullOrWhiteSpace(parameters.Item4) && parameters.Item4.IndexOf('d') is int dLocation && dLocation > 0 && parameters.Item4.IndexOf('+') is int plusLocation && plusLocation > 0)
             {
-                damage += rng.Next(1, diceSize);
+                int diceCount = int.Parse(parameters.Item4.Substring(0, dLocation));
+                int diceSize = int.Parse(parameters.Item4.Substring(dLocation + 1, plusLocation - dLocation - 1));
+                int damageBonus = int.Parse(parameters.Item4.Substring(plusLocation + 1, parameters.Item4.Length - plusLocation - 1));
+
+                damage = 0;
+                for (int i = 0; i < diceCount; i++)
+                {
+                    damage += rng.Next(1, diceSize);
+                }
+                damage += damageBonus;
             }
-            damage += damageBonus;
-        }
 
-        if (!String.IsNullOrWhiteSpace(parameters.Item5)) {
-            damageType = parameters.Item5;
-        }
+            if (!String.IsNullOrWhiteSpace(parameters.Item5))
+            {
+                damageType = parameters.Item5;
+            }
+        });
 
-        Rolls.Insert(0, new Roll(parameters.Item3, parameters.Item2, roll1, roll2, (int)parameters.Item1, damage, damageType, Combat.RoundCount));
+        Rolls.Insert(0, new Roll(parameters.Item3, parameters.Item2, roll1, roll2, (int) parameters.Item1, damage, damageType, Combat.RoundCount));
     }
 }
