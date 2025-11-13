@@ -49,9 +49,6 @@
         <member name="P:TimeForBattle.Model.Creature.ChallengeRating">
             <inheritdoc cref="F:TimeForBattle.Model.Creature.challengeRating"/>
         </member>
-        <member name="P:TimeForBattle.Model.Creature.ProficiencyBonus">
-            <inheritdoc cref="F:TimeForBattle.Model.Creature.proficiencyBonus"/>
-        </member>
         <member name="P:TimeForBattle.Model.Creature.StrScore">
             <inheritdoc cref="F:TimeForBattle.Model.Creature.strScore"/>
         </member>
@@ -70,23 +67,23 @@
         <member name="P:TimeForBattle.Model.Creature.ChaScore">
             <inheritdoc cref="F:TimeForBattle.Model.Creature.chaScore"/>
         </member>
-        <member name="P:TimeForBattle.Model.Creature.StrSaveProf">
-            <inheritdoc cref="F:TimeForBattle.Model.Creature.strSaveProf"/>
+        <member name="P:TimeForBattle.Model.Creature.StrSaveBonus">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.strSaveBonus"/>
         </member>
-        <member name="P:TimeForBattle.Model.Creature.DexSaveProf">
-            <inheritdoc cref="F:TimeForBattle.Model.Creature.dexSaveProf"/>
+        <member name="P:TimeForBattle.Model.Creature.DexSaveBonus">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.dexSaveBonus"/>
         </member>
-        <member name="P:TimeForBattle.Model.Creature.ConSaveProf">
-            <inheritdoc cref="F:TimeForBattle.Model.Creature.conSaveProf"/>
+        <member name="P:TimeForBattle.Model.Creature.ConSaveBonus">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.conSaveBonus"/>
         </member>
-        <member name="P:TimeForBattle.Model.Creature.IntSaveProf">
-            <inheritdoc cref="F:TimeForBattle.Model.Creature.intSaveProf"/>
+        <member name="P:TimeForBattle.Model.Creature.IntSaveBonus">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.intSaveBonus"/>
         </member>
-        <member name="P:TimeForBattle.Model.Creature.WisSaveProf">
-            <inheritdoc cref="F:TimeForBattle.Model.Creature.wisSaveProf"/>
+        <member name="P:TimeForBattle.Model.Creature.WisSaveBonus">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.wisSaveBonus"/>
         </member>
-        <member name="P:TimeForBattle.Model.Creature.ChaSaveProf">
-            <inheritdoc cref="F:TimeForBattle.Model.Creature.chaSaveProf"/>
+        <member name="P:TimeForBattle.Model.Creature.ChaSaveBonus">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.chaSaveBonus"/>
         </member>
         <member name="P:TimeForBattle.Model.Creature.Skills">
             <inheritdoc cref="F:TimeForBattle.Model.Creature.skills"/>
@@ -127,11 +124,8 @@
         <member name="P:TimeForBattle.Model.Creature.HotKey1Name">
             <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey1Name"/>
         </member>
-        <member name="P:TimeForBattle.Model.Creature.HotKey1Attribute">
-            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey1Attribute"/>
-        </member>
-        <member name="P:TimeForBattle.Model.Creature.HotKey1Proficiency">
-            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey1Proficiency"/>
+        <member name="P:TimeForBattle.Model.Creature.HotKey1Bonus">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey1Bonus"/>
         </member>
         <member name="P:TimeForBattle.Model.Creature.HotKey1DamageDiceNumber">
             <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey1DamageDiceNumber"/>
@@ -148,11 +142,8 @@
         <member name="P:TimeForBattle.Model.Creature.HotKey2Name">
             <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey2Name"/>
         </member>
-        <member name="P:TimeForBattle.Model.Creature.HotKey2Attribute">
-            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey2Attribute"/>
-        </member>
-        <member name="P:TimeForBattle.Model.Creature.HotKey2Proficiency">
-            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey2Proficiency"/>
+        <member name="P:TimeForBattle.Model.Creature.HotKey2Bonus">
+            <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey2Bonus"/>
         </member>
         <member name="P:TimeForBattle.Model.Creature.HotKey2DamageDiceNumber">
             <inheritdoc cref="F:TimeForBattle.Model.Creature.hotKey2DamageDiceNumber"/>
@@ -227,12 +218,18 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.AttributeNames">
             <inheritdoc cref="F:TimeForBattle.ViewModel.AddCreatureViewModel.attributeNames"/>
         </member>
         <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.DamageTypes">
             <inheritdoc cref="F:TimeForBattle.ViewModel.AddCreatureViewModel.damageTypes"/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.ImportCreatureText">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.AddCreatureViewModel.importCreatureText"/>
         </member>
         <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.Creature">
             <inheritdoc cref="F:TimeForBattle.ViewModel.AddCreatureViewModel.creature"/>
@@ -248,6 +245,24 @@
         </member>
         <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.DeleteCreatureCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.AddCreatureViewModel.DeleteCreatureAsync"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.AddCreatureViewModel.pasteImportTextCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.AddCreatureViewModel.PasteImportTextCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.PasteImportTextCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.AddCreatureViewModel.PasteImportText"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.AddCreatureViewModel.importTextCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.AddCreatureViewModel.ImportTextCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.ImportTextCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.AddCreatureViewModel.ImportText"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.AddCreatureViewModel.clearImportTextCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.AddCreatureViewModel.ClearImportTextCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.AddCreatureViewModel.ClearImportTextCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.AddCreatureViewModel.ClearImportText"/>.</summary>
         </member>
         <member name="T:TimeForBattle.ViewModel.BaseViewModel">
             <inheritdoc/>
@@ -380,6 +395,8 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.Initiative">
             <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.initiative"/>
@@ -444,17 +461,29 @@
         <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.PauseInitiativeCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.PauseInitiativeAsync"/>.</summary>
         </member>
-        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.currentHitPointsPlusCommand">
-            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsPlusCommand"/>.</summary>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.currentHitPointsPlusTenCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsPlusTenCommand"/>.</summary>
         </member>
-        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsPlusCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsPlusAsync(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsPlusTenCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsPlusTenAsync(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
         </member>
-        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.currentHitPointsMinusCommand">
-            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsMinusCommand"/>.</summary>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.currentHitPointsMinusTenCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsMinusTenCommand"/>.</summary>
         </member>
-        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsMinusCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsMinusAsync(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsMinusTenCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsMinusTenAsync(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.currentHitPointsPlusOneCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsPlusOneCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsPlusOneCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsPlusOneAsync(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.currentHitPointsMinusOneCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsMinusOneCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsMinusOneCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsMinusOneAsync(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
         </member>
         <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.rollSaveCommand">
             <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RollSaveCommand"/>.</summary>
@@ -650,9 +679,6 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ChallengeRating">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ChallengeRating" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ProficiencyBonus">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ProficiencyBonus" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StrScore">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StrScore" generated properties.</summary>
         </member>
@@ -671,23 +697,23 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ChaScore">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ChaScore" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StrSaveProf">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StrSaveProf" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.StrSaveBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "StrSaveBonus" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DexSaveProf">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DexSaveProf" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DexSaveBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DexSaveBonus" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConSaveProf">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConSaveProf" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConSaveBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConSaveBonus" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IntSaveProf">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IntSaveProf" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IntSaveBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IntSaveBonus" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.WisSaveProf">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "WisSaveProf" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.WisSaveBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "WisSaveBonus" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ChaSaveProf">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ChaSaveProf" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ChaSaveBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ChaSaveBonus" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Skills">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Skills" generated properties.</summary>
@@ -728,11 +754,8 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey1Name">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey1Name" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey1Attribute">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey1Attribute" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey1Proficiency">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey1Proficiency" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey1Bonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey1Bonus" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey1DamageDiceNumber">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey1DamageDiceNumber" generated properties.</summary>
@@ -749,11 +772,8 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey2Name">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey2Name" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey2Attribute">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey2Attribute" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey2Proficiency">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey2Proficiency" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey2Bonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey2Bonus" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HotKey2DamageDiceNumber">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HotKey2DamageDiceNumber" generated properties.</summary>
@@ -821,6 +841,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.DamageTypes">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "DamageTypes" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ImportCreatureText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ImportCreatureText" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
         </member>
@@ -881,9 +904,6 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ChallengeRating">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ChallengeRating" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ProficiencyBonus">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ProficiencyBonus" generated properties.</summary>
-        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StrScore">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StrScore" generated properties.</summary>
         </member>
@@ -902,23 +922,23 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ChaScore">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ChaScore" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StrSaveProf">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StrSaveProf" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.StrSaveBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "StrSaveBonus" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DexSaveProf">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DexSaveProf" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DexSaveBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DexSaveBonus" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConSaveProf">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConSaveProf" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConSaveBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConSaveBonus" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IntSaveProf">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IntSaveProf" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IntSaveBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IntSaveBonus" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.WisSaveProf">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "WisSaveProf" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.WisSaveBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "WisSaveBonus" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ChaSaveProf">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ChaSaveProf" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ChaSaveBonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ChaSaveBonus" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Skills">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Skills" generated properties.</summary>
@@ -959,11 +979,8 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey1Name">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey1Name" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey1Attribute">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey1Attribute" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey1Proficiency">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey1Proficiency" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey1Bonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey1Bonus" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey1DamageDiceNumber">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey1DamageDiceNumber" generated properties.</summary>
@@ -980,11 +997,8 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey2Name">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey2Name" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey2Attribute">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey2Attribute" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey2Proficiency">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey2Proficiency" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey2Bonus">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey2Bonus" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HotKey2DamageDiceNumber">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HotKey2DamageDiceNumber" generated properties.</summary>
@@ -1051,6 +1065,9 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.DamageTypes">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "DamageTypes" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ImportCreatureText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ImportCreatureText" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
