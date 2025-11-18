@@ -26,7 +26,7 @@
                     Grid.Row="0">
             <Grid Margin="10"
                   ColumnDefinitions="*,*,*,*,*,*"
-                  RowDefinitions="Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,30,30">
+                  RowDefinitions="Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,35,40">
 
 
                 <Label Grid.Column="0"
