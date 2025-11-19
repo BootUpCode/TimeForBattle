@@ -54,6 +54,13 @@ public partial class InitiativeViewModel : BaseViewModel
     }
 
     [RelayCommand]
+    public async Task GoToMainMenuAsync()
+    {
+        await Shell.Current.GoToAsync($"//{nameof(MainMenuPage)}", true);
+    }
+
+
+    [RelayCommand]
     public async Task RollInitiativeAsync()
     {
         if (Combat is null || Initiative is null || Initiative.Count == 0)
