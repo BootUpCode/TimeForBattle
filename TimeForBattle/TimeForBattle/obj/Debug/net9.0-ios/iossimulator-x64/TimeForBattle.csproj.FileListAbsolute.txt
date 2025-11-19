@@ -1,4 +1,3 @@
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-ios\iossimulator-x64\build-signature\signature
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-ios\iossimulator-x64\mauiimage.inputs
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-ios\iossimulator-x64\mauifont.inputs
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-ios\iossimulator-x64\mauisplash.inputs
