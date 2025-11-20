@@ -23,11 +23,8 @@
                 Style="{StaticResource BaseButton}" />
         <Button Grid.Column="1"
                 Grid.Row="3"
-                Text="Options"
-                Style="{StaticResource BaseButton}" />
-        <Button Grid.Column="1"
-                Grid.Row="4"
-                Text="Exit"
+                Text="Creatures"
+                Command="{Binding GoToCreatureListCommand}"
                 Style="{StaticResource BaseButton}" />
     </Grid>
 </ContentPage>

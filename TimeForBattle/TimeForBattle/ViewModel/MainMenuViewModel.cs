@@ -40,4 +40,11 @@ public partial class MainMenuViewModel : BaseViewModel
     {
         await Shell.Current.GoToAsync($"{nameof(CombatListPage)}", true);
     }
+
+
+    [RelayCommand]
+    public async Task GoToCreatureListAsync()
+    {
+        await Shell.Current.GoToAsync($"{nameof(CreatureListPage)}", true);
+    }
 }
