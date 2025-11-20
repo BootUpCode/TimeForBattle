@@ -56,7 +56,7 @@ public partial class InitiativeViewModel : BaseViewModel
     [RelayCommand]
     public async Task GoToMainMenuAsync()
     {
-        await Shell.Current.GoToAsync($"//{nameof(MainMenuPage)}", true);
+        await Shell.Current.GoToAsync($"{nameof(MainMenuPage)}", true);
     }
 
 

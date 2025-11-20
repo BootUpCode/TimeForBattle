@@ -35,7 +35,6 @@
 
     <ShellContent Shell.NavBarIsVisible="true"
                   Title="Creatures"
-                  ContentTemplate="{DataTemplate view:MainMenuPage}"
-                  Route="MainMenuPage" />
+                  ContentTemplate="{DataTemplate view:MainMenuPage}"/>
 
 </Shell>

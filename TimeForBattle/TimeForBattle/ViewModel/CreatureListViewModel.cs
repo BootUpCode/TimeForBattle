@@ -48,14 +48,17 @@ public partial class CreatureListViewModel : BaseViewModel
                 Monsters.Add(creature);
         }
 
-        List<InitiativeCreatureData> initiativeCreatureDataList = await InitiativeService.GetAllByCombatAsync(Combat.Id);
-
-        Initiative.Clear();
-
-        foreach (InitiativeCreatureData initiativeCreatureData in initiativeCreatureDataList)
+        if (this.Combat != null)
         {
-            InitiativeCreature initiativeCreature = new(await CreatureService.GetByIdAsync(initiativeCreatureData.CreatureID), initiativeCreatureData);
-            Initiative.Add(initiativeCreature);
+            List<InitiativeCreatureData> initiativeCreatureDataList = await InitiativeService.GetAllByCombatAsync(Combat.Id);
+
+            Initiative.Clear();
+
+            foreach (InitiativeCreatureData initiativeCreatureData in initiativeCreatureDataList)
+            {
+                InitiativeCreature initiativeCreature = new(await CreatureService.GetByIdAsync(initiativeCreatureData.CreatureID), initiativeCreatureData);
+                Initiative.Add(initiativeCreature);
+            }
         }
 
         await Task.Run(() => ChangeView(ViewMonsters));
@@ -101,7 +104,7 @@ public partial class CreatureListViewModel : BaseViewModel
     [RelayCommand]
     public async Task AddToInitiativeAsync(Creature creature)
     {
-        if (creature is null)
+        if (creature is null | Combat is null)
             return;
 
         InitiativeCreature newInitiativeCreature = new(creature, Combat.Id);
