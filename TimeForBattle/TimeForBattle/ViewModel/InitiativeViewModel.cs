@@ -12,6 +12,7 @@ public partial class InitiativeViewModel : BaseViewModel
     [ObservableProperty] public ObservableCollection<InitiativeCreature> initiative = new();
     [ObservableProperty] Combat? combat;
     [ObservableProperty] public ObservableCollection<Roll> rolls = new();
+    [ObservableProperty] public InitiativeCreature currentCreature;
 
     public InitiativeViewModel(CreatureService<Creature> creatureService, InitiativeService<InitiativeCreatureData> initiativeService, CreatureService<Combat> combatService)
     {
@@ -38,6 +39,7 @@ public partial class InitiativeViewModel : BaseViewModel
         }
 
         await SortInitiativeAsync();
+        CurrentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
     }
 
     [RelayCommand]
@@ -84,9 +86,9 @@ public partial class InitiativeViewModel : BaseViewModel
 
         await SortInitiativeAsync();
 
-        InitiativeCreature? currentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
+        CurrentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
 
-        if (currentCreature is null)
+        if (CurrentCreature is null)
         {
             Initiative[0].InitiativeCreatureData.IsTurn = true;
             await InitiativeService.SaveAsync(Initiative[0].InitiativeCreatureData);
@@ -94,6 +96,8 @@ public partial class InitiativeViewModel : BaseViewModel
 
         Combat.IsStarted = true;
         await CombatService.SaveAsync(Combat);
+
+        CurrentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
     }
 
     [RelayCommand]
@@ -138,13 +142,13 @@ public partial class InitiativeViewModel : BaseViewModel
         if (Combat is null || Initiative is null || Initiative.Count == 0)
             return;
 
-        InitiativeCreature? currentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
+        CurrentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
         InitiativeCreature? nextCreature = null;
 
-        if (currentCreature is not null)
+        if (CurrentCreature is not null)
         {
-            if (Initiative.IndexOf(currentCreature) + 1 < Initiative.Count)
-                nextCreature = Initiative[Initiative.IndexOf(currentCreature) + 1];
+            if (Initiative.IndexOf(CurrentCreature) + 1 < Initiative.Count)
+                nextCreature = Initiative[Initiative.IndexOf(CurrentCreature) + 1];
             else
             {
                 nextCreature = Initiative[0];
@@ -152,8 +156,8 @@ public partial class InitiativeViewModel : BaseViewModel
                 await CombatService.SaveAsync(Combat);
             }
 
-            currentCreature.InitiativeCreatureData.IsTurn = false;
-            await Task.Run(() => InitiativeService.SaveAsync(currentCreature.InitiativeCreatureData));
+            CurrentCreature.InitiativeCreatureData.IsTurn = false;
+            await Task.Run(() => InitiativeService.SaveAsync(CurrentCreature.InitiativeCreatureData));
         }
         else
             nextCreature = Initiative[0];
@@ -164,6 +168,8 @@ public partial class InitiativeViewModel : BaseViewModel
             await Task.Run(() => InitiativeService.SaveAsync(nextCreature.InitiativeCreatureData));
         }
 
+        CurrentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
+
     }
 
     [RelayCommand]
@@ -172,13 +178,13 @@ public partial class InitiativeViewModel : BaseViewModel
         if (Combat is null || Initiative is null || Initiative.Count == 0)
             return;
 
-        InitiativeCreature? currentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
+        CurrentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
         InitiativeCreature? previousCreature = null;
 
-        if (currentCreature is not null)
+        if (CurrentCreature is not null)
         {
-            if (Initiative.IndexOf(currentCreature) - 1 >= 0)
-                previousCreature = Initiative[Initiative.IndexOf(currentCreature) - 1];
+            if (Initiative.IndexOf(CurrentCreature) - 1 >= 0)
+                previousCreature = Initiative[Initiative.IndexOf(CurrentCreature) - 1];
             else
             {
                 previousCreature = Initiative[^1];
@@ -187,8 +193,8 @@ public partial class InitiativeViewModel : BaseViewModel
                 await CombatService.SaveAsync(Combat);
             }
 
-            currentCreature.InitiativeCreatureData.IsTurn = false;
-            await Task.Run(() => InitiativeService.SaveAsync(currentCreature.InitiativeCreatureData));
+            CurrentCreature.InitiativeCreatureData.IsTurn = false;
+            await Task.Run(() => InitiativeService.SaveAsync(CurrentCreature.InitiativeCreatureData));
         }
         else
             previousCreature = Initiative[0];
@@ -198,6 +204,8 @@ public partial class InitiativeViewModel : BaseViewModel
             previousCreature.InitiativeCreatureData.IsTurn = true;
             await Task.Run(() => InitiativeService.SaveAsync(previousCreature.InitiativeCreatureData));
         }
+
+        CurrentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
     }
 
     [RelayCommand]
