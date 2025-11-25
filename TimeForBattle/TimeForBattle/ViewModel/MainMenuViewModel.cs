@@ -6,8 +6,11 @@ namespace TimeForBattle.ViewModel;
 public partial class MainMenuViewModel : BaseViewModel
 {
     public CreatureService<Combat> CombatService;
+    public DialogService DialogService;
     public ObservableCollection<Combat> Combats { get; }
     [ObservableProperty] bool isRefreshing;
+    [ObservableProperty] bool isNamingNewCombat = false;
+    [ObservableProperty] string newCombatName = "";
 
     public MainMenuViewModel(CreatureService<Combat> combatService)
     {
@@ -19,12 +22,35 @@ public partial class MainMenuViewModel : BaseViewModel
     [RelayCommand]
     public async Task NewCombat(string name)
     {
+        IsNamingNewCombat = true;
+    }
+
+    [RelayCommand]
+    public async Task CancelNewCombat(string name)
+    {
+        NewCombatName = "";
+        IsNamingNewCombat = false;
+    }
+
+    [RelayCommand]
+    public async Task AddCombat(string name)
+    {
+        IsNamingNewCombat = false;
+
         Combat combat = new();
 
         Combats.Add(combat);
         await CombatService.SaveAsync(combat);
 
-        combat.Name = "Combat #" + combat.Id.ToString();
+        if(!String.IsNullOrEmpty(NewCombatName))
+        {
+            combat.Name = NewCombatName;
+        } else
+        {
+            combat.Name = "Encounter #" + combat.Id.ToString();
+        }
+
+        NewCombatName = "";
 
         await CombatService.SaveAsync(combat);
 
