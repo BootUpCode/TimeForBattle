@@ -31,21 +31,6 @@ public partial class CombatListViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    public async Task DeleteCombatAsync(Combat combat)
-    {
-        if (combat is null)
-            return;
-
-        bool answer = await DialogService.ShowConfirmationAsync((ContentPage)AppShell.Current.CurrentPage, "Delete?", "Are you sure you want to delete this encounter?", "Yes", "No");
-        if (answer)
-            await CombatService.DeleteAsync(combat);
-
-        //also delete creatures in initiative for that combat?
-
-        await RefreshCombats();
-    }
-
-    [RelayCommand]
     public async Task LoadCombatAsync(Combat combat)
     {
         if (combat is null)
@@ -56,5 +41,42 @@ public partial class CombatListViewModel : BaseViewModel
             {
                 {"Combat", combat}
             });
+    }
+
+    [RelayCommand]
+    public async Task RenameCombatAsync(Combat combat)
+    {
+        if (combat is null)
+            return;
+
+        string newCombatName = await Shell.Current.CurrentPage.DisplayPromptAsync(
+            "Name",
+            "Enter a new name for the encounter");
+
+        if (String.IsNullOrWhiteSpace(newCombatName))
+        {
+            return;
+        }
+        else
+        {
+            combat.Name = newCombatName;
+        }
+
+        await CombatService.SaveAsync(combat);
+    }
+
+    [RelayCommand]
+    public async Task DeleteCombatAsync(Combat combat)
+    {
+        if (combat is null)
+            return;
+
+        bool answer = await DialogService.ShowConfirmationAsync((ContentPage)AppShell.Current.CurrentPage, "Delete?", "Are you sure you want to delete the encounter \"" + combat.Name + "\"?", "Yes", "No");
+        if (answer)
+            await CombatService.DeleteAsync(combat);
+
+        //also delete creatures in initiative for that combat?
+
+        await RefreshCombats();
     }
 }

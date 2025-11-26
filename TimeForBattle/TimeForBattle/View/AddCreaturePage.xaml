@@ -11,6 +11,7 @@
         <converters:AttributeConverter x:Key="AttributeConverter" />
         <converters:InitiativeConverter x:Key="initiative" />
         <converters:InvertedBoolConverter x:Key="InvertedBool" />
+        <converters:StringContainDataConverter x:Key="StringContainDataConverter" />
     </ContentPage.Resources>
 
     <Shell.BackButtonBehavior>
@@ -934,7 +935,8 @@
                         Command="{Binding ImportTextCommand}"
                         BorderColor="Black"
                         CornerRadius="0"
-                        Style="{StaticResource BaseButton}" />
+                        Style="{StaticResource BaseButton}"
+                        IsEnabled="{Binding ImportCreatureText, Converter={StaticResource StringContainDataConverter}}"/>
                 <Button Grid.Column="4"
                         Grid.ColumnSpan="2"
                         Grid.Row="55"
@@ -942,7 +944,8 @@
                         Command="{Binding ClearImportTextCommand}"
                         BorderColor="Black"
                         CornerRadius="0"
-                        Style="{StaticResource BaseButton}" />
+                        Style="{StaticResource BaseButton}"
+                        IsEnabled="{Binding ImportCreatureText, Converter={StaticResource StringContainDataConverter}}"/>
             </Grid>
         </ScrollView>
 

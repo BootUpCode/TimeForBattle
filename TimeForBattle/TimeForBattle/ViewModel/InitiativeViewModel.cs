@@ -13,6 +13,8 @@ public partial class InitiativeViewModel : BaseViewModel
     [ObservableProperty] Combat? combat;
     [ObservableProperty] public ObservableCollection<Roll> rolls = new();
     [ObservableProperty] public InitiativeCreature currentCreature;
+    [ObservableProperty] bool isRenamingCombat = false;
+    [ObservableProperty] string newCombatName = "";
 
     public InitiativeViewModel(CreatureService<Creature> creatureService, InitiativeService<InitiativeCreatureData> initiativeService, CreatureService<Combat> combatService)
     {
@@ -61,6 +63,46 @@ public partial class InitiativeViewModel : BaseViewModel
         await Shell.Current.GoToAsync($"{nameof(MainMenuPage)}", true);
     }
 
+    [RelayCommand]
+    public async Task StartRenameCombatAsync()
+    {
+        await Task.Run(() => IsRenamingCombat = true);
+
+        string response = await Shell.Current.CurrentPage.DisplayPromptAsync(
+    "Name",
+    "What's your first name?");
+
+        if (!String.IsNullOrEmpty(response))
+        {
+            Combat.Name = response;
+        }
+    }
+
+    [RelayCommand]
+    public async Task CancelRenameCombatAsync()
+    {
+        await Task.Run(() =>
+        {
+            NewCombatName = "";
+            IsRenamingCombat = false;
+        });
+    }
+
+    [RelayCommand]
+    public async Task ConfirmlRenameCombatAsync()
+    {
+        if (Combat is null || Initiative is null)
+            return;
+
+        if (!String.IsNullOrEmpty(NewCombatName))
+        {
+            Combat.Name = NewCombatName;
+        }
+
+        NewCombatName = "";
+
+        await CombatService.SaveAsync(Combat);
+    }
 
     [RelayCommand]
     public async Task RollInitiativeAsync()

@@ -38,7 +38,7 @@ public partial class AddCreatureViewModel : BaseViewModel
         if (Creature is null)
             return;
 
-        bool answer = await DialogService.ShowConfirmationAsync((ContentPage)AppShell.Current.CurrentPage, "Delete?", "Are you sure you want to delete this creature?", "Yes", "No");
+        bool answer = await DialogService.ShowConfirmationAsync((ContentPage)AppShell.Current.CurrentPage, "Delete?", "Are you sure you want to delete the creature \"" + Creature.Name + "\"?", "Yes", "No");
         if (answer)
         {
             if (await CreatureService.DeleteAsync(await CreatureService.GetByIdAsync(Creature.Id)) > 0)
@@ -125,6 +125,7 @@ public partial class AddCreatureViewModel : BaseViewModel
         ];
 
         string[] matches = new string[regexStrings.Length];
+        int fieldsDetected = 0;
 
         await Task.Run(() =>
         {
@@ -140,14 +141,16 @@ public partial class AddCreatureViewModel : BaseViewModel
                 if (!String.IsNullOrEmpty(match.Groups[1].Value))
                 {
                     matches[i] = match.Groups[1].Value.TrimEnd();
+                    fieldsDetected++;
                 }
             }
         });
 
-        bool answer = await DialogService.ShowConfirmationAsync((ContentPage)AppShell.Current.CurrentPage, "Import?", "Are you sure you want to import the creature \'" + matches[0] + "\'?", "Yes", "No");
+        bool answer = await DialogService.ShowConfirmationAsync((ContentPage)AppShell.Current.CurrentPage, "Import?", "Are you sure you want to import the creature \'" + matches[0] + "\'? Statblock fields detected: " + fieldsDetected + ".", "Yes", "No");
         if (answer)
         {
             this.Creature.Import(matches);
+            ImportCreatureText = "";
         }
     }
 

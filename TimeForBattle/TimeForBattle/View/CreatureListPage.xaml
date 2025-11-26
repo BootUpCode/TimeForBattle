@@ -86,7 +86,7 @@
                     <DataTemplate x:DataType="model:Creature">
                         <Grid Padding="0,1,0,1">
                             <Border HeightRequest="180"
-                                    WidthRequest="150"
+                                    WidthRequest="155"
                                     Stroke="DarkRed"
                                     StrokeThickness="2">
                                 <Grid ColumnDefinitions="*,*"
