@@ -446,7 +446,7 @@ target triple = "x86_64-unknown-linux-android21"
 		ptr @__compressedAssemblyData_84; uint8_t* data
 	}, ; 84: Xamarin.KotlinX.Serialization.Core.Jvm
 	%struct.CompressedAssemblyDescriptor {
-		i32 905216, ; uint32_t uncompressed_file_size
+		i32 935936, ; uint32_t uncompressed_file_size
 		i1 false, ; bool loaded
 		ptr @__compressedAssemblyData_85; uint8_t* data
 	}, ; 85: TimeForBattle
@@ -757,7 +757,7 @@ target triple = "x86_64-unknown-linux-android21"
 @__compressedAssemblyData_82 = internal dso_local global [86016 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_83 = internal dso_local global [18432 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_84 = internal dso_local global [89600 x i8] zeroinitializer, align 16
-@__compressedAssemblyData_85 = internal dso_local global [905216 x i8] zeroinitializer, align 16
+@__compressedAssemblyData_85 = internal dso_local global [935936 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_86 = internal dso_local global [25088 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_87 = internal dso_local global [23552 x i8] zeroinitializer, align 16
 @__compressedAssemblyData_88 = internal dso_local global [14848 x i8] zeroinitializer, align 16
