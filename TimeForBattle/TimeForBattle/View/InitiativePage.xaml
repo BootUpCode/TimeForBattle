@@ -30,7 +30,7 @@
 
     <Grid ColumnDefinitions="3*,3*,4*,6*,3*"
           ColumnSpacing="0"
-          RowDefinitions="Auto,Auto,Auto,Auto,*,Auto,Auto">
+          RowDefinitions="50,25,25,1,*,2,155">
 
         <Button Grid.Column="0"
                 Grid.ColumnSpan="3"
@@ -38,8 +38,7 @@
                 Text="Main Menu"
                 Command="{Binding GoToMainMenuCommand}"
                 Style="{StaticResource BaseButton}"
-                LineBreakMode="WordWrap"
-                MinimumHeightRequest="60" />
+                LineBreakMode="WordWrap" />
         <Button Grid.Column="3"
                 Grid.ColumnSpan="2"
                 Grid.Row="0"
@@ -47,8 +46,7 @@
                 LineBreakMode="WordWrap"
                 Command="{Binding GoToCreatureListCommand}"
                 IsEnabled="{Binding Combat.IsStarted, Converter={StaticResource InvertedBoolConverter}}"
-                Style="{StaticResource BaseButton}"
-                MinimumHeightRequest="60" />
+                Style="{StaticResource BaseButton}" />
         
         <Button Grid.Column="1"
                 Grid.Row="1"
@@ -74,7 +72,6 @@
                 Text="&lt;"
                 FontAttributes="Bold"
                 FontSize="Large"
-                MinimumHeightRequest="60"
                 Command="{Binding PreviousCreatureCommand}"
                 IsEnabled="{Binding Combat.IsStarted}"
                 Style="{StaticResource BaseButton}" />
@@ -84,7 +81,6 @@
                 Text="&gt;"
                 FontAttributes="Bold"
                 FontSize="Large"
-                MinimumHeightRequest="60"
                 Command="{Binding NextCreatureCommand}"
                 IsEnabled="{Binding Combat.IsStarted}"
                 Style="{StaticResource BaseButton}" />
@@ -437,8 +433,7 @@
 
         <ScrollView Grid.Column="0"
                     Grid.ColumnSpan="5"
-                    Grid.Row="6"
-                    HeightRequest="150">
+                    Grid.Row="6">
             <FlexLayout BackgroundColor="Transparent"
                         BindableLayout.ItemsSource="{Binding Rolls}"
                         HorizontalOptions="Start"
@@ -450,14 +445,14 @@
                     <DataTemplate x:DataType="model:Roll">
                         <Grid ColumnDefinitions="*,*"
                               ColumnSpacing="0"
-                              RowDefinitions="*,*,*"
+                              RowDefinitions="15,30,1"
                               RowSpacing="0"
                               Padding="3,3,3,3">
                             <Label Grid.Column="0"
                                    Grid.ColumnSpan="3"
                                    Grid.Row="0"
                                    FontAttributes="Bold"
-                                   HorizontalOptions="Center">
+                                   HorizontalOptions="Start">
                                 <Label.Text>
                                     <MultiBinding StringFormat="{} Round {0}: {1} rolled {2} ({3})">
                                         <Binding Path="Round" />

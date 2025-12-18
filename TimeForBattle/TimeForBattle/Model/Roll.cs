@@ -1,6 +1,6 @@
 ﻿namespace TimeForBattle.Model;
 
-public partial class Roll : ObservableObject
+public partial class Roll : DatabaseObject
 {
     [ObservableProperty] string creatureName;
     [ObservableProperty] string rollName;
@@ -12,7 +12,7 @@ public partial class Roll : ObservableObject
     [ObservableProperty] string? damageType;
     [ObservableProperty] int round;
 
-    public Roll(string creatureName, string rollName, int rollValue1, int rollValue2, int modifier, int? damage, string? damageType, int round)
+    public Roll(string creatureName, string rollName, int rollValue1, int rollValue2, int modifier, int? damage, string? damageType, int round, int combatID)
     {
         CreatureName = creatureName;
         RollName = rollName;
@@ -26,5 +26,8 @@ public partial class Roll : ObservableObject
         else
             ModifierString = "+" + Modifier.ToString();
         Round = round;
+        CombatID = combatID;
     }
+
+    public Roll() { }
 }

@@ -3,8 +3,6 @@ namespace TimeForBattle.Model;
 
 public partial class InitiativeCreatureData : DatabaseObject
 {
-    public int CreatureID { get; set; }
-    public int CombatID { get; set; }
     [ObservableProperty] public int currentHitPoints;
     [ObservableProperty] public int? initiative;
     [ObservableProperty] public int? nameID;

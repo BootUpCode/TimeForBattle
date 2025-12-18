@@ -7,20 +7,20 @@ namespace TimeForBattle.ViewModel;
 public partial class InitiativeViewModel : BaseViewModel
 {
     public CreatureService<Creature> CreatureService;
-    public InitiativeService<InitiativeCreatureData> InitiativeService;
+    public CreatureService<InitiativeCreatureData> InitiativeService;
     public CreatureService<Combat> CombatService;
+    public CreatureService<Roll> RollService;
     [ObservableProperty] public ObservableCollection<InitiativeCreature> initiative = new();
     [ObservableProperty] Combat? combat;
     [ObservableProperty] public ObservableCollection<Roll> rolls = new();
     [ObservableProperty] public InitiativeCreature currentCreature;
-    [ObservableProperty] bool isRenamingCombat = false;
-    [ObservableProperty] string newCombatName = "";
 
-    public InitiativeViewModel(CreatureService<Creature> creatureService, InitiativeService<InitiativeCreatureData> initiativeService, CreatureService<Combat> combatService)
+    public InitiativeViewModel(CreatureService<Creature> creatureService, CreatureService<InitiativeCreatureData> initiativeService, CreatureService<Combat> combatService, CreatureService<Roll> rollService)
     {
         this.CreatureService = creatureService;
         this.InitiativeService = initiativeService;
         this.CombatService = combatService;
+        this.RollService = rollService;
         Initiative = [];
     }
 
@@ -40,7 +40,10 @@ public partial class InitiativeViewModel : BaseViewModel
             Initiative.Add(initiativeCreature);
         }
 
+        Rolls = new ObservableCollection<Roll>(await RollService.GetAllByCombatAsync(Combat.Id));
+
         await SortInitiativeAsync();
+
         CurrentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
     }
 
@@ -61,47 +64,6 @@ public partial class InitiativeViewModel : BaseViewModel
     public async Task GoToMainMenuAsync()
     {
         await Shell.Current.GoToAsync($"{nameof(MainMenuPage)}", true);
-    }
-
-    [RelayCommand]
-    public async Task StartRenameCombatAsync()
-    {
-        await Task.Run(() => IsRenamingCombat = true);
-
-        string response = await Shell.Current.CurrentPage.DisplayPromptAsync(
-    "Name",
-    "What's your first name?");
-
-        if (!String.IsNullOrEmpty(response))
-        {
-            Combat.Name = response;
-        }
-    }
-
-    [RelayCommand]
-    public async Task CancelRenameCombatAsync()
-    {
-        await Task.Run(() =>
-        {
-            NewCombatName = "";
-            IsRenamingCombat = false;
-        });
-    }
-
-    [RelayCommand]
-    public async Task ConfirmlRenameCombatAsync()
-    {
-        if (Combat is null || Initiative is null)
-            return;
-
-        if (!String.IsNullOrEmpty(NewCombatName))
-        {
-            Combat.Name = NewCombatName;
-        }
-
-        NewCombatName = "";
-
-        await CombatService.SaveAsync(Combat);
     }
 
     [RelayCommand]
@@ -149,16 +111,22 @@ public partial class InitiativeViewModel : BaseViewModel
             return;
 
         List<InitiativeCreature> sortedCreatures = [];
-
         await Task.Run(() =>
         {
             sortedCreatures = Initiative.OrderByDescending(x => x.InitiativeCreatureData.Initiative).ThenByDescending(x => x.Creature.InitiativeBonus).ToList();
         });
-
         Initiative.Clear();
-
         foreach (InitiativeCreature creature in sortedCreatures)
             Initiative.Add(creature);
+
+        List<Roll> sortedRolls = [];
+        await Task.Run(() =>
+        {
+            sortedRolls = Rolls.OrderByDescending(x => x.Round).ThenByDescending(x => x.Id).ToList();
+        });
+        Rolls.Clear();
+        foreach (Roll roll in sortedRolls)
+            Rolls.Add(roll);
     }
 
     [RelayCommand]
@@ -350,6 +318,8 @@ public partial class InitiativeViewModel : BaseViewModel
             }
         });
 
-        Rolls.Insert(0, new Roll(parameters.Item3, parameters.Item2, roll1, roll2, (int) parameters.Item1, damage, damageType, Combat.RoundCount));
+        Roll newRoll = new Roll(parameters.Item3, parameters.Item2, roll1, roll2, (int)parameters.Item1, damage, damageType, Combat.RoundCount, Combat.Id);
+        Rolls.Insert(0, newRoll);
+        await RollService.SaveAsync(newRoll);
     }
 }
