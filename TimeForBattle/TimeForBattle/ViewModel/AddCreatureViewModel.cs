@@ -7,13 +7,13 @@ namespace TimeForBattle.ViewModel;
 public partial class AddCreatureViewModel : BaseViewModel
 {
     public CreatureService<Creature> CreatureService;
-    public InitiativeService<InitiativeCreatureData> InitiativeService;
+    public CreatureService<InitiativeCreatureData> InitiativeService;
     public DialogService DialogService;
     [ObservableProperty] public static ObservableCollection<string> attributeNames = ["Str", "Dex", "Con", "Int", "Wis", "Cha"];
     [ObservableProperty] public static ObservableCollection<string> damageTypes = ["Acid", "Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", "Poison", "Psychic", "Radiant", "Slashing", "Thunder"];
     [ObservableProperty] public string importCreatureText = "";
 
-    public AddCreatureViewModel(CreatureService<Creature> characterService, InitiativeService<InitiativeCreatureData> initiativeService, DialogService dialogService)
+    public AddCreatureViewModel(CreatureService<Creature> characterService, CreatureService<InitiativeCreatureData> initiativeService, DialogService dialogService)
     {
         this.CreatureService = characterService;
         this.InitiativeService = initiativeService;

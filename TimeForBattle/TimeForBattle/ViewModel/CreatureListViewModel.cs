@@ -9,7 +9,7 @@ public partial class CreatureListViewModel : BaseViewModel
 {
     [ObservableProperty] public ObservableCollection<Creature> creatures = new();
     public CreatureService<Creature> CreatureService;
-    public InitiativeService<InitiativeCreatureData> InitiativeService;
+    public CreatureService<InitiativeCreatureData> InitiativeService;
     
     public ObservableCollection<Creature> Monsters { get; }
     public ObservableCollection<Creature> Players { get; }
@@ -18,7 +18,7 @@ public partial class CreatureListViewModel : BaseViewModel
     public bool ViewMonsters;
     [ObservableProperty] public Combat combat;
 
-    public CreatureListViewModel(CreatureService<Creature> creatureService, InitiativeService<InitiativeCreatureData> initiativeService)
+    public CreatureListViewModel(CreatureService<Creature> creatureService, CreatureService<InitiativeCreatureData> initiativeService)
     {
         Title = "Creatures";
         this.CreatureService = creatureService;
