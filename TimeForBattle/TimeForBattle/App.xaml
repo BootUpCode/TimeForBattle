@@ -59,7 +59,7 @@
                 <Setter Property="TextColor"
                         Value="{AppThemeBinding Light={StaticResource LabelText}, Dark={StaticResource LabelTextDark}}" />
                 <Setter Property="BackgroundColor"
-                        Value="{StaticResource Primary}"/>
+                        Value="{StaticResource Primary}" />
                 <Setter Property="BorderColor"
                         Value="Black" />
                 <Setter Property="CornerRadius"

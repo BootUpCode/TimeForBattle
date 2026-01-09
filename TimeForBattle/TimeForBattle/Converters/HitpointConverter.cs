@@ -11,7 +11,7 @@ public class HitpointConverter : IValueConverter
         {
             if (param.Text is not null && int.Parse(param.Text) is int maximumHP)
             {
-                float widthPercentage = 200 * ((float)currentHP / (float)maximumHP);
+                float widthPercentage = 220 * ((float)currentHP / (float)maximumHP);
                 return (int)widthPercentage;
             }
         }
