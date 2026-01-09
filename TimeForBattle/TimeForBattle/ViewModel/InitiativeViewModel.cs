@@ -282,6 +282,46 @@ public partial class InitiativeViewModel : BaseViewModel
     }
 
     [RelayCommand]
+    public async Task SetActiveTabFirst(InitiativeCreature initiativeCreature)
+    {
+        if (Combat is null || Initiative is null || initiativeCreature is null)
+            return;
+
+        initiativeCreature.InitiativeCreatureData.ActiveTab = 0;
+        await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
+    }
+
+    [RelayCommand]
+    public async Task SetActiveTabSecond(InitiativeCreature initiativeCreature)
+    {
+        if (Combat is null || Initiative is null || initiativeCreature is null)
+            return;
+
+        initiativeCreature.InitiativeCreatureData.ActiveTab = 1;
+        await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
+    }
+
+    [RelayCommand]
+    public async Task SetActiveTabThird(InitiativeCreature initiativeCreature)
+    {
+        if (Combat is null || Initiative is null || initiativeCreature is null)
+            return;
+
+        initiativeCreature.InitiativeCreatureData.ActiveTab = 2;
+        await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
+    }
+
+    [RelayCommand]
+    public async Task SetActiveTabFourth(InitiativeCreature initiativeCreature)
+    {
+        if (Combat is null || Initiative is null || initiativeCreature is null)
+            return;
+
+        initiativeCreature.InitiativeCreatureData.ActiveTab = 3;
+        await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
+    }
+
+    [RelayCommand]
     public async Task RollSaveAsync(Tuple<int?, string?, string?, string?, string?> parameters)
     {
         if (Combat is null || parameters.Item1 is null || parameters.Item2 is null || parameters.Item3 is null)
