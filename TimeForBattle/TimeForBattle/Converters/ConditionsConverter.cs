@@ -9,20 +9,23 @@ public class ConditionsConverter : IMultiValueConverter
         String returnString = "";
         int conditionCount = 0;
 
-        if (values is null || values.Length != 16)
+        if (values is null)
             return returnString;
 
-        String[] conditionNames = ["Blinded", "Charmed","Deafened", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralyzed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned", "Unconscious", "A", "B"];
-
-        int i = 0;
-
-        foreach (object value in values)
+        if (values[0] is String condition1 && values[1] is String condition2 && values[2] is String condition3 && values[3] is String condition4 && values[4] is String condition5)
         {
-            if (value is bool isCondition)
-            {
-                (conditionCount, returnString) = CheckCondition(isCondition, conditionNames[i], returnString, conditionCount);
+            String[] conditionStrings = [condition1, condition2, condition3, condition4, condition5];
+            
+            foreach (String conditionString in conditionStrings) {
+                if (!String.IsNullOrEmpty(conditionString))
+                {
+                    if (String.IsNullOrEmpty(returnString))
+                    {
+                        returnString = conditionString;
+                    }
+                    conditionCount++;
+                }
             }
-            i++;
         }
 
         if (conditionCount > 1)
@@ -30,30 +33,7 @@ public class ConditionsConverter : IMultiValueConverter
             returnString += " (+" + (conditionCount - 1).ToString() + ")";
         }
 
-        Console.WriteLine(returnString);
-
         return returnString;
-    }
-
-    static public (int, String) CheckCondition (bool isCondition, String conditionName, String conditionString, int conditionCount)
-    {
-        if (isCondition)
-        {
-            if (conditionCount < 1)
-            {
-                if (conditionCount > 0)
-                {
-                    conditionString += ", ";
-                }
-                conditionString += conditionName;
-            }
-
-            conditionCount++;
-        }
-
-        Console.WriteLine(conditionString);
-
-        return (conditionCount, conditionString);
     }
 
     public object[] ConvertBack(object value, Type[] targetTypes, object parameter, CultureInfo culture)

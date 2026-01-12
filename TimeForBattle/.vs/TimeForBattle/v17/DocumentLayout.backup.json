@@ -3,68 +3,36 @@
   "WorkspaceRootPath": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\converters\\conditionsconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\converters\\conditionsconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\view\\initiativepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\view\\initiativepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\converters\\stringscontaindataconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\converters\\stringscontaindataconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\converters\\stringcontaindataconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\converters\\stringcontaindataconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\viewmodel\\initiativeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\viewmodel\\initiativeviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\model\\initiativecreaturedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\model\\initiativecreaturedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\viewmodel\\addcreatureviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\viewmodel\\addcreatureviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\model\\initiativecreature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\model\\initiativecreature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\view\\addcreaturepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\view\\addcreaturepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\view\\addcreaturepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\view\\addcreaturepage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\model\\initiativecreaturedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\model\\initiativecreaturedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\converters\\additionconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\converters\\additionconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\appshell.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\model\\initiativecreature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\model\\initiativecreature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\model\\creature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\model\\creature.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\converters\\creaturehotkeywidthconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\converters\\creaturehotkeywidthconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\converters\\hitpointconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\converters\\hitpointconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\converters\\conditionsconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\converters\\conditionsconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\converters\\isnotequalconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -163,10 +131,6 @@
       "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\converters\\creaturehotkeylocationconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\converters\\creaturecolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\converters\\creaturecolorconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\converters\\iszeroconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\converters\\iszeroconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -193,10 +157,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\converters\\attributeconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\converters\\attributeconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\converters\\stringcontaindataconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|solutionrelative:timeforbattle\\converters\\stringcontaindataconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1A6DBF32-BBAF-4C87-BD00-068209478363}|TimeForBattle\\TimeForBattle.csproj|d:\\github\\timeforbattle\\timeforbattle\\timeforbattle\\view\\combatlistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -232,58 +192,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ConditionsConverter.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\ConditionsConverter.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\Converters\\ConditionsConverter.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\ConditionsConverter.cs*",
-              "RelativeToolTip": "TimeForBattle\\Converters\\ConditionsConverter.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-01-12T14:05:23.229Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "InitiativePage.xaml",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\InitiativePage.xaml",
-              "RelativeDocumentMoniker": "TimeForBattle\\View\\InitiativePage.xaml",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\InitiativePage.xaml*",
-              "RelativeToolTip": "TimeForBattle\\View\\InitiativePage.xaml*",
-              "ViewState": "AgIAAJwCAAAAAAAAAAAAAMYCAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-09-04T11:50:09.836Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "InitiativeCreatureData.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Model\\InitiativeCreatureData.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\Model\\InitiativeCreatureData.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Model\\InitiativeCreatureData.cs",
-              "RelativeToolTip": "TimeForBattle\\Model\\InitiativeCreatureData.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAtAAAAAAAAAA==",
+              "Title": "StringsContainDataConverter.cs",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\StringsContainDataConverter.cs",
+              "RelativeDocumentMoniker": "TimeForBattle\\Converters\\StringsContainDataConverter.cs",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\StringsContainDataConverter.cs",
+              "RelativeToolTip": "TimeForBattle\\Converters\\StringsContainDataConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:12:53.616Z",
+              "WhenOpened": "2026-01-12T18:17:21.099Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "AddCreaturePage.xaml.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\AddCreaturePage.xaml.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\View\\AddCreaturePage.xaml.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\AddCreaturePage.xaml.cs",
-              "RelativeToolTip": "TimeForBattle\\View\\AddCreaturePage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "InitiativeCreatureData.cs",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Model\\InitiativeCreatureData.cs",
+              "RelativeDocumentMoniker": "TimeForBattle\\Model\\InitiativeCreatureData.cs",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Model\\InitiativeCreatureData.cs",
+              "RelativeToolTip": "TimeForBattle\\Model\\InitiativeCreatureData.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T12:36:58.116Z",
+              "WhenOpened": "2025-11-24T12:12:53.616Z",
               "EditorCaption": ""
             },
             {
@@ -294,150 +228,40 @@
               "RelativeDocumentMoniker": "TimeForBattle\\View\\AddCreaturePage.xaml",
               "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\AddCreaturePage.xaml",
               "RelativeToolTip": "TimeForBattle\\View\\AddCreaturePage.xaml",
-              "ViewState": "AgIAALwCAAAAAAAAAAAAANgCAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAALwCAAAAAAAAAAAAAN0CAABPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2025-03-31T11:16:33.02Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AddCreatureViewModel.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModel\\AddCreatureViewModel.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\ViewModel\\AddCreatureViewModel.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModel\\AddCreatureViewModel.cs",
-              "RelativeToolTip": "TimeForBattle\\ViewModel\\AddCreatureViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAACAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T12:36:43.213Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "InitiativeViewModel.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModel\\InitiativeViewModel.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\ViewModel\\InitiativeViewModel.cs",
               "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModel\\InitiativeViewModel.cs",
               "RelativeToolTip": "TimeForBattle\\ViewModel\\InitiativeViewModel.cs",
-              "ViewState": "AgIAABABAAAAAAAAAAAqwC8BAAASAAAAAAAAAA==",
+              "ViewState": "AgIAADEBAAAAAAAAAAAAAFQBAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-15T10:15:31.654Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "App.xaml",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\App.xaml",
-              "RelativeDocumentMoniker": "TimeForBattle\\App.xaml",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\App.xaml",
-              "RelativeToolTip": "TimeForBattle\\App.xaml",
-              "ViewState": "AgIAACkAAAAAAAAAAAAAAFIAAAAUAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "InitiativePage.xaml",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\InitiativePage.xaml",
+              "RelativeDocumentMoniker": "TimeForBattle\\View\\InitiativePage.xaml",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\InitiativePage.xaml*",
+              "RelativeToolTip": "TimeForBattle\\View\\InitiativePage.xaml*",
+              "ViewState": "AgIAAMUBAAAAAAAAAAAAAPIBAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-12-18T12:56:16.332Z",
+              "WhenOpened": "2025-09-04T11:50:09.836Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "AppShell.xaml.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\AppShell.xaml.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\AppShell.xaml.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\AppShell.xaml.cs",
-              "RelativeToolTip": "TimeForBattle\\AppShell.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-19T15:44:46.011Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "AppShell.xaml",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\AppShell.xaml",
-              "RelativeDocumentMoniker": "TimeForBattle\\AppShell.xaml",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\AppShell.xaml",
-              "RelativeToolTip": "TimeForBattle\\AppShell.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAABEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-19T15:44:44.133Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Constants.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Constants.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\Constants.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Constants.cs",
-              "RelativeToolTip": "TimeForBattle\\Constants.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T11:59:23.476Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "InitiativeCreature.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Model\\InitiativeCreature.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\Model\\InitiativeCreature.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Model\\InitiativeCreature.cs",
-              "RelativeToolTip": "TimeForBattle\\Model\\InitiativeCreature.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:12:54.386Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Creature.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Model\\Creature.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\Model\\Creature.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Model\\Creature.cs",
-              "RelativeToolTip": "TimeForBattle\\Model\\Creature.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGwAAABqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T12:45:35.078Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AdditionConverter.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\AdditionConverter.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\Converters\\AdditionConverter.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\AdditionConverter.cs",
-              "RelativeToolTip": "TimeForBattle\\Converters\\AdditionConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T14:04:47.514Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "CreatureHotKeyWidthConverter.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\CreatureHotKeyWidthConverter.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\Converters\\CreatureHotKeyWidthConverter.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\CreatureHotKeyWidthConverter.cs",
-              "RelativeToolTip": "TimeForBattle\\Converters\\CreatureHotKeyWidthConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T18:41:48.088Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "HitpointConverter.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\HitpointConverter.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\Converters\\HitpointConverter.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\HitpointConverter.cs",
-              "RelativeToolTip": "TimeForBattle\\Converters\\HitpointConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T13:06:04.908Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
               "Title": "RollConverter.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\RollConverter.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Converters\\RollConverter.cs",
@@ -449,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 11,
               "Title": "MauiProgram.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\MauiProgram.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\MauiProgram.cs",
@@ -461,7 +285,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 2,
+              "Title": "StringContainDataConverter.cs",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\StringContainDataConverter.cs",
+              "RelativeDocumentMoniker": "TimeForBattle\\Converters\\StringContainDataConverter.cs",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\StringContainDataConverter.cs",
+              "RelativeToolTip": "TimeForBattle\\Converters\\StringContainDataConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-04T14:14:29.63Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ConditionsConverter.cs",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\ConditionsConverter.cs",
+              "RelativeDocumentMoniker": "TimeForBattle\\Converters\\ConditionsConverter.cs",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\ConditionsConverter.cs",
+              "RelativeToolTip": "TimeForBattle\\Converters\\ConditionsConverter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T14:05:23.229Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "InitiativeCreature.cs",
+              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Model\\InitiativeCreature.cs",
+              "RelativeDocumentMoniker": "TimeForBattle\\Model\\InitiativeCreature.cs",
+              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Model\\InitiativeCreature.cs",
+              "RelativeToolTip": "TimeForBattle\\Model\\InitiativeCreature.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-12T18:01:59.147Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Roll.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Model\\Roll.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Model\\Roll.cs",
@@ -473,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 13,
               "Title": "Combat.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Model\\Combat.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Model\\Combat.cs",
@@ -485,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 8,
               "Title": "IsNotEqualConverter.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\IsNotEqualConverter.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Converters\\IsNotEqualConverter.cs",
@@ -497,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 9,
               "Title": "IsEqualConverter.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\IsEqualConverter.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Converters\\IsEqualConverter.cs",
@@ -509,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 14,
               "Title": "DatabaseObject.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Model\\DatabaseObject.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Model\\DatabaseObject.cs",
@@ -521,7 +384,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 15,
               "Title": "CreatureService.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Services\\CreatureService.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Services\\CreatureService.cs",
@@ -533,7 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 16,
               "Title": "App.xaml.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\App.xaml.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\App.xaml.cs",
@@ -545,7 +408,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 17,
               "Title": "GlobalUsings.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\GlobalUsings.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\GlobalUsings.cs",
@@ -557,7 +420,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 18,
               "Title": "InitiativePage.xaml.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\InitiativePage.xaml.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\View\\InitiativePage.xaml.cs",
@@ -569,7 +432,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 22,
               "Title": "CombatListViewModel.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModel\\CombatListViewModel.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\ViewModel\\CombatListViewModel.cs",
@@ -581,7 +444,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 23,
               "Title": "BaseViewModel.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModel\\BaseViewModel.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\ViewModel\\BaseViewModel.cs",
@@ -593,7 +456,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 19,
               "Title": "MainMenuViewModel.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModel\\MainMenuViewModel.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\ViewModel\\MainMenuViewModel.cs",
@@ -605,7 +468,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 20,
               "Title": "CreatureListViewModel.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModel\\CreatureListViewModel.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\ViewModel\\CreatureListViewModel.cs",
@@ -617,7 +480,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 21,
               "Title": "CreatureDetailsViewModel.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\ViewModel\\CreatureDetailsViewModel.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\ViewModel\\CreatureDetailsViewModel.cs",
@@ -629,7 +492,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 24,
               "Title": "CombatListPage.xaml",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\CombatListPage.xaml",
               "RelativeDocumentMoniker": "TimeForBattle\\View\\CombatListPage.xaml",
@@ -641,7 +504,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 25,
               "Title": "CreatureListPage.xaml",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\CreatureListPage.xaml",
               "RelativeDocumentMoniker": "TimeForBattle\\View\\CreatureListPage.xaml",
@@ -653,7 +516,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 26,
               "Title": "CreatureDetailsPage.xaml",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\CreatureDetailsPage.xaml",
               "RelativeDocumentMoniker": "TimeForBattle\\View\\CreatureDetailsPage.xaml",
@@ -665,7 +528,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 27,
               "Title": "MainMenuPage.xaml",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\MainMenuPage.xaml",
               "RelativeDocumentMoniker": "TimeForBattle\\View\\MainMenuPage.xaml",
@@ -677,7 +540,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 28,
               "Title": "DialogService.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Services\\DialogService.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Services\\DialogService.cs",
@@ -689,19 +552,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "CreatureColorConverter.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\CreatureColorConverter.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\Converters\\CreatureColorConverter.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\CreatureColorConverter.cs",
-              "RelativeToolTip": "TimeForBattle\\Converters\\CreatureColorConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-24T12:35:32.857Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 30,
               "Title": "RollColorConverter.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\RollColorConverter.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Converters\\RollColorConverter.cs",
@@ -713,7 +564,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 29,
               "Title": "PauseButtonTextConverter.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\PauseButtonTextConverter.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Converters\\PauseButtonTextConverter.cs",
@@ -725,7 +576,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 32,
               "Title": "IsZeroConverter.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\IsZeroConverter.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Converters\\IsZeroConverter.cs",
@@ -737,7 +588,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 31,
               "Title": "CreatureHotKeyLocationConverter.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\CreatureHotKeyLocationConverter.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Converters\\CreatureHotKeyLocationConverter.cs",
@@ -749,7 +600,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 33,
               "Title": "IsNotNullConverter.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\IsNotNullConverter.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Converters\\IsNotNullConverter.cs",
@@ -761,7 +612,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 34,
               "Title": "InvertedBoolConverter.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\InvertedBoolConverter.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Converters\\InvertedBoolConverter.cs",
@@ -773,7 +624,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 36,
               "Title": "CreatureNameStrikethroughConverter.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\CreatureNameStrikethroughConverter.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Converters\\CreatureNameStrikethroughConverter.cs",
@@ -785,7 +636,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 37,
               "Title": "CreatureNameBoldConverter.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\CreatureNameBoldConverter.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Converters\\CreatureNameBoldConverter.cs",
@@ -797,7 +648,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 35,
               "Title": "EntryToNullabeIntConverter.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\EntryToNullabeIntConverter.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Converters\\EntryToNullabeIntConverter.cs",
@@ -809,19 +660,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "StringContainDataConverter.cs",
-              "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\StringContainDataConverter.cs",
-              "RelativeDocumentMoniker": "TimeForBattle\\Converters\\StringContainDataConverter.cs",
-              "ToolTip": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\StringContainDataConverter.cs",
-              "RelativeToolTip": "TimeForBattle\\Converters\\StringContainDataConverter.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-04T14:14:29.63Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 38,
               "Title": "AttributeConverter.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\AttributeConverter.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Converters\\AttributeConverter.cs",
@@ -833,7 +672,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 39,
               "Title": "CombatListPage.xaml.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\CombatListPage.xaml.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\View\\CombatListPage.xaml.cs",
@@ -845,7 +684,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 40,
               "Title": "MainMenuPage.xaml.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\MainMenuPage.xaml.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\View\\MainMenuPage.xaml.cs",
@@ -857,7 +696,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 41,
               "Title": "SignConverter.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\Converters\\SignConverter.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\Converters\\SignConverter.cs",
@@ -869,7 +708,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 42,
               "Title": "AttributeConverter.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\AppData\\Local\\SourceServer\\cef4ff8f5db0a631a02cd3b325ae7492be5ffbeb7f111464158ddbb950d18d2f\\TimeForBattle\\TimeForBattle\\Converters\\AttributeConverter.cs",
               "ToolTip": "C:\\Users\\Gebruiker\\AppData\\Local\\SourceServer\\cef4ff8f5db0a631a02cd3b325ae7492be5ffbeb7f111464158ddbb950d18d2f\\TimeForBattle\\TimeForBattle\\Converters\\AttributeConverter.cs",
@@ -879,7 +718,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 43,
               "Title": "View_CreatureDetailsPage.xaml.sg.cs",
               "DocumentMoniker": "C:\\Users\\Gebruiker\\AppData\\Local\\Temp\\.vsdbgsrc\\18fdf90b688d5285ffb1a31392045ad518039b6c\\View_CreatureDetailsPage.xaml.sg.cs",
               "ToolTip": "C:\\Users\\Gebruiker\\AppData\\Local\\Temp\\.vsdbgsrc\\18fdf90b688d5285ffb1a31392045ad518039b6c\\View_CreatureDetailsPage.xaml.sg.cs [Read Only]",
@@ -890,7 +729,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 44,
               "Title": "CreatureListPage.xaml.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\CreatureListPage.xaml.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\View\\CreatureListPage.xaml.cs",
@@ -902,7 +741,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 45,
               "Title": "CreatureDetailsPage.xaml.cs",
               "DocumentMoniker": "D:\\GitHub\\TimeForBattle\\TimeForBattle\\TimeForBattle\\View\\CreatureDetailsPage.xaml.cs",
               "RelativeDocumentMoniker": "TimeForBattle\\View\\CreatureDetailsPage.xaml.cs",

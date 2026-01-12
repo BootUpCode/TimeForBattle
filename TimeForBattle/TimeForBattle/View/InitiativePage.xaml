@@ -19,6 +19,7 @@
         <converters:RollColorConverter x:Key="RollColorConverter" />
         <converters:AdditionConverter x:Key="AdditionConverter" />
         <converters:StringContainDataConverter x:Key="StringContainDataConverter" />
+        <converters:StringsContainDataConverter x:Key="StringsContainDataConverter" />
         <converters:IsZeroConverter x:Key="IsZeroConverter" />
         <converters:CreatureColorConverter x:Key="CreatureColorConverter" />
         <converters:CreatureNameBoldConverter x:Key="CreatureNameBoldConverter" />
@@ -437,11 +438,11 @@
                                             </Button>
                                         </Grid>
 
-                                        <Grid ColumnDefinitions="*,100,*,100"
+                                        <Grid ColumnDefinitions="3*,4*,3*"
                                               ColumnSpacing="0"
-                                              RowDefinitions="30,30,30,30,30,30,30,30"
+                                              RowDefinitions="35,Auto,Auto,Auto,Auto,Auto,Auto"
                                               RowSpacing="0"
-                                              Padding="3,-5,3,6">
+                                              Padding="3,3,3,3">
                                             <Grid.IsVisible>
                                                 <MultiBinding Converter="{StaticResource IsEqualConverter}">
                                                     <Binding Path=".InitiativeCreatureData.ActiveTab" />
@@ -449,136 +450,159 @@
                                                              FallbackValue="3" />
                                                 </MultiBinding>
                                             </Grid.IsVisible>
-
-                                            <Switch Grid.Column="0"
+                                            <Picker Grid.Column="0"
+                                                    Grid.ColumnSpan="2"
                                                     Grid.Row="0"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsBlinded}"/>
-                                            <Label Grid.Column="1"
-                                                   Grid.Row="0"
-                                                   Text="Blinded"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsBlinded, Converter={StaticResource CreatureNameBoldConverter}}"/>
-                                            <Switch Grid.Column="0"
-                                                    Grid.Row="1"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsCharmed}"/>
+                                                    Style="{StaticResource StatblockText}"
+                                                    ItemsSource="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=ConditionNames}"
+                                                    SelectedItem="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=PickedCondition}"
+                                                    VerticalOptions="Start"
+                                                    HorizontalOptions="Start" />
+                                            <Button Grid.Column="2"
+                                                    Grid.Row="0"
+                                                    Text="Add"
+                                                    Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=SetConditionCommand}"
+                                                    CommandParameter="{Binding .}"
+                                                    Style="{StaticResource BaseButton}" />
+
+                                            <Label Grid.Column="0"
+                                                   Grid.Row="1"
+                                                   Text="Condition"
+                                                   HorizontalOptions="Start"
+                                                   VerticalOptions="Center"
+                                                   Margin="3,0,0,0">
+                                                <Label.IsVisible>
+                                                    <MultiBinding Converter="{StaticResource StringsContainDataConverter}">
+                                                        <Binding Path="InitiativeCreatureData.ConditionString1" />
+                                                        <Binding Path="InitiativeCreatureData.ConditionString2" />
+                                                        <Binding Path="InitiativeCreatureData.ConditionString3" />
+                                                        <Binding Path="InitiativeCreatureData.ConditionString4" />
+                                                        <Binding Path="InitiativeCreatureData.ConditionString5" />
+                                                    </MultiBinding>
+                                                </Label.IsVisible>
+                                            </Label>
                                             <Label Grid.Column="1"
                                                    Grid.Row="1"
-                                                   Text="Charmed"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsCharmed, Converter={StaticResource CreatureNameBoldConverter}}"/>
-                                            <Switch Grid.Column="0"
-                                                    Grid.Row="2"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsDeafened}" />
-                                            <Label Grid.Column="1"
-                                                   Grid.Row="2"
-                                                   Text="Deafened"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsDeafened, Converter={StaticResource CreatureNameBoldConverter}}"/>
-                                            <Switch Grid.Column="0"
-                                                    Grid.Row="3"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsFrightened}" />
-                                            <Label Grid.Column="1"
-                                                   Grid.Row="3"
-                                                   Text="Frightened"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsFrightened, Converter={StaticResource CreatureNameBoldConverter}}"/>
-                                            <Switch Grid.Column="0"
-                                                    Grid.Row="4"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsGrappled}"/>
-                                            <Label Grid.Column="1"
-                                                   Grid.Row="4"
-                                                   Text="Grappled"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsGrappled, Converter={StaticResource CreatureNameBoldConverter}}"/>
-                                            <Switch Grid.Column="0"
-                                                    Grid.Row="5"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsIncapacitated}"/>
-                                            <Label Grid.Column="1"
-                                                   Grid.Row="5"
-                                                   Text="Incapacitated"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsIncapacitated, Converter={StaticResource CreatureNameBoldConverter}}"/>
-                                            <Switch Grid.Column="0"
-                                                    Grid.Row="6"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsInvisible}"/>
-                                            <Label Grid.Column="1"
-                                                   Grid.Row="6"
-                                                   Text="Invisible"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsInvisible, Converter={StaticResource CreatureNameBoldConverter}}"/>
-                                            <Switch Grid.Column="0"
-                                                    Grid.Row="7"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsParalyzed}"/>
-                                            <Label Grid.Column="1"
-                                                   Grid.Row="7"
-                                                   Text="Paralyzed"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsParalyzed, Converter={StaticResource CreatureNameBoldConverter}}"/>
-                                            <Switch Grid.Column="2"
-                                                    Grid.Row="0"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsPetrified}"/>
-                                            <Label Grid.Column="3"
-                                                   Grid.Row="0"
-                                                   Text="Petrified"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsPetrified, Converter={StaticResource CreatureNameBoldConverter}}"/>
-                                            <Switch Grid.Column="2"
-                                                    Grid.Row="1"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsPoisoned}"/>
-                                            <Label Grid.Column="3"
-                                                   Grid.Row="1"
-                                                   Text="Poisoned"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsPoisoned, Converter={StaticResource CreatureNameBoldConverter}}"/>
-                                            <Switch Grid.Column="2"
-                                                    Grid.Row="2"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsProne}"/>
-                                            <Label Grid.Column="3"
-                                                   Grid.Row="2"
-                                                   Text="Prone"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsProne, Converter={StaticResource CreatureNameBoldConverter}}"/>
-                                            <Switch Grid.Column="2"
-                                                    Grid.Row="3"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsRestrained}"/>
-                                            <Label Grid.Column="3"
-                                                   Grid.Row="3"
-                                                   Text="Restrained"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsRestrained, Converter={StaticResource CreatureNameBoldConverter}}"/>
-                                            <Switch Grid.Column="2"
-                                                    Grid.Row="4"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsStunned}"/>
-                                            <Label Grid.Column="3"
-                                                   Grid.Row="4"
-                                                   Text="Stunned"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsStunned, Converter={StaticResource CreatureNameBoldConverter}}"/>
-                                            <Switch Grid.Column="2"
-                                                    Grid.Row="5"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsUnconscious}"/>
-                                            <Label Grid.Column="3"
-                                                   Grid.Row="5"
-                                                   Text="Unconscious"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsUnconscious, Converter={StaticResource CreatureNameBoldConverter}}"/>
-                                            <Switch Grid.Column="2"
-                                                    Grid.Row="6"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsOtherA}" />
-                                            <Label Grid.Column="3"
-                                                   Grid.Row="6"
-                                                   Text="A"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsOtherA, Converter={StaticResource CreatureNameBoldConverter}}" />
-                                            <Switch Grid.Column="2"
-                                                    Grid.Row="7"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsOtherB}" />
-                                            <Label Grid.Column="3"
-                                                   Grid.Row="7"
-                                                   Text="B"
-                                                   VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsOtherB, Converter={StaticResource CreatureNameBoldConverter}}" />
+                                                   Text="Started"
+                                                   HorizontalOptions="Start"
+                                                   VerticalOptions="Center"
+                                                   Margin="3,0,0,0">
+                                                <Label.IsVisible>
+                                                    <MultiBinding Converter="{StaticResource StringsContainDataConverter}">
+                                                        <Binding Path="InitiativeCreatureData.ConditionString1" />
+                                                        <Binding Path="InitiativeCreatureData.ConditionString2" />
+                                                        <Binding Path="InitiativeCreatureData.ConditionString3" />
+                                                        <Binding Path="InitiativeCreatureData.ConditionString4" />
+                                                        <Binding Path="InitiativeCreatureData.ConditionString5" />
+                                                    </MultiBinding>
+                                                </Label.IsVisible>
+                                            </Label>
 
+                                            <Label Grid.Column="0"
+                                                   Grid.Row="2"
+                                                   Text="{Binding InitiativeCreatureData.ConditionString1}"
+                                                   IsVisible="{Binding InitiativeCreatureData.ConditionString1, Converter={StaticResource StringContainDataConverter}}"
+                                                   HorizontalOptions="Start"
+                                                   VerticalOptions="Center"
+                                                   Margin="3,0,0,0"/>
+                                            <Label Grid.Column="1"
+                                                   Grid.Row="2"
+                                                   Text="{Binding InitiativeCreatureData.ConditionTimeString1}"
+                                                   IsVisible="{Binding InitiativeCreatureData.ConditionString1, Converter={StaticResource StringContainDataConverter}}"
+                                                   HorizontalOptions="Start"
+                                                   VerticalOptions="Center"
+                                                   Margin="3,0,0,0" />
+                                            <Button Grid.Column="2"
+                                                    Grid.Row="2"
+                                                    Text="Remove"
+                                                    Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition1Command}"
+                                                    CommandParameter="{Binding .}"
+                                                    Style="{StaticResource BaseButton}"
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString1, Converter={StaticResource StringContainDataConverter}}" />
+                                            <Label Grid.Column="0"
+                                                   Grid.Row="3"
+                                                   Text="{Binding InitiativeCreatureData.ConditionString2}"
+                                                   IsVisible="{Binding InitiativeCreatureData.ConditionString2, Converter={StaticResource StringContainDataConverter}}"
+                                                   HorizontalOptions="Start"
+                                                   VerticalOptions="Center"
+                                                   Margin="3,0,0,0" />
+                                            <Label Grid.Column="1"
+                                                   Grid.Row="3"
+                                                   Text="{Binding InitiativeCreatureData.ConditionTimeString2}"
+                                                   IsVisible="{Binding InitiativeCreatureData.ConditionString2, Converter={StaticResource StringContainDataConverter}}"
+                                                   HorizontalOptions="Start"
+                                                   VerticalOptions="Center"
+                                                   Margin="3,0,0,0" />
+                                            <Button Grid.Column="2"
+                                                    Grid.Row="3"
+                                                    Text="Remove"
+                                                    Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition2Command}"
+                                                    CommandParameter="{Binding .}"
+                                                    Style="{StaticResource BaseButton}"
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString2, Converter={StaticResource StringContainDataConverter}}" />
+                                            <Label Grid.Column="0"
+                                                   Grid.Row="4"
+                                                   Text="{Binding InitiativeCreatureData.ConditionString3}"
+                                                   IsVisible="{Binding InitiativeCreatureData.ConditionString3, Converter={StaticResource StringContainDataConverter}}"
+                                                   HorizontalOptions="Start"
+                                                   VerticalOptions="Center"
+                                                   Margin="3,0,0,0" />
+                                            <Label Grid.Column="1"
+                                                   Grid.Row="4"
+                                                   Text="{Binding InitiativeCreatureData.ConditionTimeString3}"
+                                                   IsVisible="{Binding InitiativeCreatureData.ConditionString3, Converter={StaticResource StringContainDataConverter}}"
+                                                   HorizontalOptions="Start"
+                                                   VerticalOptions="Center"
+                                                   Margin="3,0,0,0" />
+                                            <Button Grid.Column="2"
+                                                    Grid.Row="4"
+                                                    Text="Remove"
+                                                    Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition3Command}"
+                                                    CommandParameter="{Binding .}"
+                                                    Style="{StaticResource BaseButton}"
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString3, Converter={StaticResource StringContainDataConverter}}" />
+                                            <Label Grid.Column="0"
+                                                   Grid.Row="5"
+                                                   Text="{Binding InitiativeCreatureData.ConditionString4}"
+                                                   IsVisible="{Binding InitiativeCreatureData.ConditionString4, Converter={StaticResource StringContainDataConverter}}"
+                                                   HorizontalOptions="Start"
+                                                   VerticalOptions="Center"
+                                                   Margin="3,0,0,0" />
+                                            <Label Grid.Column="1"
+                                                   Grid.Row="5"
+                                                   Text="{Binding InitiativeCreatureData.ConditionTimeString4}"
+                                                   IsVisible="{Binding InitiativeCreatureData.ConditionString4, Converter={StaticResource StringContainDataConverter}}"
+                                                   HorizontalOptions="Start"
+                                                   VerticalOptions="Center"
+                                                   Margin="3,0,0,0" />
+                                            <Button Grid.Column="2"
+                                                    Grid.Row="5"
+                                                    Text="Remove"
+                                                    Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition4Command}"
+                                                    CommandParameter="{Binding .}"
+                                                    Style="{StaticResource BaseButton}"
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString4, Converter={StaticResource StringContainDataConverter}}" />
+                                            <Label Grid.Column="0"
+                                                   Grid.Row="6"
+                                                   Text="{Binding InitiativeCreatureData.ConditionString5}"
+                                                   IsVisible="{Binding InitiativeCreatureData.ConditionString5, Converter={StaticResource StringContainDataConverter}}"
+                                                   HorizontalOptions="Start"
+                                                   VerticalOptions="Center"
+                                                   Margin="3,0,0,0" />
+                                            <Label Grid.Column="1"
+                                                   Grid.Row="6"
+                                                   Text="{Binding InitiativeCreatureData.ConditionTimeString5}"
+                                                   IsVisible="{Binding InitiativeCreatureData.ConditionString5, Converter={StaticResource StringContainDataConverter}}"
+                                                   HorizontalOptions="Start"
+                                                   VerticalOptions="Center"
+                                                   Margin="3,0,0,0" />
+                                            <Button Grid.Column="2"
+                                                    Grid.Row="6"
+                                                    Text="Remove"
+                                                    Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition5Command}"
+                                                    CommandParameter="{Binding .}"
+                                                    Style="{StaticResource BaseButton}"
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString5, Converter={StaticResource StringContainDataConverter}}" />
                                         </Grid>
 
                                     </VerticalStackLayout>
@@ -639,26 +663,14 @@
                                                        TextColor="DarkRed">
                                                     <Label.Text>
                                                         <MultiBinding Converter="{StaticResource ConditionsConverter}">
-                                                            <Binding Path="InitiativeCreatureData.IsBlinded" />
-                                                            <Binding Path="InitiativeCreatureData.IsCharmed" />
-                                                            <Binding Path="InitiativeCreatureData.IsDeafened" />
-                                                            <Binding Path="InitiativeCreatureData.IsFrightened" />
-                                                            <Binding Path="InitiativeCreatureData.IsGrappled" />
-                                                            <Binding Path="InitiativeCreatureData.IsIncapacitated" />
-                                                            <Binding Path="InitiativeCreatureData.IsInvisible" />
-                                                            <Binding Path="InitiativeCreatureData.IsParalyzed" />
-                                                            <Binding Path="InitiativeCreatureData.IsPetrified" />
-                                                            <Binding Path="InitiativeCreatureData.IsPoisoned" />
-                                                            <Binding Path="InitiativeCreatureData.IsProne" />
-                                                            <Binding Path="InitiativeCreatureData.IsRestrained" />
-                                                            <Binding Path="InitiativeCreatureData.IsStunned" />
-                                                            <Binding Path="InitiativeCreatureData.IsUnconscious" />
-                                                            <Binding Path="InitiativeCreatureData.IsOtherA" />
-                                                            <Binding Path="InitiativeCreatureData.IsOtherB" />
+                                                            <Binding Path="InitiativeCreatureData.ConditionString1" />
+                                                            <Binding Path="InitiativeCreatureData.ConditionString2" />
+                                                            <Binding Path="InitiativeCreatureData.ConditionString3" />
+                                                            <Binding Path="InitiativeCreatureData.ConditionString4" />
+                                                            <Binding Path="InitiativeCreatureData.ConditionString5" />
                                                         </MultiBinding>
                                                     </Label.Text>
                                                 </Label>
-
                                                 <Border Grid.Column="0"
                                                         Grid.Row="1"
                                                         Grid.ColumnSpan="2"

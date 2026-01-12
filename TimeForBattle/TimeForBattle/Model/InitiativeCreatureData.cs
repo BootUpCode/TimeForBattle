@@ -8,22 +8,16 @@ public partial class InitiativeCreatureData : DatabaseObject
     [ObservableProperty] public int? nameID;
     [ObservableProperty] public bool isTurn;
     [ObservableProperty] public bool isExpanded;
-    [ObservableProperty] public bool isBlinded;
-    [ObservableProperty] public bool isCharmed;
-    [ObservableProperty] public bool isDeafened;
-    [ObservableProperty] public bool isFrightened;
-    [ObservableProperty] public bool isGrappled;
-    [ObservableProperty] public bool isIncapacitated;
-    [ObservableProperty] public bool isInvisible;
-    [ObservableProperty] public bool isParalyzed;
-    [ObservableProperty] public bool isPetrified;
-    [ObservableProperty] public bool isPoisoned;
-    [ObservableProperty] public bool isProne;
-    [ObservableProperty] public bool isRestrained;
-    [ObservableProperty] public bool isStunned;
-    [ObservableProperty] public bool isUnconscious;
-    [ObservableProperty] public bool isOtherA;
-    [ObservableProperty] public bool isOtherB;
+    [ObservableProperty] public string conditionString1;
+    [ObservableProperty] public string conditionTimeString1;
+    [ObservableProperty] public string conditionString2;
+    [ObservableProperty] public string conditionTimeString2;
+    [ObservableProperty] public string conditionString3;
+    [ObservableProperty] public string conditionTimeString3;
+    [ObservableProperty] public string conditionString4;
+    [ObservableProperty] public string conditionTimeString4;
+    [ObservableProperty] public string conditionString5;
+    [ObservableProperty] public string conditionTimeString5;
     [ObservableProperty] public int activeTab;
 
     public InitiativeCreatureData(Creature creature, int combatID)
@@ -35,22 +29,16 @@ public partial class InitiativeCreatureData : DatabaseObject
         this.CurrentHitPoints = creature.MaximumHitPoints;
         this.IsTurn = false;
         this.IsExpanded = false;
-        this.IsBlinded = false;
-        this.IsCharmed = false;
-        this.IsDeafened = false;
-        this.IsFrightened = false;
-        this.IsGrappled = false;
-        this.IsIncapacitated = false;
-        this.IsInvisible = false;
-        this.IsParalyzed = false;
-        this.IsPetrified = false;
-        this.IsPoisoned = false;
-        this.IsProne = false;
-        this.IsRestrained = false;
-        this.IsStunned = false;
-        this.IsUnconscious = false;
-        this.IsOtherA = false;
-        this.IsOtherB = false;
+        this.ConditionString1 = "";
+        this.ConditionTimeString1 = "";
+        this.ConditionString2 = "";
+        this.ConditionTimeString2 = "";
+        this.ConditionString3 = "";
+        this.ConditionTimeString3 = "";
+        this.ConditionString4 = "";
+        this.ConditionTimeString4 = "";
+        this.ConditionString5 = "";
+        this.ConditionTimeString5 = "";
         this.ActiveTab = 0;
     }
 
