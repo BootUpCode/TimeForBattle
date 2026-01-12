@@ -66,11 +66,6 @@ D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appiconWideTile.scale-150.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appiconWideTile.scale-200.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\appiconWideTile.scale-400.png
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-100.png
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-125.png
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-150.png
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-200.png
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-400.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\CoreMessagingXP.dll
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dcompi.dll
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dwmcorei.dll
@@ -442,11 +437,6 @@ D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-150.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-200.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconWideTile.scale-400.png
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-100.png
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-125.png
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\mauiimage.stamp
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\mauiimage.outputs
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\TimeForBattle.AssemblyInfoInputs.cache
@@ -525,3 +515,5 @@ D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.Media.Capture.Projection.dll
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\System.Speech.dll
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.ApplicationModel.Background.UniversalBGTask.dll
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\acicon.scale-100.png
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\acicon.scale-100.png
