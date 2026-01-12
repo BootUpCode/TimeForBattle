@@ -15,7 +15,7 @@ public partial class InitiativeCreatureData : DatabaseObject
     [ObservableProperty] public bool isGrappled;
     [ObservableProperty] public bool isIncapacitated;
     [ObservableProperty] public bool isInvisible;
-    [ObservableProperty] public bool isParalysed;
+    [ObservableProperty] public bool isParalyzed;
     [ObservableProperty] public bool isPetrified;
     [ObservableProperty] public bool isPoisoned;
     [ObservableProperty] public bool isProne;
@@ -42,7 +42,7 @@ public partial class InitiativeCreatureData : DatabaseObject
         this.IsGrappled = false;
         this.IsIncapacitated = false;
         this.IsInvisible = false;
-        this.IsParalysed = false;
+        this.IsParalyzed = false;
         this.IsPetrified = false;
         this.IsPoisoned = false;
         this.IsProne = false;

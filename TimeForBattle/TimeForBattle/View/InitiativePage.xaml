@@ -28,6 +28,7 @@
         <converters:PauseButtonTextConverter x:Key="PauseButtonTextConverter" />
         <converters:IsEqualConverter x:Key="IsEqualConverter" />
         <converters:IsNotEqualConverter x:Key="IsNotEqualConverter" />
+        <converters:ConditionsConverter x:Key="ConditionsConverter" />
     </ContentPage.Resources>
 
     <Grid ColumnDefinitions="3*,3*,4*,6*,3*"
@@ -499,20 +500,20 @@
                                                    FontAttributes="{Binding InitiativeCreatureData.IsIncapacitated, Converter={StaticResource CreatureNameBoldConverter}}"/>
                                             <Switch Grid.Column="0"
                                                     Grid.Row="6"
-                                                    IsToggled="{Binding InitiativeCreatureData.isInvisible}"/>
+                                                    IsToggled="{Binding InitiativeCreatureData.IsInvisible}"/>
                                             <Label Grid.Column="1"
                                                    Grid.Row="6"
                                                    Text="Invisible"
                                                    VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.isInvisible, Converter={StaticResource CreatureNameBoldConverter}}"/>
+                                                   FontAttributes="{Binding InitiativeCreatureData.IsInvisible, Converter={StaticResource CreatureNameBoldConverter}}"/>
                                             <Switch Grid.Column="0"
                                                     Grid.Row="7"
-                                                    IsToggled="{Binding InitiativeCreatureData.IsParalysed}"/>
+                                                    IsToggled="{Binding InitiativeCreatureData.IsParalyzed}"/>
                                             <Label Grid.Column="1"
                                                    Grid.Row="7"
                                                    Text="Paralyzed"
                                                    VerticalOptions="End"
-                                                   FontAttributes="{Binding InitiativeCreatureData.IsParalysed, Converter={StaticResource CreatureNameBoldConverter}}"/>
+                                                   FontAttributes="{Binding InitiativeCreatureData.IsParalyzed, Converter={StaticResource CreatureNameBoldConverter}}"/>
                                             <Switch Grid.Column="2"
                                                     Grid.Row="0"
                                                     IsToggled="{Binding InitiativeCreatureData.IsPetrified}"/>
@@ -566,7 +567,7 @@
                                                     IsToggled="{Binding InitiativeCreatureData.IsOtherA}" />
                                             <Label Grid.Column="3"
                                                    Grid.Row="6"
-                                                   Text="Other A"
+                                                   Text="A"
                                                    VerticalOptions="End"
                                                    FontAttributes="{Binding InitiativeCreatureData.IsOtherA, Converter={StaticResource CreatureNameBoldConverter}}" />
                                             <Switch Grid.Column="2"
@@ -574,7 +575,7 @@
                                                     IsToggled="{Binding InitiativeCreatureData.IsOtherB}" />
                                             <Label Grid.Column="3"
                                                    Grid.Row="7"
-                                                   Text="Other B"
+                                                   Text="B"
                                                    VerticalOptions="End"
                                                    FontAttributes="{Binding InitiativeCreatureData.IsOtherB, Converter={StaticResource CreatureNameBoldConverter}}" />
 
@@ -582,7 +583,7 @@
 
                                     </VerticalStackLayout>
                                     <toolkit:Expander.Header>
-                                        <Grid ColumnDefinitions="40,*,20"
+                                        <Grid ColumnDefinitions="40,*,30"
                                               ColumnSpacing="0"
                                               RowDefinitions="35"
                                               RowSpacing="0"
@@ -629,6 +630,35 @@
                                                         </MultiBinding>
                                                     </Label.Text>
                                                 </Label>
+
+                                                <Label Grid.Column="1"
+                                                       Grid.Row="0"
+                                                       VerticalOptions="Center"
+                                                       HorizontalOptions="End"
+                                                       Margin="0,0,10,0"
+                                                       TextColor="DarkRed">
+                                                    <Label.Text>
+                                                        <MultiBinding Converter="{StaticResource ConditionsConverter}">
+                                                            <Binding Path="InitiativeCreatureData.IsBlinded" />
+                                                            <Binding Path="InitiativeCreatureData.IsCharmed" />
+                                                            <Binding Path="InitiativeCreatureData.IsDeafened" />
+                                                            <Binding Path="InitiativeCreatureData.IsFrightened" />
+                                                            <Binding Path="InitiativeCreatureData.IsGrappled" />
+                                                            <Binding Path="InitiativeCreatureData.IsIncapacitated" />
+                                                            <Binding Path="InitiativeCreatureData.IsInvisible" />
+                                                            <Binding Path="InitiativeCreatureData.IsParalyzed" />
+                                                            <Binding Path="InitiativeCreatureData.IsPetrified" />
+                                                            <Binding Path="InitiativeCreatureData.IsPoisoned" />
+                                                            <Binding Path="InitiativeCreatureData.IsProne" />
+                                                            <Binding Path="InitiativeCreatureData.IsRestrained" />
+                                                            <Binding Path="InitiativeCreatureData.IsStunned" />
+                                                            <Binding Path="InitiativeCreatureData.IsUnconscious" />
+                                                            <Binding Path="InitiativeCreatureData.IsOtherA" />
+                                                            <Binding Path="InitiativeCreatureData.IsOtherB" />
+                                                        </MultiBinding>
+                                                    </Label.Text>
+                                                </Label>
+
                                                 <Border Grid.Column="0"
                                                         Grid.Row="1"
                                                         Grid.ColumnSpan="2"
@@ -651,7 +681,7 @@
                                                         HorizontalOptions="Start"
                                                         WidthRequest="{Binding InitiativeCreatureData.CurrentHitPoints, Converter={StaticResource HitpointConverter}, ConverterParameter={x:Reference Name=MaximumHitPointsLabel}}"
                                                         MaximumWidthRequest="220"
-                                                        MinimumWidthRequest="0"/>
+                                                        MinimumWidthRequest="0" />
                                                 <Label Grid.Column="0"
                                                        Grid.ColumnSpan="2"
                                                        Grid.Row="2"
@@ -666,6 +696,11 @@
                                                     </Label.Text>
                                                 </Label>
                                             </Grid>
+                                            <Image Grid.Column="2"
+                                                   Grid.Row="0"
+                                                   Source="acicon.png"
+                                                   Aspect="AspectFill"
+                                                   Margin="-1,-2,-3,5" />
                                             <Label Grid.Column="2"
                                                    Grid.Row="0"
                                                    Text="{Binding Creature.ArmorClass}"
@@ -673,7 +708,7 @@
                                                    MinimumWidthRequest="35"
                                                    HeightRequest="25"
                                                    MinimumHeightRequest="24"
-                                                   Margin="0,0,0,0"
+                                                   Margin="9,0,0,8"
                                                    VerticalOptions="Center"
                                                    HorizontalOptions="Start" />
                                         </Grid>
