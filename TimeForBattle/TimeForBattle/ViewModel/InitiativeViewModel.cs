@@ -14,6 +14,8 @@ public partial class InitiativeViewModel : BaseViewModel
     [ObservableProperty] Combat? combat;
     [ObservableProperty] public ObservableCollection<Roll> rolls = new();
     [ObservableProperty] public InitiativeCreature currentCreature;
+    [ObservableProperty] public static ObservableCollection<string> conditionNames = ["Blinded", "Charmed", "Deafened", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralyzed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned", "Unconscious", "A", "B"];
+    [ObservableProperty] public String pickedCondition = "";
 
     public InitiativeViewModel(CreatureService<Creature> creatureService, CreatureService<InitiativeCreatureData> initiativeService, CreatureService<Combat> combatService, CreatureService<Roll> rollService)
     {
@@ -318,6 +320,78 @@ public partial class InitiativeViewModel : BaseViewModel
             return;
 
         initiativeCreature.InitiativeCreatureData.ActiveTab = 3;
+        await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
+    }
+
+    [RelayCommand]
+    public async Task SetCondition(InitiativeCreature initiativeCreature)
+    {
+        if (Combat is null || Initiative is null || initiativeCreature is null || String.IsNullOrEmpty(PickedCondition))
+            return;
+
+        String timeString = "Round " + Combat.RoundCount + ", " + CurrentCreature.Creature.Name + " " + CurrentCreature.InitiativeCreatureData.NameID + "'s turn";
+
+        if (String.IsNullOrEmpty(initiativeCreature.InitiativeCreatureData.ConditionString1)) { initiativeCreature.InitiativeCreatureData.ConditionString1 = PickedCondition; initiativeCreature.InitiativeCreatureData.ConditionTimeString1 = timeString; }
+        else if (String.IsNullOrEmpty(initiativeCreature.InitiativeCreatureData.ConditionString2)) { initiativeCreature.InitiativeCreatureData.ConditionString2 = PickedCondition; initiativeCreature.InitiativeCreatureData.ConditionTimeString2 = timeString; }
+        else if (String.IsNullOrEmpty(initiativeCreature.InitiativeCreatureData.ConditionString3)) { initiativeCreature.InitiativeCreatureData.ConditionString3 = PickedCondition; initiativeCreature.InitiativeCreatureData.ConditionTimeString3 = timeString; }
+        else if (String.IsNullOrEmpty(initiativeCreature.InitiativeCreatureData.ConditionString4)) { initiativeCreature.InitiativeCreatureData.ConditionString4 = PickedCondition; initiativeCreature.InitiativeCreatureData.ConditionTimeString4 = timeString; }
+        else if (String.IsNullOrEmpty(initiativeCreature.InitiativeCreatureData.ConditionString5)) { initiativeCreature.InitiativeCreatureData.ConditionString5 = PickedCondition; initiativeCreature.InitiativeCreatureData.ConditionTimeString5 = timeString; }
+
+        await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
+    }
+
+    [RelayCommand]
+    public async Task RemoveCondition1(InitiativeCreature initiativeCreature)
+    {
+        if (Combat is null || Initiative is null || initiativeCreature is null)
+            return;
+
+        if (!String.IsNullOrEmpty(initiativeCreature.InitiativeCreatureData.ConditionString1)) { initiativeCreature.InitiativeCreatureData.ConditionString1 = ""; }
+
+        await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
+    }
+
+    [RelayCommand]
+    public async Task RemoveCondition2(InitiativeCreature initiativeCreature)
+    {
+        if (Combat is null || Initiative is null || initiativeCreature is null)
+            return;
+
+        if (!String.IsNullOrEmpty(initiativeCreature.InitiativeCreatureData.ConditionString2)) { initiativeCreature.InitiativeCreatureData.ConditionString2 = ""; }
+
+        await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
+    }
+
+    [RelayCommand]
+    public async Task RemoveCondition3(InitiativeCreature initiativeCreature)
+    {
+        if (Combat is null || Initiative is null || initiativeCreature is null)
+            return;
+
+        if (!String.IsNullOrEmpty(initiativeCreature.InitiativeCreatureData.ConditionString3)) { initiativeCreature.InitiativeCreatureData.ConditionString3 = ""; }
+
+        await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
+    }
+
+    [RelayCommand]
+    public async Task RemoveCondition4(InitiativeCreature initiativeCreature)
+    {
+        if (Combat is null || Initiative is null || initiativeCreature is null)
+            return;
+
+        if (!String.IsNullOrEmpty(initiativeCreature.InitiativeCreatureData.ConditionString4)) { initiativeCreature.InitiativeCreatureData.ConditionString4 = ""; }
+
+        await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
+    }
+
+    [RelayCommand]
+    public async Task RemoveCondition5(InitiativeCreature initiativeCreature)
+    {
+        if (Combat is null || Initiative is null || initiativeCreature is null)
+            return;
+
+        if (!String.IsNullOrEmpty(initiativeCreature.InitiativeCreatureData.ConditionString5)) { initiativeCreature.InitiativeCreatureData.ConditionString5 = ""; }
+
         await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
     }
 
