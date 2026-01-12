@@ -31,10 +31,10 @@ TimeForBattle can now also quickly calculate results for common combat occurance
   - Include damage rolls (Done!)
   - Add a second hotkey (Done!)
 - Add combat info (Done!)
-  - Track turn count(Done!)
+  - Track turn count (Done!)
 - Add ability to quickly import statblocks from text (Done!)
   - Include hotkeys in import function (Done!)
 - Add encounter renaming (Done!)
 - Add status tracking to initiative page (Done!)
-  - Track duration of status in rounds
+  - Track duration of status in rounds (Done!)
 - Pretty up main/sub menus
