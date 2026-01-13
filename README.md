@@ -37,4 +37,5 @@ TimeForBattle can now also quickly calculate results for common combat occurance
 - Add encounter renaming (Done!)
 - Add status tracking to initiative page (Done!)
   - Track duration of status in rounds (Done!)
+  - UI warning when creature is ummine to assigned status (Done!)
 - Pretty up main/sub menus
