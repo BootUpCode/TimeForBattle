@@ -704,6 +704,7 @@
                                                    MinimumHeightRequest="35"
                                                    VerticalOptions="Center"
                                                    HorizontalOptions="Start"
+                                                   Margin="-3,0,0,6"
                                                    MaxLength="2"
                                                    Keyboard="Numeric"
                                                    Completed="InitiativeEntryCompleted" />
