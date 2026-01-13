@@ -8,7 +8,7 @@ Tabletop roleplaying games often incorporate turn-based combat. At the start of 
 TimeForBattle aims to assist the Game Master of a tabletop roleplaying game with keeping the initiative order in combat. The app can quickly set up combat scenarios and keep track of important statistics, while the Game Master can focus on delivering an unforgettable experience.
 TimeForBattle can now also quickly calculate results for common combat occurances, such as attack rolls and saving throws!
 
-# ToDo
+# Updates and plans
 - Add creature list page (Done!)
 - Add creature details page (Done!)
 - Add creature creation page (Done!)
