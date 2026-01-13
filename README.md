@@ -6,7 +6,7 @@ Tabletop roleplaying games often incorporate turn-based combat. At the start of 
 
 # Quick and easy initiative order
 TimeForBattle aims to assist the Game Master of a tabletop roleplaying game with keeping the initiative order in combat. The app can quickly set up combat scenarios and keep track of important statistics, while the Game Master can focus on delivering an unforgettable experience.
-TimeForBattle can now also quickly calculate results for common combat occurances, such as attack rolls and saving throws!
+TimeForBattle can now also quickly calculate results for common combat occurances, such as attack rolls and saving throws, and record status conditions!
 
 # Updates and plans
 - Add creature list page (Done!)
@@ -38,4 +38,7 @@ TimeForBattle can now also quickly calculate results for common combat occurance
 - Add status tracking to initiative page (Done!)
   - Track duration of status in rounds (Done!)
   - UI warning when creature is ummine to assigned status (Done!)
-- Pretty up main/sub menus
+- Adjust statblock saving throw/damage type detection
+- Add app icon
+- Main menu icon
+- Adjust UI colors
