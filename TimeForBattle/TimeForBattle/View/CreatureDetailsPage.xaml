@@ -10,10 +10,10 @@
              Title="{Binding Creature.Name}">
     <ContentPage.Resources>
         <converters:AttributeConverter x:Key="AttributeConverter" />
-        <converters:InitiativeConverter x:Key="initiative" />
         <converters:StringContainDataConverter x:Key="StringContainDataConverter" />
         <converters:NotStringContainDataConverter x:Key="NotStringContainDataConverter" />
         <converters:SignConverter x:Key="SignConverter" />
+        <converters:InvertedBoolConverter x:Key="InvertedBoolConverter" />
     </ContentPage.Resources>
 
     <Grid ColumnDefinitions="*,*"
@@ -354,13 +354,15 @@
                        Grid.Row="26"
                        Text="Roll Hotkeys"
                        Style="{StaticResource StatblockText}"
+                       IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBoolConverter}}"
                        FontSize="20"
                        Padding="0,10,0,0" />
                 <BoxView Grid.Column="0"
                          Grid.ColumnSpan="6"
                          Grid.Row="27"
                          HeightRequest="2"
-                         Color="DarkRed" />
+                         Color="DarkRed"
+                         IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBoolConverter}}"/>
                 <Grid Grid.Column="0"
                       Grid.ColumnSpan="6"
                       Grid.Row="28"
@@ -371,18 +373,21 @@
                            HorizontalOptions="Start"
                            Text="NAME"
                            Style="{StaticResource SmallLabel}"
+                           IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBoolConverter}}"
                            TextColor="Grey" />
                     <Label Grid.Column="1"
                            Grid.Row="0"
                            HorizontalOptions="Start"
                            Text="BONUS"
                            Style="{StaticResource SmallLabel}"
+                           IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBoolConverter}}"
                            TextColor="Grey" />
                     <Label Grid.Column="2"
                            Grid.Row="0"
                            HorizontalOptions="Start"
                            Text="DAMAGE"
                            Style="{StaticResource SmallLabel}"
+                           IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBoolConverter}}"
                            TextColor="Grey" />
                     <Label Grid.Column="0"
                            Grid.Row="1"

@@ -925,6 +925,7 @@
                         Grid.Row="55"
                         Text="Paste"
                         Command="{Binding PasteImportTextCommand}"
+                        IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
                         BorderColor="Black"
                         CornerRadius="0"
                         Style="{StaticResource BaseButton}" />
@@ -933,6 +934,7 @@
                         Grid.Row="55"
                         Text="Import"
                         Command="{Binding ImportTextCommand}"
+                        IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
                         BorderColor="Black"
                         CornerRadius="0"
                         Style="{StaticResource BaseButton}"
@@ -942,6 +944,7 @@
                         Grid.Row="55"
                         Text="Clear"
                         Command="{Binding ClearImportTextCommand}"
+                        IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
                         BorderColor="Black"
                         CornerRadius="0"
                         Style="{StaticResource BaseButton}"

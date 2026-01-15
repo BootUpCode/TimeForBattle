@@ -115,16 +115,22 @@ public partial class AddCreatureViewModel : BaseViewModel
             @"Actions.*?\(([0-9]+)d[0-9]+ \+ [0-9]+\)",
             @"Actions.*?\([0-9]+d([0-9]+) \+ [0-9]+\)",
             @"Actions.*?\([0-9]+d[0-9]+ \+ ([0-9]+)\)",
-            @"Actions.*?(Acid|Bludgeoning|Cold|Fire|Force|Lightning|Necrotic|Piercing|Poison|Psychic|Radiant|Slashing|Thunder)",
+            @"Actions.*?(Acid|Bludgeoning|Cold|Fire|Force|Lightning|Necrotic|Piercing|Poison|Psychic|Radiant|Slashing|Thunder|acid|bludgeoning|cold|fire|force|lightning|necrotic|piercing|poison|psychic|radiant|slashing|thunder)",
             @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?([A-Za-z ]+)\. [A-Za-z ]+: \+",
             @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?: \+([0-9]+)",
             @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?\(([0-9]+)d[0-9]+ \+ [0-9]+\)",
             @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?\([0-9]+d([0-9]+) \+ [0-9]+\)",
             @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?\([0-9]+d[0-9]+ \+ ([0-9]+)\)",
-            @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?(Acid|Bludgeoning|Cold|Fire|Force|Lightning|Necrotic|Piercing|Poison|Psychic|Radiant|Slashing|Thunder)",
+            @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?(Acid|Bludgeoning|Cold|Fire|Force|Lightning|Necrotic|Piercing|Poison|Psychic|Radiant|Slashing|Thunder|acid|bludgeoning|cold|fire|force|lightning|necrotic|piercing|poison|psychic|radiant|slashing|thunder)",
             @"Damage Immunities ([a-zA-Z ,;]+)",
             @"Condition Immunities ([a-zA-Z ,;]+)",
-            @"(?:Challenge) (?:[0-9/]+) \((?:[0-9,]+ XP)\)(.*?)(?:Actions)"
+            @"(?:Challenge) (?:[0-9/]+) \((?:[0-9,]+ XP)\)(.*?)(?:Actions)",
+            @"(?:Saving Throws).*?(?:STR ([\+\-0-9]+))",
+            @"(?:Saving Throws).*?(?:DEX ([\+\-0-9]+))",
+            @"(?:Saving Throws).*?(?:CON ([\+\-0-9]+))",
+            @"(?:Saving Throws).*?(?:INT ([\+\-0-9]+))",
+            @"(?:Saving Throws).*?(?:WIS ([\+\-0-9]+))",
+            @"(?:Saving Throws).*?(?:CHA ([\+\-0-9]+))"
         ];
 
         string[] matches = new string[regexStrings.Length];
