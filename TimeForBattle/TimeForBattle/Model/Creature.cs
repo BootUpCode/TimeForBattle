@@ -69,16 +69,22 @@ public partial class Creature : DatabaseObject
 
         this.StrScore = int.TryParse(creatureData[9], out result) ? result : 0;
         this.StrSaveBonus = int.TryParse(creatureData[10], out result) ? result : (int)Math.Floor(((double)this.StrScore - 10) / 2);
+        this.StrSaveBonus = int.TryParse(creatureData[47], out result) ? result : this.StrSaveBonus;
         this.DexScore = int.TryParse(creatureData[11], out result) ? result : 0;
         this.DexSaveBonus = int.TryParse(creatureData[12], out result) ? result : (int)Math.Floor(((double)this.DexScore - 10) / 2);
+        this.DexSaveBonus = int.TryParse(creatureData[48], out result) ? result : this.DexSaveBonus;
         this.ConScore = int.TryParse(creatureData[13], out result) ? result : 0;
         this.ConSaveBonus = int.TryParse(creatureData[14], out result) ? result : (int)Math.Floor(((double)this.ConScore - 10) / 2);
+        this.ConSaveBonus = int.TryParse(creatureData[49], out result) ? result : this.ConSaveBonus;
         this.IntScore = int.TryParse(creatureData[15], out result) ? result : 0;
         this.IntSaveBonus = int.TryParse(creatureData[16], out result) ? result : (int)Math.Floor(((double)this.IntScore - 10) / 2);
+        this.IntSaveBonus = int.TryParse(creatureData[50], out result) ? result : this.IntSaveBonus;
         this.WisScore = int.TryParse(creatureData[17], out result) ? result : 0;
         this.WisSaveBonus = int.TryParse(creatureData[18], out result) ? result : (int)Math.Floor(((double)this.WisScore - 10) / 2);
+        this.WisSaveBonus = int.TryParse(creatureData[51], out result) ? result : this.WisSaveBonus;
         this.ChaScore = int.TryParse(creatureData[19], out result) ? result : 0;
         this.ChaSaveBonus = int.TryParse(creatureData[20], out result) ? result : (int)Math.Floor(((double)this.ChaScore - 10) / 2);
+        this.ChaSaveBonus = int.TryParse(creatureData[52], out result) ? result : this.ChaSaveBonus;
 
         this.ArmorClass = int.TryParse(creatureData[4], out result) ? result : 0;
         this.MaximumHitPoints = int.TryParse(creatureData[5], out result) ? result : 0;
@@ -106,13 +112,13 @@ public partial class Creature : DatabaseObject
         this.HotKey1DamageDiceNumber = int.TryParse(creatureData[34], out result) ? result : 0;
         this.HotKey1DamageDiceSize = int.TryParse(creatureData[35], out result) ? result : 0;
         this.HotKey1DamageBonus = int.TryParse(creatureData[36], out result) ? result : 0;
-        this.HotKey1DamageType = String.IsNullOrEmpty(creatureData[37]) ? string.Empty : creatureData[37];
+        this.HotKey1DamageType = String.IsNullOrEmpty(creatureData[37]) ? string.Empty : char.ToUpper(creatureData[37][0]) + creatureData[37].Substring(1);
 
         this.HotKey2Name = String.IsNullOrEmpty(creatureData[38]) ? string.Empty : creatureData[38].Trim();
         this.HotKey2Bonus = int.TryParse(creatureData[39], out result) ? result : 0;
         this.HotKey2DamageDiceNumber = int.TryParse(creatureData[40], out result) ? result : 0;
         this.HotKey2DamageDiceSize = int.TryParse(creatureData[41], out result) ? result : 0;
         this.HotKey2DamageBonus = int.TryParse(creatureData[42], out result) ? result : 0;
-        this.HotKey2DamageType = String.IsNullOrEmpty(creatureData[43]) ? string.Empty : creatureData[43];
+        this.HotKey2DamageType = String.IsNullOrEmpty(creatureData[43]) ? string.Empty : char.ToUpper(creatureData[43][0]) + creatureData[43].Substring(1);
     }
 }
