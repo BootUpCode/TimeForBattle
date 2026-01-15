@@ -34,11 +34,11 @@ TimeForBattle can now also quickly calculate results for common combat occurance
   - Track turn count (Done!)
 - Add ability to quickly import statblocks from text (Done!)
   - Include hotkeys in import function (Done!)
+  - Adjust import function to be compatible with multiple older versions of statblocks (Done!)
 - Add encounter renaming (Done!)
 - Add status tracking to initiative page (Done!)
   - Track duration of status in rounds (Done!)
   - UI warning when creature is immine to assigned status (Done!)
-- Adjust statblock saving throw/damage type detection
 - Search/sort function for creature list
 - Add app icon
 - Main menu icon
