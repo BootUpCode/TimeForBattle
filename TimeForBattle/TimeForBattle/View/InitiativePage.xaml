@@ -445,7 +445,7 @@
                                             </Button>
                                         </Grid>
 
-                                        <Grid ColumnDefinitions="110,*,80"
+                                        <Grid ColumnDefinitions="90,*,40,80"
                                               ColumnSpacing="0"
                                               RowDefinitions="35,Auto,Auto,Auto,Auto,Auto,Auto"
                                               RowSpacing="0"
@@ -468,7 +468,7 @@
                                                     MinimumWidthRequest="200"
                                                     WidthRequest="200"
                                                     Margin="0,2,0,0"/>
-                                            <Button Grid.Column="2"
+                                            <Button Grid.Column="3"
                                                     Grid.Row="0"
                                                     Text="Add"
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=SetConditionCommand}"
@@ -540,6 +540,13 @@
                                                    Margin="3,0,0,0" />
                                             <Button Grid.Column="2"
                                                     Grid.Row="2"
+                                                    Text="?"
+                                                    Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=ShowConditionInfoCommand}"
+                                                    CommandParameter="{Binding InitiativeCreatureData.ConditionString1}"
+                                                    Style="{StaticResource BaseButton}"
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString1, Converter={StaticResource StringContainDataConverter}}" />
+                                            <Button Grid.Column="3"
+                                                    Grid.Row="2"
                                                     Text="Remove"
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition1Command}"
                                                     CommandParameter="{Binding .}"
@@ -574,6 +581,13 @@
                                                    VerticalOptions="Center"
                                                    Margin="3,0,0,0" />
                                             <Button Grid.Column="2"
+                                                    Grid.Row="3"
+                                                    Text="?"
+                                                    Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=ShowConditionInfoCommand}"
+                                                    CommandParameter="{Binding InitiativeCreatureData.ConditionString2}"
+                                                    Style="{StaticResource BaseButton}"
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString2, Converter={StaticResource StringContainDataConverter}}" />
+                                            <Button Grid.Column="3"
                                                     Grid.Row="3"
                                                     Text="Remove"
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition2Command}"
@@ -610,6 +624,13 @@
                                                    Margin="3,0,0,0" />
                                             <Button Grid.Column="2"
                                                     Grid.Row="4"
+                                                    Text="?"
+                                                    Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=ShowConditionInfoCommand}"
+                                                    CommandParameter="{Binding InitiativeCreatureData.ConditionString3}"
+                                                    Style="{StaticResource BaseButton}"
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString3, Converter={StaticResource StringContainDataConverter}}" />
+                                            <Button Grid.Column="3"
+                                                    Grid.Row="4"
                                                     Text="Remove"
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition3Command}"
                                                     CommandParameter="{Binding .}"
@@ -645,6 +666,13 @@
                                                    Margin="3,0,0,0" />
                                             <Button Grid.Column="2"
                                                     Grid.Row="5"
+                                                    Text="?"
+                                                    Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=ShowConditionInfoCommand}"
+                                                    CommandParameter="{Binding InitiativeCreatureData.ConditionString4}"
+                                                    Style="{StaticResource BaseButton}"
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString4, Converter={StaticResource StringContainDataConverter}}" />
+                                            <Button Grid.Column="3"
+                                                    Grid.Row="5"
                                                     Text="Remove"
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition4Command}"
                                                     CommandParameter="{Binding .}"
@@ -679,6 +707,13 @@
                                                    VerticalOptions="Center"
                                                    Margin="3,0,0,0" />
                                             <Button Grid.Column="2"
+                                                    Grid.Row="6"
+                                                    Text="?"
+                                                    Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=ShowConditionInfoCommand}"
+                                                    CommandParameter="{Binding InitiativeCreatureData.ConditionString5}"
+                                                    Style="{StaticResource BaseButton}"
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString5, Converter={StaticResource StringContainDataConverter}}" />
+                                            <Button Grid.Column="3"
                                                     Grid.Row="6"
                                                     Text="Remove"
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition5Command}"
