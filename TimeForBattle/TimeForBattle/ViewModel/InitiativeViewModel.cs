@@ -1,3 +1,4 @@
+using Microsoft.Maui.Controls;
 using TimeForBattle.Services;
 using TimeForBattle.View;
 
@@ -326,7 +327,7 @@ public partial class InitiativeViewModel : BaseViewModel
     [RelayCommand]
     public async Task SetCondition(InitiativeCreature initiativeCreature)
     {
-        if (Combat is null || Initiative is null || initiativeCreature is null || String.IsNullOrEmpty(PickedCondition))
+        if (Combat is null || Initiative is null || initiativeCreature is null || String.IsNullOrEmpty(PickedCondition) || CurrentCreature is null)
             return;
 
         String timeString = "Round " + Combat.RoundCount.ToString() + "\nInitiative " + CurrentCreature.InitiativeCreatureData.Initiative.ToString();
@@ -393,6 +394,75 @@ public partial class InitiativeViewModel : BaseViewModel
         if (!String.IsNullOrEmpty(initiativeCreature.InitiativeCreatureData.ConditionString5)) { initiativeCreature.InitiativeCreatureData.ConditionString5 = ""; }
 
         await InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData);
+    }
+
+    [RelayCommand]
+
+    public async Task ShowConditionInfo(String ConditionName)
+    {
+        String displayString = "";
+
+        switch(ConditionName)
+        {
+            case "Blinded":
+                displayString = "While you have the Blinded condition, you experience the following effects.\r\n\r\nCan’t See. You can’t see and automatically fail any ability check that requires sight.\r\n\r\nAttacks Affected. Attack rolls against you have Advantage, and your attack rolls have Disadvantage.";
+                break;
+            case "Charmed":
+                displayString = "While you have the Charmed condition, you experience the following effects.\r\n\r\nCan’t Harm the Charmer. You can’t attack the charmer or target the charmer with damaging abilities or magical effects.\r\n\r\nSocial Advantage. The charmer has Advantage on any ability check to interact with you socially.";
+                break;
+            case "Deafened":
+                displayString = "While you have the Deafened condition, you experience the following effect.\r\n\r\nCan’t Hear. You can’t hear and automatically fail any ability check that requires hearing.";
+                break;
+            case "Frightened":
+                displayString = "While you have the Frightened condition, you experience the following effects.\r\n\r\nAbility Checks and Attacks Affected. You have Disadvantage on ability checks and attack rolls while the source of fear is within line of sight.\r\n\r\nCan’t Approach. You can’t willingly move closer to the source of fear.";
+                break;
+            case "Grappled":
+                displayString = "While you have the Grappled condition, you experience the following effects.\r\n\r\nSpeed 0. Your Speed is 0 and can’t increase.\r\n\r\nAttacks Affected. You have Disadvantage on attack rolls against any target other than the grappler.\r\n\r\nMovable. The grappler can drag or carry you when it moves, but every foot of movement costs it 1 extra foot unless you are Tiny or two or more sizes smaller than it.";
+                break;
+            case "Incapacitated":
+                displayString = "While you have the Incapacitated condition, you experience the following effects.\r\n\r\nInactive. You can’t take any action, Bonus Action, or Reaction.\r\n\r\nNo Concentration. Your Concentration is broken.\r\n\r\nSpeechless. You can’t speak.\r\n\r\nSurprised. If you’re Incapacitated when you roll Initiative, you have Disadvantage on the roll.";
+                break;
+            case "Invisible":
+                displayString = "While you have the Invisible condition, you experience the following effects.\r\n\r\nSurprise. If you’re Invisible when you roll Initiative, you have Advantage on the roll.\r\n\r\nConcealed. You aren’t affected by any effect that requires its target to be seen unless the effect’s creator can somehow see you. Any equipment you are wearing or carrying is also concealed.\r\n\r\nAttacks Affected. Attack rolls against you have Disadvantage, and your attack rolls have Advantage. If a creature can somehow see you, you don’t gain this benefit against that creature.";
+                break;
+            case "Paralyzed":
+                displayString = "While you have the Paralyzed condition, you experience the following effects.\r\n\r\nIncapacitated. You have the Incapacitated condition.\r\n\r\nSpeed 0. Your Speed is 0 and can’t increase.\r\n\r\nSaving Throws Affected. You automatically fail Strength and Dexterity saving throws.\r\n\r\nAttacks Affected. Attack rolls against you have Advantage.\r\n\r\nAutomatic Critical Hits. Any attack roll that hits you is a Critical Hit if the attacker is within 5 feet of you.";
+                break;
+            case "Petrified":
+                displayString = "While you have the Petrified condition, you experience the following effects.\r\n\r\nTurned to Inanimate Substance. You are transformed, along with any nonmagical objects you are wearing and carrying, into a solid inanimate substance (usually stone). Your weight increases by a factor of ten, and you cease aging.\r\n\r\nIncapacitated. You have the Incapacitated condition.\r\n\r\nSpeed 0. Your Speed is 0 and can’t increase.\r\n\r\nAttacks Affected. Attack rolls against you have Advantage.\r\n\r\nSaving Throws Affected. You automatically fail Strength and Dexterity saving throws.\r\n\r\nResist Damage. You have Resistance to all damage.\r\n\r\nPoison Immunity. You have Immunity to the Poisoned condition.";
+                break;
+            case "Poisoned":
+                displayString = "While you have the Poisoned condition, you experience the following effect.\r\n\r\nAbility Checks and Attacks Affected. You have Disadvantage on attack rolls and ability checks.";
+                break;
+            case "Prone":
+                displayString = "While you have the Prone condition, you experience the following effects.\r\n\r\nRestricted Movement. Your only movement options are to crawl or to spend an amount of movement equal to half your Speed (round down) to right yourself and thereby end the condition. If your Speed is 0, you can’t right yourself.\r\n\r\nAttacks Affected. You have Disadvantage on attack rolls. An attack roll against you has Advantage if the attacker is within 5 feet of you. Otherwise, that attack roll has Disadvantage.";
+                break;
+            case "Restrained":
+                displayString = "While you have the Restrained condition, you experience the following effects.\r\n\r\nSpeed 0. Your Speed is 0 and can’t increase.\r\n\r\nAttacks Affected. Attack rolls against you have Advantage, and your attack rolls have Disadvantage.\r\n\r\nSaving Throws Affected. You have Disadvantage on Dexterity saving throws.";
+                break;
+            case "Stunned":
+                displayString = "While you have the Stunned condition, you experience the following effects.\r\n\r\nIncapacitated. You have the Incapacitated condition.\r\n\r\nSaving Throws Affected. You automatically fail Strength and Dexterity saving throws.\r\n\r\nAttacks Affected. Attack rolls against you have Advantage.";
+                break;
+            case "Unconscious":
+                displayString = "While you have the Unconscious condition, you experience the following effects.\r\n\r\nInert. You have the Incapacitated and Prone conditions, and you drop whatever you’re holding. When this condition ends, you remain Prone.\r\n\r\nSpeed 0. Your Speed is 0 and can’t increase.\r\n\r\nAttacks Affected. Attack rolls against you have Advantage.\r\n\r\nSaving Throws Affected. You automatically fail Strength and Dexterity saving throws.\r\n\r\nAutomatic Critical Hits. Any attack roll that hits you is a Critical Hit if the attacker is within 5 feet of you.\r\n\r\nUnaware. You’re unaware of your surroundings.";
+                break;
+            case "Positive A":
+                displayString = "This is an undefined positive condition.";
+                break;
+            case "Positive B":
+                displayString = "This is an undefined positive condition.";
+                break;
+            case "Negative A":
+                displayString = "This is an undefined negative condition.";
+                break;
+            case "Negative B":
+                displayString = "This is an undefined negative condition.";
+                break;
+        }
+
+
+        await Shell.Current.CurrentPage.DisplayAlert(ConditionName, displayString, "OK"
+            );
     }
 
     [RelayCommand]
