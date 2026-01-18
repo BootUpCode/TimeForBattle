@@ -12,11 +12,11 @@ public partial class InitiativeViewModel : BaseViewModel
     public CreatureService<Combat> CombatService;
     public CreatureService<Roll> RollService;
     [ObservableProperty] public ObservableCollection<InitiativeCreature> initiative = new();
-    [ObservableProperty] Combat? combat;
+    [ObservableProperty] public Combat? combat;
     [ObservableProperty] public ObservableCollection<Roll> rolls = new();
     [ObservableProperty] public InitiativeCreature currentCreature;
-    [ObservableProperty] public static ObservableCollection<string> conditionNames = ["Blinded", "Charmed", "Deafened", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralyzed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned", "Unconscious", "Positive A", "Positive B", "Negative A", "Negative B"];
-    [ObservableProperty] public String pickedCondition = "Prone";
+    [ObservableProperty] private static ObservableCollection<string> conditionNames = ["Blinded", "Charmed", "Deafened", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralyzed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned", "Unconscious", "Positive A", "Positive B", "Negative A", "Negative B"];
+    [ObservableProperty] public String pickedCondition = "";
 
     public InitiativeViewModel(CreatureService<Creature> creatureService, CreatureService<InitiativeCreatureData> initiativeService, CreatureService<Combat> combatService, CreatureService<Roll> rollService)
     {
@@ -330,7 +330,7 @@ public partial class InitiativeViewModel : BaseViewModel
         if (Combat is null || Initiative is null || initiativeCreature is null || String.IsNullOrEmpty(PickedCondition) || CurrentCreature is null)
             return;
 
-        String timeString = "Round " + Combat.RoundCount.ToString() + "\nInitiative " + CurrentCreature.InitiativeCreatureData.Initiative.ToString();
+        String timeString = "Round " + Combat.RoundCount.ToString() + "\nInit. " + CurrentCreature.InitiativeCreatureData.Initiative.ToString();
 
         if (String.IsNullOrEmpty(initiativeCreature.InitiativeCreatureData.ConditionString1)) { initiativeCreature.InitiativeCreatureData.ConditionString1 = PickedCondition; initiativeCreature.InitiativeCreatureData.ConditionTimeString1 = timeString; }
         else if (String.IsNullOrEmpty(initiativeCreature.InitiativeCreatureData.ConditionString2)) { initiativeCreature.InitiativeCreatureData.ConditionString2 = PickedCondition; initiativeCreature.InitiativeCreatureData.ConditionTimeString2 = timeString; }

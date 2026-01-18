@@ -184,6 +184,39 @@
         <member name="P:TimeForBattle.Model.InitiativeCreatureData.IsExpanded">
             <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.isExpanded"/>
         </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.ConditionString1">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.conditionString1"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.ConditionTimeString1">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.conditionTimeString1"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.ConditionString2">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.conditionString2"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.ConditionTimeString2">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.conditionTimeString2"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.ConditionString3">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.conditionString3"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.ConditionTimeString3">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.conditionTimeString3"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.ConditionString4">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.conditionString4"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.ConditionTimeString4">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.conditionTimeString4"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.ConditionString5">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.conditionString5"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.ConditionTimeString5">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.conditionTimeString5"/>
+        </member>
+        <member name="P:TimeForBattle.Model.InitiativeCreatureData.ActiveTab">
+            <inheritdoc cref="F:TimeForBattle.Model.InitiativeCreatureData.activeTab"/>
+        </member>
         <member name="T:TimeForBattle.Model.Roll">
             <inheritdoc/>
         </member>
@@ -408,6 +441,14 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.Initiative">
             <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.initiative"/>
@@ -421,11 +462,11 @@
         <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentCreature">
             <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.currentCreature"/>
         </member>
-        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.IsRenamingCombat">
-            <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.isRenamingCombat"/>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.ConditionNames">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.conditionNames"/>
         </member>
-        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.NewCombatName">
-            <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.newCombatName"/>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.PickedCondition">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.pickedCondition"/>
         </member>
         <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.refreshInitiativeCommand">
             <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RefreshInitiativeCommand"/>.</summary>
@@ -444,24 +485,6 @@
         </member>
         <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.GoToMainMenuCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.GoToMainMenuAsync"/>.</summary>
-        </member>
-        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.startRenameCombatCommand">
-            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.StartRenameCombatCommand"/>.</summary>
-        </member>
-        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.StartRenameCombatCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.StartRenameCombatAsync"/>.</summary>
-        </member>
-        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.cancelRenameCombatCommand">
-            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.CancelRenameCombatCommand"/>.</summary>
-        </member>
-        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.CancelRenameCombatCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.CancelRenameCombatAsync"/>.</summary>
-        </member>
-        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.confirmlRenameCombatCommand">
-            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.ConfirmlRenameCombatCommand"/>.</summary>
-        </member>
-        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.ConfirmlRenameCombatCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.ConfirmlRenameCombatAsync"/>.</summary>
         </member>
         <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.rollInitiativeCommand">
             <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RollInitiativeCommand"/>.</summary>
@@ -528,6 +551,72 @@
         </member>
         <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsMinusOneCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.CurrentHitPointsMinusOneAsync(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.setActiveTabFirstCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.SetActiveTabFirstCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.SetActiveTabFirstCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.SetActiveTabFirst(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.setActiveTabSecondCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.SetActiveTabSecondCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.SetActiveTabSecondCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.SetActiveTabSecond(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.setActiveTabThirdCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.SetActiveTabThirdCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.SetActiveTabThirdCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.SetActiveTabThird(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.setActiveTabFourthCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.SetActiveTabFourthCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.SetActiveTabFourthCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.SetActiveTabFourth(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.setConditionCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.SetConditionCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.SetConditionCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.SetCondition(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.removeCondition1Command">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition1Command"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition1Command">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition1(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.removeCondition2Command">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition2Command"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition2Command">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition2(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.removeCondition3Command">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition3Command"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition3Command">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition3(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.removeCondition4Command">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition4Command"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition4Command">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition4(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.removeCondition5Command">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition5Command"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition5Command">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.RemoveCondition5(TimeForBattle.Model.InitiativeCreature)"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.showConditionInfoCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.ShowConditionInfoCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.ShowConditionInfoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.ShowConditionInfo(System.String)"/>.</summary>
         </member>
         <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.rollSaveCommand">
             <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RollSaveCommand"/>.</summary>
@@ -859,6 +948,39 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsExpanded">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsExpanded" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConditionString1">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConditionString1" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConditionTimeString1">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConditionTimeString1" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConditionString2">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConditionString2" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConditionTimeString2">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConditionTimeString2" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConditionString3">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConditionString3" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConditionTimeString3">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConditionTimeString3" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConditionString4">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConditionString4" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConditionTimeString4">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConditionTimeString4" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConditionString5">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConditionString5" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConditionTimeString5">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConditionTimeString5" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ActiveTab">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ActiveTab" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CreatureName">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CreatureName" generated properties.</summary>
         </member>
@@ -916,11 +1038,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CurrentCreature">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CurrentCreature" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsRenamingCombat">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsRenamingCombat" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ConditionNames">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ConditionNames" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.NewCombatName">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "NewCombatName" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PickedCondition">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PickedCondition" generated properties.</summary>
         </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
@@ -1093,6 +1215,39 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsExpanded">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsExpanded" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConditionString1">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConditionString1" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConditionTimeString1">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConditionTimeString1" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConditionString2">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConditionString2" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConditionTimeString2">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConditionTimeString2" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConditionString3">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConditionString3" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConditionTimeString3">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConditionTimeString3" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConditionString4">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConditionString4" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConditionTimeString4">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConditionTimeString4" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConditionString5">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConditionString5" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConditionTimeString5">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConditionTimeString5" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ActiveTab">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ActiveTab" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CreatureName">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CreatureName" generated properties.</summary>
         </member>
@@ -1150,11 +1305,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CurrentCreature">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CurrentCreature" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsRenamingCombat">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsRenamingCombat" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ConditionNames">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ConditionNames" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.NewCombatName">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "NewCombatName" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PickedCondition">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PickedCondition" generated properties.</summary>
         </member>
     </members>
 </doc>

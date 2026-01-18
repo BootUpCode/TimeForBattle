@@ -16,8 +16,8 @@ public class RollColorConverter : IValueConverter
             {
                 var color = Colors.Black;
 
-                if (App.Current.Resources.TryGetValue("LabelText", out var colorvalue))
-                    color = (Color)colorvalue;
+                //if (App.Current.Resources.TryGetValue("LabelText", out var colorvalue))
+                    //color = (Color)colorvalue;
 
                 return color;
             }

@@ -30,7 +30,8 @@
                                    FontAttributes="Bold"
                                    HorizontalOptions="Start"
                                    VerticalOptions="Start"
-                                   Margin="5,5,0,0" />
+                                   Margin="5,5,0,0"
+                                   Style="{StaticResource BaseLabel}"/>
                             <Button Grid.Column="2"
                                     Grid.Row="0"
                                     Text="Load"

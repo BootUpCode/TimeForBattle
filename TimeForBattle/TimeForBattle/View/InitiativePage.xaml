@@ -20,6 +20,7 @@
         <converters:AdditionConverter x:Key="AdditionConverter" />
         <converters:StringContainDataConverter x:Key="StringContainDataConverter" />
         <converters:StringsContainDataConverter x:Key="StringsContainDataConverter" />
+        <converters:NotStringContainDataConverter x:Key="NotStringContainDataConverter" />
         <converters:IsZeroConverter x:Key="IsZeroConverter" />
         <converters:CreatureColorConverter x:Key="CreatureColorConverter" />
         <converters:CreatureNameBoldConverter x:Key="CreatureNameBoldConverter" />
@@ -51,7 +52,8 @@
                 LineBreakMode="WordWrap"
                 Command="{Binding GoToCreatureListCommand}"
                 IsEnabled="{Binding Combat.IsStarted, Converter={StaticResource InvertedBoolConverter}}"
-                Style="{StaticResource BaseButton}" />
+                Style="{StaticResource BaseButton}"
+                Padding="15,-3,15,-3"/>
         
         <Button Grid.Column="1"
                 Grid.Row="1"
@@ -95,9 +97,10 @@
                Grid.Row="1"
                HorizontalOptions="Center"
                VerticalOptions="Center"
-               IsVisible="{Binding Combat.IsStarted}">
+               IsVisible="{Binding Combat.IsStarted}"
+               Style="{StaticResource BaseLabel}">
             <Label.Text>
-                <MultiBinding StringFormat='{}Round {0}, Initiative {1}'>
+                <MultiBinding StringFormat='{}Round {0}, Init. {1}'>
                     <Binding Path="Combat.RoundCount" />
                     <Binding Path="CurrentCreature.InitiativeCreatureData.Initiative" />
                 </MultiBinding>
@@ -109,7 +112,8 @@
                HorizontalOptions="Center"
                VerticalOptions="Center"
                IsVisible="{Binding Combat.IsStarted}"
-               LineBreakMode="WordWrap">
+               LineBreakMode="WordWrap"
+               Style="{StaticResource BaseLabel}">
             <Label.Text>
                 <MultiBinding StringFormat="{}{0} {1}&apos;s turn">
                     <Binding Path="CurrentCreature.Creature.Name" />
@@ -134,7 +138,8 @@
                         Direction="Column"
                         Wrap="NoWrap"
                         JustifyContent="Start"
-                        AlignContent="Start">
+                        AlignContent="Start"
+                        Padding="0,3,0,3">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="model:InitiativeCreature">
                         <VerticalStackLayout Padding="3,3,3,3">
@@ -143,7 +148,7 @@
                                     Grid.RowSpan="1"
                                     Stroke="{Binding InitiativeCreatureData.IsTurn, Converter={StaticResource CreatureColorConverter}}"
                                     StrokeThickness="2"
-                                    WidthRequest="300">
+                                    WidthRequest="300" >
                                 <toolkit:Expander Grid.Column="1"
                                                   Grid.Row="0"
                                                   Grid.RowSpan="1"
@@ -255,17 +260,19 @@
                                                    Grid.Row="0"
                                                    Grid.RowSpan="2"
                                                    Text="{Binding InitiativeCreatureData.CurrentHitPoints}"
-                                                   WidthRequest="40"
-                                                   MinimumWidthRequest="40"
+                                                   WidthRequest="50"
+                                                   MinimumWidthRequest="50"
                                                    HeightRequest="35"
                                                    VerticalOptions="Center"
-                                                   MaxLength="3"
-                                                   Keyboard="Numeric" />
+                                                   MaxLength="4"
+                                                   Keyboard="Numeric"
+                                                   Style="{StaticResource BaseEntry}" />
                                             <Label Grid.Column="3"
                                                    Grid.Row="0"
                                                    Grid.RowSpan="2"
                                                    Text="{Binding Creature.MaximumHitPoints, StringFormat='{} / {0}'}"
-                                                   VerticalOptions="Center" />
+                                                   VerticalOptions="Center"
+                                                   Style="{StaticResource BaseLabel}" />
                                             <Button Grid.Column="4"
                                                     Grid.Row="0"
                                                     Text="+1"
@@ -445,9 +452,9 @@
                                             </Button>
                                         </Grid>
 
-                                        <Grid ColumnDefinitions="90,*,40,80"
+                                        <Grid ColumnDefinitions="105,*,40,80"
                                               ColumnSpacing="0"
-                                              RowDefinitions="35,Auto,Auto,Auto,Auto,Auto,Auto"
+                                              RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto"
                                               RowSpacing="0"
                                               Padding="3,3,3,3">
                                             <Grid.IsVisible>
@@ -457,17 +464,30 @@
                                                              FallbackValue="3" />
                                                 </MultiBinding>
                                             </Grid.IsVisible>
+                                            <Label Grid.Column="0"
+                                                   Grid.ColumnSpan="2"
+                                                   Grid.Row="0"
+                                                   Text="Select Condition"
+                                                   IsVisible="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=PickedCondition, Converter={StaticResource NotStringContainDataConverter}}"
+                                                   VerticalOptions="Start"
+                                                   HorizontalOptions="Start"
+                                                   MinimumWidthRequest="200"
+                                                   WidthRequest="200"
+                                                   HeightRequest="38"
+                                                   Margin="12,10,0,-10"
+                                                   TextColor="Black"/>
                                             <Picker Grid.Column="0"
-                                                    Grid.ColumnSpan="2"
-                                                    Grid.Row="0"
-                                                    Style="{StaticResource StatblockText}"
-                                                    ItemsSource="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=ConditionNames}"
-                                                    SelectedItem="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=PickedCondition}"
-                                                    VerticalOptions="Start"
-                                                    HorizontalOptions="Start"
-                                                    MinimumWidthRequest="200"
-                                                    WidthRequest="200"
-                                                    Margin="0,2,0,0"/>
+                                                        Grid.ColumnSpan="2"
+                                                        Grid.Row="0"
+                                                        Style="{StaticResource BasePicker}"
+                                                        ItemsSource="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=ConditionNames}"
+                                                        SelectedItem="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=PickedCondition}"
+                                                        VerticalOptions="Start"
+                                                        HorizontalOptions="Start"
+                                                        MinimumWidthRequest="200"
+                                                        WidthRequest="200"
+                                                        HeightRequest="38"
+                                                        Margin="0,0,0,0" />
                                             <Button Grid.Column="3"
                                                     Grid.Row="0"
                                                     Text="Add"
@@ -481,7 +501,8 @@
                                                    HorizontalOptions="Start"
                                                    VerticalOptions="Center"
                                                    Margin="3,0,0,0"
-                                                   FontAttributes="Bold">
+                                                   FontAttributes="Bold"
+                                                   Style="{StaticResource BaseLabel}">
                                                 <Label.IsVisible>
                                                     <MultiBinding Converter="{StaticResource StringsContainDataConverter}">
                                                         <Binding Path="InitiativeCreatureData.ConditionString1" />
@@ -498,7 +519,8 @@
                                                    HorizontalOptions="Start"
                                                    VerticalOptions="Center"
                                                    Margin="3,0,0,0"
-                                                   FontAttributes="Bold">
+                                                   FontAttributes="Bold"
+                                                   Style="{StaticResource BaseLabel}">
                                                 <Label.IsVisible>
                                                     <MultiBinding Converter="{StaticResource StringsContainDataConverter}">
                                                         <Binding Path="InitiativeCreatureData.ConditionString1" />
@@ -516,7 +538,8 @@
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString1, Converter={StaticResource StringContainDataConverter}}"
                                                    HorizontalOptions="Start"
                                                    VerticalOptions="Start"
-                                                   Margin="3,1,0,0"/>
+                                                   Margin="3,1,0,0"
+                                                   Style="{StaticResource BaseLabel}" />
                                             <Label Grid.Column="0"
                                                    Grid.Row="2"
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString1, Converter={StaticResource StringContainDataConverter}}"
@@ -537,7 +560,8 @@
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString1, Converter={StaticResource StringContainDataConverter}}"
                                                    HorizontalOptions="Start"
                                                    VerticalOptions="Center"
-                                                   Margin="3,0,0,0" />
+                                                   Margin="3,0,0,0"
+                                                   Style="{StaticResource BaseLabel}"  />
                                             <Button Grid.Column="2"
                                                     Grid.Row="2"
                                                     Text="?"
@@ -551,14 +575,16 @@
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition1Command}"
                                                     CommandParameter="{Binding .}"
                                                     Style="{StaticResource BaseButton}"
-                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString1, Converter={StaticResource StringContainDataConverter}}" />
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString1, Converter={StaticResource StringContainDataConverter}}"
+                                                    Padding="-5,0,-5,0" />
                                             <Label Grid.Column="0"
                                                    Grid.Row="3"
                                                    Text="{Binding InitiativeCreatureData.ConditionString2}"
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString2, Converter={StaticResource StringContainDataConverter}}"
                                                    HorizontalOptions="Start"
                                                    VerticalOptions="Start"
-                                                   Margin="3,1,0,0" />
+                                                   Margin="3,1,0,0"
+                                                   Style="{StaticResource BaseLabel}"  />
                                             <Label Grid.Column="0"
                                                    Grid.Row="3"
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString2, Converter={StaticResource StringContainDataConverter}}"
@@ -579,7 +605,8 @@
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString2, Converter={StaticResource StringContainDataConverter}}"
                                                    HorizontalOptions="Start"
                                                    VerticalOptions="Center"
-                                                   Margin="3,0,0,0" />
+                                                   Margin="3,0,0,0"
+                                                   Style="{StaticResource BaseLabel}"  />
                                             <Button Grid.Column="2"
                                                     Grid.Row="3"
                                                     Text="?"
@@ -593,14 +620,16 @@
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition2Command}"
                                                     CommandParameter="{Binding .}"
                                                     Style="{StaticResource BaseButton}"
-                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString2, Converter={StaticResource StringContainDataConverter}}" />
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString2, Converter={StaticResource StringContainDataConverter}}"
+                                                    Padding="-5,0,-5,0" />
                                             <Label Grid.Column="0"
                                                    Grid.Row="4"
                                                    Text="{Binding InitiativeCreatureData.ConditionString3}"
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString3, Converter={StaticResource StringContainDataConverter}}"
                                                    HorizontalOptions="Start"
                                                    VerticalOptions="Start"
-                                                   Margin="3,1,0,0" />
+                                                   Margin="3,1,0,0"
+                                                   Style="{StaticResource BaseLabel}"  />
                                             <Label Grid.Column="0"
                                                    Grid.Row="4"
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString3, Converter={StaticResource StringContainDataConverter}}"
@@ -621,7 +650,8 @@
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString3, Converter={StaticResource StringContainDataConverter}}"
                                                    HorizontalOptions="Start"
                                                    VerticalOptions="Center"
-                                                   Margin="3,0,0,0" />
+                                                   Margin="3,0,0,0"
+                                                   Style="{StaticResource BaseLabel}"  />
                                             <Button Grid.Column="2"
                                                     Grid.Row="4"
                                                     Text="?"
@@ -635,14 +665,16 @@
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition3Command}"
                                                     CommandParameter="{Binding .}"
                                                     Style="{StaticResource BaseButton}"
-                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString3, Converter={StaticResource StringContainDataConverter}}" />
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString3, Converter={StaticResource StringContainDataConverter}}"
+                                                    Padding="-5,0,-5,0" />
                                             <Label Grid.Column="0"
                                                    Grid.Row="5"
                                                    Text="{Binding InitiativeCreatureData.ConditionString4}"
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString4, Converter={StaticResource StringContainDataConverter}}"
                                                    HorizontalOptions="Start"
                                                    VerticalOptions="Start"
-                                                   Margin="3,1,0,0" />
+                                                   Margin="3,1,0,0"
+                                                   Style="{StaticResource BaseLabel}"  />
                                             <Label Grid.Column="0"
                                                    Grid.Row="5"
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString4, Converter={StaticResource StringContainDataConverter}}"
@@ -663,7 +695,8 @@
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString4, Converter={StaticResource StringContainDataConverter}}"
                                                    HorizontalOptions="Start"
                                                    VerticalOptions="Center"
-                                                   Margin="3,0,0,0" />
+                                                   Margin="3,0,0,0"
+                                                   Style="{StaticResource BaseLabel}"  />
                                             <Button Grid.Column="2"
                                                     Grid.Row="5"
                                                     Text="?"
@@ -677,14 +710,16 @@
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition4Command}"
                                                     CommandParameter="{Binding .}"
                                                     Style="{StaticResource BaseButton}"
-                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString4, Converter={StaticResource StringContainDataConverter}}" />
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString4, Converter={StaticResource StringContainDataConverter}}"
+                                                    Padding="-5,0,-5,0" />
                                             <Label Grid.Column="0"
                                                    Grid.Row="6"
                                                    Text="{Binding InitiativeCreatureData.ConditionString5}"
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString5, Converter={StaticResource StringContainDataConverter}}"
                                                    HorizontalOptions="Start"
                                                    VerticalOptions="Start"
-                                                   Margin="3,1,0,0" />
+                                                   Margin="3,1,0,0"
+                                                   Style="{StaticResource BaseLabel}"  />
                                             <Label Grid.Column="0"
                                                    Grid.Row="6"
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString5, Converter={StaticResource StringContainDataConverter}}"
@@ -705,7 +740,8 @@
                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString5, Converter={StaticResource StringContainDataConverter}}"
                                                    HorizontalOptions="Start"
                                                    VerticalOptions="Center"
-                                                   Margin="3,0,0,0" />
+                                                   Margin="3,0,0,0"
+                                                   Style="{StaticResource BaseLabel}"  />
                                             <Button Grid.Column="2"
                                                     Grid.Row="6"
                                                     Text="?"
@@ -719,7 +755,8 @@
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RemoveCondition5Command}"
                                                     CommandParameter="{Binding .}"
                                                     Style="{StaticResource BaseButton}"
-                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString5, Converter={StaticResource StringContainDataConverter}}" />
+                                                    IsVisible="{Binding InitiativeCreatureData.ConditionString5, Converter={StaticResource StringContainDataConverter}}"
+                                                    Padding="-5,0,-5,0" />
                                         </Grid>
 
                                     </VerticalStackLayout>
@@ -773,7 +810,8 @@
                                                            MaximumHeightRequest="20"
                                                            LineBreakMode="TailTruncation"
                                                            Margin="0,-2,0,0" 
-                                                           Text="{Binding Creature.Name}"/>
+                                                           Text="{Binding Creature.Name}"
+                                                           Style="{StaticResource BaseLabel}" />
                                                     <Label VerticalOptions="Center"
                                                            HorizontalOptions="Start"
                                                            FontAttributes="{Binding InitiativeCreatureData.IsTurn, Converter={StaticResource CreatureNameBoldConverter}}"
@@ -782,7 +820,8 @@
                                                            MinimumHeightRequest="20"
                                                            MaximumHeightRequest="20"
                                                            Margin="2,-2,0,0"
-                                                           Text="{Binding InitiativeCreatureData.NameID}" />
+                                                           Text="{Binding InitiativeCreatureData.NameID}"
+                                                           Style="{StaticResource BaseLabel}" />
                                                 </HorizontalStackLayout>
 
                                                 <Label Grid.Column="1"
@@ -829,7 +868,8 @@
                                                        Grid.Row="2"
                                                        HeightRequest="35"
                                                        VerticalOptions="Center"
-                                                       HorizontalOptions="Center">
+                                                       HorizontalOptions="Center"
+                                                       Style="{StaticResource BaseLabel}">
                                                     <Label.Text>
                                                         <MultiBinding StringFormat='{}{0} / {1}'>
                                                             <Binding Path=".InitiativeCreatureData.CurrentHitPoints" />
@@ -850,7 +890,8 @@
                                                    MinimumHeightRequest="24"
                                                    Margin="-6,-2,-7,8"
                                                    VerticalOptions="Center"
-                                                   HorizontalOptions="Center" />
+                                                   HorizontalOptions="Center"
+                                                   Style="{StaticResource BaseLabel}" />
                                         </Grid>
                                     </toolkit:Expander.Header>
                                 </toolkit:Expander>
@@ -890,19 +931,22 @@
                                 <Label FontAttributes="Bold"
                                        HorizontalOptions="Start"
                                        Text="{Binding Round, StringFormat='{} Round {0}: '}"
-                                       Margin="0,0,0,-5" />
+                                       Margin="0,0,3,-5"
+                                       Style="{StaticResource BaseLabel}" />
                                 <Label FontAttributes="Bold"
                                        HorizontalOptions="Start"
                                        Text="{Binding CreatureName}"
                                        MaximumWidthRequest="100"
                                        LineBreakMode="TailTruncation"
-                                       Margin="0,0,0,-5" />
+                                       Margin="0,0,0,-5"
+                                       Style="{StaticResource BaseLabel}" />
                                 <Label Grid.Column="0"
                                    Grid.ColumnSpan="2"
                                    Grid.Row="0"
                                    FontAttributes="Bold"
                                    HorizontalOptions="Start"
-                                       Margin="0,0,0,-5">
+                                       Margin="0,0,0,-5"
+                                       Style="{StaticResource BaseLabel}">
                                 <Label.Text>
                                         <MultiBinding StringFormat="{} rolled {0} ({1})">
                                         <Binding Path="RollName" />
@@ -927,8 +971,9 @@
                                     </Label.Text>
                                 </Label>
                                 <Label FontSize="20"
-                                       FontAttributes="Bold" 
-                                       Text="|"/>
+                                       FontAttributes="Bold"
+                                       Text="|"
+                                       Style="{StaticResource BaseLabel}" />
                                 <Label FontSize="20"
                                        FontAttributes="Bold"
                                        TextColor="{Binding RollValue2, Converter={StaticResource RollColorConverter}}">
@@ -945,12 +990,14 @@
                                                    Padding="0,0,20,0">
                                 <Label FontSize="20"
                                        FontAttributes="Bold"
-                                       Text="{Binding Damage}" />
+                                       Text="{Binding Damage}"
+                                       Style="{StaticResource BaseLabel}" />
                                 <Label FontSize="20"
                                        FontAttributes="Bold"
                                        Text="{Binding DamageType, StringFormat='{} {0} Damage'}"
                                        IsVisible="{Binding DamageType, Converter={StaticResource StringContainDataConverter}}"
-                                       LineBreakMode="TailTruncation"/>
+                                       LineBreakMode="TailTruncation"
+                                       Style="{StaticResource BaseLabel}" />
                             </HorizontalStackLayout>
                             <BoxView Grid.Column="0"
                                      Grid.ColumnSpan="2"
