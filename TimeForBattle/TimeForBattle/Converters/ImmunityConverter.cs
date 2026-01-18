@@ -13,7 +13,7 @@ public class ImmunityConverter : IMultiValueConverter
 
         if (values[0] is String condition && values[1] is String immunityString)
         {
-            if (immunityString.Contains(condition)) {
+            if (immunityString.Contains(condition) || immunityString.Contains(char.ToLower(condition[0]) + condition.Substring(1))) {
                 returnString = "(Immune)";
             }
         }

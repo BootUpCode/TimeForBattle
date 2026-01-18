@@ -16,16 +16,19 @@
             <x:String x:Key="Attribute5">Cha</x:String>
 
             <Color x:Key="Primary">DarkRed</Color>
-            <Color x:Key="PrimaryDark">#FFA000</Color>
+            <Color x:Key="PrimaryDark">DarkRed</Color>
             <Color x:Key="Accent">#00BCD4</Color>
 
             <Color x:Key="LightBackground">Beige</Color>
-            <Color x:Key="DarkBackground">DarkOrange</Color>
+            <Color x:Key="DarkBackground">Beige</Color>
 
-            <Color x:Key="LabelText">#1F1F1F</Color>
-            <Color x:Key="LabelTextDark">White</Color>
+            <Color x:Key="LabelText">Black</Color>
+            <Color x:Key="LabelTextDark">Black</Color>
 
-            <Color x:Key="CardBackground">White</Color>
+            <Color x:Key="ButtonText">White</Color>
+            <Color x:Key="ButtonTextDark">White</Color>
+
+            <Color x:Key="CardBackground">#1C1C1E</Color>
             <Color x:Key="CardBackgroundDark">#1C1C1E</Color>
 
             <Style TargetType="Page"
@@ -52,12 +55,30 @@
                         Value="{AppThemeBinding Light={StaticResource LabelText}, Dark={StaticResource LabelTextDark}}" />
             </Style>
 
+            <Style TargetType="Picker"
+                   x:Key="BasePicker">
+                <Setter Property="FontFamily"
+                        Value="OpenSansRegular" />
+                <Setter Property="TextColor"
+                        Value="{AppThemeBinding Light={StaticResource LabelText}, Dark={StaticResource LabelTextDark}}" />
+                <Setter Property="TitleColor"
+                        Value="Gray" />
+            </Style>
+
+            <Style TargetType="Entry"
+                   x:Key="BaseEntry">
+                <Setter Property="FontFamily"
+                        Value="OpenSansRegular" />
+                <Setter Property="TextColor"
+                        Value="{AppThemeBinding Light={StaticResource LabelText}, Dark={StaticResource LabelTextDark}}" />
+            </Style>
+
             <Style TargetType="Button"
                    x:Key="BaseButton">
                 <Setter Property="FontFamily"
                         Value="OpenSansRegular" />
                 <Setter Property="TextColor"
-                        Value="{AppThemeBinding Light={StaticResource LabelText}, Dark={StaticResource LabelTextDark}}" />
+                        Value="{AppThemeBinding Light={StaticResource ButtonText}, Dark={StaticResource ButtonTextDark}}" />
                 <Setter Property="BackgroundColor"
                         Value="{StaticResource Primary}" />
                 <Setter Property="BorderColor"
@@ -113,7 +134,7 @@
             <Style x:Key="StatblockText"
                    TargetType="Label">
                 <Setter Property="TextColor"
-                        Value="DarkRed" />
+                        Value="{StaticResource Primary}" />
                 <Setter Property="FontSize"
                         Value="14" />
                 <Setter Property="HorizontalOptions"
@@ -125,7 +146,7 @@
             <Style x:Key="StatblockSpan"
                    TargetType="Span">
                 <Setter Property="TextColor"
-                        Value="DarkRed" />
+                        Value="{StaticResource Primary}"  />
                 <Setter Property="FontSize"
                         Value="14" />
             </Style>
@@ -133,7 +154,7 @@
             <Style x:Key="StatblockEntry"
                    TargetType="Entry">
                 <Setter  Property="TextColor"
-                         Value="DarkRed" />
+                         Value="{StaticResource Primary}"  />
                 <Setter  Property="FontSize"
                          Value="14" />
             </Style>
@@ -141,7 +162,7 @@
             <Style x:Key="StatblockEditor"
                    TargetType="Editor">
                 <Setter  Property="TextColor"
-                         Value="DarkRed" />
+                         Value="{StaticResource Primary}"  />
                 <Setter  Property="FontSize"
                          Value="14" />
             </Style>
@@ -149,7 +170,7 @@
             <Style x:Key="StatblockLine"
                    TargetType="Line">
                 <Setter  Property="Stroke"
-                         Value="DarkRed" />
+                         Value="{StaticResource Primary}"  />
                 <Setter  Property="StrokeThickness"
                          Value="2" />
             </Style>
@@ -178,7 +199,7 @@
             <Style x:Key="CardView"
                    TargetType="Border">
                 <Setter Property="Stroke"
-                        Value="#DDDDDD" />
+                        Value="{StaticResource ButtonText}" />
                 <Setter Property="StrokeThickness"
                         Value="1" />
                 <Setter Property="StrokeShape"

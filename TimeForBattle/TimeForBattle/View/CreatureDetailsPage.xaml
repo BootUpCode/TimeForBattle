@@ -462,7 +462,8 @@
                        Grid.Row="32"
                        IsVisible="{Binding Creature.Traits, Converter={StaticResource StringContainDataConverter}}"
                        Text="{Binding Creature.Traits}"
-                       VerticalTextAlignment="Start" />
+                       VerticalTextAlignment="Start"
+                       Style="{StaticResource StatblockText}" />
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="6"
                        Grid.Row="34"
@@ -481,7 +482,8 @@
                        Grid.Row="36"
                        IsVisible="{Binding Creature.Actions, Converter={StaticResource StringContainDataConverter}}"
                        Text="{Binding Creature.Actions}"
-                       VerticalTextAlignment="Start" />
+                       VerticalTextAlignment="Start"
+                       Style="{StaticResource StatblockText}" />
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="6"
                        Grid.Row="38"
@@ -500,7 +502,8 @@
                        Grid.Row="40"
                        IsVisible="{Binding Creature.BonusActions, Converter={StaticResource StringContainDataConverter}}"
                        Text="{Binding Creature.BonusActions}"
-                       VerticalTextAlignment="Start" />
+                       VerticalTextAlignment="Start"
+                       Style="{StaticResource StatblockText}" />
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="6"
                        Grid.Row="42"
@@ -519,7 +522,8 @@
                        Grid.Row="44"
                        IsVisible="{Binding Creature.Reactions, Converter={StaticResource StringContainDataConverter}}"
                        Text="{Binding Creature.Reactions}"
-                       VerticalTextAlignment="Start" />
+                       VerticalTextAlignment="Start"
+                       Style="{StaticResource StatblockText}" />
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="6"
                        Grid.Row="46"
@@ -538,7 +542,8 @@
                        Grid.Row="48"
                        IsVisible="{Binding Creature.LegendaryActions, Converter={StaticResource StringContainDataConverter}}"
                        Text="{Binding Creature.LegendaryActions}"
-                       VerticalTextAlignment="Start" />
+                       VerticalTextAlignment="Start"
+                       Style="{StaticResource StatblockText}" />
             </Grid>
         </ScrollView>
         
