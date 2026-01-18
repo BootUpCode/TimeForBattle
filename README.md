@@ -39,7 +39,7 @@ TimeForBattle can now also quickly calculate results for common combat occurance
 - Add status tracking to initiative page (Done!)
   - Track duration of status in rounds (Done!)
   - UI warning when creature is immine to assigned status (Done!)
+- Adjust UI colors (Done!)
 - Search/sort function for creature list
 - Add app icon
 - Main menu icon
-- Adjust UI colors
