@@ -41,5 +41,6 @@ TimeForBattle can now also quickly calculate results for common combat occurance
   - UI warning when creature is immine to assigned status (Done!)
 - Adjust UI colors (Done!)
 - Search/sort function for creature list (Done!)
+- Bugfix: change hotkey import function to ignore abilties with saving throws
 - Add app icon
 - Main menu icon
