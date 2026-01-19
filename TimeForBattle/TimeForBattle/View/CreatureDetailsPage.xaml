@@ -14,6 +14,7 @@
         <converters:NotStringContainDataConverter x:Key="NotStringContainDataConverter" />
         <converters:SignConverter x:Key="SignConverter" />
         <converters:InvertedBoolConverter x:Key="InvertedBoolConverter" />
+        <converters:ChallengeConverter x:Key="ChallengeConverter" />
     </ContentPage.Resources>
 
     <Grid ColumnDefinitions="*,*"
@@ -93,7 +94,7 @@
                        Grid.ColumnSpan="1"
                        Grid.Row="9"
                        Style="{StaticResource StatblockText}"
-                       Text="{Binding Creature.ChallengeRating}"
+                       Text="{Binding Creature.ChallengeRating, Converter={StaticResource ChallengeConverter}}"
                        WidthRequest="40"
                        MinimumWidthRequest="40"
                        HorizontalOptions="Start" />

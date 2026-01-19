@@ -13,7 +13,7 @@ public partial class Creature : DatabaseObject
     [ObservableProperty] public int initiativeBonus;
     [ObservableProperty] public int maximumHitPoints;
     [ObservableProperty] public string speed;
-    [ObservableProperty] public string challengeRating;
+    [ObservableProperty] public int challengeRating;
 
     [ObservableProperty] public int strScore;
     [ObservableProperty] public int dexScore;
@@ -88,7 +88,7 @@ public partial class Creature : DatabaseObject
 
         this.ArmorClass = int.TryParse(creatureData[4], out result) ? result : 0;
         this.MaximumHitPoints = int.TryParse(creatureData[5], out result) ? result : 0;
-        this.ChallengeRating = String.IsNullOrEmpty(creatureData[6]) ? string.Empty : creatureData[6];
+        this.ChallengeRating = int.TryParse(creatureData[6], out result) ? (result * 8) : 0;
         this.InitiativeBonus = int.TryParse(creatureData[7], out result) ? result : (int)Math.Floor(((double)this.DexScore - 10) / 2);
         this.Speed = String.IsNullOrEmpty(creatureData[8]) ? string.Empty : creatureData[8];
 
@@ -111,14 +111,14 @@ public partial class Creature : DatabaseObject
         this.HotKey1Bonus = int.TryParse(creatureData[33], out result) ? result : 0;
         this.HotKey1DamageDiceNumber = int.TryParse(creatureData[34], out result) ? result : 0;
         this.HotKey1DamageDiceSize = int.TryParse(creatureData[35], out result) ? result : 0;
-        this.HotKey1DamageBonus = int.TryParse(creatureData[36], out result) ? result : 0;
+        this.HotKey1DamageBonus = int.TryParse(creatureData[36].Replace(" ", string.Empty), out result) ? result : 0;
         this.HotKey1DamageType = String.IsNullOrEmpty(creatureData[37]) ? string.Empty : char.ToUpper(creatureData[37][0]) + creatureData[37].Substring(1);
 
         this.HotKey2Name = String.IsNullOrEmpty(creatureData[38]) ? string.Empty : creatureData[38].Trim();
         this.HotKey2Bonus = int.TryParse(creatureData[39], out result) ? result : 0;
         this.HotKey2DamageDiceNumber = int.TryParse(creatureData[40], out result) ? result : 0;
         this.HotKey2DamageDiceSize = int.TryParse(creatureData[41], out result) ? result : 0;
-        this.HotKey2DamageBonus = int.TryParse(creatureData[42], out result) ? result : 0;
+        this.HotKey2DamageBonus = int.TryParse(creatureData[42].Replace(" ", string.Empty), out result) ? result : 0;
         this.HotKey2DamageType = String.IsNullOrEmpty(creatureData[43]) ? string.Empty : char.ToUpper(creatureData[43][0]) + creatureData[43].Substring(1);
     }
 }

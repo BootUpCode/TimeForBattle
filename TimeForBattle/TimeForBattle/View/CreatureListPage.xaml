@@ -6,16 +6,18 @@
              xmlns:converters="clr-namespace:TimeForBattle.Converters"
              x:DataType="viewmodel:CreatureListViewModel"
              Title="{Binding Combat.Name}"
-             x:Class="TimeForBattle.View.CreatureListPage">
+             x:Class="TimeForBattle.View.CreatureListPage"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
     <ContentPage.Resources>
         <converters:InvertedBoolConverter x:Key="InvertedBool" />
         <converters:IsNotNullConverter x:Key="IsNotNullConverter" />
+        <converters:ChallengeConverter x:Key="ChallengeConverter" />
     </ContentPage.Resources>
 
-    <Grid ColumnDefinitions="*,*"
+    <Grid ColumnDefinitions="*,*,60"
           ColumnSpacing="0"
-          RowDefinitions="35,35,*,Auto,Auto,35">
+          RowDefinitions="35,35,35,*,Auto,Auto,35">
 
         <Button Grid.Row="0"
                 Grid.Column="0"
@@ -31,8 +33,8 @@
             </Button.CommandParameter>
         </Button>
 
-        <Button Grid.Row="1"
-                Grid.Column="0"
+        <Button Grid.Row="0"
+                Grid.Column="1"
                 Text="View Players"
                 BorderColor="Black"
                 CornerRadius="0"
@@ -46,35 +48,31 @@
         </Button>
 
         <Button Grid.Row="0"
-                Grid.Column="1"
-                Text="New Monster"
+                Grid.Column="2"
+                Text="New"
                 BorderColor="Black"
                 CornerRadius="0"
                 Command="{Binding NewCreatureCommand}"
-                Style="{StaticResource BaseButton}">
-            <Button.CommandParameter>
-                <x:Boolean>
-                    False
-                </x:Boolean>
-            </Button.CommandParameter>
-        </Button>
+                Style="{StaticResource BaseButton}" />
 
-        <Button Grid.Row="1"
+        <Label Grid.Row="1"
+                Grid.Column="0"
+                Text="Sort:"
+                Style="{StaticResource BaseLabel}" />
+        <Picker Grid.Row="1"
                 Grid.Column="1"
-                Text="New Player"
-                BorderColor="Black"
-                CornerRadius="0"
-                Command="{Binding NewCreatureCommand}"
-                Style="{StaticResource BaseButton}">
-            <Button.CommandParameter>
-                <x:Boolean>
-                    True
-                </x:Boolean>
-            </Button.CommandParameter>
-        </Button>
+                Style="{StaticResource BasePicker}"
+                ItemsSource="{Binding SortNames}"
+                SelectedItem="{Binding PickedSort}"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"
+                MinimumWidthRequest="200"
+                WidthRequest="200"
+                HeightRequest="38"
+                Margin="0,0,0,0" />
 
-        <ScrollView Grid.Row="2"
-                    Grid.ColumnSpan="2">
+        <ScrollView Grid.Row="3"
+                    Grid.ColumnSpan="3">
             <FlexLayout BackgroundColor="Transparent"
                         BindableLayout.ItemsSource="{Binding Creatures}"
                         Direction="Row"
@@ -144,13 +142,13 @@
                                     <Label Grid.Column="1"
                                            Grid.Row="3"
                                            IsVisible="{Binding IsPlayer, Converter={StaticResource InvertedBool}}"
-                                           Text="{Binding ChallengeRating, StringFormat='CR: {0}'}"
+                                           Text="{Binding ChallengeRating, Converter={StaticResource ChallengeConverter}, StringFormat='CR: {0}'}"
                                            VerticalOptions="Center"
                                            Style="{StaticResource BaseLabel}" />
                                     <Label Grid.Column="1"
                                            Grid.Row="3"
                                            IsVisible="{Binding IsPlayer}"
-                                           Text="{Binding ChallengeRating, StringFormat='Level: {0}'}"
+                                           Text="{Binding ChallengeRating, Converter={StaticResource ChallengeConverter}, StringFormat='Level: {0}'}"
                                            VerticalOptions="Center"
                                            Style="{StaticResource BaseLabel}" />
                                     <Label Grid.Column="0"
@@ -289,14 +287,14 @@
         </ScrollView>
 
         <BoxView Grid.Column="0"
-                 Grid.ColumnSpan="2"
-                 Grid.Row="3"
+                 Grid.ColumnSpan="3"
+                 Grid.Row="4"
                  HeightRequest="2"
                  Color="DarkRed"
                  IsVisible="{Binding x:DataType='viewmodel:CreatureListViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureListViewModel}}, Path=Combat, Converter={StaticResource IsNotNullConverter}}"/>
 
-        <Grid Grid.Row="4"
-              Grid.ColumnSpan="2"
+        <Grid Grid.Row="5"
+              Grid.ColumnSpan="3"
               ColumnDefinitions="*"
               ColumnSpacing="0"
               RowDefinitions="20,*"
@@ -376,9 +374,9 @@
             </ScrollView>
         </Grid>
 
-        <Button Grid.Row="5"
+        <Button Grid.Row="6"
                 Grid.Column="0"
-                Grid.ColumnSpan="2"
+                Grid.ColumnSpan="3"
                 Command="{Binding GoToInitiativeCommand}"
                 Text="View Initiative"
                 BorderColor="Black"
