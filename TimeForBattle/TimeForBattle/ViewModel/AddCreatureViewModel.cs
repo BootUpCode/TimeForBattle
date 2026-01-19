@@ -1,5 +1,6 @@
 ﻿using System.Text.RegularExpressions;
 using TimeForBattle.Services;
+using static Microsoft.Maui.ApplicationModel.Permissions;
 
 namespace TimeForBattle.ViewModel;
 
@@ -79,8 +80,8 @@ public partial class AddCreatureViewModel : BaseViewModel
         string[] regexStrings =
         [
             @"([a-zA-Z ]+)\r?\n?",
-            @"(Small|Medium|Large|Huge|Gargantuan)",
-            @"(?:Small|Medium|Large|Huge|Gargantuan) ([a-zA-Z() ]+)",
+            @"((?:Small|Medium|Large|Huge|Gargantuan)(?: Or )?(?:Small|Medium|Large|Huge|Gargantuan)?)",
+            @"(?:(?:Small|Medium|Large|Huge|Gargantuan)(?: Or )?(?:Small|Medium|Large|Huge|Gargantuan)?) ([a-zA-Z() ]+)",
             @"[a-zA-Z]+\r?\n?[a-zA-Z]+ [a-zA-Z() ]+, ([a-zA-Z ]+)",
             @"(?:AC|Armor Class) ([0-9]+)",
             @"(?:HP|Hit Points) ([0-9]+)",
@@ -112,16 +113,16 @@ public partial class AddCreatureViewModel : BaseViewModel
             @"(?:Legendary actions|Legendary Actions)\s*((?:(?!Habitat|Treasure|Source).)*)",
             @"Actions.*?([A-Za-z ]+)\. [A-Za-z ]+: \+",
             @"Actions.*?: \+([0-9]+)",
-            @"Actions.*?\(([0-9]+)d[0-9]+ \+ [0-9]+\)",
-            @"Actions.*?\([0-9]+d([0-9]+) \+ [0-9]+\)",
-            @"Actions.*?\([0-9]+d[0-9]+ \+ ([0-9]+)\)",
+            @"Actions.*?\(([0-9]+)d[0-9]+(?: \+ [0-9]+)?\)",
+            @"Actions.*?\([0-9]+d([0-9]+)(?: \+ [0-9]+)?\)",
+            @"Actions.*?\([0-9]+d[0-9]+(?:( \+ [0-9]+)?)\)",
             @"Actions.*?(Acid|Bludgeoning|Cold|Fire|Force|Lightning|Necrotic|Piercing|Poison|Psychic|Radiant|Slashing|Thunder|acid|bludgeoning|cold|fire|force|lightning|necrotic|piercing|poison|psychic|radiant|slashing|thunder)",
-            @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?([A-Za-z ]+)\. [A-Za-z ]+: \+",
-            @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?: \+([0-9]+)",
-            @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?\(([0-9]+)d[0-9]+ \+ [0-9]+\)",
-            @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?\([0-9]+d([0-9]+) \+ [0-9]+\)",
-            @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?\([0-9]+d[0-9]+ \+ ([0-9]+)\)",
-            @"Actions.*?\([0-9]+d[0-9]+ \+ [0-9]+\) [A-Za-z]+ damage\..*?(Acid|Bludgeoning|Cold|Fire|Force|Lightning|Necrotic|Piercing|Poison|Psychic|Radiant|Slashing|Thunder|acid|bludgeoning|cold|fire|force|lightning|necrotic|piercing|poison|psychic|radiant|slashing|thunder)",
+            @"Actions.*?\([0-9]+d[0-9]+(?: \+ [0-9]+)?\) [A-Za-z]+ damage.*?\..*?([A-Za-z ]+)\. [A-Za-z ]+: \+",
+            @"Actions.*?\([0-9]+d[0-9]+(?: \+ [0-9]+)?\) [A-Za-z]+ damage.*?\..*?: \+([0-9]+)",
+            @"Actions.*?\([0-9]+d[0-9]+(?: \+ [0-9]+)?\) [A-Za-z]+ damage.*?\..*?\(([0-9]+)d[0-9]+(?: \+ [0-9]+)?\)",
+            @"Actions.*?\([0-9]+d[0-9]+(?: \+ [0-9]+)?\) [A-Za-z]+ damage.*?\..*?\([0-9]+d([0-9]+)(?: \+ [0-9]+)?\)",
+            @"Actions.*?\([0-9]+d[0-9]+(?: \+ [0-9]+)?\) [A-Za-z]+ damage.*?\..*?\([0-9]+d[0-9]+(?:( \+ [0-9]+)?)\)",
+            @"Actions.*?\([0-9]+d[0-9]+(?: \+ [0-9]+)?\) [A-Za-z]+ damage.*?\..*?(Acid|Bludgeoning|Cold|Fire|Force|Lightning|Necrotic|Piercing|Poison|Psychic|Radiant|Slashing|Thunder|acid|bludgeoning|cold|fire|force|lightning|necrotic|piercing|poison|psychic|radiant|slashing|thunder)",
             @"Damage Immunities ([a-zA-Z ,;]+)",
             @"Condition Immunities ([a-zA-Z ,;]+)",
             @"(?:Challenge) (?:[0-9/]+) \((?:[0-9,]+ XP)\)(.*?)(?:Actions)",

@@ -12,6 +12,7 @@
         <converters:InitiativeConverter x:Key="initiative" />
         <converters:InvertedBoolConverter x:Key="InvertedBool" />
         <converters:StringContainDataConverter x:Key="StringContainDataConverter" />
+        <converters:ChallengeConverter x:Key="ChallengeConverter" />
     </ContentPage.Resources>
 
     <Shell.BackButtonBehavior>
@@ -156,8 +157,8 @@
                        Grid.ColumnSpan="1"
                        Grid.Row="9"
                        Style="{StaticResource StatblockEntry}"
-                       Text="{Binding Creature.ChallengeRating}"
-                       MaxLength="3"
+                       Text="{Binding Creature.ChallengeRating, Converter={StaticResource ChallengeConverter}}"
+                       MaxLength="5"
                        WidthRequest="50"
                        MinimumWidthRequest="50"
                        HorizontalOptions="Start" />
@@ -590,7 +591,8 @@
                     <Picker Grid.Column="6"
                             Grid.ColumnSpan="2"
                             Grid.Row="3"
-                            Style="{StaticResource StatblockText}"
+                            Style="{StaticResource BasePicker}"
+                            TextColor="DarkRed"
                             ItemsSource="{Binding DamageTypes}"
                             SelectedItem="{Binding Creature.HotKey1DamageType}"
                             MinimumHeightRequest="35"
@@ -731,7 +733,8 @@
                     <Picker Grid.Column="6"
                             Grid.ColumnSpan="2"
                             Grid.Row="3"
-                            Style="{StaticResource StatblockText}"
+                            Style="{StaticResource BasePicker}"
+                            TextColor="DarkRed"
                             ItemsSource="{Binding DamageTypes}"
                             SelectedItem="{Binding Creature.HotKey2DamageType}"
                             MinimumHeightRequest="35"
