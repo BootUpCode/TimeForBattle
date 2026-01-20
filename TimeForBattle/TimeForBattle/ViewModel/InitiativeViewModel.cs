@@ -466,15 +466,17 @@ public partial class InitiativeViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    public async Task RollSaveAsync(Tuple<int?, string?, string?, string?, string?> parameters)
+    public async Task RollSaveAsync(Tuple<int?, string?, string?, string?, string?, string?, string?> parameters)
     {
         if (Combat is null || parameters.Item1 is null || parameters.Item2 is null || parameters.Item3 is null)
             return;
 
         int roll1 = 0;
         int roll2 = 0;
-        int? damage = null;
-        string? damageType = null;
+        int? damage1 = null;
+        string? damageType1 = null;
+        int? damage2 = null;
+        string? damageType2 = null;
 
         await Task.Run(() =>
         {
@@ -482,27 +484,44 @@ public partial class InitiativeViewModel : BaseViewModel
             roll1 = rng.Next(1, 21);
             roll2 = rng.Next(1, 21);
 
-            if (!String.IsNullOrWhiteSpace(parameters.Item4) && parameters.Item4.IndexOf('d') is int dLocation && dLocation > 0 && parameters.Item4.IndexOf('+') is int plusLocation && plusLocation > 0)
+            if (!String.IsNullOrWhiteSpace(parameters.Item4) && parameters.Item4.IndexOf('d') is int dLocation1 && dLocation1 > 0 && parameters.Item4.IndexOf('+') is int plusLocation1 && plusLocation1 > 0)
             {
-                int diceCount = int.Parse(parameters.Item4.Substring(0, dLocation));
-                int diceSize = int.Parse(parameters.Item4.Substring(dLocation + 1, plusLocation - dLocation - 1));
-                int damageBonus = int.Parse(parameters.Item4.Substring(plusLocation + 1, parameters.Item4.Length - plusLocation - 1));
+                int diceCount1 = int.Parse(parameters.Item4.Substring(0, dLocation1));
+                int diceSize1 = int.Parse(parameters.Item4.Substring(dLocation1 + 1, plusLocation1 - dLocation1 - 1));
+                int damageBonus1 = int.Parse(parameters.Item4.Substring(plusLocation1 + 1, parameters.Item4.Length - plusLocation1 - 1));
 
-                damage = 0;
-                for (int i = 0; i < diceCount; i++)
+                damage1 = 0;
+                for (int i = 0; i < diceCount1; i++)
                 {
-                    damage += rng.Next(1, diceSize);
+                    damage1 += rng.Next(1, diceSize1);
                 }
-                damage += damageBonus;
+                damage1 += damageBonus1;
             }
-
             if (!String.IsNullOrWhiteSpace(parameters.Item5))
             {
-                damageType = parameters.Item5;
+                damageType1 = parameters.Item5;
+            }
+
+            if (!String.IsNullOrWhiteSpace(parameters.Item6) && parameters.Item6.IndexOf('d') is int dLocation2 && dLocation2 > 0 && parameters.Item6.IndexOf('+') is int plusLocation2 && plusLocation2 > 0)
+            {
+                int diceCount2 = int.Parse(parameters.Item6.Substring(0, dLocation2));
+                int diceSize2 = int.Parse(parameters.Item6.Substring(dLocation2 + 1, plusLocation2 - dLocation2 - 1));
+                int damageBonus2 = int.Parse(parameters.Item6.Substring(plusLocation2 + 1, parameters.Item6.Length - plusLocation2 - 1));
+
+                damage2 = 0;
+                for (int i = 0; i < diceCount2; i++)
+                {
+                    damage2 += rng.Next(1, diceSize2);
+                }
+                damage2 += damageBonus2;
+            }
+            if (!String.IsNullOrWhiteSpace(parameters.Item7))
+            {
+                damageType2 = parameters.Item7;
             }
         });
 
-        Roll newRoll = new Roll(parameters.Item3, parameters.Item2, roll1, roll2, (int)parameters.Item1, damage, damageType, Combat.RoundCount, Combat.Id);
+        Roll newRoll = new Roll(parameters.Item3, parameters.Item2, roll1, roll2, (int)parameters.Item1, damage1, damageType1, damage2, damageType2, Combat.RoundCount, Combat.Id);
         Rolls.Insert(0, newRoll);
         await RollService.SaveAsync(newRoll);
     }
