@@ -316,10 +316,14 @@
                                                         <Binding Path="." />
                                                         <Binding Path="Creature.HotKey1Bonus" />
                                                         <Binding Path="Creature.HotKey1Name" />
-                                                        <Binding Path="Creature.HotKey1DamageDiceNumber" />
-                                                        <Binding Path="Creature.HotKey1DamageDiceSize" />
-                                                        <Binding Path="Creature.HotKey1DamageBonus" />
-                                                        <Binding Path="Creature.HotKey1DamageType" />
+                                                        <Binding Path="Creature.HotKey1DamageDiceNumber1" />
+                                                        <Binding Path="Creature.HotKey1DamageDiceSize1" />
+                                                        <Binding Path="Creature.HotKey1DamageBonus1" />
+                                                        <Binding Path="Creature.HotKey1DamageType1" />
+                                                        <Binding Path="Creature.HotKey1DamageDiceNumber2" />
+                                                        <Binding Path="Creature.HotKey1DamageDiceSize2" />
+                                                        <Binding Path="Creature.HotKey1DamageBonus2" />
+                                                        <Binding Path="Creature.HotKey1DamageType2" />
                                                     </MultiBinding>
                                                 </Button.CommandParameter>
                                             </Button>
@@ -338,10 +342,14 @@
                                                         <Binding Path="." />
                                                         <Binding Path="Creature.HotKey2Bonus" />
                                                         <Binding Path="Creature.HotKey2Name" />
-                                                        <Binding Path="Creature.HotKey2DamageDiceNumber" />
-                                                        <Binding Path="Creature.HotKey2DamageDiceSize" />
-                                                        <Binding Path="Creature.HotKey2DamageBonus" />
-                                                        <Binding Path="Creature.HotKey2DamageType" />
+                                                        <Binding Path="Creature.HotKey2DamageDiceNumber1" />
+                                                        <Binding Path="Creature.HotKey2DamageDiceSize1" />
+                                                        <Binding Path="Creature.HotKey2DamageBonus1" />
+                                                        <Binding Path="Creature.HotKey2DamageType1" />
+                                                        <Binding Path="Creature.HotKey2DamageDiceNumber2" />
+                                                        <Binding Path="Creature.HotKey2DamageDiceSize2" />
+                                                        <Binding Path="Creature.HotKey2DamageBonus2" />
+                                                        <Binding Path="Creature.HotKey2DamageType2" />
                                                     </MultiBinding>
                                                 </Button.CommandParameter>
                                             </Button>
@@ -920,7 +928,7 @@
                         AlignContent="Start">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="model:Roll">
-                        <Grid ColumnDefinitions="110,*"
+                        <Grid ColumnDefinitions="90,*"
                               ColumnSpacing="0"
                               RowDefinitions="15,30,1"
                               RowSpacing="0"
@@ -940,6 +948,12 @@
                                        LineBreakMode="TailTruncation"
                                        Margin="0,0,0,-5"
                                        Style="{StaticResource BaseLabel}" />
+                                <Label FontAttributes="Bold"
+                                       HorizontalOptions="Start"
+                                       Text="{Binding CreatureID}"
+                                       MaximumWidthRequest="20"
+                                       Margin="2,0,0,-5"
+                                       Style="{StaticResource BaseLabel}" />
                                 <Label Grid.Column="0"
                                    Grid.ColumnSpan="2"
                                    Grid.Row="0"
@@ -958,8 +972,9 @@
                             
                             <HorizontalStackLayout Grid.Column="0"
                                                    Grid.Row="1"
+                                                   Grid.RowSpan="2"
                                                    Padding="15,0,0,0"
-                                                   Spacing="5">
+                                                   Spacing="1">
                                 <Label FontSize="20"
                                        FontAttributes="Bold"
                                        TextColor="{Binding RollValue1, Converter={StaticResource RollColorConverter}}">
@@ -987,15 +1002,28 @@
                             </HorizontalStackLayout>
                             <HorizontalStackLayout Grid.Column="1"
                                                    Grid.Row="1"
-                                                   Padding="0,0,20,0">
-                                <Label FontSize="20"
-                                       FontAttributes="Bold"
-                                       Text="{Binding Damage}"
+                                                   Padding="0,5,0,0"
+                                                   Spacing="3">
+                                <Label FontAttributes="Bold"
+                                       Text="{Binding Damage1}"
+                                       Style="{StaticResource BaseLabel}"
+                                       IsVisible="{Binding Damage1, Converter={StaticResource StringContainDataConverter}}" />
+                                <Label FontAttributes="Bold"
+                                       Text="{Binding DamageType1}"
+                                       IsVisible="{Binding DamageType1, Converter={StaticResource StringContainDataConverter}}"
+                                       LineBreakMode="TailTruncation"
                                        Style="{StaticResource BaseLabel}" />
-                                <Label FontSize="20"
-                                       FontAttributes="Bold"
-                                       Text="{Binding DamageType, StringFormat='{} {0} Damage'}"
-                                       IsVisible="{Binding DamageType, Converter={StaticResource StringContainDataConverter}}"
+                                <Label FontAttributes="Bold"
+                                       Text="+"
+                                       Style="{StaticResource BaseLabel}"
+                                       IsVisible="{Binding Damage2, Converter={StaticResource StringContainDataConverter}}" />
+                                <Label FontAttributes="Bold"
+                                       Text="{Binding Damage2}"
+                                       Style="{StaticResource BaseLabel}"
+                                       IsVisible="{Binding Damage2, Converter={StaticResource StringContainDataConverter}}" />
+                                <Label FontAttributes="Bold"
+                                       Text="{Binding DamageType2}"
+                                       IsVisible="{Binding DamageType2, Converter={StaticResource StringContainDataConverter}}"
                                        LineBreakMode="TailTruncation"
                                        Style="{StaticResource BaseLabel}" />
                             </HorizontalStackLayout>

@@ -46,17 +46,25 @@ public partial class Creature : DatabaseObject
 
     [ObservableProperty] public string hotKey1Name;
     [ObservableProperty] public int hotKey1Bonus;
-    [ObservableProperty] public int hotKey1DamageDiceNumber;
-    [ObservableProperty] public int hotKey1DamageDiceSize;
-    [ObservableProperty] public int hotKey1DamageBonus;
-    [ObservableProperty] public string hotKey1DamageType;
+    [ObservableProperty] public int hotKey1DamageDiceNumber1;
+    [ObservableProperty] public int hotKey1DamageDiceSize1;
+    [ObservableProperty] public int hotKey1DamageBonus1;
+    [ObservableProperty] public string hotKey1DamageType1;
+    [ObservableProperty] public int hotKey1DamageDiceNumber2;
+    [ObservableProperty] public int hotKey1DamageDiceSize2;
+    [ObservableProperty] public int hotKey1DamageBonus2;
+    [ObservableProperty] public string hotKey1DamageType2;
 
     [ObservableProperty] public string hotKey2Name;
     [ObservableProperty] public int hotKey2Bonus;
-    [ObservableProperty] public int hotKey2DamageDiceNumber;
-    [ObservableProperty] public int hotKey2DamageDiceSize;
-    [ObservableProperty] public int hotKey2DamageBonus;
-    [ObservableProperty] public string hotKey2DamageType;
+    [ObservableProperty] public int hotKey2DamageDiceNumber1;
+    [ObservableProperty] public int hotKey2DamageDiceSize1;
+    [ObservableProperty] public int hotKey2DamageBonus1;
+    [ObservableProperty] public string hotKey2DamageType1;
+    [ObservableProperty] public int hotKey2DamageDiceNumber2;
+    [ObservableProperty] public int hotKey2DamageDiceSize2;
+    [ObservableProperty] public int hotKey2DamageBonus2;
+    [ObservableProperty] public string hotKey2DamageType2;
 
     public void Import(string[] creatureData)
     {
@@ -89,6 +97,21 @@ public partial class Creature : DatabaseObject
         this.ArmorClass = int.TryParse(creatureData[4], out result) ? result : 0;
         this.MaximumHitPoints = int.TryParse(creatureData[5], out result) ? result : 0;
         this.ChallengeRating = int.TryParse(creatureData[6], out result) ? (result * 8) : 0;
+        if (this.ChallengeRating == 0)
+        {
+            string[] split = creatureData[6].Split(new char[] { '/' });
+            if (split.Length == 2)
+            {
+                int a, b;
+                if (int.TryParse(split[0].Trim(), out a) && int.TryParse(split[1].Trim(), out b))
+                {
+                    if (split.Length == 2)
+                    {
+                        this.ChallengeRating = 8 * a / b;
+                    }
+                }
+            }
+        }
         this.InitiativeBonus = int.TryParse(creatureData[7], out result) ? result : (int)Math.Floor(((double)this.DexScore - 10) / 2);
         this.Speed = String.IsNullOrEmpty(creatureData[8]) ? string.Empty : creatureData[8];
 
@@ -109,16 +132,24 @@ public partial class Creature : DatabaseObject
 
         this.HotKey1Name = String.IsNullOrEmpty(creatureData[32]) ? string.Empty : creatureData[32].Trim();
         this.HotKey1Bonus = int.TryParse(creatureData[33], out result) ? result : 0;
-        this.HotKey1DamageDiceNumber = int.TryParse(creatureData[34], out result) ? result : 0;
-        this.HotKey1DamageDiceSize = int.TryParse(creatureData[35], out result) ? result : 0;
-        this.HotKey1DamageBonus = int.TryParse(creatureData[36].Replace(" ", string.Empty), out result) ? result : 0;
-        this.HotKey1DamageType = String.IsNullOrEmpty(creatureData[37]) ? string.Empty : char.ToUpper(creatureData[37][0]) + creatureData[37].Substring(1);
+        this.HotKey1DamageDiceNumber1 = int.TryParse(creatureData[34], out result) ? result : 0;
+        this.HotKey1DamageDiceSize1 = int.TryParse(creatureData[35], out result) ? result : 0;
+        this.HotKey1DamageBonus1 = int.TryParse(creatureData[36].Replace(" ", string.Empty), out result) ? result : 0;
+        this.HotKey1DamageType1 = String.IsNullOrEmpty(creatureData[37]) ? string.Empty : char.ToUpper(creatureData[37][0]) + creatureData[37].Substring(1);
+        //this.HotKey1DamageDiceNumber2 = int.TryParse(creatureData[34], out result) ? result : 0;
+        //this.HotKey1DamageDiceSize2 = int.TryParse(creatureData[35], out result) ? result : 0;
+        //this.HotKey1DamageBonus2 = int.TryParse(creatureData[36].Replace(" ", string.Empty), out result) ? result : 0;
+        //this.HotKey1DamageType2 = String.IsNullOrEmpty(creatureData[37]) ? string.Empty : char.ToUpper(creatureData[37][0]) + creatureData[37].Substring(1);
 
         this.HotKey2Name = String.IsNullOrEmpty(creatureData[38]) ? string.Empty : creatureData[38].Trim();
         this.HotKey2Bonus = int.TryParse(creatureData[39], out result) ? result : 0;
-        this.HotKey2DamageDiceNumber = int.TryParse(creatureData[40], out result) ? result : 0;
-        this.HotKey2DamageDiceSize = int.TryParse(creatureData[41], out result) ? result : 0;
-        this.HotKey2DamageBonus = int.TryParse(creatureData[42].Replace(" ", string.Empty), out result) ? result : 0;
-        this.HotKey2DamageType = String.IsNullOrEmpty(creatureData[43]) ? string.Empty : char.ToUpper(creatureData[43][0]) + creatureData[43].Substring(1);
+        this.HotKey2DamageDiceNumber1 = int.TryParse(creatureData[40], out result) ? result : 0;
+        this.HotKey2DamageDiceSize1 = int.TryParse(creatureData[41], out result) ? result : 0;
+        this.HotKey2DamageBonus1 = int.TryParse(creatureData[42].Replace(" ", string.Empty), out result) ? result : 0;
+        this.HotKey2DamageType1 = String.IsNullOrEmpty(creatureData[43]) ? string.Empty : char.ToUpper(creatureData[43][0]) + creatureData[43].Substring(1);
+        //this.HotKey2DamageDiceNumber2 = int.TryParse(creatureData[40], out result) ? result : 0;
+        //this.HotKey2DamageDiceSize2 = int.TryParse(creatureData[41], out result) ? result : 0;
+        //this.HotKey2DamageBonus2 = int.TryParse(creatureData[42].Replace(" ", string.Empty), out result) ? result : 0;
+        //this.HotKey2DamageType2 = String.IsNullOrEmpty(creatureData[43]) ? string.Empty : char.ToUpper(creatureData[43][0]) + creatureData[43].Substring(1);
     }
 }
