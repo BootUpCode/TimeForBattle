@@ -7,7 +7,7 @@ namespace TimeForBattle.ViewModel;
 public partial class CreatureDetailsViewModel: BaseViewModel
 {
     public CreatureService<Creature> creatureService;
-
+    [ObservableProperty] Creature creature;
     public bool[] Bools { get => [false, true]; }
     public String[] Attributes { get => ["Str", "Dex", "Con", "Int", "Wis", "Cha"]; }
 
@@ -15,8 +15,6 @@ public partial class CreatureDetailsViewModel: BaseViewModel
     {
         this.creatureService = characterService;
     }
-
-    [ObservableProperty] Creature creature;
 
     [RelayCommand]
     public async Task GoToEditAsync()

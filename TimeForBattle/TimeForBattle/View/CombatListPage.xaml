@@ -8,7 +8,12 @@
              x:Class="TimeForBattle.View.CombatListPage"
              Title="{Binding Title}">
 
-    <ScrollView>
+    <VerticalStackLayout>
+        <Button Text="Main Menu"
+                Command="{Binding GoToMainMenuCommand}"
+                Style="{StaticResource BaseButton}"
+                LineBreakMode="WordWrap" />
+        <ScrollView>
         <FlexLayout BackgroundColor="Transparent"
                     BindableLayout.ItemsSource="{Binding Combats}"
                     Direction="Column"
@@ -56,4 +61,5 @@
             </BindableLayout.ItemTemplate>
         </FlexLayout>
     </ScrollView>
+    </VerticalStackLayout>
 </ContentPage>

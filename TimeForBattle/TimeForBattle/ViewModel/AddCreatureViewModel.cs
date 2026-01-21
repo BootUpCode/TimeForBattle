@@ -13,6 +13,7 @@ public partial class AddCreatureViewModel : BaseViewModel
     [ObservableProperty] public static ObservableCollection<string> attributeNames = ["Str", "Dex", "Con", "Int", "Wis", "Cha"];
     [ObservableProperty] public static ObservableCollection<string> damageTypes = ["Acid", "Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", "Poison", "Psychic", "Radiant", "Slashing", "Thunder"];
     [ObservableProperty] public string importCreatureText = "";
+    [ObservableProperty] Creature creature;
 
     public AddCreatureViewModel(CreatureService<Creature> characterService, CreatureService<InitiativeCreatureData> initiativeService, DialogService dialogService)
     {
@@ -20,8 +21,6 @@ public partial class AddCreatureViewModel : BaseViewModel
         this.InitiativeService = initiativeService;
         this.DialogService = dialogService;
     }
-
-    [ObservableProperty] Creature creature;
 
     [RelayCommand]
     public async Task SaveCreatureAsync()
@@ -39,7 +38,7 @@ public partial class AddCreatureViewModel : BaseViewModel
         if (Creature is null)
             return;
 
-        bool answer = await DialogService.ShowConfirmationAsync((ContentPage)AppShell.Current.CurrentPage, "Delete?", "Are you sure you want to delete the creature \"" + Creature.Name + "\"?", "Yes", "No");
+        bool answer = await DialogService.ShowConfirmationAsync((ContentPage)AppShell.Current.CurrentPage, "Delete?", "Are you sure you want to delete the creature \"" + Creature.Name + "\" and remove it from all saved encounters?", "Yes", "No");
         if (answer)
         {
             if (await CreatureService.DeleteAsync(await CreatureService.GetByIdAsync(Creature.Id)) > 0)
@@ -56,7 +55,7 @@ public partial class AddCreatureViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    public async Task PasteImportText()
+    public async Task ImportText()
     {
         await Task.Run(() => {
             MainThread.BeginInvokeOnMainThread(() =>
@@ -67,11 +66,7 @@ public partial class AddCreatureViewModel : BaseViewModel
                 }
             });
         });
-    }
 
-        [RelayCommand]
-    public async Task ImportText()
-    {
         if (String.IsNullOrEmpty(ImportCreatureText))
         {
             return;
@@ -80,8 +75,8 @@ public partial class AddCreatureViewModel : BaseViewModel
         string[] regexStrings =
         [
             @"([a-zA-Z ]+)\r?\n?",
-            @"((?:Small|Medium|Large|Huge|Gargantuan)(?: (?:Or|or) )?(?:Small|Medium|Large|Huge|Gargantuan)?)",
-            @"(?:(?:Small|Medium|Large|Huge|Gargantuan)(?: Or )?(?:Small|Medium|Large|Huge|Gargantuan)?) ([a-zA-Z() ]+)",
+            @"((?:Small|Medium|Large|Huge|Gargantuan)(?: Or | or )?(?:Small|Medium|Large|Huge|Gargantuan)?)",
+            @"(?:(?:Small|Medium|Large|Huge|Gargantuan)(?: Or | or )?(?:Small|Medium|Large|Huge|Gargantuan)?) ([a-zA-Z() ]+)",
             @"[a-zA-Z]+\r?\n?[a-zA-Z]+ [a-zA-Z() ]+, ([a-zA-Z ]+)",
             @"(?:AC|Armor Class) ([0-9]+)",
             @"(?:HP|Hit Points) ([0-9]+)",
@@ -131,7 +126,15 @@ public partial class AddCreatureViewModel : BaseViewModel
             @"(?:Saving Throws).*?(?:CON ([\+\-0-9]+))",
             @"(?:Saving Throws).*?(?:INT ([\+\-0-9]+))",
             @"(?:Saving Throws).*?(?:WIS ([\+\-0-9]+))",
-            @"(?:Saving Throws).*?(?:CHA ([\+\-0-9]+))"
+            @"(?:Saving Throws).*?(?:CHA ([\+\-0-9]+))",
+            @"Actions.*?[A-Za-z ]+\. [A-Za-z ]+Attack(?:[A-Za-z ]+)?:.*?damage[A-Za-z0-9 ]*?\(([0-9]+)d[0-9]+(?: \+ [0-9]+)?\)",
+            @"Actions.*?[A-Za-z ]+\. [A-Za-z ]+Attack(?:[A-Za-z ]+)?:.*?damage[A-Za-z0-9 ]*?\([0-9]+d([0-9]+)(?: \+ [0-9]+)?\)",
+            @"Actions.*?[A-Za-z ]+\. [A-Za-z ]+Attack(?:[A-Za-z ]+)?:.*?damage[A-Za-z0-9 ]*?\([0-9]+d[0-9]+( \+ [0-9]+)?\)",
+            @"Actions.*?[A-Za-z ]+\. [A-Za-z ]+Attack(?:[A-Za-z ]+)?:.*?damage[A-Za-z0-9 /(/)-+]*?(Acid|Bludgeoning|Cold|Fire|Force|Lightning|Necrotic|Piercing|Poison|Psychic|Radiant|Slashing|Thunder|acid|bludgeoning|cold|fire|force|lightning|necrotic|piercing|poison|psychic|radiant|slashing|thunder)",
+            @"Actions.*?\([0-9]+d[0-9]+(?: \+ [0-9]+)?\) [A-Za-z]+ damage.*?\..*?[A-Za-z ]+\. [A-Za-z ]+Attack(?:[A-Za-z ]+)?:.*?damage[A-Za-z0-9 ]*?\(([0-9]+)d[0-9]+(?: \+ [0-9]+)?\)",
+            @"Actions.*?\([0-9]+d[0-9]+(?: \+ [0-9]+)?\) [A-Za-z]+ damage.*?\..*?[A-Za-z ]+\. [A-Za-z ]+Attack(?:[A-Za-z ]+)?:.*?damage[A-Za-z0-9 ]*?\([0-9]+d([0-9]+)(?: \+ [0-9]+)?\)",
+            @"Actions.*?\([0-9]+d[0-9]+(?: \+ [0-9]+)?\) [A-Za-z]+ damage.*?\..*?[A-Za-z ]+\. [A-Za-z ]+Attack(?:[A-Za-z ]+)?:.*?damage[A-Za-z0-9 ]*?\([0-9]+d[0-9]+( \+ [0-9]+)?\)",
+            @"Actions.*?\([0-9]+d[0-9]+(?: \+ [0-9]+)?\) [A-Za-z]+ damage.*?\..*?[A-Za-z ]+\. [A-Za-z ]+Attack(?:[A-Za-z ]+)?:.*?damage[A-Za-z0-9 /(/)-+]*?(Acid|Bludgeoning|Cold|Fire|Force|Lightning|Necrotic|Piercing|Poison|Psychic|Radiant|Slashing|Thunder|acid|bludgeoning|cold|fire|force|lightning|necrotic|piercing|poison|psychic|radiant|slashing|thunder)"
         ];
 
         string[] matches = new string[regexStrings.Length];
@@ -160,16 +163,7 @@ public partial class AddCreatureViewModel : BaseViewModel
         if (answer)
         {
             this.Creature.Import(matches);
-            ImportCreatureText = "";
         }
-    }
-
-    [RelayCommand]
-    public async Task ClearImportText()
-    {
-        await Task.Run(() =>
-        {
-            ImportCreatureText = "";
-        });
+        ImportCreatureText = "";
     }
 }

@@ -5,7 +5,7 @@
              xmlns:viewmodel="clr-namespace:TimeForBattle.ViewModel"
              xmlns:converters="clr-namespace:TimeForBattle.Converters"
              x:DataType="viewmodel:CreatureListViewModel"
-             Title="{Binding Combat.Name}"
+             Title="{Binding Title}"
              x:Class="TimeForBattle.View.CreatureListPage"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
@@ -17,9 +17,47 @@
 
     <Grid ColumnDefinitions="*,*,60"
           ColumnSpacing="0"
-          RowDefinitions="35,35,35,*,Auto,Auto,35">
+          RowDefinitions="35,35,*,Auto,Auto,Auto">
 
-        <Button Grid.Row="0"
+        <Border Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Grid.RowSpan="2"
+                BackgroundColor="Black" />
+
+        <Button Grid.Column="0"
+                Grid.ColumnSpan="1"
+                Grid.Row="0"
+                Text="Main Menu"
+                Command="{Binding GoToMainMenuCommand}"
+                Style="{StaticResource BaseButton}"
+                LineBreakMode="WordWrap" />
+
+        <Border Grid.Row="0"
+                Grid.Column="1"
+                Grid.ColumnSpan="2"
+                BackgroundColor="DarkRed"
+                Stroke="Black"
+                StrokeThickness="1"
+                Margin="-1,0,-1,-1">
+            <HorizontalStackLayout>
+        <Label Text="Sort by:"
+               Style="{StaticResource BaseLabel}"
+               TextColor="White"
+               Margin="10,7,10,5"/>
+        <Picker Style="{StaticResource BasePicker}"
+                ItemsSource="{Binding SortNames}"
+                SelectedItem="{Binding PickedSort}"
+                VerticalOptions="Start"
+                HorizontalOptions="Start"
+                MinimumWidthRequest="120"
+                WidthRequest="120"
+                HeightRequest="35"
+                Margin="0,0,0,0" />
+        </HorizontalStackLayout>
+        </Border>
+
+        <Button Grid.Row="1"
                 Grid.Column="0"
                 Text="View Monsters"
                 BorderColor="Black"
@@ -33,7 +71,7 @@
             </Button.CommandParameter>
         </Button>
 
-        <Button Grid.Row="0"
+        <Button Grid.Row="1"
                 Grid.Column="1"
                 Text="View Players"
                 BorderColor="Black"
@@ -47,7 +85,7 @@
             </Button.CommandParameter>
         </Button>
 
-        <Button Grid.Row="0"
+        <Button Grid.Row="1"
                 Grid.Column="2"
                 Text="New"
                 BorderColor="Black"
@@ -55,23 +93,7 @@
                 Command="{Binding NewCreatureCommand}"
                 Style="{StaticResource BaseButton}" />
 
-        <Label Grid.Row="1"
-                Grid.Column="0"
-                Text="Sort:"
-                Style="{StaticResource BaseLabel}" />
-        <Picker Grid.Row="1"
-                Grid.Column="1"
-                Style="{StaticResource BasePicker}"
-                ItemsSource="{Binding SortNames}"
-                SelectedItem="{Binding PickedSort}"
-                VerticalOptions="Start"
-                HorizontalOptions="Start"
-                MinimumWidthRequest="200"
-                WidthRequest="200"
-                HeightRequest="38"
-                Margin="0,0,0,0" />
-
-        <ScrollView Grid.Row="3"
+        <ScrollView Grid.Row="2"
                     Grid.ColumnSpan="3">
             <FlexLayout BackgroundColor="Transparent"
                         BindableLayout.ItemsSource="{Binding Creatures}"
@@ -99,7 +121,8 @@
                                            LineBreakMode="TailTruncation"
                                            FontSize="20"
                                            VerticalOptions="Center"
-                                           Style="{StaticResource BaseLabel}"/>
+                                           Style="{StaticResource BaseLabel}"
+                                           Margin="0,0,0,-2"/>
                                     <Line Grid.ColumnSpan="2"
                                           Grid.Row="1"
                                           X1="-5"
@@ -288,12 +311,12 @@
 
         <BoxView Grid.Column="0"
                  Grid.ColumnSpan="3"
-                 Grid.Row="4"
+                 Grid.Row="3"
                  HeightRequest="2"
                  Color="DarkRed"
                  IsVisible="{Binding x:DataType='viewmodel:CreatureListViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureListViewModel}}, Path=Combat, Converter={StaticResource IsNotNullConverter}}"/>
 
-        <Grid Grid.Row="5"
+        <Grid Grid.Row="4"
               Grid.ColumnSpan="3"
               ColumnDefinitions="*"
               ColumnSpacing="0"
@@ -374,12 +397,13 @@
             </ScrollView>
         </Grid>
 
-        <Button Grid.Row="6"
+        <Button Grid.Row="5"
                 Grid.Column="0"
                 Grid.ColumnSpan="3"
                 Command="{Binding GoToInitiativeCommand}"
                 Text="View Initiative"
                 BorderColor="Black"
+                HeightRequest="35"
                 CornerRadius="0"
                 Style="{StaticResource BaseButton}"
                 IsVisible="{Binding x:DataType='viewmodel:CreatureListViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:CreatureListViewModel}}, Path=Combat, Converter={StaticResource IsNotNullConverter}}"/>

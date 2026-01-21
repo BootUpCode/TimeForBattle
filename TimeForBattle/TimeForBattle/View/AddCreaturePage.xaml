@@ -20,15 +20,41 @@
                             IconOverride="back.png" />
     </Shell.BackButtonBehavior>
 
-    <Grid ColumnDefinitions="*,80"
+    <Grid ColumnDefinitions="*,*"
           ColumnSpacing="0"
-          RowDefinitions="*,50">
+          RowDefinitions="35,Auto,Auto,*">
+
+        <Button Grid.Column="0"
+                Grid.Row="0"
+                Command="{Binding SaveCreatureCommand}"
+                Text="Return"
+                BorderColor="Black"
+                CornerRadius="0"
+                Style="{StaticResource BaseButton}" />
+        <Button Grid.Column="1"
+                Grid.Row="0"
+                Command="{Binding DeleteCreatureCommand}"
+                Text="Delete"
+                BorderColor="Black"
+                CornerRadius="0"
+                Style="{StaticResource BaseButton}" />
+
+        <Button Grid.Column="0"
+                Grid.Row="1"
+                Grid.ColumnSpan="3"
+                Text="Import from clipboard"
+                Command="{Binding ImportTextCommand}"
+                IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
+                BorderColor="Black"
+                CornerRadius="0"
+                Style="{StaticResource BaseButton}" />
+
         <ScrollView Grid.Column="0"
-                    Grid.ColumnSpan="2"
-                    Grid.Row="0">
+                    Grid.ColumnSpan="3"
+                    Grid.Row="3">
             <Grid Margin="10"
                   ColumnDefinitions="*,*,*,*,*,*"
-                  RowDefinitions="Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,35,40">
+                  RowDefinitions="Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,Auto,10,Auto,Auto,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto,Auto,Auto,5,Auto">
 
 
                 <Label Grid.Column="0"
@@ -45,7 +71,7 @@
                        Style="{StaticResource StatblockEntry}"
                        Text="{Binding Creature.Name}"
                        FontSize="20"
-                       FontAttributes="Bold"/>
+                       FontAttributes="Bold" />
                 <BoxView Grid.Column="0"
                          Grid.ColumnSpan="6"
                          Grid.Row="1"
@@ -168,7 +194,7 @@
                        Style="{StaticResource StatblockText}"
                        Text="Initiative Bonus"
                        FontAttributes="Bold"
-                       Padding="5,0,0,0"/>
+                       Padding="5,0,0,0" />
                 <Entry Grid.Column="5"
                        Grid.ColumnSpan="1"
                        Grid.Row="7"
@@ -769,7 +795,7 @@
                            WidthRequest="235"
                            MaxLength="24"
                            VerticalOptions="Start"
-                           HorizontalOptions="Start"/>
+                           HorizontalOptions="Start" />
                     <Entry Grid.Column="7"
                            Grid.Row="1"
                            Grid.ColumnSpan="5"
@@ -781,7 +807,7 @@
                            MaximumWidthRequest="40"
                            MaxLength="24"
                            VerticalOptions="Start"
-                           HorizontalOptions="Start"/>
+                           HorizontalOptions="Start" />
 
                     <Label Grid.Column="0"
                            Grid.ColumnSpan="5"
@@ -1035,73 +1061,7 @@
                         Text="{Binding Creature.LegendaryActions}"
                         AutoSize="TextChanges"
                         VerticalTextAlignment="Start" />
-
-                <Label Grid.Column="0"
-                       Grid.ColumnSpan="6"
-                       Grid.Row="53"
-                       IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
-                       Text="Import From Text"
-                       Style="{StaticResource StatblockText}"
-                       FontSize="20"
-                       Padding="0,10,0,0" />
-                <BoxView Grid.Column="0"
-                         Grid.ColumnSpan="6"
-                         Grid.Row="54"
-                         IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
-                         HeightRequest="2"
-                         Color="DarkRed" />
-                <Editor Grid.Column="0"
-                        Grid.ColumnSpan="6"
-                        Grid.Row="56"
-                        IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
-                        Text="{Binding ImportCreatureText}"
-                        AutoSize="Disabled"
-                        VerticalTextAlignment="Start" />
-                <Button Grid.Column="0"
-                        Grid.ColumnSpan="2"
-                        Grid.Row="55"
-                        Text="Paste"
-                        Command="{Binding PasteImportTextCommand}"
-                        IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
-                        BorderColor="Black"
-                        CornerRadius="0"
-                        Style="{StaticResource BaseButton}" />
-                <Button Grid.Column="2"
-                        Grid.ColumnSpan="2"
-                        Grid.Row="55"
-                        Text="Import"
-                        Command="{Binding ImportTextCommand}"
-                        IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
-                        BorderColor="Black"
-                        CornerRadius="0"
-                        Style="{StaticResource BaseButton}"
-                        IsEnabled="{Binding ImportCreatureText, Converter={StaticResource StringContainDataConverter}}"/>
-                <Button Grid.Column="4"
-                        Grid.ColumnSpan="2"
-                        Grid.Row="55"
-                        Text="Clear"
-                        Command="{Binding ClearImportTextCommand}"
-                        IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
-                        BorderColor="Black"
-                        CornerRadius="0"
-                        Style="{StaticResource BaseButton}"
-                        IsEnabled="{Binding ImportCreatureText, Converter={StaticResource StringContainDataConverter}}"/>
             </Grid>
         </ScrollView>
-
-        <Button Grid.Column="0"
-                Grid.Row="1"
-                Command="{Binding SaveCreatureCommand}"
-                Text="Return"
-                BorderColor="Black"
-                CornerRadius="0"
-                Style="{StaticResource BaseButton}" />
-        <Button Grid.Column="1"
-                Grid.Row="1"
-                Command="{Binding DeleteCreatureCommand}"
-                Text="Delete"
-                BorderColor="Black"
-                CornerRadius="0"
-                Style="{StaticResource BaseButton}" />
     </Grid>
 </ContentPage>
