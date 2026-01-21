@@ -114,6 +114,12 @@ public partial class CreatureListViewModel : BaseViewModel
     }
 
     [RelayCommand]
+    public async Task GoToMainMenuAsync()
+    {
+        await Shell.Current.GoToAsync($"{nameof(MainMenuPage)}", true);
+    }
+
+    [RelayCommand]
     public async Task GoToDetailsAsync(Creature creature)
     {
         if (creature is null)

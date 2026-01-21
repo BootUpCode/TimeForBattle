@@ -6,16 +6,24 @@ namespace TimeForBattle.ViewModel;
 public partial class CombatListViewModel : BaseViewModel
 {
     public CreatureService<Combat> CombatService;
+    public CreatureService<InitiativeCreatureData> InitiativeService;
     public DialogService DialogService;
     public ObservableCollection<Combat> Combats { get; }
     [ObservableProperty] bool isRefreshing;
 
-    public CombatListViewModel(CreatureService<Combat> combatService, DialogService dialogService)
+    public CombatListViewModel(CreatureService<Combat> combatService, CreatureService<InitiativeCreatureData> initiativeService, DialogService dialogService)
     {
-        Title = "Load Combat";
+        Title = "Encounters";
         this.CombatService = combatService;
+        this.InitiativeService = initiativeService;
         this.DialogService = dialogService;
         Combats = [];
+    }
+
+    [RelayCommand]
+    public async Task GoToMainMenuAsync()
+    {
+        await Shell.Current.GoToAsync($"{nameof(MainMenuPage)}", true);
     }
 
     [RelayCommand]
@@ -73,10 +81,15 @@ public partial class CombatListViewModel : BaseViewModel
 
         bool answer = await DialogService.ShowConfirmationAsync((ContentPage)AppShell.Current.CurrentPage, "Delete?", "Are you sure you want to delete the encounter \"" + combat.Name + "\"?", "Yes", "No");
         if (answer)
-            await CombatService.DeleteAsync(combat);
-
-        //also delete creatures in initiative for that combat?
-
+            if (await CombatService.DeleteAsync(combat) > 0)
+            {
+                List<InitiativeCreatureData> deleteList = await InitiativeService.GetAllByCombatAsync(combat.Id);
+                foreach (InitiativeCreatureData deleteCreature in deleteList)
+                {
+                    await InitiativeService.DeleteAsync(deleteCreature);
+                }
+            }
+        
         await RefreshCombats();
     }
 }
