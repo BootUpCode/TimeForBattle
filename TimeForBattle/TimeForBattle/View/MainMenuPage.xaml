@@ -8,23 +8,33 @@
              x:Class="TimeForBattle.View.MainMenuPage"
              Title="{Binding Title}">
 
-    <Grid ColumnDefinitions="*,Auto,*"
+    <Grid ColumnDefinitions="*"
           ColumnSpacing="0"
-          RowDefinitions="*,Auto,Auto,Auto,*">
-        <Button Grid.Column="1"
-                Grid.Row="1"
-                Text="New Encounter"
-                Command="{Binding NewCombatCommand}"
-                Style="{StaticResource BaseButton}" />
-        <Button Grid.Column="1"
-                Grid.Row="2"
-                Text="Load Encounter"
-                Command="{Binding GoToCombatListPageCommand}"
-                Style="{StaticResource BaseButton}" />
-        <Button Grid.Column="1"
-                Grid.Row="3"
-                Text="Manage Creatures"
-                Command="{Binding GoToCreatureListCommand}"
-                Style="{StaticResource BaseButton}" />
+          RowDefinitions="*,Auto,*">
+        <VerticalStackLayout  Grid.Column="0"
+                              Grid.Row="1">
+            <Image Source="timeforbattlemain.png"
+                   Aspect="AspectFill" 
+                   Margin="0,-30,0,-10"/>
+            <Grid ColumnDefinitions="*,Auto,*"
+                  ColumnSpacing="0"
+                  RowDefinitions="*,Auto,Auto,Auto,*">
+                <Button Grid.Column="1"
+                        Grid.Row="1"
+                        Text="New Encounter"
+                        Command="{Binding NewCombatCommand}"
+                        Style="{StaticResource BaseButton}" />
+                <Button Grid.Column="1"
+                        Grid.Row="2"
+                        Text="Load Encounter"
+                        Command="{Binding GoToCombatListPageCommand}"
+                        Style="{StaticResource BaseButton}" />
+                <Button Grid.Column="1"
+                        Grid.Row="3"
+                        Text="Manage Creatures"
+                        Command="{Binding GoToCreatureListCommand}"
+                        Style="{StaticResource BaseButton}" />
+            </Grid>
+        </VerticalStackLayout>
     </Grid>
 </ContentPage>
