@@ -41,5 +41,10 @@ TimeForBattle can now also quickly calculate results for common combat occurance
   - UI warning when creature is immine to assigned status (Done!)
 - Adjust UI colors (Done!)
 - Search/sort function for creature list (Done!)
-- Add app icon
-- Add main menu icon
+- Add app icon (Done!)
+- Add main menu icon (Done!)
+- Final touches
+  - Documentation
+  - Warnings and errors
+  - Platform tests
+  - UI colors
