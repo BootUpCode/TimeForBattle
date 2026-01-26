@@ -12,8 +12,8 @@ public partial class AddCreatureViewModel : BaseViewModel
     public DialogService DialogService;
     [ObservableProperty] public static ObservableCollection<string> attributeNames = ["Str", "Dex", "Con", "Int", "Wis", "Cha"];
     [ObservableProperty] public static ObservableCollection<string> damageTypes = ["Acid", "Bludgeoning", "Cold", "Fire", "Force", "Lightning", "Necrotic", "Piercing", "Poison", "Psychic", "Radiant", "Slashing", "Thunder"];
-    [ObservableProperty] public string importCreatureText = "";
-    [ObservableProperty] Creature creature;
+    [ObservableProperty] public string? importCreatureText = "";
+    [ObservableProperty] public Creature? creature;
 
     public AddCreatureViewModel(CreatureService<Creature> characterService, CreatureService<InitiativeCreatureData> initiativeService, DialogService dialogService)
     {

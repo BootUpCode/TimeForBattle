@@ -1,7 +1,7 @@
 @string/appbar_scrolling_view_behavior;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\162\jl\res\layout\fragment_backstack.xml
 @string/appbar_scrolling_view_behavior;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\162\jl\res\layout\navigationlayout.xml
-adaptive-icon;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
-adaptive-icon;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
+adaptive-icon;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\timeforbattle.xml
+adaptive-icon;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\timeforbattle_round.xml
 alpha;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\160\jl\res\anim\enterfromleft.xml
 alpha;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\160\jl\res\anim\exittoleft.xml
 alpha;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\162\jl\res\anim\nav_default_enter_anim.xml
@@ -14,8 +14,8 @@ androidx.drawerlayout.widget.DrawerLayout;D:\GitHub\TimeForBattle\TimeForBattle\
 androidx.fragment.app.FragmentContainerView;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\162\jl\res\layout\fragment_backstack.xml
 androidx.fragment.app.FragmentContainerView;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\162\jl\res\layout\navigationlayout.xml
 attr;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\162\jl\res\values\attr.xml
-background;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
-background;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
+background;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\timeforbattle.xml
+background;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\timeforbattle_round.xml
 bitmap;obj\Release\net9.0-android\resizetizer\sp\drawable\maui_splash_image.xml
 bitmap;obj\Release\net9.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
 cache-path;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\163\jl\res\xml\microsoft_maui_essentials_fileprovider_file_paths.xml
@@ -28,8 +28,8 @@ com.google.android.material.appbar.AppBarLayout;D:\GitHub\TimeForBattle\TimeForB
 declare-styleable;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\162\jl\res\values\attr.xml
 external-cache-path;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\163\jl\res\xml\microsoft_maui_essentials_fileprovider_file_paths.xml
 external-path;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\163\jl\res\xml\microsoft_maui_essentials_fileprovider_file_paths.xml
-foreground;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
-foreground;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
+foreground;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\timeforbattle.xml
+foreground;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\timeforbattle_round.xml
 item;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\161\jl\res\values\values.xml
 item;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\162\jl\res\drawable\maui_splash.xml
 item;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\162\jl\res\values\styles.xml
@@ -42,8 +42,8 @@ layer-list;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.
 layer-list;obj\Release\net9.0-android\resizetizer\sp\drawable\maui_splash_image.xml
 layer-list;obj\Release\net9.0-android\resizetizer\sp\drawable-v31\maui_splash_image.xml
 microsoft.maui.controls.platform.compatibility.ShellFlyoutLayout;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\160\jl\res\layout\flyoutcontent.xml
-monochrome;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon.xml
-monochrome;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\appicon_round.xml
+monochrome;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\timeforbattle.xml
+monochrome;obj\Release\net9.0-android\resizetizer\r\mipmap-anydpi-v26\timeforbattle_round.xml
 paths;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\163\jl\res\xml\microsoft_maui_essentials_fileprovider_file_paths.xml
 resources;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\160\jl\res\values\strings.xml
 resources;D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\161\jl\res\values\values.xml

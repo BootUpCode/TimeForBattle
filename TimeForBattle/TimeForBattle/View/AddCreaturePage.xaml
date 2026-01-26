@@ -71,7 +71,7 @@
                        Style="{StaticResource StatblockEntry}"
                        Text="{Binding Creature.Name}"
                        FontSize="20"
-                       FontAttributes="Bold" />
+                       FontAttributes="Bold"/>
                 <BoxView Grid.Column="0"
                          Grid.ColumnSpan="6"
                          Grid.Row="1"
@@ -86,7 +86,8 @@
                 <Entry Grid.Column="2"
                        Grid.ColumnSpan="4"
                        Grid.Row="3"
-                       Text="{Binding Creature.Size}" />
+                       Text="{Binding Creature.Size}"
+                       Style="{StaticResource StatblockEntry}" />
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="2"
                        Grid.Row="4"
@@ -97,7 +98,8 @@
                        Grid.ColumnSpan="4"
                        Grid.Row="4"
                        IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
-                       Text="{Binding Creature.Type}" />
+                       Text="{Binding Creature.Type}"
+                       Style="{StaticResource StatblockEntry}" />
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="2"
                        Grid.Row="4"
@@ -108,7 +110,8 @@
                        Grid.ColumnSpan="4"
                        Grid.Row="4"
                        IsVisible="{Binding Creature.IsPlayer}"
-                       Text="{Binding Creature.Type}" />
+                       Text="{Binding Creature.Type}"
+                       Style="{StaticResource StatblockEntry}" />
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="2"
                        Grid.Row="5"
@@ -119,7 +122,8 @@
                        Grid.ColumnSpan="4"
                        Grid.Row="5"
                        IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
-                       Text="{Binding Creature.Alignment}" />
+                       Text="{Binding Creature.Alignment}"
+                       Style="{StaticResource StatblockEntry}" />
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="2"
                        Grid.Row="5"
@@ -130,7 +134,8 @@
                        Grid.ColumnSpan="4"
                        Grid.Row="5"
                        IsVisible="{Binding Creature.IsPlayer}"
-                       Text="{Binding Creature.Alignment}" />
+                       Text="{Binding Creature.Alignment}"
+                       Style="{StaticResource StatblockEntry}" />
 
 
                 <Label Grid.Column="0"
@@ -976,7 +981,8 @@
                         IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
                         Text="{Binding Creature.Traits}"
                         AutoSize="TextChanges"
-                        VerticalTextAlignment="Start" />
+                        VerticalTextAlignment="Start"
+                        Style="{StaticResource StatblockEditor}" />
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="6"
                        Grid.Row="37"
@@ -997,7 +1003,8 @@
                         IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
                         Text="{Binding Creature.Actions}"
                         AutoSize="TextChanges"
-                        VerticalTextAlignment="Start" />
+                        VerticalTextAlignment="Start"
+                        Style="{StaticResource StatblockEditor}" />
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="6"
                        Grid.Row="41"
@@ -1018,7 +1025,8 @@
                         IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
                         Text="{Binding Creature.BonusActions}"
                         AutoSize="TextChanges"
-                        VerticalTextAlignment="Start" />
+                        VerticalTextAlignment="Start"
+                        Style="{StaticResource StatblockEditor}" />
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="6"
                        Grid.Row="45"
@@ -1039,7 +1047,8 @@
                         IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
                         Text="{Binding Creature.Reactions}"
                         AutoSize="TextChanges"
-                        VerticalTextAlignment="Start" />
+                        VerticalTextAlignment="Start"
+                        Style="{StaticResource StatblockEditor}" />
                 <Label Grid.Column="0"
                        Grid.ColumnSpan="6"
                        Grid.Row="49"
@@ -1060,7 +1069,8 @@
                         IsVisible="{Binding Creature.IsPlayer, Converter={StaticResource InvertedBool}}"
                         Text="{Binding Creature.LegendaryActions}"
                         AutoSize="TextChanges"
-                        VerticalTextAlignment="Start" />
+                        VerticalTextAlignment="Start"
+                        Style="{StaticResource StatblockEditor}" />
             </Grid>
         </ScrollView>
     </Grid>

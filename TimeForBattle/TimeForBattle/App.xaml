@@ -8,12 +8,15 @@
 
             <x:Boolean x:Key="BooleanFalse">false</x:Boolean>
             <x:Boolean x:Key="BooleanTrue">true</x:Boolean>
-            <x:String x:Key="Attribute0">Str</x:String>
-            <x:String x:Key="Attribute1">Dex</x:String>
-            <x:String x:Key="Attribute2">Con</x:String>
-            <x:String x:Key="Attribute3">Int</x:String>
-            <x:String x:Key="Attribute4">Wis</x:String>
-            <x:String x:Key="Attribute5">Cha</x:String>
+            <x:String x:Key="Attribute0">Str Save</x:String>
+            <x:String x:Key="Attribute1">Dex Save</x:String>
+            <x:String x:Key="Attribute2">Con Save</x:String>
+            <x:String x:Key="Attribute3">Int Save</x:String>
+            <x:String x:Key="Attribute4">Wis Save</x:String>
+            <x:Int32 x:Key="Int0">0</x:Int32>
+            <x:Int32 x:Key="Int1">1</x:Int32>
+            <x:Int32 x:Key="Int2">2</x:Int32>
+            <x:Int32 x:Key="Int3">3</x:Int32>
 
             <Color x:Key="Primary">DarkRed</Color>
             <Color x:Key="PrimaryDark">DarkRed</Color>
@@ -162,7 +165,7 @@
             <Style x:Key="StatblockEditor"
                    TargetType="Editor">
                 <Setter  Property="TextColor"
-                         Value="{StaticResource Primary}"  />
+                         Value="{StaticResource Primary}" />
                 <Setter  Property="FontSize"
                          Value="14" />
             </Style>

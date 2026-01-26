@@ -26,7 +26,7 @@ public class RollConverter : IMultiValueConverter
         {
             //Create damage roll info string, if damage is part of the roll
             string? damageString1 = null;
-            if (values.Length > 3 && values[3] is int && values[4] is int && values[5] is int)
+            if (values.Length > 3 && values[3] is not null && values[4] is not null && values[5] is not null && values[3] is int && values[4] is int && values[5] is int)
             {
                 damageString1 = (int)values[3] + "d" + (int)values[4] + "+" + (int)values[5];
             }
@@ -39,7 +39,7 @@ public class RollConverter : IMultiValueConverter
 
             //Create damage roll info string, if damage is part of the roll
             string? damageString2 = null;
-            if (values.Length > 7 && values[7] is int && values[8] is int && values[9] is int)
+            if (values.Length > 7 && values[7] is not null && values[8] is not null && values[9] is not null && values[7] is int && values[8] is int && values[9] is int)
             {
                 damageString2 = (int)values[7] + "d" + (int)values[8] + "+" + (int)values[9];
             }

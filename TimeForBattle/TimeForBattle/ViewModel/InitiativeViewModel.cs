@@ -17,6 +17,8 @@ public partial class InitiativeViewModel : BaseViewModel
     [ObservableProperty] public InitiativeCreature currentCreature;
     [ObservableProperty] private static ObservableCollection<string> conditionNames = ["Blinded", "Charmed", "Deafened", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralyzed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned", "Unconscious", "Positive A", "Positive B", "Negative A", "Negative B"];
     [ObservableProperty] public String pickedCondition = "";
+    [ObservableProperty] public static int[] integers = [0, 1, 2, 3, 4, 5, 6];
+    [ObservableProperty] public static string[] saveNames = ["Str Save", "Dex Save", "Con Save", "Int Save", "Wis Save", "Cha Save"];
 
     public InitiativeViewModel(CreatureService<Creature> creatureService, CreatureService<InitiativeCreatureData> initiativeService, CreatureService<Combat> combatService, CreatureService<Roll> rollService)
     {
