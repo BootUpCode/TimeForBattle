@@ -14,7 +14,7 @@
         <VerticalStackLayout  Grid.Column="0"
                               Grid.Row="1">
             <Image Source="timeforbattlemain.png"
-                   Aspect="AspectFill" 
+                   MaximumWidthRequest="300"
                    Margin="0,-30,0,-10"/>
             <Grid ColumnDefinitions="*,Auto,*"
                   ColumnSpacing="0"

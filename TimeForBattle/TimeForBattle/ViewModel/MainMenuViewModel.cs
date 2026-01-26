@@ -10,10 +10,11 @@ public partial class MainMenuViewModel : BaseViewModel
     public ObservableCollection<Combat> Combats { get; }
     [ObservableProperty] bool isRefreshing;
 
-    public MainMenuViewModel(CreatureService<Combat> combatService)
+    public MainMenuViewModel(CreatureService<Combat> combatService, DialogService dialogService)
     {
         Title = "Main Menu";
         this.CombatService = combatService;
+        this.DialogService = dialogService;
         Combats = [];
     }
 

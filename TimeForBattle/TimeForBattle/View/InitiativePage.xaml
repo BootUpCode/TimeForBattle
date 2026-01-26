@@ -170,8 +170,9 @@
                                                 <Button.IsEnabled>
                                                     <MultiBinding Converter="{StaticResource IsNotEqualConverter}">
                                                         <Binding Path=".InitiativeCreatureData.ActiveTab" />
-                                                        <Binding Path="Tabvalue"
-                                                                 FallbackValue="0" />
+                                                        <Binding x:DataType='viewmodel:InitiativeViewModel'
+                                                                 Source="{RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}"
+                                                                 Path="Integers[0]" />
                                                     </MultiBinding>
                                                 </Button.IsEnabled>
                                             </Button>
@@ -185,8 +186,9 @@
                                                 <Button.IsEnabled>
                                                     <MultiBinding Converter="{StaticResource IsNotEqualConverter}">
                                                         <Binding Path=".InitiativeCreatureData.ActiveTab" />
-                                                        <Binding Path="Tabvalue"
-                                                                 FallbackValue="1" />
+                                                        <Binding x:DataType='viewmodel:InitiativeViewModel'
+                                                                 Source="{RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}"
+                                                                 Path="Integers[1]" />
                                                     </MultiBinding>
                                                 </Button.IsEnabled>
                                             </Button>
@@ -200,8 +202,9 @@
                                                 <Button.IsEnabled>
                                                     <MultiBinding Converter="{StaticResource IsNotEqualConverter}">
                                                         <Binding Path=".InitiativeCreatureData.ActiveTab" />
-                                                        <Binding Path="Tabvalue"
-                                                                 FallbackValue="2" />
+                                                        <Binding x:DataType='viewmodel:InitiativeViewModel'
+                                                                 Source="{RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}"
+                                                                 Path="Integers[2]" />
                                                     </MultiBinding>
                                                 </Button.IsEnabled>
                                             </Button>
@@ -215,8 +218,9 @@
                                                 <Button.IsEnabled>
                                                     <MultiBinding Converter="{StaticResource IsNotEqualConverter}">
                                                         <Binding Path=".InitiativeCreatureData.ActiveTab" />
-                                                        <Binding Path="Tabvalue"
-                                                                 FallbackValue="3" />
+                                                        <Binding x:DataType='viewmodel:InitiativeViewModel'
+                                                                 Source="{RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}"
+                                                                 Path="Integers[3]" />
                                                     </MultiBinding>
                                                 </Button.IsEnabled>
                                             </Button>
@@ -237,8 +241,9 @@
                                             <Grid.IsVisible>
                                                 <MultiBinding Converter="{StaticResource IsEqualConverter}">
                                                     <Binding Path=".InitiativeCreatureData.ActiveTab" />
-                                                    <Binding Path="Tabvalue"
-                                                             FallbackValue="0" />
+                                                    <Binding x:DataType='viewmodel:InitiativeViewModel'
+                                                             Source="{RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}"
+                                                             Path="Integers[0]" />
                                                 </MultiBinding>
                                             </Grid.IsVisible>
 
@@ -289,7 +294,7 @@
                                                     Style="{StaticResource BaseButton}" />
                                         </Grid>
 
-                                        <Grid ColumnDefinitions="48,48,49,49,48,48"
+                                        <Grid ColumnDefinitions="Auto,Auto"
                                               ColumnSpacing="0"
                                               RowDefinitions="35"
                                               RowSpacing="0"
@@ -297,20 +302,21 @@
                                             <Grid.IsVisible>
                                                 <MultiBinding Converter="{StaticResource IsEqualConverter}">
                                                     <Binding Path=".InitiativeCreatureData.ActiveTab" />
-                                                    <Binding Path="Tabvalue"
-                                                             FallbackValue="1" />
+                                                    <Binding x:DataType='viewmodel:InitiativeViewModel'
+                                                             Source="{RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}"
+                                                             Path="Integers[1]" />
                                                 </MultiBinding>
                                             </Grid.IsVisible>
 
                                             <Button x:Name="HotKeyButton1"
                                                     Grid.Column="0"
-                                                    Grid.ColumnSpan="{Binding ., Converter={StaticResource CreatureHotKeyWidthConverter}}"
                                                     Grid.Row="0"
                                                     Text="{Binding Creature.HotKey1Name}"
                                                     Padding="5"
                                                     IsVisible="{Binding Creature.HotKey1Name, Converter={StaticResource StringContainDataConverter}}"
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
-                                                    Style="{StaticResource BaseButton}">
+                                                    Style="{StaticResource BaseButton}"
+                                                    MinimumWidthRequest="145">
                                                 <Button.CommandParameter>
                                                     <MultiBinding Converter="{StaticResource RollConverter}">
                                                         <Binding Path="." />
@@ -329,14 +335,14 @@
                                             </Button>
 
                                             <Button x:Name="HotKeyButton2"
-                                                    Grid.Column="{Binding ., Converter={StaticResource CreatureHotKeyLocationConverter}}"
-                                                    Grid.ColumnSpan="{Binding ., Converter={StaticResource CreatureHotKeyWidthConverter}}"
+                                                    Grid.Column="1"
                                                     Grid.Row="0"
                                                     Text="{Binding Creature.HotKey2Name}"
                                                     Padding="5"
                                                     IsVisible="{Binding Creature.HotKey2Name, Converter={StaticResource StringContainDataConverter}}"
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
-                                                    Style="{StaticResource BaseButton}">
+                                                    Style="{StaticResource BaseButton}"
+                                                    MinimumWidthRequest="145">
                                                 <Button.CommandParameter>
                                                     <MultiBinding Converter="{StaticResource RollConverter}">
                                                         <Binding Path="." />
@@ -363,8 +369,9 @@
                                             <Grid.IsVisible>
                                                 <MultiBinding Converter="{StaticResource IsEqualConverter}">
                                                     <Binding Path=".InitiativeCreatureData.ActiveTab" />
-                                                    <Binding Path="Tabvalue"
-                                                             FallbackValue="2" />
+                                                    <Binding x:DataType='viewmodel:InitiativeViewModel'
+                                                             Source="{RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}"
+                                                             Path="Integers[2]" />
                                                 </MultiBinding>
                                             </Grid.IsVisible>
 
@@ -378,8 +385,9 @@
                                                     <MultiBinding Converter="{StaticResource RollConverter}">
                                                         <Binding Path="." />
                                                         <Binding Path="Creature.StrSaveBonus" />
-                                                        <Binding Path="RollName"
-                                                                 FallbackValue="Str Save" />
+                                                        <Binding x:DataType='viewmodel:InitiativeViewModel'
+                                                                 Source="{RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}"
+                                                                 Path="SaveNames[0]" />
                                                     </MultiBinding>
                                                 </Button.CommandParameter>
                                             </Button>
@@ -393,8 +401,9 @@
                                                     <MultiBinding Converter="{StaticResource RollConverter}">
                                                         <Binding Path="." />
                                                         <Binding Path="Creature.DexSaveBonus" />
-                                                        <Binding Path="RollName"
-                                                                 FallbackValue="Dex Save" />
+                                                        <Binding x:DataType='viewmodel:InitiativeViewModel'
+                                                                 Source="{RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}"
+                                                                 Path="SaveNames[1]" />
                                                     </MultiBinding>
                                                 </Button.CommandParameter>
                                             </Button>
@@ -408,8 +417,9 @@
                                                     <MultiBinding Converter="{StaticResource RollConverter}">
                                                         <Binding Path="." />
                                                         <Binding Path="Creature.ConSaveBonus" />
-                                                        <Binding Path="RollName"
-                                                                 FallbackValue="Con Save" />
+                                                        <Binding x:DataType='viewmodel:InitiativeViewModel'
+                                                                 Source="{RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}"
+                                                                 Path="SaveNames[2]" />
                                                     </MultiBinding>
                                                 </Button.CommandParameter>
                                             </Button>
@@ -423,8 +433,9 @@
                                                     <MultiBinding Converter="{StaticResource RollConverter}">
                                                         <Binding Path="." />
                                                         <Binding Path="Creature.IntSaveBonus" />
-                                                        <Binding Path="RollName"
-                                                                 FallbackValue="Int Save" />
+                                                        <Binding x:DataType='viewmodel:InitiativeViewModel'
+                                                                 Source="{RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}"
+                                                                 Path="SaveNames[3]" />
                                                     </MultiBinding>
                                                 </Button.CommandParameter>
                                             </Button>
@@ -438,8 +449,9 @@
                                                     <MultiBinding Converter="{StaticResource RollConverter}">
                                                         <Binding Path="." />
                                                         <Binding Path="Creature.WisSaveBonus" />
-                                                        <Binding Path="RollName"
-                                                                 FallbackValue="Wis Save" />
+                                                        <Binding x:DataType='viewmodel:InitiativeViewModel'
+                                                                 Source="{RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}"
+                                                                 Path="SaveNames[4]" />
                                                     </MultiBinding>
                                                 </Button.CommandParameter>
                                             </Button>
@@ -453,8 +465,9 @@
                                                     <MultiBinding Converter="{StaticResource RollConverter}">
                                                         <Binding Path="." />
                                                         <Binding Path="Creature.ChaSaveBonus" />
-                                                        <Binding Path="RollName"
-                                                                 FallbackValue="Cha Save" />
+                                                        <Binding x:DataType='viewmodel:InitiativeViewModel'
+                                                                 Source="{RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}"
+                                                                 Path="SaveNames[5]" />
                                                     </MultiBinding>
                                                 </Button.CommandParameter>
                                             </Button>
@@ -468,8 +481,9 @@
                                             <Grid.IsVisible>
                                                 <MultiBinding Converter="{StaticResource IsEqualConverter}">
                                                     <Binding Path=".InitiativeCreatureData.ActiveTab" />
-                                                    <Binding Path="Tabvalue"
-                                                             FallbackValue="3" />
+                                                    <Binding x:DataType='viewmodel:InitiativeViewModel'
+                                                             Source="{RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}"
+                                                             Path="Integers[3]" />
                                                 </MultiBinding>
                                             </Grid.IsVisible>
                                             <Label Grid.Column="0"

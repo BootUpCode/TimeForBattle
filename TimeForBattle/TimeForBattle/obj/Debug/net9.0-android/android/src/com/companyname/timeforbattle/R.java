@@ -11876,8 +11876,9 @@ public final class R {
     public static final int notify_panel_notification_icon_bg=0x7f0700e3;
     public static final int splash=0x7f0700e4;
     public static final int test_level_drawable=0x7f0700e5;
-    public static final int tooltip_frame_dark=0x7f0700e6;
-    public static final int tooltip_frame_light=0x7f0700e7;
+    public static final int timeforbattlemain=0x7f0700e6;
+    public static final int tooltip_frame_dark=0x7f0700e7;
+    public static final int tooltip_frame_light=0x7f0700e8;
   }
   public static final class id {
     public static final int ALT=0x7f080000;
@@ -12627,10 +12628,10 @@ public final class R {
     public static final int support_simple_spinner_dropdown_item=0x7f0b0071;
   }
   public static final class mipmap {
-    public static final int appicon=0x7f0d0000;
-    public static final int appicon_background=0x7f0d0001;
-    public static final int appicon_foreground=0x7f0d0002;
-    public static final int appicon_round=0x7f0d0003;
+    public static final int timeforbattle=0x7f0d0000;
+    public static final int timeforbattle_background=0x7f0d0001;
+    public static final int timeforbattle_foreground=0x7f0d0002;
+    public static final int timeforbattle_round=0x7f0d0003;
   }
   public static final class plurals {
     public static final int mtrl_badge_content_description=0x7f0e0000;
