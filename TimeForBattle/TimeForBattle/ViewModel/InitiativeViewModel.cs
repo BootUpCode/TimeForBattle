@@ -11,14 +11,12 @@ public partial class InitiativeViewModel : BaseViewModel
     public CreatureService<InitiativeCreatureData> InitiativeService;
     public CreatureService<Combat> CombatService;
     public CreatureService<Roll> RollService;
-    [ObservableProperty] public ObservableCollection<InitiativeCreature> initiative = new();
+    [ObservableProperty] public ObservableCollection<InitiativeCreature> initiative;
     [ObservableProperty] public Combat? combat;
     [ObservableProperty] public ObservableCollection<Roll> rolls = new();
-    [ObservableProperty] public InitiativeCreature currentCreature;
+    [ObservableProperty] public InitiativeCreature? currentCreature;
     [ObservableProperty] private static ObservableCollection<string> conditionNames = ["Blinded", "Charmed", "Deafened", "Frightened", "Grappled", "Incapacitated", "Invisible", "Paralyzed", "Petrified", "Poisoned", "Prone", "Restrained", "Stunned", "Unconscious", "Positive A", "Positive B", "Negative A", "Negative B"];
     [ObservableProperty] public String pickedCondition = "";
-    [ObservableProperty] public static int[] integers = [0, 1, 2, 3, 4, 5, 6];
-    [ObservableProperty] public static string[] saveNames = ["Str Save", "Dex Save", "Con Save", "Int Save", "Wis Save", "Cha Save"];
 
     public InitiativeViewModel(CreatureService<Creature> creatureService, CreatureService<InitiativeCreatureData> initiativeService, CreatureService<Combat> combatService, CreatureService<Roll> rollService)
     {
@@ -26,12 +24,15 @@ public partial class InitiativeViewModel : BaseViewModel
         this.InitiativeService = initiativeService;
         this.CombatService = combatService;
         this.RollService = rollService;
-        Initiative = [];
+        Initiative = new ObservableCollection<InitiativeCreature>();
+        IsBusy = false;
     }
 
     [RelayCommand]
     public async Task RefreshInitiativeAsync()
     {
+        IsBusy = true;
+
         if (Combat is null)
             return;
 
@@ -50,6 +51,8 @@ public partial class InitiativeViewModel : BaseViewModel
         await SortInitiativeAsync();
 
         CurrentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
+
+        IsBusy = false;
     }
 
     [RelayCommand]
@@ -74,10 +77,12 @@ public partial class InitiativeViewModel : BaseViewModel
     [RelayCommand]
     public async Task RollInitiativeAsync()
     {
+        IsBusy = true;
+
         if (Combat is null || Initiative is null || Initiative.Count == 0)
             return;
 
-        await Task.Run((Action)(() =>
+        await Task.Run(() =>
         {
             Random rng = new();
 
@@ -88,25 +93,25 @@ public partial class InitiativeViewModel : BaseViewModel
                     int initiative = rng.Next(1, 21) + initiativeCreature.Creature.InitiativeBonus;
                     initiativeCreature.InitiativeCreatureData.Initiative = initiative;
                 }
-
-                Task.Run(() => InitiativeService.SaveAsync(initiativeCreature.InitiativeCreatureData));
             }
-        }));
+        });
 
         await SortInitiativeAsync();
 
-        CurrentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
+        await Task.Run(() =>
+        {
+            CurrentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
+        });
 
         if (CurrentCreature is null)
         {
             Initiative[0].InitiativeCreatureData.IsTurn = true;
-            await InitiativeService.SaveAsync(Initiative[0].InitiativeCreatureData);
         }
 
         Combat.IsStarted = true;
         await CombatService.SaveAsync(Combat);
 
-        CurrentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
+        IsBusy = false;
     }
 
     [RelayCommand]

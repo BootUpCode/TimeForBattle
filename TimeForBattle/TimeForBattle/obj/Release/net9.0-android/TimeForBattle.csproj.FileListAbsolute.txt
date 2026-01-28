@@ -457,3 +457,4 @@ D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\l
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\142\jl\files.cache
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\144\jl\files.cache
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\lp\157\jl\files.cache
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-android\resizetizer\r\drawable\timeforbattleloading.png
