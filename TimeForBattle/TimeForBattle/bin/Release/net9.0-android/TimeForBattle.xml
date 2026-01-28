@@ -528,6 +528,12 @@
         <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.PickedCondition">
             <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.pickedCondition"/>
         </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.Integers">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.integers"/>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.SaveNames">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.saveNames"/>
+        </member>
         <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.refreshInitiativeCommand">
             <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RefreshInitiativeCommand"/>.</summary>
         </member>
@@ -1152,6 +1158,12 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PickedCondition">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PickedCondition" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Integers">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Integers" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SaveNames">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SaveNames" generated properties.</summary>
+        </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
             A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
@@ -1466,6 +1478,12 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PickedCondition">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PickedCondition" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Integers">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Integers" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SaveNames">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SaveNames" generated properties.</summary>
         </member>
     </members>
 </doc>

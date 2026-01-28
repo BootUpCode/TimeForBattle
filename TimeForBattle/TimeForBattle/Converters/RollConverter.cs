@@ -19,11 +19,22 @@ public class RollConverter : IMultiValueConverter
         //9: Damage bonus 2: int
         //10: Damage type 2: string
 
-        if (values[0] is null || values[1] is null || values[2] is null)
+        //Parameter: static roll name for saves
+
+        if (values[0] is null || values[1] is null)
             return new Tuple<int?, string?, string?, string?, string?, string?, string?>(null, null, null, null, null, null, null);
 
-        if (values[0] is InitiativeCreature initiativeCreature && values[1] is int modifier && values[2] is string rollName)
+        if (values[0] is InitiativeCreature initiativeCreature && values[1] is int modifier)
         {
+            //Set roll name
+            string rollName = "";
+            if (values.Length > 2 && values[2] is not null && values[2] is string)
+                rollName = (string)values[2];
+            else if (parameter is not null && parameter is string)
+            {
+                rollName = (string)parameter;
+            }
+
             //Create damage roll info string, if damage is part of the roll
             string? damageString1 = null;
             if (values.Length > 3 && values[3] is not null && values[4] is not null && values[5] is not null && values[3] is int && values[4] is int && values[5] is int)
