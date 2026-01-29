@@ -1,4 +1,5 @@
 using Microsoft.Maui.Controls;
+using Microsoft.Maui.Devices.Sensors;
 using TimeForBattle.Services;
 using TimeForBattle.View;
 
@@ -25,16 +26,16 @@ public partial class InitiativeViewModel : BaseViewModel
         this.CombatService = combatService;
         this.RollService = rollService;
         Initiative = new ObservableCollection<InitiativeCreature>();
-        IsBusy = false;
     }
 
     [RelayCommand]
     public async Task RefreshInitiativeAsync()
     {
-        IsBusy = true;
-
         if (Combat is null)
             return;
+
+        IsBusy = true;
+        await Task.Delay(10);
 
         List<InitiativeCreatureData> initiativeCreatureDataList = await InitiativeService.GetAllByCombatAsync(Combat.Id);
 
@@ -49,6 +50,7 @@ public partial class InitiativeViewModel : BaseViewModel
         Rolls = new ObservableCollection<Roll>(await RollService.GetAllByCombatAsync(Combat.Id));
 
         await SortInitiativeAsync();
+        await SortRollsAsync();
 
         CurrentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
 
@@ -77,10 +79,11 @@ public partial class InitiativeViewModel : BaseViewModel
     [RelayCommand]
     public async Task RollInitiativeAsync()
     {
-        IsBusy = true;
-
         if (Combat is null || Initiative is null || Initiative.Count == 0)
             return;
+
+        IsBusy = true;
+        await Task.Delay(10);
 
         await Task.Run(() =>
         {
@@ -128,6 +131,13 @@ public partial class InitiativeViewModel : BaseViewModel
         Initiative.Clear();
         foreach (InitiativeCreature creature in sortedCreatures)
             Initiative.Add(creature);
+    }
+
+    [RelayCommand]
+    public async Task SortRollsAsync()
+    {
+        if (Combat is null || Initiative is null || Initiative.Count == 0)
+            return;
 
         List<Roll> sortedRolls = [];
         await Task.Run(() =>
@@ -473,17 +483,56 @@ public partial class InitiativeViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    public async Task RollSaveAsync(Tuple<int?, string?, string?, string?, string?, string?, string?> parameters)
+    public async Task RollSaveAsync(Tuple<InitiativeCreature?, int> parameters)
     {
-        if (Combat is null || parameters.Item1 is null || parameters.Item2 is null || parameters.Item3 is null)
+        if (Combat is null || parameters.Item1 is null || parameters.Item2 < 0 || parameters.Item2 > 7)
             return;
 
+        InitiativeCreature initiativeCreature = parameters.Item1;
         int roll1 = 0;
         int roll2 = 0;
+        string rollName = "";
+        int modifier = 0;
         int? damage1 = null;
         string? damageType1 = null;
         int? damage2 = null;
         string? damageType2 = null;
+
+        switch (parameters.Item2)
+        {
+            case 0:
+                rollName = "Str Save";
+                modifier = initiativeCreature.Creature.StrSaveBonus;
+                break;
+            case 1:
+                rollName = "Dex Save";
+                modifier = initiativeCreature.Creature.DexSaveBonus;
+                break;
+            case 2:
+                rollName = "Con Save";
+                modifier = initiativeCreature.Creature.ConSaveBonus;
+                break;
+            case 3:
+                rollName = "Int Save";
+                modifier = initiativeCreature.Creature.IntSaveBonus;
+                break;
+            case 4:
+                rollName = "Wis Save";
+                modifier = initiativeCreature.Creature.WisSaveBonus;
+                break;
+            case 5:
+                rollName = "Cha Save";
+                modifier = initiativeCreature.Creature.ChaSaveBonus;
+                break;
+            case 6:
+                rollName = initiativeCreature.Creature.HotKey1Name;
+                modifier = initiativeCreature.Creature.HotKey1Bonus;
+                break;
+            case 7:
+                rollName = initiativeCreature.Creature.HotKey2Name;
+                modifier = initiativeCreature.Creature.HotKey2Bonus;
+                break;
+        }
 
         await Task.Run(() =>
         {
@@ -491,11 +540,37 @@ public partial class InitiativeViewModel : BaseViewModel
             roll1 = rng.Next(1, 21);
             roll2 = rng.Next(1, 21);
 
-            if (!String.IsNullOrWhiteSpace(parameters.Item4) && parameters.Item4.IndexOf('d') is int dLocation1 && dLocation1 > 0 && parameters.Item4.IndexOf('+') is int plusLocation1 && plusLocation1 > 0)
+            if (parameters.Item2 == 6 || parameters.Item2 == 7)
             {
-                int diceCount1 = int.Parse(parameters.Item4.Substring(0, dLocation1));
-                int diceSize1 = int.Parse(parameters.Item4.Substring(dLocation1 + 1, plusLocation1 - dLocation1 - 1));
-                int damageBonus1 = int.Parse(parameters.Item4.Substring(plusLocation1 + 1, parameters.Item4.Length - plusLocation1 - 1));
+                int diceCount1 = 0;
+                int diceSize1 = 0;
+                int damageBonus1 = 0;
+                int diceCount2 = 0;
+                int diceSize2 = 0;
+                int damageBonus2 = 0;
+
+                if (parameters.Item2 == 6)
+                {
+                    diceCount1 = initiativeCreature.Creature.HotKey1DamageDiceNumber1;
+                    diceSize1 = initiativeCreature.Creature.HotKey1DamageDiceSize1;
+                    damageBonus1 = initiativeCreature.Creature.HotKey1DamageBonus1;
+                    damageType1 = initiativeCreature.Creature.HotKey1DamageType1;
+                    diceCount2 = initiativeCreature.Creature.HotKey1DamageDiceNumber2;
+                    diceSize2 = initiativeCreature.Creature.HotKey1DamageDiceSize2;
+                    damageBonus2 = initiativeCreature.Creature.HotKey1DamageBonus2;
+                    damageType2 = initiativeCreature.Creature.HotKey1DamageType2;
+                }
+                else if (parameters.Item2 == 7)
+                {
+                    diceCount1 = initiativeCreature.Creature.HotKey2DamageDiceNumber1;
+                    diceSize1 = initiativeCreature.Creature.HotKey2DamageDiceSize1;
+                    damageBonus1 = initiativeCreature.Creature.HotKey2DamageBonus1;
+                    damageType1 = initiativeCreature.Creature.HotKey2DamageType1;
+                    diceCount2 = initiativeCreature.Creature.HotKey2DamageDiceNumber2;
+                    diceSize2 = initiativeCreature.Creature.HotKey2DamageDiceSize2;
+                    damageBonus2 = initiativeCreature.Creature.HotKey2DamageBonus2;
+                    damageType2 = initiativeCreature.Creature.HotKey2DamageType2;
+                }
 
                 damage1 = 0;
                 for (int i = 0; i < diceCount1; i++)
@@ -503,17 +578,6 @@ public partial class InitiativeViewModel : BaseViewModel
                     damage1 += rng.Next(1, diceSize1);
                 }
                 damage1 += damageBonus1;
-            }
-            if (!String.IsNullOrWhiteSpace(parameters.Item5))
-            {
-                damageType1 = parameters.Item5;
-            }
-
-            if (!String.IsNullOrWhiteSpace(parameters.Item6) && parameters.Item6.IndexOf('d') is int dLocation2 && dLocation2 > 0 && parameters.Item6.IndexOf('+') is int plusLocation2 && plusLocation2 > 0)
-            {
-                int diceCount2 = int.Parse(parameters.Item6.Substring(0, dLocation2));
-                int diceSize2 = int.Parse(parameters.Item6.Substring(dLocation2 + 1, plusLocation2 - dLocation2 - 1));
-                int damageBonus2 = int.Parse(parameters.Item6.Substring(plusLocation2 + 1, parameters.Item6.Length - plusLocation2 - 1));
 
                 damage2 = 0;
                 for (int i = 0; i < diceCount2; i++)
@@ -522,13 +586,9 @@ public partial class InitiativeViewModel : BaseViewModel
                 }
                 damage2 += damageBonus2;
             }
-            if (!String.IsNullOrWhiteSpace(parameters.Item7))
-            {
-                damageType2 = parameters.Item7;
-            }
         });
 
-        Roll newRoll = new Roll(parameters.Item3, parameters.Item2, roll1, roll2, (int)parameters.Item1, damage1, damageType1, damage2, damageType2, Combat.RoundCount, Combat.Id);
+        Roll newRoll = new Roll(initiativeCreature.Creature.Name + " " + initiativeCreature.InitiativeCreatureData.NameID, rollName, roll1, roll2, modifier, damage1, damageType1, damage2, damageType2, Combat.RoundCount, Combat.Id);
         Rolls.Insert(0, newRoll);
         await RollService.SaveAsync(newRoll);
     }
