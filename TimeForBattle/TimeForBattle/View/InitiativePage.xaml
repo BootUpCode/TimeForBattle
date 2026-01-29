@@ -153,6 +153,12 @@
                             AlignContent="Start"
                             Padding="0,3,0,3"
                             IsVisible="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}">
+                    <BindableLayout.EmptyView>
+                        <VerticalStackLayout>
+                            <Label Text="No creatures in initiative" />
+                            <Label Text="No creatures in initiative" />
+                        </VerticalStackLayout>
+                    </BindableLayout.EmptyView>
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="model:InitiativeCreature">
                         <VerticalStackLayout Padding="3,3,3,3">
@@ -276,57 +282,27 @@
                                                   IsVisible="{Binding InitiativeCreatureData.ActiveTab, Converter={StaticResource IsEqualConverter}, ConverterParameter=1}">
 
                                                 <Button x:Name="HotKeyButton1"
-                                                    Grid.Column="0"
-                                                    Grid.Row="0"
-                                                    Text="{Binding Creature.HotKey1Name}"
-                                                    Padding="5"
-                                                    IsVisible="{Binding Creature.HotKey1Name, Converter={StaticResource StringContainDataConverter}}"
-                                                    Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
-                                                    Style="{StaticResource BaseButton}"
-                                                    MinimumWidthRequest="145">
-                                                <Button.CommandParameter>
-                                                        <MultiBinding Converter="{StaticResource RollConverter}">
-                                                        <Binding Path="." />
-                                                            <Binding Path="Creature.HotKey1Bonus" />
-                                                            <Binding Path="Creature.HotKey1Name" />
-                                                            <Binding Path="Creature.HotKey1DamageDiceNumber1" />
-                                                        <Binding Path="Creature.HotKey1DamageDiceSize1" />
-                                                        <Binding Path="Creature.HotKey1DamageBonus1" />
-                                                        <Binding Path="Creature.HotKey1DamageType1" />
-                                                        <Binding Path="Creature.HotKey1DamageDiceNumber2" />
-                                                        <Binding Path="Creature.HotKey1DamageDiceSize2" />
-                                                        <Binding Path="Creature.HotKey1DamageBonus2" />
-                                                        <Binding Path="Creature.HotKey1DamageType2" />
-                                                    </MultiBinding>
-                                                </Button.CommandParameter>
-                                            </Button>
+                                                        Grid.Column="0"
+                                                        Grid.Row="0"
+                                                        Text="{Binding Creature.HotKey1Name}"
+                                                        Padding="5"
+                                                        IsVisible="{Binding Creature.HotKey1Name, Converter={StaticResource StringContainDataConverter}}"
+                                                        Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
+                                                        Style="{StaticResource BaseButton}"
+                                                        MinimumWidthRequest="145"
+                                                        CommandParameter="{Binding ., Converter={StaticResource RollConverter}, ConverterParameter=6}" />
 
-                                            <Button x:Name="HotKeyButton2"
-                                                    Grid.Column="1"
-                                                    Grid.Row="0"
-                                                    Text="{Binding Creature.HotKey2Name}"
-                                                    Padding="5"
-                                                    IsVisible="{Binding Creature.HotKey2Name, Converter={StaticResource StringContainDataConverter}}"
-                                                    Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
-                                                    Style="{StaticResource BaseButton}"
-                                                    MinimumWidthRequest="145">
-                                                <Button.CommandParameter>
-                                                        <MultiBinding Converter="{StaticResource RollConverter}">
-                                                            <Binding Path="." />
-                                                            <Binding Path="Creature.HotKey2Bonus" />
-                                                            <Binding Path="Creature.HotKey2Name" />
-                                                            <Binding Path="Creature.HotKey2DamageDiceNumber1" />
-                                                        <Binding Path="Creature.HotKey2DamageDiceSize1" />
-                                                        <Binding Path="Creature.HotKey2DamageBonus1" />
-                                                        <Binding Path="Creature.HotKey2DamageType1" />
-                                                        <Binding Path="Creature.HotKey2DamageDiceNumber2" />
-                                                        <Binding Path="Creature.HotKey2DamageDiceSize2" />
-                                                        <Binding Path="Creature.HotKey2DamageBonus2" />
-                                                        <Binding Path="Creature.HotKey2DamageType2" />
-                                                    </MultiBinding>
-                                                </Button.CommandParameter>
-                                            </Button>
-                                        </Grid>
+                                                <Button x:Name="HotKeyButton2"
+                                                        Grid.Column="1"
+                                                        Grid.Row="0"
+                                                        Text="{Binding Creature.HotKey2Name}"
+                                                        Padding="5"
+                                                        IsVisible="{Binding Creature.HotKey2Name, Converter={StaticResource StringContainDataConverter}}"
+                                                        Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
+                                                        Style="{StaticResource BaseButton}"
+                                                        MinimumWidthRequest="145"
+                                                        CommandParameter="{Binding ., Converter={StaticResource RollConverter}, ConverterParameter=7}" />
+                                            </Grid>
 
                                         <Grid ColumnDefinitions="48,48,49,49,48,48"
                                               ColumnSpacing="0"
@@ -336,90 +312,48 @@
                                                   IsVisible="{Binding InitiativeCreatureData.ActiveTab, Converter={StaticResource IsEqualConverter}, ConverterParameter=2}">
 
                                                 <Button Grid.Column="0"
-                                                    Grid.Row="0"
-                                                    Text="STR"
-                                                    Padding="5"
-                                                    Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
-                                                    Style="{StaticResource BaseButton}">
-                                                <Button.CommandParameter>
-                                                        <MultiBinding Converter="{StaticResource RollConverter}"
-                                                                      ConverterParameter="Str Save">
-                                                            <Binding Path="." />
-                                                            <Binding Path="Creature.StrSaveBonus" />
-                                                        </MultiBinding>
-                                                </Button.CommandParameter>
-                                            </Button>
-                                            <Button Grid.Column="1"
+                                                        Grid.Row="0"
+                                                        Text="STR"
+                                                        Padding="5"
+                                                        Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
+                                                        Style="{StaticResource BaseButton}"
+                                                        CommandParameter="{Binding ., Converter={StaticResource RollConverter}, ConverterParameter=0}" />
+                                                <Button Grid.Column="1"
                                                     Grid.Row="0"
                                                     Text="DEX"
                                                     Padding="5"
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
-                                                    Style="{StaticResource BaseButton}">
-                                                <Button.CommandParameter>
-                                                        <MultiBinding Converter="{StaticResource RollConverter}"
-                                                                      ConverterParameter="Dex Save">
-                                                            <Binding Path="." />
-                                                            <Binding Path="Creature.DexSaveBonus" />
-                                                        </MultiBinding>
-                                                </Button.CommandParameter>
-                                            </Button>
-                                            <Button Grid.Column="2"
+                                                        Style="{StaticResource BaseButton}"
+                                                        CommandParameter="{Binding ., Converter={StaticResource RollConverter}, ConverterParameter=1}" />
+                                                <Button Grid.Column="2"
                                                     Grid.Row="0"
                                                     Text="CON"
                                                     Padding="5"
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
-                                                    Style="{StaticResource BaseButton}">
-                                                <Button.CommandParameter>
-                                                        <MultiBinding Converter="{StaticResource RollConverter}"
-                                                                      ConverterParameter="Con Save">
-                                                            <Binding Path="." />
-                                                            <Binding Path="Creature.ConSaveBonus" />
-                                                        </MultiBinding>
-                                                </Button.CommandParameter>
-                                            </Button>
-                                            <Button Grid.Column="3"
+                                                        Style="{StaticResource BaseButton}"
+                                                        CommandParameter="{Binding ., Converter={StaticResource RollConverter}, ConverterParameter=2}" />
+                                                <Button Grid.Column="3"
                                                     Grid.Row="0"
                                                     Text="INT"
                                                     Padding="5"
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
-                                                    Style="{StaticResource BaseButton}">
-                                                <Button.CommandParameter>
-                                                        <MultiBinding Converter="{StaticResource RollConverter}"
-                                                                      ConverterParameter="Int Save">
-                                                            <Binding Path="." />
-                                                            <Binding Path="Creature.IntSaveBonus" />
-                                                        </MultiBinding>
-                                                </Button.CommandParameter>
-                                            </Button>
-                                            <Button Grid.Column="4"
+                                                        Style="{StaticResource BaseButton}"
+                                                        CommandParameter="{Binding ., Converter={StaticResource RollConverter}, ConverterParameter=3}" />
+                                                <Button Grid.Column="4"
                                                     Grid.Row="0"
                                                     Text="WIS"
                                                     Padding="5"
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
-                                                    Style="{StaticResource BaseButton}">
-                                                <Button.CommandParameter>
-                                                        <MultiBinding Converter="{StaticResource RollConverter}"
-                                                                      ConverterParameter="Wis Save">
-                                                            <Binding Path="." />
-                                                            <Binding Path="Creature.WisSaveBonus" />
-                                                        </MultiBinding>
-                                                </Button.CommandParameter>
-                                            </Button>
-                                            <Button Grid.Column="5"
+                                                        Style="{StaticResource BaseButton}"
+                                                        CommandParameter="{Binding ., Converter={StaticResource RollConverter}, ConverterParameter=4}" />
+                                                <Button Grid.Column="5"
                                                     Grid.Row="0"
                                                     Text="CHA"
                                                     Padding="5"
                                                     Command="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=RollSaveCommand}"
-                                                    Style="{StaticResource BaseButton}">
-                                                <Button.CommandParameter>
-                                                        <MultiBinding Converter="{StaticResource RollConverter}"
-                                                                      ConverterParameter="Cha Save">
-                                                            <Binding Path="." />
-                                                            <Binding Path="Creature.ChaSaveBonus" />
-                                                        </MultiBinding>
-                                                </Button.CommandParameter>
-                                            </Button>
-                                        </Grid>
+                                                        Style="{StaticResource BaseButton}"
+                                                        CommandParameter="{Binding ., Converter={StaticResource RollConverter}, ConverterParameter=5}" />
+                                            </Grid>
 
                                         <Grid ColumnDefinitions="105,*,40,80"
                                               ColumnSpacing="0"

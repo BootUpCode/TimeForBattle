@@ -9,11 +9,14 @@ public partial class InitiativePage : ContentPage
 		InitializeComponent();
 		BindingContext = viewModel;
 		this.viewModel = viewModel;
+        viewModel.IsBusy = true;
 	}
 
     protected async override void OnAppearing()
     {
         base.OnAppearing();
+        viewModel.IsBusy = true;
+        await Task.Delay(100);
         await viewModel.RefreshInitiativeAsync();
     }
 
