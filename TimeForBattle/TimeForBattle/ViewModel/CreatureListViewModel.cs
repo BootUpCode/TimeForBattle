@@ -15,6 +15,7 @@ public partial class CreatureListViewModel : BaseViewModel
     public ObservableCollection<InitiativeCreature> Initiative { get; }
     [ObservableProperty] private static ObservableCollection<string> sortNames = ["Name", "Type", "CR/Level"];
     [ObservableProperty] public String pickedSort = "Name";
+    [ObservableProperty] public String searchInput = "";
     [ObservableProperty] public bool viewMonsters;
     [ObservableProperty] public Combat combat;
 
@@ -69,6 +70,11 @@ public partial class CreatureListViewModel : BaseViewModel
         Task.Run(() => SortViewAsync());
     }
 
+    partial void OnSearchInputChanged(String value)
+    {
+        Task.Run(() => SortViewAsync());
+    }
+
     [RelayCommand]
     public async Task ChangeViewAsync(bool viewMonsters)
     {
@@ -105,6 +111,19 @@ public partial class CreatureListViewModel : BaseViewModel
             } else
             {
                 sortedCreatures = Creatures.OrderBy(x => x.Name).ToList();
+            }
+
+            if(!String.IsNullOrWhiteSpace(SearchInput))
+            {
+                List<Creature> searchedCreatures = [];
+                foreach (Creature creature in sortedCreatures)
+                {
+                    if (creature.Name.ToLower().Contains(SearchInput.ToLower()))
+                    {
+                        searchedCreatures.Add(creature);
+                    }
+                }
+                sortedCreatures = searchedCreatures;
             }
 
             Creatures = new ObservableCollection<Creature>();
