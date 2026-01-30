@@ -44,7 +44,7 @@ TimeForBattle can now also quickly calculate results for common combat occurance
 - Add app icon (Done!)
 - Add main menu icon (Done!)
 - Add splash/loading screen (Done!)
-- Search function for creature list 
+- Search function for creature list (Done!)
 - Final touches
   - Documentation
   - Warnings and errors
