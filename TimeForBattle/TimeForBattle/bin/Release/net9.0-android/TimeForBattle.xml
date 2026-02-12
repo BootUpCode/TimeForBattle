@@ -413,6 +413,9 @@
         <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.PickedSort">
             <inheritdoc cref="F:TimeForBattle.ViewModel.CreatureListViewModel.pickedSort"/>
         </member>
+        <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.SearchInput">
+            <inheritdoc cref="F:TimeForBattle.ViewModel.CreatureListViewModel.searchInput"/>
+        </member>
         <member name="P:TimeForBattle.ViewModel.CreatureListViewModel.ViewMonsters">
             <inheritdoc cref="F:TimeForBattle.ViewModel.CreatureListViewModel.viewMonsters"/>
         </member>
@@ -426,6 +429,11 @@
             <summary>Executes the logic for when <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.PickedSort"/> just changed.</summary>
             <param name="value">The new property value that was set.</param>
             <remarks>This method is invoked right after the value of <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.PickedSort"/> is changed.</remarks>
+        </member>
+        <member name="M:TimeForBattle.ViewModel.CreatureListViewModel.OnSearchInputChanged(System.String)">
+            <summary>Executes the logic for when <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.SearchInput"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.SearchInput"/> is changed.</remarks>
         </member>
         <member name="F:TimeForBattle.ViewModel.CreatureListViewModel.refreshCreaturesCommand">
             <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.CreatureListViewModel.RefreshCreaturesCommand"/>.</summary>
@@ -509,6 +517,7 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.Initiative">
             <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.initiative"/>
@@ -527,12 +536,6 @@
         </member>
         <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.PickedCondition">
             <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.pickedCondition"/>
-        </member>
-        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.Integers">
-            <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.integers"/>
-        </member>
-        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.SaveNames">
-            <inheritdoc cref="F:TimeForBattle.ViewModel.InitiativeViewModel.saveNames"/>
         </member>
         <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.refreshInitiativeCommand">
             <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RefreshInitiativeCommand"/>.</summary>
@@ -563,6 +566,12 @@
         </member>
         <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.SortInitiativeCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.SortInitiativeAsync"/>.</summary>
+        </member>
+        <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.sortRollsCommand">
+            <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.SortRollsCommand"/>.</summary>
+        </member>
+        <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.SortRollsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.SortRollsAsync"/>.</summary>
         </member>
         <member name="F:TimeForBattle.ViewModel.InitiativeViewModel.saveCombatCommand">
             <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.SaveCombatCommand"/>.</summary>
@@ -688,7 +697,7 @@
             <summary>The backing field for <see cref="P:TimeForBattle.ViewModel.InitiativeViewModel.RollSaveCommand"/>.</summary>
         </member>
         <member name="P:TimeForBattle.ViewModel.InitiativeViewModel.RollSaveCommand">
-            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.RollSaveAsync(System.Tuple{System.Nullable{System.Int32},System.String,System.String,System.String,System.String,System.String,System.String})"/>.</summary>
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:TimeForBattle.ViewModel.InitiativeViewModel.RollSaveAsync(System.Tuple{TimeForBattle.Model.InitiativeCreature,System.Int32})"/>.</summary>
         </member>
         <member name="T:TimeForBattle.ViewModel.MainMenuViewModel">
             <inheritdoc/>
@@ -1140,6 +1149,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PickedSort">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PickedSort" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SearchInput">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SearchInput" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ViewMonsters">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ViewMonsters" generated properties.</summary>
         </member>
@@ -1157,12 +1169,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PickedCondition">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PickedCondition" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Integers">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Integers" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SaveNames">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SaveNames" generated properties.</summary>
         </member>
         <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
             <summary>
@@ -1461,6 +1467,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PickedSort">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PickedSort" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SearchInput">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SearchInput" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ViewMonsters">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ViewMonsters" generated properties.</summary>
         </member>
@@ -1478,12 +1487,6 @@
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PickedCondition">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PickedCondition" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Integers">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Integers" generated properties.</summary>
-        </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SaveNames">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SaveNames" generated properties.</summary>
         </member>
     </members>
 </doc>
