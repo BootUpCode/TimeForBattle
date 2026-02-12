@@ -31,7 +31,7 @@
                     Grid.ColumnSpan="2"
                     Grid.RowSpan="3"
                     BackgroundColor="Black"
-                    Margin="0,0,0,-1"/>
+                    Margin="0,0,-1,-1"/>
 
             <Button Grid.Row="0"
                     Grid.Column="0"
@@ -85,9 +85,10 @@
                     Margin="5,5,5,5"
                     Text="{Binding SearchInput}"
                     Style="{StaticResource BaseEntry}"
+                    TextColor="White"
                     Placeholder="Search..."
                     HorizontalOptions="Fill"
-                    HeightRequest="35" />
+                    HeightRequest="35"/>
 
             <Border Grid.Row="2"
                     Grid.Column="0"
@@ -101,6 +102,7 @@
                            TextColor="White"
                            Margin="10,7,10,5" />
                     <Picker Style="{StaticResource BasePicker}"
+                            TextColor="White"
                             ItemsSource="{Binding SortNames}"
                             SelectedItem="{Binding PickedSort}"
                             VerticalOptions="Start"
@@ -115,7 +117,8 @@
         </Grid>
 
         <ScrollView Grid.Row="1"
-                    Grid.ColumnSpan="3">
+                    Grid.ColumnSpan="3"
+                    Padding="0,2,0,2">
             <FlexLayout BackgroundColor="Transparent"
                         BindableLayout.ItemsSource="{Binding Creatures}"
                         Direction="Row"
@@ -125,7 +128,7 @@
                         AlignContent="Start">
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="model:Creature">
-                        <Grid Padding="0,1,0,1">
+                        <Grid Padding="0,2,0,0">
                             <Border HeightRequest="180"
                                     WidthRequest="155"
                                     Stroke="DarkRed"
@@ -134,7 +137,7 @@
                                       ColumnSpacing="5"
                                       RowDefinitions="25,2,*,*,*,2,*,*,2,35"
                                       RowSpacing="2"
-                                      Padding="5">
+                                      Padding="4">
 
                                     <Label Grid.ColumnSpan="2"
                                            Grid.Row="0"

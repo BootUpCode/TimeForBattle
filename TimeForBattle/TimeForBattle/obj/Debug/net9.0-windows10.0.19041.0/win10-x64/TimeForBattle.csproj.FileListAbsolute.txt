@@ -35,7 +35,6 @@ D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\timeforbattleLogo.targetsize-256.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\timeforbattleLogo.targetsize-32.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\timeforbattleLogo.targetsize-48.png
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\timeforbattlemain.scale-100.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\timeforbattleMediumTile.scale-100.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\timeforbattleMediumTile.scale-125.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\timeforbattleMediumTile.scale-150.png
@@ -470,7 +469,6 @@ D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\timeforbattleLogo.targetsize-256.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\timeforbattleLogo.targetsize-32.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\timeforbattleLogo.targetsize-48.png
-D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\timeforbattlemain.scale-100.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\timeforbattleMediumTile.scale-100.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\timeforbattleMediumTile.scale-125.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\timeforbattleMediumTile.scale-150.png
@@ -521,3 +519,5 @@ D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\timeforbattleloading.scale-100.png
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\timeforbattleloading.scale-100.png
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\timeforbattlemain.scale-100.png
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\timeforbattlemain.scale-100.png
