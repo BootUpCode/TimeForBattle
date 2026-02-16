@@ -1,5 +1,3 @@
-using Microsoft.Maui.Controls;
-using Microsoft.Maui.Devices.Sensors;
 using TimeForBattle.Services;
 using TimeForBattle.View;
 
@@ -35,6 +33,8 @@ public partial class InitiativeViewModel : BaseViewModel
             return;
 
         IsBusy = true;
+        bool wasStarted = Combat.IsStarted;
+        Combat.IsStarted = false;
         await Task.Delay(10);
 
         List<InitiativeCreatureData> initiativeCreatureDataList = await InitiativeService.GetAllByCombatAsync(Combat.Id);
@@ -55,6 +55,7 @@ public partial class InitiativeViewModel : BaseViewModel
         CurrentCreature = Initiative.FirstOrDefault(x => x.InitiativeCreatureData.IsTurn == true, null);
 
         IsBusy = false;
+        Combat.IsStarted = wasStarted;
     }
 
     [RelayCommand]
@@ -83,6 +84,7 @@ public partial class InitiativeViewModel : BaseViewModel
             return;
 
         IsBusy = true;
+        Combat.IsStarted = false;
         await Task.Delay(10);
 
         await Task.Run(() =>
@@ -109,6 +111,7 @@ public partial class InitiativeViewModel : BaseViewModel
         if (CurrentCreature is null)
         {
             Initiative[0].InitiativeCreatureData.IsTurn = true;
+            CurrentCreature = Initiative[0];
         }
 
         Combat.IsStarted = true;

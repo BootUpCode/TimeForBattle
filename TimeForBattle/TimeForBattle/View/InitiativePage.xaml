@@ -154,10 +154,9 @@
                             Padding="0,3,0,3"
                             IsVisible="{Binding IsBusy, Converter={StaticResource InvertedBoolConverter}}">
                     <BindableLayout.EmptyView>
-                        <VerticalStackLayout>
-                            <Label Text="No creatures in initiative" />
-                            <Label Text="No creatures in initiative" />
-                        </VerticalStackLayout>
+                        <Label Text="There are no creatures in initiative!"
+                               HorizontalOptions="Center"
+                               Padding="0,20,0,20"/>
                     </BindableLayout.EmptyView>
                 <BindableLayout.ItemTemplate>
                     <DataTemplate x:DataType="model:InitiativeCreature">
@@ -668,13 +667,14 @@
                                                    Grid.Row="0"
                                                    Text="{Binding InitiativeCreatureData.Initiative, Converter={StaticResource EntryToNullableIntConverter}}"
                                                    IsVisible="{Binding x:DataType='viewmodel:InitiativeViewModel', Source={RelativeSource AncestorType={x:Type viewmodel:InitiativeViewModel}}, Path=Combat.IsStarted, Converter={StaticResource InvertedBoolConverter}}"
+                                                   Style="{StaticResource BaseEntry}"
                                                    WidthRequest="35"
                                                    MinimumWidthRequest="35"
-                                                   HeightRequest="35"
-                                                   MinimumHeightRequest="35"
+                                                   HeightRequest="31"
+                                                   MinimumHeightRequest="31"
                                                    VerticalOptions="Center"
                                                    HorizontalOptions="Start"
-                                                   Margin="-3,0,0,6"
+                                                   Margin="-3,-4,0,6"
                                                    MaxLength="2"
                                                    Keyboard="Numeric"
                                                    Completed="InitiativeEntryCompleted" />
@@ -686,9 +686,9 @@
                                                    TextColor="{Binding InitiativeCreatureData.IsTurn, Converter={StaticResource CreatureColorConverter}}"
                                                    WidthRequest="35"
                                                    MinimumWidthRequest="35"
-                                                   HeightRequest="25"
-                                                   MinimumHeightRequest="24"
-                                                   Margin="10,-10,0,0"
+                                                   HeightRequest="35"
+                                                   MinimumHeightRequest="35"
+                                                   Margin="10,2,0,0"
                                                    VerticalOptions="Center"
                                                    HorizontalOptions="Start" />
                                             <Grid  Grid.Column="1"
@@ -702,7 +702,7 @@
                                                            HorizontalOptions="Start"
                                                            FontAttributes="{Binding InitiativeCreatureData.IsTurn, Converter={StaticResource CreatureNameBoldConverter}}"
                                                            TextDecorations="{Binding InitiativeCreatureData.CurrentHitPoints, Converter={StaticResource CreatureNameStrikethroughConverter}}"
-                                                           MaximumWidthRequest="90"
+                                                           MaximumWidthRequest="150"
                                                            HeightRequest="20"
                                                            MinimumHeightRequest="20"
                                                            MaximumHeightRequest="20"
@@ -726,8 +726,10 @@
                                                        Grid.Row="0"
                                                        VerticalOptions="Center"
                                                        HorizontalOptions="End"
-                                                       Margin="0,-4,10,0"
-                                                       TextColor="DarkRed">
+                                                       Margin="0,-2,10,0"
+                                                       TextColor="DarkRed"
+                                                       MaximumWidthRequest="70"
+                                                       LineBreakMode="TailTruncation">
                                                     <Label.Text>
                                                         <MultiBinding Converter="{StaticResource ConditionsConverter}">
                                                             <Binding Path="InitiativeCreatureData.ConditionString1" />

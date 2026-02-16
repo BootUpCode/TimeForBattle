@@ -96,8 +96,6 @@ public partial class CreatureListViewModel : BaseViewModel
                 Creatures = Players;
         });
 
-        Console.WriteLine(PickedSort);
-
         await Task.Run(() =>
         {
             List<Creature> sortedCreatures = [];
@@ -118,7 +116,7 @@ public partial class CreatureListViewModel : BaseViewModel
                 List<Creature> searchedCreatures = [];
                 foreach (Creature creature in sortedCreatures)
                 {
-                    if (creature.Name.ToLower().Contains(SearchInput.ToLower()))
+                    if (creature.Name is not null && creature.Name.ToLower().Contains(SearchInput.ToLower()))
                     {
                         searchedCreatures.Add(creature);
                     }
