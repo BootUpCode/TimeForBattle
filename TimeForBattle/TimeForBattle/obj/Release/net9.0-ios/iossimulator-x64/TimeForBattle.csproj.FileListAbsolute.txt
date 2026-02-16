@@ -313,3 +313,5 @@ D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-ios\iossi
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-ios\iossimulator-x64\TimeForBattle.pdb
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-ios\iossimulator-x64\TimeForBattle.genruntimeconfig.cache
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-ios\iossimulator-x64\ref\TimeForBattle.dll
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\timeforbattleloading.png
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-ios\iossimulator-x64\build-signature\signature

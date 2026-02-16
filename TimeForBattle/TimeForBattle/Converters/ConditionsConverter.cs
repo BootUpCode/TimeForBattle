@@ -21,7 +21,7 @@ public class ConditionsConverter : IMultiValueConverter
                 {
                     if (String.IsNullOrEmpty(returnString))
                     {
-                        returnString = conditionString;
+                        returnString = conditionString.Substring(0, 1);
                     }
                     conditionCount++;
                 }

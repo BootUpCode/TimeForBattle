@@ -281,3 +281,4 @@ D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-maccataly
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-maccatalyst\maccatalyst-arm64\TimeForBattle.pdb
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-maccatalyst\maccatalyst-arm64\TimeForBattle.genruntimeconfig.cache
 D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-maccatalyst\maccatalyst-arm64\ref\TimeForBattle.dll
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\obj\Release\net9.0-maccatalyst\maccatalyst-arm64\resizetizer\r\Resources\timeforbattleloading.png

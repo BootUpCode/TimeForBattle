@@ -1,0 +1,2 @@
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041\win10-x64\publish\TimeForBattle.pdb
+D:\GitHub\TimeForBattle\TimeForBattle\TimeForBattle\bin\Debug\net9.0-windows10.0.19041\win10-x64\publish\TimeForBattle.exe
