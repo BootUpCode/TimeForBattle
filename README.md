@@ -1,12 +1,13 @@
 # TimeForBattle
-TimeForBattle is under construction!
+TimeForBattle is an app which aims to assist the Game Master of a tabletop roleplaying game. The app can quickly set up combat scenarios and keep track of important statistics, while the Game Master can focus on delivering an unforgettable experience!
 
-# Initiative
-Tabletop roleplaying games often incorporate turn-based combat. At the start of combat, the Game Master will ask their players to roll the dice for 'initiative', which determines the order in which they will take their turns. The Game Master then sets up the initiative order and keeps track of turns during combat. At the same time, the Game Master must also strategically control the players' opponents, narrate the battle with epic descriptions and arbitrate game rule disputes. That's a lot for one person to handle - and the players don't want to be kept waiting!
+# Quick and easy encounter setup and management
+Tabletop roleplaying games often incorporate turn-based combat. During a combat encounter the Game Master strategically controls the players' opponents, keeps track of the turn order, narrates the battle with epic descriptions and arbitrates game rule disputes.
+That's a lot for one person to handle - and the players don't want to be kept waiting!
+TimeForBattle can assist a Game Master by allowing them to quickly assign creatures to a combat encounter and giving a clear summary of their statistics. TimeForBattle can also automatically roll for initiative, attack rolls and saving throws, which saves the Game Master a lot of dice rolls and calculations!
 
-# Quick and easy initiative order
-TimeForBattle aims to assist the Game Master of a tabletop roleplaying game with keeping the initiative order in combat. The app can quickly set up combat scenarios and keep track of important statistics, while the Game Master can focus on delivering an unforgettable experience.
-TimeForBattle can now also quickly calculate results for common combat occurances, such as attack rolls and saving throws, and record status conditions!
+# Overview and Instructions
+<img width="1600" height="3000" alt="TimeForBattle guide Complete" src="https://github.com/user-attachments/assets/fe5fc0fc-3b88-4beb-98e2-2c8bf89ca47e" />
 
 # Updates and plans
 - Add creature list page (Done!)
