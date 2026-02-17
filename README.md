@@ -1,7 +1,7 @@
 # TimeForBattle
 TimeForBattle is an app which aims to assist the Game Master of a tabletop roleplaying game. The app can quickly set up combat scenarios and keep track of important statistics, while the Game Master can focus on delivering an unforgettable experience!
 
-# Quick and easy encounter setup and management
+# Quick and easy encounter management
 Tabletop roleplaying games often incorporate turn-based combat. During a combat encounter the Game Master strategically controls the players' opponents, keeps track of the turn order, narrates the battle with epic descriptions and arbitrates game rule disputes.
 That's a lot for one person to handle - and the players don't want to be kept waiting!
 TimeForBattle can assist a Game Master by allowing them to quickly assign creatures to a combat encounter and giving a clear summary of their statistics. TimeForBattle can also automatically roll for initiative, attack rolls and saving throws, which saves the Game Master a lot of dice rolls and calculations!
