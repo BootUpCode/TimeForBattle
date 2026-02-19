@@ -7,6 +7,10 @@ That's a lot for one person to handle - and the players don't want to be kept wa
 A Game Master can use TimeForBattle to quickly assign creatures to a combat encounter and view a clear summary of their statistics. TimeForBattle can also automatically roll for initiative, attack rolls and saving throws, which saves the Game Master a lot of dice rolls and calculations!
 
 # Overview and Instructions
+To try TimeForBattle on Windows PC:
+1. Download TimeForBattle.exe from this respository
+2. Run TimeForBattle.exe
+
 <img width="1600" height="3000" alt="TimeForBattle guide Complete" src="https://github.com/user-attachments/assets/fe5fc0fc-3b88-4beb-98e2-2c8bf89ca47e" />
 
 # Updates and plans
