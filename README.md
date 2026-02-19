@@ -8,7 +8,7 @@ A Game Master can use TimeForBattle to quickly assign creatures to a combat enco
 
 # Overview and Instructions
 To try TimeForBattle on Windows PC:
-1. Download TimeForBattle.exe from this respository
+1. Download TimeForBattle.exe from this repository
 2. Run TimeForBattle.exe
 
 <img width="1600" height="3000" alt="TimeForBattle guide Complete" src="https://github.com/user-attachments/assets/fe5fc0fc-3b88-4beb-98e2-2c8bf89ca47e" />
